@@ -15,9 +15,9 @@
 
     <style>
         :root {
-            --primary: #0D7377;
-            --primary-light: #14919B;
-            --primary-dark: #0A5C5F;
+            --primary: #024056;
+            --primary-light: #097992;
+            --primary-dark: #012a38;
             --accent: #0FF0FC;
             --dark: #0A0A0A;
             --dark-light: #141414;
@@ -879,7 +879,7 @@
 
         .client-logo {
             width: 100%;
-            height: 80px;
+            height: 100px;
             margin: 0 auto 1rem;
             background: var(--white);
             border-radius: 12px;
@@ -887,7 +887,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            padding: 12px;
+            padding: 16px;
         }
 
         .client-logo img {
@@ -965,22 +965,17 @@
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
             padding-bottom: 1rem;
-            scrollbar-width: thin;
-            scrollbar-color: var(--primary) var(--gray-200);
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            cursor: grab;
         }
 
         .reviews-grid::-webkit-scrollbar {
-            height: 6px;
+            display: none;
         }
 
-        .reviews-grid::-webkit-scrollbar-track {
-            background: var(--gray-200);
-            border-radius: 3px;
-        }
-
-        .reviews-grid::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 3px;
+        .reviews-grid:active {
+            cursor: grabbing;
         }
 
         .review-card {
@@ -1238,6 +1233,46 @@
             fill: var(--white);
         }
 
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(13, 115, 119, 0.3);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(13, 115, 119, 0.4);
+        }
+
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--white);
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .services-orbit {
@@ -1427,7 +1462,7 @@
                     <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M25 25 C25 10, 40 10, 50 25 C60 40, 75 40, 75 25 C75 10, 60 10, 50 25 C40 40, 25 40, 25 25"
-                            fill="none" stroke="#0D7377" stroke-width="3" stroke-linecap="round" />
+                            fill="none" stroke="#024056" stroke-width="3" stroke-linecap="round" />
                     </svg>
                     <div class="strike"></div>
                 </div>
@@ -1672,7 +1707,7 @@
             <div class="client-card animate-on-scroll">
                 <div class="client-logo"><img src="clients/valle.webp" alt="Valle"></div>
                 <h4>Valle</h4>
-                <p>Food & Beverage</p>
+                <p>Entertainment Park</p>
             </div>
             <div class="client-card animate-on-scroll">
                 <div class="client-logo"><img src="clients/manjoo.jpg" alt="Manjoo"></div>
@@ -1698,6 +1733,11 @@
                 <div class="client-logo"><img src="clients/succexa.png" alt="Succexa"></div>
                 <h4>Succexa</h4>
                 <p>Recruitment & Talent Acquisition</p>
+            </div>
+            <div class="client-card animate-on-scroll">
+                <div class="client-logo"><img src="clients/home-classics.png" alt="Alfar Global Ltd"></div>
+                <h4>Home Classics</h4>
+                <p>Kitchen Utensils</p>
             </div>
             <div class="client-card animate-on-scroll">
                 <div class="client-logo"><img src="clients/alfarglobal.webp" alt="Alfar Global Ltd"></div>
@@ -1728,6 +1768,11 @@
                 <div class="client-logo"><img src="clients/promoshop.png" alt="Promoshop"></div>
                 <h4>Promoshop</h4>
                 <p>Children's Products</p>
+            </div>
+            <div class="client-card animate-on-scroll">
+                <div class="client-logo"><img src="clients/ummahpreneurs.jpeg" alt="Promoshop"></div>
+                <h4>Ummahpreneurs</h4>
+                <p>Business Network</p>
             </div>
         </div>
 
@@ -1973,12 +2018,19 @@
         </div>
     </section>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </button>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <img src="logo.webp" alt="Exera" class="footer-logo">
             <p class="footer-text">
-                <em>Stay Low, Stay Humble</em> — © 2024 Exera Ltd. All rights reserved.
+                <em>Stay Low, Stay Humble</em> — © <span id="currentYear"></span> Exera Ltd. All rights reserved.
             </p>
             <div class="footer-social">
                 <a href="https://facebook.com/exera.mu" target="_blank" aria-label="Facebook">
@@ -2036,13 +2088,13 @@
                 if (isFilled) {
                     hex.innerHTML = `
                         <svg viewBox="0 0 100 115.47" xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="50,0 100,28.87 100,86.6 50,115.47 0,86.6 0,28.87" fill="#0D7377" stroke="none"/>
+                            <polygon points="50,0 100,28.87 100,86.6 50,115.47 0,86.6 0,28.87" fill="#024056" stroke="none"/>
                         </svg>
                     `;
                 } else {
                     hex.innerHTML = `
                         <svg viewBox="0 0 100 115.47" xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="50,0 100,28.87 100,86.6 50,115.47 0,86.6 0,28.87" fill="none" stroke="#0D7377" stroke-width="2"/>
+                            <polygon points="50,0 100,28.87 100,86.6 50,115.47 0,86.6 0,28.87" fill="none" stroke="#024056" stroke-width="2"/>
                         </svg>
                     `;
                 }
@@ -2052,6 +2104,9 @@
         }
 
         createHexagons();
+
+        // Set dynamic year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         // Navigation scroll effect
         const nav = document.querySelector('nav');
@@ -2129,6 +2184,52 @@
                 }
             });
         });
+
+        // Scroll to top button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Drag to scroll for reviews
+        const reviewsGrid = document.querySelector('.reviews-grid');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        reviewsGrid.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - reviewsGrid.offsetLeft;
+            scrollLeft = reviewsGrid.scrollLeft;
+        });
+
+        reviewsGrid.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        reviewsGrid.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        reviewsGrid.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - reviewsGrid.offsetLeft;
+            const walk = (x - startX) * 2;
+            reviewsGrid.scrollLeft = scrollLeft - walk;
+        });
     </script>
 
     <!-- amCharts 5 -->
@@ -2173,7 +2274,7 @@
 
             // Hover state
             polygonSeries.mapPolygons.template.states.create("hover", {
-                fill: am5.color(0x0D7377),
+                fill: am5.color(0x024056),
                 fillOpacity: 0.3
             });
 
@@ -2190,7 +2291,7 @@
                 // Outer pulsing circle
                 var outerCircle = container.children.push(am5.Circle.new(root, {
                     radius: 20,
-                    fill: am5.color(0x0D7377),
+                    fill: am5.color(0x024056),
                     fillOpacity: 0.2
                 }));
 
@@ -2216,7 +2317,7 @@
                 // Inner solid circle
                 var circle = container.children.push(am5.Circle.new(root, {
                     radius: 6,
-                    fill: am5.color(0x0D7377),
+                    fill: am5.color(0x024056),
                     stroke: am5.color(0xFFFFFF),
                     strokeWidth: 2,
                     tooltipText: "{title}",
@@ -2225,7 +2326,7 @@
 
                 circle.states.create("hover", {
                     radius: 8,
-                    fill: am5.color(0x14919B)
+                    fill: am5.color(0x097992)
                 });
 
                 return am5.Bullet.new(root, {
