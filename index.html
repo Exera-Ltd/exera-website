@@ -19,11 +19,16 @@
             --accent: #0FF0FC;
             --dark: #0A0A0A;
             --dark-light: #141414;
-            --dark-medium: #1A1A1A;
-            --gray: #6B7280;
-            --gray-light: #9CA3AF;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-300: #D1D5DB;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
             --white: #FFFFFF;
-            --off-white: #F9FAFB;
         }
 
         * {
@@ -38,34 +43,64 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--dark);
-            color: var(--white);
+            background: var(--white);
+            color: var(--gray-900);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Selection */
         ::selection {
             background: var(--primary);
             color: var(--white);
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
 
         ::-webkit-scrollbar-track {
-            background: var(--dark);
+            background: var(--gray-100);
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--primary-dark);
+            background: var(--primary);
             border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary);
+            background: var(--primary-dark);
+        }
+
+        /* Animated Hexagon Background */
+        .hex-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hexagon {
+            position: absolute;
+            opacity: 0.07;
+            animation: floatHex linear infinite;
+        }
+
+        .hexagon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes floatHex {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+            }
         }
 
         /* Animations */
@@ -85,20 +120,14 @@
             to { opacity: 1; }
         }
 
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.5); opacity: 0.4; }
+        }
+
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 0.8; }
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            50% { transform: translateY(-10px); }
         }
 
         .animate-on-scroll {
@@ -110,19 +139,6 @@
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
-        }
-
-        /* Hexagon Pattern Background */
-        .hex-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%230D7377' fill-opacity='1'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
         /* Navigation */
@@ -141,11 +157,11 @@
         }
 
         nav.scrolled {
-            background: rgba(10, 10, 10, 0.9);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             padding: 1rem 5%;
-            border-bottom: 1px solid rgba(13, 115, 119, 0.1);
+            box-shadow: 0 1px 20px rgba(0, 0, 0, 0.05);
         }
 
         .nav-logo {
@@ -164,7 +180,7 @@
         }
 
         .nav-links a {
-            color: var(--gray-light);
+            color: var(--gray-600);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
@@ -185,7 +201,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--white);
+            color: var(--gray-900);
         }
 
         .nav-links a:hover::after {
@@ -193,15 +209,15 @@
         }
 
         .nav-links a.active {
-            color: var(--primary-light);
+            color: var(--primary);
         }
 
         .nav-cta {
             padding: 0.75rem 1.5rem;
-            background: transparent;
-            border: 1px solid var(--primary);
-            color: var(--primary-light);
-            border-radius: 4px;
+            background: var(--primary);
+            border: none;
+            color: var(--white);
+            border-radius: 6px;
             font-size: 0.9rem;
             font-weight: 500;
             cursor: pointer;
@@ -209,9 +225,9 @@
         }
 
         .nav-cta:hover {
-            background: var(--primary);
-            color: var(--white);
-            box-shadow: 0 0 30px rgba(13, 115, 119, 0.3);
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(13, 115, 119, 0.2);
         }
 
         /* Mobile Menu */
@@ -226,7 +242,7 @@
         .menu-toggle span {
             width: 25px;
             height: 2px;
-            background: var(--white);
+            background: var(--gray-900);
             transition: all 0.3s ease;
         }
 
@@ -241,15 +257,14 @@
             overflow: hidden;
         }
 
-        .hero-bg-gradient {
+        .hero-gradient {
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 80%;
-            height: 150%;
-            background: radial-gradient(ellipse at center, rgba(13, 115, 119, 0.15) 0%, transparent 70%);
+            top: -30%;
+            right: -10%;
+            width: 60%;
+            height: 120%;
+            background: radial-gradient(ellipse at center, rgba(13, 115, 119, 0.08) 0%, transparent 70%);
             pointer-events: none;
-            animation: pulse 8s ease-in-out infinite;
         }
 
         .hero-content {
@@ -264,11 +279,11 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.5rem 1rem;
-            background: rgba(13, 115, 119, 0.1);
-            border: 1px solid rgba(13, 115, 119, 0.3);
+            background: rgba(13, 115, 119, 0.08);
+            border: 1px solid rgba(13, 115, 119, 0.2);
             border-radius: 50px;
             font-size: 0.85rem;
-            color: var(--primary-light);
+            color: var(--primary);
             margin-bottom: 2rem;
             animation: fadeInUp 0.8s ease forwards;
         }
@@ -287,12 +302,13 @@
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 1.5rem;
+            color: var(--gray-900);
             animation: fadeInUp 0.8s ease 0.2s forwards;
             opacity: 0;
         }
 
         .hero-title .highlight {
-            background: linear-gradient(135deg, var(--primary-light), var(--accent));
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -300,10 +316,10 @@
 
         .hero-subtitle {
             font-size: 1.25rem;
-            color: var(--gray-light);
+            color: var(--gray-600);
             max-width: 600px;
             margin: 0 auto 3rem;
-            font-weight: 300;
+            font-weight: 400;
             animation: fadeInUp 0.8s ease 0.4s forwards;
             opacity: 0;
         }
@@ -322,7 +338,7 @@
             background: var(--primary);
             color: var(--white);
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 1rem;
             font-weight: 500;
             cursor: pointer;
@@ -331,17 +347,17 @@
         }
 
         .btn-primary:hover {
-            background: var(--primary-light);
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(13, 115, 119, 0.3);
+            box-shadow: 0 10px 40px rgba(13, 115, 119, 0.25);
         }
 
         .btn-secondary {
             padding: 1rem 2.5rem;
             background: transparent;
-            color: var(--white);
-            border: 1px solid var(--gray);
-            border-radius: 4px;
+            color: var(--gray-700);
+            border: 1px solid var(--gray-300);
+            border-radius: 6px;
             font-size: 1rem;
             font-weight: 500;
             cursor: pointer;
@@ -351,7 +367,7 @@
 
         .btn-secondary:hover {
             border-color: var(--primary);
-            color: var(--primary-light);
+            color: var(--primary);
         }
 
         .hero-stats {
@@ -360,7 +376,7 @@
             gap: 4rem;
             margin-top: 5rem;
             padding-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid var(--gray-200);
             animation: fadeInUp 0.8s ease 0.8s forwards;
             opacity: 0;
         }
@@ -372,13 +388,13 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--primary-light);
+            color: var(--primary);
             line-height: 1;
         }
 
         .stat-label {
             font-size: 0.9rem;
-            color: var(--gray);
+            color: var(--gray-500);
             margin-top: 0.5rem;
         }
 
@@ -398,7 +414,7 @@
 
         .scroll-indicator span {
             font-size: 0.75rem;
-            color: var(--gray);
+            color: var(--gray-400);
             letter-spacing: 2px;
             text-transform: uppercase;
         }
@@ -406,7 +422,7 @@
         .scroll-indicator .mouse {
             width: 24px;
             height: 40px;
-            border: 2px solid var(--gray);
+            border: 2px solid var(--gray-300);
             border-radius: 12px;
             position: relative;
         }
@@ -446,7 +462,7 @@
             display: inline-block;
             font-size: 0.8rem;
             font-weight: 600;
-            color: var(--primary-light);
+            color: var(--primary);
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 1rem;
@@ -456,181 +472,327 @@
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
             margin-bottom: 1rem;
+            color: var(--gray-900);
         }
 
         .section-subtitle {
             font-size: 1.1rem;
-            color: var(--gray-light);
-            font-weight: 300;
+            color: var(--gray-500);
+            font-weight: 400;
         }
 
-        /* Services Section */
+        /* Services Section - Creative Orbital Design */
         #services {
-            background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 100%);
+            background: var(--gray-50);
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            padding: 3rem;
-            background: var(--dark-medium);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(13, 115, 119, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(13, 115, 119, 0.1);
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .service-card p {
-            color: var(--gray-light);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* Process Section */
-        #process {
-            background: var(--dark-light);
-        }
-
-        .process-steps {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
+        .services-container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .process-step {
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
-            text-align: center;
-            padding: 2rem;
+        .services-orbit {
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 700px;
         }
 
-        .process-number {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
+        .orbit-center {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            border-radius: 50%;
-            position: relative;
+            text-align: center;
+            color: var(--white);
+            z-index: 10;
+            box-shadow: 0 20px 60px rgba(13, 115, 119, 0.3);
         }
 
-        .process-number::after {
-            content: '';
+        .orbit-center h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding: 1rem;
+        }
+
+        .orbit-ring {
             position: absolute;
-            top: 50%;
-            right: -100%;
-            width: 80%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), transparent);
+            border: 1px dashed var(--gray-300);
+            border-radius: 50%;
         }
 
-        .process-step:last-child .process-number::after {
+        .orbit-ring-1 {
+            width: 400px;
+            height: 400px;
+        }
+
+        .orbit-ring-2 {
+            width: 600px;
+            height: 600px;
+        }
+
+        .service-node {
+            position: absolute;
+            width: 160px;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--gray-100);
+            transition: all 0.4s ease;
+            cursor: default;
+        }
+
+        .service-node:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 40px rgba(13, 115, 119, 0.15);
+            border-color: var(--primary);
+        }
+
+        .service-node-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1rem;
+            background: rgba(13, 115, 119, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .service-node h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .service-node p {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+
+        /* Position service nodes around the orbit */
+        .node-1 { top: 0; left: 50%; transform: translateX(-50%); }
+        .node-2 { top: 15%; right: 5%; }
+        .node-3 { bottom: 15%; right: 5%; }
+        .node-4 { bottom: 0; left: 50%; transform: translateX(-50%); }
+        .node-5 { bottom: 15%; left: 5%; }
+        .node-6 { top: 15%; left: 5%; }
+
+        /* Mobile Services Fallback */
+        .services-mobile {
             display: none;
         }
 
-        .process-step h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
+        .services-mobile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
-        .process-step p {
-            color: var(--gray-light);
-            font-size: 0.9rem;
+        .services-mobile .service-node {
+            position: relative;
+            width: 100%;
+        }
+
+        /* Process Section */
+        #process {
+            background: var(--white);
+        }
+
+        .process-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+            transform: translateX(-50%);
+        }
+
+        .process-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .process-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .process-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .process-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .process-content {
+            width: 45%;
+            padding: 2rem;
+            background: var(--gray-50);
+            border-radius: 16px;
+            border: 1px solid var(--gray-100);
+        }
+
+        .process-item:nth-child(odd) .process-content {
+            text-align: right;
+            margin-right: 5%;
+        }
+
+        .process-item:nth-child(even) .process-content {
+            text-align: left;
+            margin-left: 5%;
+        }
+
+        .process-number {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            z-index: 1;
+        }
+
+        .process-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .process-content p {
+            color: var(--gray-500);
+            font-size: 0.95rem;
         }
 
         /* Clients Section */
         #clients {
-            background: linear-gradient(180deg, var(--dark-light) 0%, var(--dark) 100%);
+            background: var(--gray-50);
         }
 
-        .clients-map-container {
-            max-width: 1000px;
+        .clients-intro {
+            text-align: center;
+            max-width: 800px;
             margin: 0 auto 4rem;
+        }
+
+        .clients-intro p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto 5rem;
+        }
+
+        .client-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .client-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(13, 115, 119, 0.1);
+        }
+
+        .client-logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: var(--gray-100);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .client-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .client-card p {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+
+        /* Global Reach - World Map */
+        .global-reach {
+            margin-top: 4rem;
+        }
+
+        .global-reach h3 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            color: var(--gray-900);
+        }
+
+        .world-map-container {
+            max-width: 1000px;
+            margin: 0 auto;
             position: relative;
         }
 
-        .world-map {
+        .world-map-svg {
             width: 100%;
-            opacity: 0.3;
-        }
-
-        .map-dots {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            height: auto;
         }
 
         .map-dot {
             position: absolute;
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             background: var(--primary);
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            animation: pulse 2s ease-in-out infinite;
+            cursor: pointer;
+            z-index: 10;
         }
 
-        .map-dot::after {
+        .map-dot::before {
             content: '';
             position: absolute;
             top: 50%;
@@ -638,55 +800,70 @@
             transform: translate(-50%, -50%);
             width: 30px;
             height: 30px;
-            background: rgba(13, 115, 119, 0.3);
+            background: rgba(13, 115, 119, 0.2);
             border-radius: 50%;
             animation: pulse 2s ease-in-out infinite;
         }
 
-        /* Position dots roughly on world map */
-        .dot-us { top: 35%; left: 20%; }
-        .dot-france { top: 30%; left: 47%; }
-        .dot-switzerland { top: 28%; left: 50%; }
-        .dot-turkey { top: 32%; left: 55%; }
-        .dot-thailand { top: 45%; left: 72%; }
-        .dot-china { top: 38%; left: 75%; }
-        .dot-mauritius { top: 62%; left: 58%; animation-delay: 0.5s; }
-
-        .countries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .country-item {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: var(--dark-medium);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            transition: all 0.3s ease;
-        }
-
-        .country-item:hover {
-            border-color: var(--primary);
-            transform: translateY(-4px);
-        }
-
-        .country-flag {
-            font-size: 2.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .country-name {
-            font-size: 0.9rem;
+        .map-dot::after {
+            content: attr(data-country);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
             font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .map-dot:hover::after {
+            opacity: 1;
+        }
+
+        /* Position dots on world map */
+        .dot-us { top: 38%; left: 20%; }
+        .dot-france { top: 32%; left: 47%; }
+        .dot-switzerland { top: 33%; left: 49%; }
+        .dot-turkey { top: 36%; left: 55%; }
+        .dot-thailand { top: 48%; left: 72%; }
+        .dot-china { top: 40%; left: 76%; }
+        .dot-mauritius { top: 62%; left: 58%; }
+
+        .countries-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .country-tag {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--gray-700);
+        }
+
+        .country-tag span {
+            font-size: 1.2rem;
         }
 
         /* Reviews Section */
         #reviews {
-            background: var(--dark);
+            background: var(--white);
         }
 
         .reviews-container {
@@ -702,25 +879,25 @@
 
         .review-card {
             padding: 2.5rem;
-            background: var(--dark-light);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            background: var(--gray-50);
+            border-radius: 16px;
+            border: 1px solid var(--gray-100);
             position: relative;
             transition: all 0.3s ease;
         }
 
         .review-card:hover {
-            border-color: rgba(13, 115, 119, 0.2);
-            transform: translateY(-4px);
+            border-color: rgba(13, 115, 119, 0.3);
+            box-shadow: 0 12px 40px rgba(13, 115, 119, 0.08);
         }
 
         .review-quote {
             position: absolute;
-            top: 2rem;
+            top: 1.5rem;
             right: 2rem;
             font-size: 4rem;
             color: var(--primary);
-            opacity: 0.2;
+            opacity: 0.15;
             font-family: Georgia, serif;
             line-height: 1;
         }
@@ -728,7 +905,7 @@
         .review-text {
             font-size: 1rem;
             line-height: 1.8;
-            color: var(--gray-light);
+            color: var(--gray-600);
             margin-bottom: 2rem;
             font-style: italic;
         }
@@ -749,28 +926,31 @@
             justify-content: center;
             font-weight: 600;
             font-size: 1.1rem;
+            color: var(--white);
         }
 
         .review-author-info h4 {
             font-size: 1rem;
             font-weight: 600;
+            color: var(--gray-900);
         }
 
         .review-author-info p {
             font-size: 0.85rem;
-            color: var(--gray);
+            color: var(--gray-500);
         }
 
         .review-stars {
-            color: #FFD700;
+            color: #F59E0B;
             font-size: 0.9rem;
             margin-top: 0.25rem;
         }
 
         /* EXRP Section */
         #exrp {
-            background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 100%);
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--dark) 100%);
             text-align: center;
+            color: var(--white);
         }
 
         .exrp-content {
@@ -781,12 +961,12 @@
         .exrp-badge {
             display: inline-block;
             padding: 0.5rem 1.5rem;
-            background: linear-gradient(135deg, rgba(13, 115, 119, 0.2), rgba(15, 240, 252, 0.1));
+            background: rgba(13, 115, 119, 0.2);
             border: 1px solid var(--primary);
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 500;
-            color: var(--accent);
+            color: var(--primary-light);
             margin-bottom: 2rem;
         }
 
@@ -798,7 +978,7 @@
 
         .exrp-description {
             font-size: 1.2rem;
-            color: var(--gray-light);
+            color: var(--gray-400);
             margin-bottom: 3rem;
         }
 
@@ -815,9 +995,9 @@
             flex: 1;
             min-width: 250px;
             padding: 1rem 1.5rem;
-            background: var(--dark-medium);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
+            border-radius: 6px;
             color: var(--white);
             font-size: 1rem;
             outline: none;
@@ -829,12 +1009,12 @@
         }
 
         .exrp-notify input::placeholder {
-            color: var(--gray);
+            color: var(--gray-500);
         }
 
         /* Contact Section */
         #contact {
-            background: var(--dark-light);
+            background: var(--gray-50);
             text-align: center;
         }
 
@@ -856,18 +1036,19 @@
             align-items: center;
             gap: 0.75rem;
             padding: 1rem 1.5rem;
-            background: var(--dark-medium);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            color: var(--gray-light);
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 10px;
+            color: var(--gray-700);
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .contact-link:hover {
             border-color: var(--primary);
-            color: var(--white);
+            color: var(--primary);
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(13, 115, 119, 0.1);
         }
 
         .contact-link svg {
@@ -879,8 +1060,8 @@
         /* Footer */
         footer {
             padding: 3rem 5%;
-            background: var(--dark);
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            background: var(--white);
+            border-top: 1px solid var(--gray-100);
         }
 
         .footer-content {
@@ -895,7 +1076,7 @@
 
         .footer-logo {
             height: 30px;
-            opacity: 0.7;
+            opacity: 0.8;
             transition: opacity 0.3s ease;
         }
 
@@ -904,12 +1085,12 @@
         }
 
         .footer-text {
-            color: var(--gray);
+            color: var(--gray-500);
             font-size: 0.85rem;
         }
 
         .footer-text em {
-            color: var(--primary-light);
+            color: var(--primary);
             font-style: normal;
         }
 
@@ -924,8 +1105,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--dark-light);
-            border-radius: 8px;
+            background: var(--gray-100);
+            border-radius: 10px;
             transition: all 0.3s ease;
         }
 
@@ -937,7 +1118,7 @@
         .footer-social svg {
             width: 18px;
             height: 18px;
-            fill: var(--gray-light);
+            fill: var(--gray-600);
             transition: fill 0.3s ease;
         }
 
@@ -945,7 +1126,40 @@
             fill: var(--white);
         }
 
-        /* Mobile Responsive */
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .services-orbit {
+                display: none;
+            }
+
+            .services-mobile {
+                display: block;
+            }
+
+            .process-timeline::before {
+                left: 30px;
+            }
+
+            .process-item,
+            .process-item:nth-child(odd),
+            .process-item:nth-child(even) {
+                flex-direction: row;
+            }
+
+            .process-content,
+            .process-item:nth-child(odd) .process-content,
+            .process-item:nth-child(even) .process-content {
+                width: calc(100% - 80px);
+                margin-left: 80px;
+                margin-right: 0;
+                text-align: left;
+            }
+
+            .process-number {
+                left: 30px;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
@@ -953,7 +1167,7 @@
                 right: -100%;
                 width: 100%;
                 height: 100vh;
-                background: var(--dark);
+                background: var(--white);
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
@@ -967,6 +1181,7 @@
 
             .nav-links a {
                 font-size: 1.5rem;
+                color: var(--gray-900);
             }
 
             .menu-toggle {
@@ -991,18 +1206,11 @@
 
             .hero-stats {
                 gap: 2rem;
+                flex-wrap: wrap;
             }
 
             .stat-number {
                 font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-number::after {
-                display: none;
             }
 
             .reviews-grid {
@@ -1017,8 +1225,8 @@
     </style>
 </head>
 <body>
-    <!-- Hexagon Pattern -->
-    <div class="hex-pattern"></div>
+    <!-- Animated Hexagon Background -->
+    <div class="hex-bg" id="hexBg"></div>
 
     <!-- Navigation -->
     <nav>
@@ -1043,7 +1251,7 @@
 
     <!-- Hero Section -->
     <section id="home">
-        <div class="hero-bg-gradient"></div>
+        <div class="hero-gradient"></div>
         <div class="hero-content">
             <div class="hero-badge">
                 <span>10+ Years of Excellence</span>
@@ -1080,7 +1288,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section - Orbital Design -->
     <section id="services">
         <div class="section-header animate-on-scroll">
             <span class="section-tag">What We Do</span>
@@ -1089,69 +1297,154 @@
                 From concept to deployment, we handle every aspect of your software needs with precision and care.
             </p>
         </div>
-        <div class="services-grid">
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="16 18 22 12 16 6"></polyline>
-                        <polyline points="8 6 2 12 8 18"></polyline>
-                    </svg>
+
+        <div class="services-container">
+            <!-- Desktop Orbital Layout -->
+            <div class="services-orbit animate-on-scroll">
+                <div class="orbit-ring orbit-ring-1"></div>
+                <div class="orbit-ring orbit-ring-2"></div>
+
+                <div class="orbit-center">
+                    <h3>Your Business<br>At The Core</h3>
                 </div>
-                <h3>Custom Software Development</h3>
-                <p>Bespoke applications designed around your unique workflows. We don't believe in one-size-fits-all. Every line of code is written with your specific needs in mind.</p>
+
+                <div class="service-node node-1">
+                    <div class="service-node-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h4>Custom Software</h4>
+                    <p>Built for your workflow</p>
+                </div>
+
+                <div class="service-node node-2">
+                    <div class="service-node-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h4>Web Applications</h4>
+                    <p>Modern & scalable</p>
+                </div>
+
+                <div class="service-node node-3">
+                    <div class="service-node-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h4>Mobile Apps</h4>
+                    <p>iOS & Android</p>
+                </div>
+
+                <div class="service-node node-4">
+                    <div class="service-node-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h4>Integration</h4>
+                    <p>Connect your systems</p>
+                </div>
+
+                <div class="service-node node-5">
+                    <div class="service-node-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                    </div>
+                    <h4>Maintenance</h4>
+                    <p>Ongoing support</p>
+                </div>
+
+                <div class="service-node node-6">
+                    <div class="service-node-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h4>Consulting</h4>
+                    <p>Strategic guidance</p>
+                </div>
             </div>
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                        <line x1="8" y1="21" x2="16" y2="21"></line>
-                        <line x1="12" y1="17" x2="12" y2="21"></line>
-                    </svg>
+
+            <!-- Mobile Grid Fallback -->
+            <div class="services-mobile">
+                <div class="services-mobile-grid">
+                    <div class="service-node animate-on-scroll">
+                        <div class="service-node-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h4>Custom Software</h4>
+                        <p>Built for your workflow</p>
+                    </div>
+                    <div class="service-node animate-on-scroll">
+                        <div class="service-node-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h4>Web Applications</h4>
+                        <p>Modern & scalable</p>
+                    </div>
+                    <div class="service-node animate-on-scroll">
+                        <div class="service-node-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                            </svg>
+                        </div>
+                        <h4>Mobile Apps</h4>
+                        <p>iOS & Android</p>
+                    </div>
+                    <div class="service-node animate-on-scroll">
+                        <div class="service-node-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h4>Integration</h4>
+                        <p>Connect your systems</p>
+                    </div>
+                    <div class="service-node animate-on-scroll">
+                        <div class="service-node-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                            </svg>
+                        </div>
+                        <h4>Maintenance</h4>
+                        <p>Ongoing support</p>
+                    </div>
+                    <div class="service-node animate-on-scroll">
+                        <div class="service-node-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h4>Consulting</h4>
+                        <p>Strategic guidance</p>
+                    </div>
                 </div>
-                <h3>Web Applications</h3>
-                <p>Modern, responsive web applications that scale with your business. Built with the latest technologies for performance, security, and exceptional user experience.</p>
-            </div>
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                    </svg>
-                </div>
-                <h3>Mobile Solutions</h3>
-                <p>Native and cross-platform mobile applications that put your business in your customers' pockets. Seamless experiences across iOS and Android.</p>
-            </div>
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                        <path d="M2 17l10 5 10-5"></path>
-                        <path d="M2 12l10 5 10-5"></path>
-                    </svg>
-                </div>
-                <h3>System Integration</h3>
-                <p>Connect your existing tools and systems seamlessly. We bridge the gaps between your software ecosystem to create unified, efficient workflows.</p>
-            </div>
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="3"></circle>
-                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-                    </svg>
-                </div>
-                <h3>Maintenance & Support</h3>
-                <p>Your software evolves as your business grows. We provide ongoing maintenance, updates, and support to keep your systems running smoothly.</p>
-            </div>
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                    </svg>
-                </div>
-                <h3>Consulting & Strategy</h3>
-                <p>Not sure where to start? We analyze your business processes and recommend technology solutions that drive real results and competitive advantage.</p>
             </div>
         </div>
     </section>
@@ -1165,26 +1458,34 @@
                 A proven methodology that ensures your project succeeds from day one.
             </p>
         </div>
-        <div class="process-steps">
-            <div class="process-step animate-on-scroll">
+        <div class="process-timeline">
+            <div class="process-item animate-on-scroll">
+                <div class="process-content">
+                    <h3>Discovery</h3>
+                    <p>We visit your site, observe your operations, and understand your business from the ground up.</p>
+                </div>
                 <div class="process-number">1</div>
-                <h3>Discovery</h3>
-                <p>We visit your site, observe your operations, and understand your business from the ground up.</p>
             </div>
-            <div class="process-step animate-on-scroll">
+            <div class="process-item animate-on-scroll">
+                <div class="process-content">
+                    <h3>Design</h3>
+                    <p>We architect a solution tailored specifically to your workflows, challenges, and goals.</p>
+                </div>
                 <div class="process-number">2</div>
-                <h3>Design</h3>
-                <p>We architect a solution tailored specifically to your workflows, challenges, and goals.</p>
             </div>
-            <div class="process-step animate-on-scroll">
+            <div class="process-item animate-on-scroll">
+                <div class="process-content">
+                    <h3>Develop</h3>
+                    <p>Our team builds your solution with clean, maintainable code and regular progress updates.</p>
+                </div>
                 <div class="process-number">3</div>
-                <h3>Develop</h3>
-                <p>Our team builds your solution with clean, maintainable code and regular progress updates.</p>
             </div>
-            <div class="process-step animate-on-scroll">
+            <div class="process-item animate-on-scroll">
+                <div class="process-content">
+                    <h3>Deploy & Support</h3>
+                    <p>We launch your solution and provide ongoing support as your business evolves.</p>
+                </div>
                 <div class="process-number">4</div>
-                <h3>Deploy & Support</h3>
-                <p>We launch your solution and provide ongoing support as your business evolves.</p>
             </div>
         </div>
     </section>
@@ -1192,57 +1493,110 @@
     <!-- Clients Section -->
     <section id="clients">
         <div class="section-header animate-on-scroll">
-            <span class="section-tag">Global Reach</span>
-            <h2 class="section-title">Trusted Worldwide</h2>
+            <span class="section-tag">Our Clients</span>
+            <h2 class="section-title">Trusted Partners</h2>
             <p class="section-subtitle">
-                Our solutions power businesses across continents, from startups to enterprises.
+                Businesses across Mauritius and beyond rely on our solutions every day.
             </p>
         </div>
 
-        <!-- World Map with Dots -->
-        <div class="clients-map-container animate-on-scroll">
-            <svg class="world-map" viewBox="0 0 1000 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M170 120C180 115 200 110 220 115C240 120 250 130 260 125C280 115 310 120 330 130C340 135 360 140 370 150C380 160 400 165 410 160C420 155 430 145 450 140C470 135 490 140 510 150C520 155 530 165 540 170C550 175 560 180 580 175C600 170 620 160 640 155C660 150 680 145 700 150C720 155 740 165 760 170C770 175 780 180 790 175C800 170 810 160 820 155C830 150 840 145 850 150M150 200C160 195 180 190 200 195C220 200 230 210 250 205C270 195 300 200 320 210C330 215 350 220 370 230C390 240 410 250 430 245C450 240 470 230 490 225C510 220 530 225 550 235C570 245 590 250 610 245C630 240 650 230 670 225C690 220 710 225 730 235C750 245 770 255 790 250C810 245 830 235 850 230M130 280C140 275 160 270 180 275C200 280 210 290 230 285C250 275 280 280 300 290C310 295 330 300 350 310C370 320 390 330 410 325C430 320 450 310 470 305C490 300 510 305 530 315C550 325 570 330 590 325C610 320 630 310 650 305C670 300 690 305 710 315C730 325 750 335 770 330C790 325 810 315 830 310" stroke="var(--primary)" stroke-opacity="0.3" stroke-width="1.5"/>
-            </svg>
-            <div class="map-dots">
-                <div class="map-dot dot-us" title="United States"></div>
-                <div class="map-dot dot-france" title="France"></div>
-                <div class="map-dot dot-switzerland" title="Switzerland"></div>
-                <div class="map-dot dot-turkey" title="Turkey"></div>
-                <div class="map-dot dot-thailand" title="Thailand"></div>
-                <div class="map-dot dot-china" title="China"></div>
-                <div class="map-dot dot-mauritius" title="Mauritius"></div>
+        <div class="clients-grid">
+            <div class="client-card animate-on-scroll">
+                <div class="client-logo">A</div>
+                <h4>Alpha Industries</h4>
+                <p>Manufacturing</p>
+            </div>
+            <div class="client-card animate-on-scroll">
+                <div class="client-logo">B</div>
+                <h4>BlueSky Logistics</h4>
+                <p>Supply Chain</p>
+            </div>
+            <div class="client-card animate-on-scroll">
+                <div class="client-logo">C</div>
+                <h4>CoreTech Solutions</h4>
+                <p>IT Services</p>
+            </div>
+            <div class="client-card animate-on-scroll">
+                <div class="client-logo">D</div>
+                <h4>Delta Finance</h4>
+                <p>Financial Services</p>
+            </div>
+            <div class="client-card animate-on-scroll">
+                <div class="client-logo">E</div>
+                <h4>EcoGreen Energy</h4>
+                <p>Renewable Energy</p>
+            </div>
+            <div class="client-card animate-on-scroll">
+                <div class="client-logo">F</div>
+                <h4>Fusion Healthcare</h4>
+                <p>Healthcare</p>
+            </div>
+            <div class="client-card animate-on-scroll">
+                <div class="client-logo">G</div>
+                <h4>GlobalTrade Co</h4>
+                <p>Import/Export</p>
+            </div>
+            <div class="client-card animate-on-scroll">
+                <div class="client-logo">H</div>
+                <h4>Horizon Hotels</h4>
+                <p>Hospitality</p>
             </div>
         </div>
 
-        <div class="countries-grid">
-            <div class="country-item animate-on-scroll">
-                <div class="country-flag">🇺🇸</div>
-                <div class="country-name">United States</div>
+        <!-- Global Reach Map -->
+        <div class="global-reach animate-on-scroll">
+            <h3>Our Global Footprint</h3>
+            <div class="world-map-container">
+                <svg class="world-map-svg" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Simplified World Map -->
+                    <defs>
+                        <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#0D7377;stop-opacity:0.1" />
+                            <stop offset="100%" style="stop-color:#14919B;stop-opacity:0.05" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- North America -->
+                    <path d="M120 100 Q140 80 180 85 Q220 90 240 110 Q260 130 250 160 Q240 190 220 200 Q180 220 160 210 Q140 200 130 180 Q110 150 120 120 Z" fill="url(#mapGradient)" stroke="#0D7377" stroke-width="1" stroke-opacity="0.3"/>
+                    <path d="M180 150 Q200 140 230 150 Q260 160 280 180 Q290 200 270 220 Q250 240 220 235 Q190 230 175 210 Q160 190 170 170 Q175 155 180 150 Z" fill="url(#mapGradient)" stroke="#0D7377" stroke-width="1" stroke-opacity="0.3"/>
+
+                    <!-- South America -->
+                    <path d="M230 260 Q250 250 270 260 Q300 280 310 320 Q320 360 300 400 Q280 430 250 420 Q220 410 210 380 Q200 340 210 300 Q220 270 230 260 Z" fill="url(#mapGradient)" stroke="#0D7377" stroke-width="1" stroke-opacity="0.3"/>
+
+                    <!-- Europe -->
+                    <path d="M440 90 Q470 80 500 85 Q530 90 550 110 Q560 130 550 150 Q540 170 510 175 Q480 180 450 170 Q430 160 430 140 Q430 110 440 90 Z" fill="url(#mapGradient)" stroke="#0D7377" stroke-width="1" stroke-opacity="0.3"/>
+
+                    <!-- Africa -->
+                    <path d="M450 200 Q480 190 520 200 Q560 220 570 270 Q580 320 560 370 Q540 410 500 420 Q460 425 440 400 Q420 370 430 320 Q440 260 450 200 Z" fill="url(#mapGradient)" stroke="#0D7377" stroke-width="1" stroke-opacity="0.3"/>
+
+                    <!-- Asia -->
+                    <path d="M560 80 Q620 70 700 90 Q780 110 820 150 Q850 190 840 230 Q820 270 770 280 Q720 290 670 270 Q620 250 590 210 Q560 170 560 130 Q560 100 560 80 Z" fill="url(#mapGradient)" stroke="#0D7377" stroke-width="1" stroke-opacity="0.3"/>
+
+                    <!-- Southeast Asia -->
+                    <path d="M700 240 Q730 230 760 250 Q790 270 800 310 Q810 350 790 380 Q760 400 720 390 Q680 380 670 340 Q660 300 680 270 Q695 245 700 240 Z" fill="url(#mapGradient)" stroke="#0D7377" stroke-width="1" stroke-opacity="0.3"/>
+
+                    <!-- Australia -->
+                    <path d="M760 380 Q800 370 840 390 Q880 410 890 450 Q895 480 860 490 Q820 495 780 480 Q750 460 750 430 Q750 400 760 380 Z" fill="url(#mapGradient)" stroke="#0D7377" stroke-width="1" stroke-opacity="0.3"/>
+                </svg>
+
+                <!-- Location Dots -->
+                <div class="map-dot dot-us" data-country="United States"></div>
+                <div class="map-dot dot-france" data-country="France"></div>
+                <div class="map-dot dot-switzerland" data-country="Switzerland"></div>
+                <div class="map-dot dot-turkey" data-country="Turkey"></div>
+                <div class="map-dot dot-thailand" data-country="Thailand"></div>
+                <div class="map-dot dot-china" data-country="China"></div>
+                <div class="map-dot dot-mauritius" data-country="Mauritius"></div>
             </div>
-            <div class="country-item animate-on-scroll">
-                <div class="country-flag">🇨🇭</div>
-                <div class="country-name">Switzerland</div>
-            </div>
-            <div class="country-item animate-on-scroll">
-                <div class="country-flag">🇫🇷</div>
-                <div class="country-name">France</div>
-            </div>
-            <div class="country-item animate-on-scroll">
-                <div class="country-flag">🇹🇭</div>
-                <div class="country-name">Thailand</div>
-            </div>
-            <div class="country-item animate-on-scroll">
-                <div class="country-flag">🇹🇷</div>
-                <div class="country-name">Turkey</div>
-            </div>
-            <div class="country-item animate-on-scroll">
-                <div class="country-flag">🇨🇳</div>
-                <div class="country-name">China</div>
-            </div>
-            <div class="country-item animate-on-scroll">
-                <div class="country-flag">🇲🇺</div>
-                <div class="country-name">Mauritius</div>
+
+            <div class="countries-list">
+                <div class="country-tag"><span>🇺🇸</span> United States</div>
+                <div class="country-tag"><span>🇨🇭</span> Switzerland</div>
+                <div class="country-tag"><span>🇫🇷</span> France</div>
+                <div class="country-tag"><span>🇹🇭</span> Thailand</div>
+                <div class="country-tag"><span>🇹🇷</span> Turkey</div>
+                <div class="country-tag"><span>🇨🇳</span> China</div>
+                <div class="country-tag"><span>🇲🇺</span> Mauritius</div>
             </div>
         </div>
     </section>
@@ -1385,24 +1739,55 @@
     </footer>
 
     <script>
+        // Create animated hexagon background
+        function createHexagons() {
+            const hexBg = document.getElementById('hexBg');
+            const hexCount = 15;
+
+            for (let i = 0; i < hexCount; i++) {
+                const hex = document.createElement('div');
+                hex.className = 'hexagon';
+
+                const size = Math.random() * 60 + 30;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 20;
+                const duration = Math.random() * 20 + 25;
+
+                hex.style.cssText = `
+                    width: ${size}px;
+                    height: ${size * 1.1547}px;
+                    left: ${left}%;
+                    animation-delay: -${delay}s;
+                    animation-duration: ${duration}s;
+                `;
+
+                hex.innerHTML = `
+                    <svg viewBox="0 0 100 115.47" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="50,0 100,28.87 100,86.6 50,115.47 0,86.6 0,28.87" fill="none" stroke="#0D7377" stroke-width="2"/>
+                    </svg>
+                `;
+
+                hexBg.appendChild(hex);
+            }
+        }
+
+        createHexagons();
+
         // Navigation scroll effect
         const nav = document.querySelector('nav');
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-links a');
 
         window.addEventListener('scroll', () => {
-            // Nav background change
             if (window.scrollY > 50) {
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
             }
 
-            // Active section highlighting
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
                 if (scrollY >= sectionTop - 200) {
                     current = section.getAttribute('id');
                 }
@@ -1425,7 +1810,6 @@
             navLinksContainer.classList.toggle('active');
         });
 
-        // Close mobile menu on link click
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
@@ -1464,15 +1848,6 @@
                     });
                 }
             });
-        });
-
-        // Parallax effect for hero background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.scrollY;
-            const heroGradient = document.querySelector('.hero-bg-gradient');
-            if (heroGradient && scrolled < window.innerHeight) {
-                heroGradient.style.transform = `translateY(${scrolled * 0.3}px)`;
-            }
         });
     </script>
 </body>
