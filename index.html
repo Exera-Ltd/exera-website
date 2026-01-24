@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exera Ltd | Tailor-Made Software Solutions</title>
+    <meta name="description" content="Exera Ltd - 10+ years crafting bespoke software solutions. We learn your business and build technology that fits perfectly.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0D7377;
+            --primary-light: #14919B;
+            --primary-dark: #0A5C5F;
+            --accent: #0FF0FC;
+            --dark: #0A0A0A;
+            --dark-light: #141414;
+            --dark-medium: #1A1A1A;
+            --gray: #6B7280;
+            --gray-light: #9CA3AF;
+            --white: #FFFFFF;
+            --off-white: #F9FAFB;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-dark);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hexagon Pattern Background */
+        .hex-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%230D7377' fill-opacity='1'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        nav.scrolled {
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 1rem 5%;
+            border-bottom: 1px solid rgba(13, 115, 119, 0.1);
+        }
+
+        .nav-logo {
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary-light);
+        }
+
+        .nav-cta {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary-light);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 0 30px rgba(13, 115, 119, 0.3);
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 120px 5% 80px;
+            overflow: hidden;
+        }
+
+        .hero-bg-gradient {
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(ellipse at center, rgba(13, 115, 119, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(13, 115, 119, 0.1);
+            border: 1px solid rgba(13, 115, 119, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--primary-light);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(135deg, var(--primary-light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-light);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        .btn-primary {
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(13, 115, 119, 0.3);
+        }
+
+        .btn-secondary {
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--gray);
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary-light);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 5rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            animation: fadeInUp 0.8s ease 0.8s forwards;
+            opacity: 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            animation: fadeIn 1s ease 1.2s forwards, float 3s ease-in-out infinite 1.2s;
+            opacity: 0;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.75rem;
+            color: var(--gray);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .scroll-indicator .mouse {
+            width: 24px;
+            height: 40px;
+            border: 2px solid var(--gray);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .scroll-indicator .mouse::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 2px;
+            animation: scroll 2s ease-in-out infinite;
+        }
+
+        @keyframes scroll {
+            0%, 100% { top: 8px; opacity: 1; }
+            50% { top: 20px; opacity: 0.3; }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 120px 5%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-light);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-light);
+            font-weight: 300;
+        }
+
+        /* Services Section */
+        #services {
+            background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            padding: 3rem;
+            background: var(--dark-medium);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(13, 115, 119, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(13, 115, 119, 0.1);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Process Section */
+        #process {
+            background: var(--dark-light);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .process-number::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -100%;
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), transparent);
+        }
+
+        .process-step:last-child .process-number::after {
+            display: none;
+        }
+
+        .process-step h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .process-step p {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+        }
+
+        /* Clients Section */
+        #clients {
+            background: linear-gradient(180deg, var(--dark-light) 0%, var(--dark) 100%);
+        }
+
+        .clients-map-container {
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            position: relative;
+        }
+
+        .world-map {
+            width: 100%;
+            opacity: 0.3;
+        }
+
+        .map-dots {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .map-dot::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background: rgba(13, 115, 119, 0.3);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Position dots roughly on world map */
+        .dot-us { top: 35%; left: 20%; }
+        .dot-france { top: 30%; left: 47%; }
+        .dot-switzerland { top: 28%; left: 50%; }
+        .dot-turkey { top: 32%; left: 55%; }
+        .dot-thailand { top: 45%; left: 72%; }
+        .dot-china { top: 38%; left: 75%; }
+        .dot-mauritius { top: 62%; left: 58%; animation-delay: 0.5s; }
+
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .country-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: var(--dark-medium);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .country-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .country-flag {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .country-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Reviews Section */
+        #reviews {
+            background: var(--dark);
+        }
+
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            padding: 2.5rem;
+            background: var(--dark-light);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            border-color: rgba(13, 115, 119, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .review-quote {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .review-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--gray-light);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .review-author-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .review-author-info p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .review-stars {
+            color: #FFD700;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        /* EXRP Section */
+        #exrp {
+            background: linear-gradient(180deg, var(--dark) 0%, var(--dark-light) 100%);
+            text-align: center;
+        }
+
+        .exrp-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .exrp-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, rgba(13, 115, 119, 0.2), rgba(15, 240, 252, 0.1));
+            border: 1px solid var(--primary);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .exrp-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .exrp-description {
+            font-size: 1.2rem;
+            color: var(--gray-light);
+            margin-bottom: 3rem;
+        }
+
+        .exrp-notify {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .exrp-notify input {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem 1.5rem;
+            background: var(--dark-medium);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: var(--white);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .exrp-notify input:focus {
+            border-color: var(--primary);
+        }
+
+        .exrp-notify input::placeholder {
+            color: var(--gray);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--dark-light);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: var(--dark-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            color: var(--gray-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            border-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .contact-link svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 5%;
+            background: var(--dark);
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            height: 30px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            opacity: 1;
+        }
+
+        .footer-text {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        .footer-text em {
+            color: var(--primary-light);
+            font-style: normal;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--dark-light);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--gray-light);
+            transition: fill 0.3s ease;
+        }
+
+        .footer-social a:hover svg {
+            fill: var(--white);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: var(--dark);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: right 0.4s ease;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.5rem;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-number::after {
+                display: none;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hexagon Pattern -->
+    <div class="hex-pattern"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">
+            <img src="logo.webp" alt="Exera" class="nav-logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#clients">Clients</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#exrp">EXRP</a></li>
+        </ul>
+        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+            Get in Touch
+        </button>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero-bg-gradient"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>10+ Years of Excellence</span>
+            </div>
+            <h1 class="hero-title">
+                We Build Software<br>
+                <span class="highlight">That Fits Your Business</span>
+            </h1>
+            <p class="hero-subtitle">
+                We come on site, learn your business inside out, and develop tailor-made solutions that work exactly the way you need them to.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#contact" class="btn-primary">Start Your Project</a>
+                <a href="#services" class="btn-secondary">How We Work</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">7+</div>
+                    <div class="stat-label">Countries Served</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Tailored Solutions</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">What We Do</span>
+            <h2 class="section-title">Crafting Digital Excellence</h2>
+            <p class="section-subtitle">
+                From concept to deployment, we handle every aspect of your software needs with precision and care.
+            </p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </div>
+                <h3>Custom Software Development</h3>
+                <p>Bespoke applications designed around your unique workflows. We don't believe in one-size-fits-all. Every line of code is written with your specific needs in mind.</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <h3>Web Applications</h3>
+                <p>Modern, responsive web applications that scale with your business. Built with the latest technologies for performance, security, and exceptional user experience.</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                </div>
+                <h3>Mobile Solutions</h3>
+                <p>Native and cross-platform mobile applications that put your business in your customers' pockets. Seamless experiences across iOS and Android.</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5"></path>
+                        <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                </div>
+                <h3>System Integration</h3>
+                <p>Connect your existing tools and systems seamlessly. We bridge the gaps between your software ecosystem to create unified, efficient workflows.</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                </div>
+                <h3>Maintenance & Support</h3>
+                <p>Your software evolves as your business grows. We provide ongoing maintenance, updates, and support to keep your systems running smoothly.</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                </div>
+                <h3>Consulting & Strategy</h3>
+                <p>Not sure where to start? We analyze your business processes and recommend technology solutions that drive real results and competitive advantage.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">Our Approach</span>
+            <h2 class="section-title">How We Work</h2>
+            <p class="section-subtitle">
+                A proven methodology that ensures your project succeeds from day one.
+            </p>
+        </div>
+        <div class="process-steps">
+            <div class="process-step animate-on-scroll">
+                <div class="process-number">1</div>
+                <h3>Discovery</h3>
+                <p>We visit your site, observe your operations, and understand your business from the ground up.</p>
+            </div>
+            <div class="process-step animate-on-scroll">
+                <div class="process-number">2</div>
+                <h3>Design</h3>
+                <p>We architect a solution tailored specifically to your workflows, challenges, and goals.</p>
+            </div>
+            <div class="process-step animate-on-scroll">
+                <div class="process-number">3</div>
+                <h3>Develop</h3>
+                <p>Our team builds your solution with clean, maintainable code and regular progress updates.</p>
+            </div>
+            <div class="process-step animate-on-scroll">
+                <div class="process-number">4</div>
+                <h3>Deploy & Support</h3>
+                <p>We launch your solution and provide ongoing support as your business evolves.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">Global Reach</span>
+            <h2 class="section-title">Trusted Worldwide</h2>
+            <p class="section-subtitle">
+                Our solutions power businesses across continents, from startups to enterprises.
+            </p>
+        </div>
+
+        <!-- World Map with Dots -->
+        <div class="clients-map-container animate-on-scroll">
+            <svg class="world-map" viewBox="0 0 1000 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M170 120C180 115 200 110 220 115C240 120 250 130 260 125C280 115 310 120 330 130C340 135 360 140 370 150C380 160 400 165 410 160C420 155 430 145 450 140C470 135 490 140 510 150C520 155 530 165 540 170C550 175 560 180 580 175C600 170 620 160 640 155C660 150 680 145 700 150C720 155 740 165 760 170C770 175 780 180 790 175C800 170 810 160 820 155C830 150 840 145 850 150M150 200C160 195 180 190 200 195C220 200 230 210 250 205C270 195 300 200 320 210C330 215 350 220 370 230C390 240 410 250 430 245C450 240 470 230 490 225C510 220 530 225 550 235C570 245 590 250 610 245C630 240 650 230 670 225C690 220 710 225 730 235C750 245 770 255 790 250C810 245 830 235 850 230M130 280C140 275 160 270 180 275C200 280 210 290 230 285C250 275 280 280 300 290C310 295 330 300 350 310C370 320 390 330 410 325C430 320 450 310 470 305C490 300 510 305 530 315C550 325 570 330 590 325C610 320 630 310 650 305C670 300 690 305 710 315C730 325 750 335 770 330C790 325 810 315 830 310" stroke="var(--primary)" stroke-opacity="0.3" stroke-width="1.5"/>
+            </svg>
+            <div class="map-dots">
+                <div class="map-dot dot-us" title="United States"></div>
+                <div class="map-dot dot-france" title="France"></div>
+                <div class="map-dot dot-switzerland" title="Switzerland"></div>
+                <div class="map-dot dot-turkey" title="Turkey"></div>
+                <div class="map-dot dot-thailand" title="Thailand"></div>
+                <div class="map-dot dot-china" title="China"></div>
+                <div class="map-dot dot-mauritius" title="Mauritius"></div>
+            </div>
+        </div>
+
+        <div class="countries-grid">
+            <div class="country-item animate-on-scroll">
+                <div class="country-flag">🇺🇸</div>
+                <div class="country-name">United States</div>
+            </div>
+            <div class="country-item animate-on-scroll">
+                <div class="country-flag">🇨🇭</div>
+                <div class="country-name">Switzerland</div>
+            </div>
+            <div class="country-item animate-on-scroll">
+                <div class="country-flag">🇫🇷</div>
+                <div class="country-name">France</div>
+            </div>
+            <div class="country-item animate-on-scroll">
+                <div class="country-flag">🇹🇭</div>
+                <div class="country-name">Thailand</div>
+            </div>
+            <div class="country-item animate-on-scroll">
+                <div class="country-flag">🇹🇷</div>
+                <div class="country-name">Turkey</div>
+            </div>
+            <div class="country-item animate-on-scroll">
+                <div class="country-flag">🇨🇳</div>
+                <div class="country-name">China</div>
+            </div>
+            <div class="country-item animate-on-scroll">
+                <div class="country-flag">🇲🇺</div>
+                <div class="country-name">Mauritius</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">Testimonials</span>
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">
+                The success of our clients is the true measure of our work.
+            </p>
+        </div>
+        <div class="reviews-container">
+            <div class="reviews-grid">
+                <div class="review-card animate-on-scroll">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Exera took the time to truly understand our operations. The system they built has transformed how we work - it's like they read our minds and built exactly what we needed.
+                    </p>
+                    <div class="review-author">
+                        <div class="review-avatar">JD</div>
+                        <div class="review-author-info">
+                            <h4>Jean-Pierre D.</h4>
+                            <p>Operations Director, France</p>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card animate-on-scroll">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Working with Exera was a breath of fresh air. They didn't just deliver software - they delivered a solution that actually solved our problems. Highly professional team.
+                    </p>
+                    <div class="review-author">
+                        <div class="review-avatar">MK</div>
+                        <div class="review-author-info">
+                            <h4>Michael K.</h4>
+                            <p>CTO, Switzerland</p>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card animate-on-scroll">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        The attention to detail and commitment to understanding our unique requirements sets Exera apart. They've been our technology partner for years now.
+                    </p>
+                    <div class="review-author">
+                        <div class="review-avatar">SL</div>
+                        <div class="review-author-info">
+                            <h4>Sarah L.</h4>
+                            <p>Founder, United States</p>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXRP Section -->
+    <section id="exrp">
+        <div class="exrp-content animate-on-scroll">
+            <span class="exrp-badge">Coming Soon</span>
+            <h2 class="exrp-title">EXRP</h2>
+            <p class="exrp-description">
+                Something exciting is brewing. Stay tuned for our next big innovation.
+            </p>
+            <div class="exrp-notify">
+                <input type="email" placeholder="Enter your email for updates">
+                <button class="btn-primary">Notify Me</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header animate-on-scroll">
+            <span class="section-tag">Get Started</span>
+            <h2 class="section-title">Let's Build Something Great</h2>
+            <p class="section-subtitle">
+                Ready to transform your business with tailor-made software? We're here to help.
+            </p>
+        </div>
+        <div class="contact-content animate-on-scroll">
+            <div class="contact-links">
+                <a href="https://wa.me/23059440110" target="_blank" class="contact-link">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    WhatsApp
+                </a>
+                <a href="mailto:info@exera.mu" class="contact-link">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    Email Us
+                </a>
+                <a href="tel:+23059440110" class="contact-link">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                    </svg>
+                    Call Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <img src="logo.webp" alt="Exera" class="footer-logo">
+            <p class="footer-text">
+                <em>Stay Low, Stay Humble</em> — © 2024 Exera Ltd. All rights reserved.
+            </p>
+            <div class="footer-social">
+                <a href="https://facebook.com/exera.mu" target="_blank" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </a>
+                <a href="https://instagram.com/exera.mu" target="_blank" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/company/exera-ltd" target="_blank" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/Exera-Ltd" target="_blank" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        const nav = document.querySelector('nav');
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            // Nav background change
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            // Active section highlighting
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinksContainer = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinksContainer.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinksContainer.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect for hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const heroGradient = document.querySelector('.hero-bg-gradient');
+            if (heroGradient && scrolled < window.innerHeight) {
+                heroGradient.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
