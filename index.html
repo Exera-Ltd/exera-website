@@ -774,73 +774,6 @@
             color: var(--gray-900);
         }
 
-        .world-map-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .world-map-svg {
-            width: 100%;
-            height: auto;
-        }
-
-        .map-dot {
-            position: absolute;
-            width: 14px;
-            height: 14px;
-            background: var(--primary);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            cursor: pointer;
-            z-index: 10;
-        }
-
-        .map-dot::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 30px;
-            height: 30px;
-            background: rgba(13, 115, 119, 0.2);
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        .map-dot::after {
-            content: attr(data-country);
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gray-900);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            margin-bottom: 10px;
-        }
-
-        .map-dot:hover::after {
-            opacity: 1;
-        }
-
-        /* Position dots on world map - aligned to dotted map viewBox 2000x1000 */
-        .dot-us { top: 40%; left: 18%; }
-        .dot-france { top: 35%; left: 47%; }
-        .dot-switzerland { top: 37%; left: 48%; }
-        .dot-turkey { top: 42%; left: 55%; }
-        .dot-thailand { top: 55%; left: 75%; }
-        .dot-china { top: 42%; left: 78%; }
-        .dot-mauritius { top: 72%; left: 55%; }
-
         .countries-list {
             display: flex;
             justify-content: center;
@@ -1552,18 +1485,7 @@
         <!-- Global Reach Map -->
         <div class="global-reach animate-on-scroll">
             <h3>Our Global Footprint</h3>
-            <div class="world-map-container" id="worldMapContainer">
-                <!-- Dotted map loaded via JS -->
-
-                <!-- Location Dots -->
-                <div class="map-dot dot-us" data-country="United States"></div>
-                <div class="map-dot dot-france" data-country="France"></div>
-                <div class="map-dot dot-switzerland" data-country="Switzerland"></div>
-                <div class="map-dot dot-turkey" data-country="Turkey"></div>
-                <div class="map-dot dot-thailand" data-country="Thailand"></div>
-                <div class="map-dot dot-china" data-country="China"></div>
-                <div class="map-dot dot-mauritius" data-country="Mauritius"></div>
-            </div>
+            <div id="amcharts-map" style="width: 100%; height: 450px; max-width: 1000px; margin: 0 auto;"></div>
 
             <div class="countries-list">
                 <div class="country-tag"><span>🇺🇸</span> United States</div>
@@ -1758,140 +1680,6 @@
 
         createHexagons();
 
-        // Load dotted world map
-        function loadDottedMap() {
-            const container = document.getElementById('worldMapContainer');
-            const mapSvg = `<svg class="world-map-svg" width="100%" height="100%" viewBox="0 0 2000 1000" style="position: absolute; top: 0; left: 0;">
-                <style>
-                    .world-map-svg circle { fill: #0D7377; fill-opacity: 0.4; transition: fill-opacity 0.3s ease; }
-                    .world-map-svg:hover circle { fill-opacity: 0.5; }
-                </style>
-                ${generateDottedMap()}
-            </svg>`;
-            container.insertAdjacentHTML('afterbegin', mapSvg);
-        }
-
-        function generateDottedMap() {
-            // Optimized dotted world map coordinates
-            const dots = [
-                // North America
-                [185,310],[200,295],[215,280],[230,270],[245,265],[260,260],[275,255],[290,255],[305,260],[320,265],[335,275],
-                [170,325],[185,325],[200,310],[215,295],[230,285],[245,280],[260,275],[275,270],[290,270],[305,275],[320,285],[335,295],
-                [155,340],[170,340],[185,340],[200,325],[215,310],[230,300],[245,295],[260,290],[275,285],[290,285],[305,290],[320,300],[335,315],
-                [140,355],[155,355],[170,355],[185,355],[200,340],[215,325],[230,315],[245,310],[260,305],[275,300],[290,300],[305,305],[320,315],[335,330],[350,345],
-                [140,370],[155,370],[170,370],[185,370],[200,355],[215,340],[230,330],[245,325],[260,320],[275,315],[290,315],[305,320],[320,330],[335,345],[350,360],
-                [155,385],[170,385],[185,385],[200,370],[215,355],[230,345],[245,340],[260,335],[275,330],[290,330],[305,335],[320,345],[335,360],[350,375],
-                [170,400],[185,400],[200,385],[215,370],[230,360],[245,355],[260,350],[275,345],[290,345],[305,350],[320,360],[335,375],[350,390],
-                [185,415],[200,400],[215,385],[230,375],[245,370],[260,365],[275,360],[290,360],[305,365],[320,375],[335,390],
-                [200,430],[215,415],[230,400],[245,390],[260,385],[275,380],[290,380],[305,385],[320,395],[335,410],
-                [215,445],[230,430],[245,420],[260,410],[275,405],[290,405],[305,410],[320,420],
-                // Central America
-                [260,460],[275,450],[290,445],[305,450],[320,460],
-                [275,475],[290,470],[305,475],
-                [290,490],[305,495],[320,505],
-                [305,520],[320,530],[335,545],
-                [320,550],[335,565],[350,580],
-                // South America
-                [350,600],[365,590],[380,585],[395,590],[410,600],
-                [335,620],[350,615],[365,605],[380,600],[395,605],[410,615],[425,625],
-                [335,640],[350,635],[365,625],[380,620],[395,625],[410,635],[425,645],
-                [350,660],[365,650],[380,645],[395,650],[410,660],
-                [365,680],[380,670],[395,675],[410,685],
-                [380,700],[395,695],[410,705],
-                [395,720],[410,725],
-                [395,745],[410,750],
-                [395,770],[410,775],
-                [395,795],
-                // Europe
-                [890,270],[905,265],[920,270],[935,280],
-                [875,290],[890,285],[905,280],[920,285],[935,295],[950,305],
-                [890,305],[905,300],[920,300],[935,310],[950,320],[965,325],
-                [905,320],[920,315],[935,325],[950,335],[965,340],[980,340],
-                [920,335],[935,340],[950,350],[965,355],[980,355],[995,350],
-                [935,360],[950,365],[965,370],[980,370],[995,365],[1010,360],
-                [935,380],[950,385],[965,385],[980,385],[995,380],[1010,375],[1025,370],
-                [950,400],[965,400],[980,400],[995,395],[1010,390],[1025,385],
-                [965,415],[980,415],[995,410],[1010,405],
-                // Scandinavia
-                [995,260],[1010,255],[1025,260],[1040,270],
-                [1010,280],[1025,280],[1040,285],[1055,295],
-                [1025,300],[1040,305],[1055,315],[1070,320],
-                // Eastern Europe & Russia
-                [1055,340],[1070,340],[1085,335],[1100,330],[1115,330],[1130,335],
-                [1070,355],[1085,355],[1100,350],[1115,350],[1130,355],[1145,360],[1160,365],
-                [1085,375],[1100,370],[1115,370],[1130,375],[1145,380],[1160,385],[1175,390],
-                [1100,390],[1115,390],[1130,395],[1145,400],[1160,405],[1175,410],[1190,415],
-                [1115,410],[1130,415],[1145,420],[1160,425],[1175,430],[1190,435],[1205,440],
-                // Russia extended
-                [1220,320],[1240,315],[1260,310],[1280,310],[1300,315],[1320,320],[1340,330],
-                [1240,335],[1260,330],[1280,330],[1300,335],[1320,340],[1340,350],[1360,360],
-                [1260,350],[1280,350],[1300,355],[1320,360],[1340,370],[1360,380],[1380,390],
-                [1280,370],[1300,375],[1320,380],[1340,390],[1360,400],[1380,410],
-                [1300,395],[1320,400],[1340,410],[1360,420],[1380,430],
-                // Middle East
-                [1085,440],[1100,435],[1115,435],[1130,440],[1145,450],
-                [1100,455],[1115,455],[1130,460],[1145,470],[1160,480],
-                [1115,480],[1130,480],[1145,490],[1160,500],[1175,510],
-                [1130,505],[1145,510],[1160,520],[1175,530],
-                // Africa
-                [905,470],[920,465],[935,465],[950,470],[965,480],
-                [890,490],[905,485],[920,480],[935,480],[950,485],[965,495],[980,505],
-                [890,510],[905,505],[920,500],[935,500],[950,505],[965,515],[980,525],
-                [905,530],[920,525],[935,520],[950,525],[965,535],[980,545],
-                [920,550],[935,545],[950,545],[965,555],[980,565],
-                [935,575],[950,570],[965,575],[980,585],
-                [950,600],[965,600],[980,610],
-                [965,630],[980,635],
-                [980,660],[995,665],
-                [995,695],
-                [1010,730],
-                [995,760],
-                // India
-                [1275,470],[1290,465],[1305,470],[1320,480],
-                [1260,490],[1275,485],[1290,485],[1305,490],[1320,500],[1335,515],
-                [1260,515],[1275,510],[1290,510],[1305,515],[1320,525],[1335,540],
-                [1275,535],[1290,535],[1305,540],[1320,550],[1335,565],
-                [1290,560],[1305,565],[1320,575],[1335,590],
-                [1305,590],[1320,600],[1335,615],
-                [1320,625],[1335,640],
-                [1335,665],
-                // China & East Asia
-                [1400,340],[1420,335],[1440,335],[1460,340],[1480,350],
-                [1380,360],[1400,355],[1420,355],[1440,355],[1460,360],[1480,370],[1500,385],
-                [1380,385],[1400,380],[1420,380],[1440,380],[1460,385],[1480,395],[1500,410],[1520,425],
-                [1400,405],[1420,405],[1440,405],[1460,410],[1480,420],[1500,435],[1520,450],
-                [1420,430],[1440,430],[1460,435],[1480,445],[1500,460],[1520,475],
-                [1440,455],[1460,460],[1480,470],[1500,485],[1520,500],
-                [1460,485],[1480,495],[1500,510],[1520,525],
-                // Japan
-                [1580,370],[1595,365],[1610,370],
-                [1580,390],[1595,385],[1610,390],[1625,400],
-                [1595,410],[1610,415],[1625,425],
-                [1610,440],[1625,450],
-                // Southeast Asia
-                [1400,530],[1420,525],[1440,530],[1460,540],
-                [1420,555],[1440,555],[1460,565],[1480,580],
-                [1440,585],[1460,590],[1480,605],[1500,620],
-                [1460,620],[1480,630],[1500,645],[1520,660],
-                [1480,655],[1500,670],[1520,685],
-                [1500,695],[1520,710],[1540,725],
-                // Indonesia
-                [1540,750],[1560,755],[1580,760],[1600,770],
-                [1560,780],[1580,785],[1600,795],[1620,805],
-                [1600,820],[1620,830],[1640,840],[1660,850],
-                // Australia
-                [1540,825],[1560,820],[1580,820],[1600,825],[1620,835],
-                [1520,850],[1540,845],[1560,845],[1580,845],[1600,850],[1620,860],[1640,875],
-                [1520,875],[1540,870],[1560,870],[1580,870],[1600,875],[1620,885],[1640,900],[1660,915],
-                [1540,895],[1560,895],[1580,895],[1600,900],[1620,910],[1640,925],
-                [1560,920],[1580,920],[1600,925],[1620,935],
-                [1580,945],[1600,950]
-            ];
-            return dots.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="4"/>`).join('');
-        }
-
-        loadDottedMap();
-
         // Navigation scroll effect
         const nav = document.querySelector('nav');
         const sections = document.querySelectorAll('section');
@@ -1967,6 +1755,118 @@
                     });
                 }
             });
+        });
+    </script>
+
+    <!-- amCharts 5 -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <script>
+        // Initialize amCharts Map
+        am5.ready(function() {
+            // Create root element
+            var root = am5.Root.new("amcharts-map");
+
+            // Set themes
+            root.setThemes([am5themes_Animated.new(root)]);
+
+            // Create the map chart
+            var chart = root.container.children.push(am5map.MapChart.new(root, {
+                panX: "none",
+                panY: "none",
+                wheelY: "none",
+                projection: am5map.geoNaturalEarth1()
+            }));
+
+            // Create polygon series for countries
+            var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+                geoJSON: am5geodata_worldLow,
+                exclude: ["AQ"]
+            }));
+
+            // Style the countries
+            polygonSeries.mapPolygons.template.setAll({
+                fill: am5.color(0xE5E7EB),
+                stroke: am5.color(0xFFFFFF),
+                strokeWidth: 0.5,
+                fillOpacity: 0.8
+            });
+
+            // Hover state
+            polygonSeries.mapPolygons.template.states.create("hover", {
+                fill: am5.color(0x0D7377),
+                fillOpacity: 0.3
+            });
+
+            // Create point series for markers
+            var pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
+
+            // Configure marker bullets
+            pointSeries.bullets.push(function() {
+                var container = am5.Container.new(root, {});
+
+                // Outer pulsing circle
+                var outerCircle = container.children.push(am5.Circle.new(root, {
+                    radius: 20,
+                    fill: am5.color(0x0D7377),
+                    fillOpacity: 0.2
+                }));
+
+                // Animate the outer circle
+                outerCircle.animate({
+                    key: "radius",
+                    from: 10,
+                    to: 25,
+                    duration: 1500,
+                    loops: Infinity,
+                    easing: am5.ease.out(am5.ease.cubic)
+                });
+
+                outerCircle.animate({
+                    key: "fillOpacity",
+                    from: 0.4,
+                    to: 0,
+                    duration: 1500,
+                    loops: Infinity,
+                    easing: am5.ease.out(am5.ease.cubic)
+                });
+
+                // Inner solid circle
+                var circle = container.children.push(am5.Circle.new(root, {
+                    radius: 6,
+                    fill: am5.color(0x0D7377),
+                    stroke: am5.color(0xFFFFFF),
+                    strokeWidth: 2,
+                    tooltipText: "{title}",
+                    cursorOverStyle: "pointer"
+                }));
+
+                circle.states.create("hover", {
+                    radius: 8,
+                    fill: am5.color(0x14919B)
+                });
+
+                return am5.Bullet.new(root, {
+                    sprite: container
+                });
+            });
+
+            // Add location data
+            pointSeries.data.setAll([
+                { title: "United States", latitude: 37.0902, longitude: -95.7129 },
+                { title: "France", latitude: 46.2276, longitude: 2.2137 },
+                { title: "Switzerland", latitude: 46.8182, longitude: 8.2275 },
+                { title: "Turkey", latitude: 38.9637, longitude: 35.2433 },
+                { title: "Thailand", latitude: 15.8700, longitude: 100.9925 },
+                { title: "China", latitude: 35.8617, longitude: 104.1954 },
+                { title: "Mauritius", latitude: -20.3484, longitude: 57.5522 }
+            ]);
+
+            // Animate on load
+            chart.appear(1000, 100);
         });
     </script>
 </body>
