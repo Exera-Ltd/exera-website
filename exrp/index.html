@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>EXRP | Cloud-Based ERP Solution for Mauritian Businesses</title>
+    <meta name="title" content="EXRP | Cloud-Based ERP Solution for Mauritian Businesses">
+    <meta name="description" content="EXRP - Operate your business in the cloud. Affordable, scalable ERP with unlimited invoices, customers & transactions. Made in Moris certified. MRA E-Invoicing compliant.">
+    <meta name="keywords" content="EXRP, ERP mauritius, cloud ERP, business management software, POS system, inventory management, MRA e-invoicing, made in moris, exera">
+    <meta name="author" content="Exera Ltd">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://exrp.mu/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://exrp.mu/">
+    <meta property="og:title" content="EXRP | Cloud-Based ERP Solution">
+    <meta property="og:description" content="Operate your business in the cloud. Affordable ERP with unlimited transactions. Made in Moris certified.">
+    <meta property="og:image" content="https://exera.mu/logo.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EXRP | Cloud-Based ERP Solution">
+    <meta name="twitter:description" content="Operate your business in the cloud. Affordable ERP with unlimited transactions. Made in Moris certified.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+    <meta name="theme-color" content="#024056">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #024056;
+            --primary-light: #097992;
+            --primary-dark: #012a38;
+            --accent: #0FF0FC;
+            --gold: #daa520;
+            --dark: #0A0A0A;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-600: #4B5563;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-300: #D1D5DB;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--gray-900);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Animated Hexagon Background */
+        .hex-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hexagon {
+            position: absolute;
+            opacity: 0.15;
+            animation: floatHex linear infinite;
+        }
+
+        .hexagon.filled {
+            opacity: 0.05;
+        }
+
+        .hexagon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes floatHex {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .nav-logo {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            padding: 0.6rem 1.25rem;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            clip-path: polygon(8px 0%, calc(100% - 8px) 0%, 100% 50%, calc(100% - 8px) 100%, 8px 100%, 0% 50%);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-light);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 5%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: rgba(218, 165, 32, 0.15);
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: #b8860b;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badge svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--gold);
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--gray-900);
+        }
+
+        .hero-title span {
+            color: var(--primary);
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0% 50%);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            padding: 1rem 2.5rem;
+            background: var(--gray-100);
+            color: var(--gray-700);
+            border: none;
+            clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0% 50%);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Unlimited Badge */
+        .unlimited-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(2, 64, 86, 0.08);
+            padding: 1rem 2rem;
+            border-radius: 60px;
+            border: 1px solid rgba(2, 64, 86, 0.15);
+        }
+
+        .unlimited-badge svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .unlimited-badge span {
+            color: var(--gray-700);
+            font-size: 0.95rem;
+        }
+
+        .unlimited-badge strong {
+            color: var(--primary);
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 12px;
+            height: 14px;
+            background: var(--primary);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gray-900);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Features Grid */
+        .features-section {
+            background: transparent;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(2, 64, 86, 0.1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 66px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--white);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--gray-900);
+        }
+
+        .feature-card p {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* Vision Mission Section */
+        .vm-section {
+            background: transparent;
+        }
+
+        .vision-mission {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .vm-card {
+            padding: 2.5rem;
+            border-radius: 16px;
+            position: relative;
+        }
+
+        .vm-card.vision {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+
+        .vm-card.mission {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+        }
+
+        .vm-card.values {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            color: var(--white);
+        }
+
+        .vm-icon {
+            width: 50px;
+            height: 55px;
+            background: rgba(255, 255, 255, 0.15);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .vm-card.mission .vm-icon {
+            background: rgba(2, 64, 86, 0.1);
+        }
+
+        .vm-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .vm-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .vm-card p {
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .vm-card.mission h3,
+        .vm-card.mission p {
+            color: var(--gray-900);
+        }
+
+        .vm-card.mission p {
+            color: var(--gray-600);
+        }
+
+        .values-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .value-item::before {
+            content: '';
+            width: 8px;
+            height: 9px;
+            background: rgba(255, 255, 255, 0.5);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        /* Why EXRP Section */
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .why-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+            color: var(--gray-900);
+        }
+
+        .why-content h3 span {
+            color: var(--primary);
+        }
+
+        .why-content p {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .why-benefits {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .why-benefit {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 10px;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .why-benefit:hover {
+            border-color: var(--primary);
+        }
+
+        .why-benefit-icon {
+            width: 40px;
+            height: 44px;
+            background: rgba(2, 64, 86, 0.1);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .why-benefit-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .why-benefit span {
+            font-size: 0.9rem;
+            color: var(--gray-700);
+        }
+
+        .competitors-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .competitor-tag {
+            padding: 0.5rem 1rem;
+            background: var(--gray-100);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        /* Modules Section */
+        .modules-section {
+            background: transparent;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .module-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .module-card:hover::before {
+            opacity: 1;
+        }
+
+        .module-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(2, 64, 86, 0.1);
+        }
+
+        .module-card.compulsory {
+            border-color: var(--gold);
+        }
+
+        .module-card.compulsory::before {
+            background: linear-gradient(90deg, var(--gold), #f4d03f);
+            opacity: 1;
+        }
+
+        .module-card.coming-soon {
+            opacity: 0.7;
+            border-style: dashed;
+        }
+
+        .module-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .module-badge.compulsory {
+            background: var(--gold);
+            color: #1a1a1a;
+        }
+
+        .module-badge.popular {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .module-badge.soon {
+            background: var(--gray-200);
+            color: var(--gray-600);
+        }
+
+        .module-badge.free {
+            background: #22c55e;
+            color: var(--white);
+        }
+
+        .module-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .module-icon {
+            width: 50px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .module-card.compulsory .module-icon {
+            background: linear-gradient(135deg, var(--gold), #f4d03f);
+        }
+
+        .module-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--white);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .module-card.compulsory .module-icon svg {
+            stroke: #1a1a1a;
+        }
+
+        .module-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .module-header p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        .module-description {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* Analytics Dashboard Section */
+        .analytics-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--dark) 100%);
+            color: var(--white);
+        }
+
+        .analytics-section .section-tag {
+            color: var(--primary-light);
+        }
+
+        .analytics-section .section-tag::before {
+            background: var(--primary-light);
+        }
+
+        .analytics-section .section-title {
+            color: var(--white);
+        }
+
+        .analytics-section .section-subtitle {
+            color: var(--gray-400);
+        }
+
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .analytics-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .analytics-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .analytics-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .analytics-label {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+            margin-bottom: 0.5rem;
+        }
+
+        .analytics-change {
+            font-size: 0.75rem;
+            color: #22c55e;
+        }
+
+        .analytics-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .diversity-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .diversity-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .diversity-bar {
+            margin-bottom: 1rem;
+        }
+
+        .diversity-bar-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .diversity-bar-header span:first-child {
+            color: var(--gray-300);
+        }
+
+        .diversity-bar-header span:last-child {
+            color: var(--primary-light);
+        }
+
+        .diversity-bar-track {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .diversity-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            border-radius: 4px;
+        }
+
+        .impact-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .impact-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .impact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .impact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .impact-icon {
+            width: 50px;
+            height: 55px;
+            background: rgba(34, 197, 94, 0.2);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .impact-item-content span {
+            display: block;
+        }
+
+        .impact-item-content .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #22c55e;
+        }
+
+        .impact-item-content .label {
+            font-size: 0.8rem;
+            color: var(--gray-400);
+        }
+
+        /* Compliance Section */
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .compliance-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .compliance-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .compliance-icon {
+            width: 70px;
+            height: 77px;
+            background: rgba(2, 64, 86, 0.08);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .compliance-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .compliance-icon img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .compliance-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--gray-900);
+        }
+
+        .compliance-card p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        /* Industries Section */
+        .industries-hex-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .industry-hex {
+            width: 140px;
+            height: 154px;
+            background: var(--white);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            border: 2px solid var(--gray-200);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .industry-hex:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .industry-hex svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 1.5;
+            margin-bottom: 0.5rem;
+            transition: stroke 0.3s ease;
+        }
+
+        .industry-hex:hover svg {
+            stroke: var(--white);
+        }
+
+        .industry-hex span {
+            font-size: 0.85rem;
+            color: var(--gray-700);
+            transition: color 0.3s ease;
+        }
+
+        .industry-hex:hover span {
+            color: var(--white);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background: transparent;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gray-900);
+        }
+
+        .cta-content p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 5%;
+            border-top: 1px solid var(--gray-200);
+            text-align: center;
+            background: var(--white);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            height: 30px;
+            opacity: 0.7;
+        }
+
+        .footer-text {
+            color: var(--gray-500);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .vision-mission {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .analytics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .analytics-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .why-benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .analytics-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .analytics-value {
+                font-size: 1.75rem;
+            }
+
+            .industry-hex {
+                width: 110px;
+                height: 121px;
+            }
+
+            .cta-content h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                padding: 60px 4%;
+            }
+
+            .unlimited-badge {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .compliance-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Animated Hexagon Background -->
+    <div class="hex-bg" id="hexBg"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="../">
+            <img src="../logo.webp" alt="Exera Ltd" class="nav-logo">
+        </a>
+        <div class="nav-links">
+            <a href="../">Home</a>
+            <a href="#features">Features</a>
+            <a href="#modules">Modules</a>
+            <a href="#analytics">Analytics</a>
+            <a href="mailto:info@exrp.mu?subject=EXRP Demo Request" class="nav-cta">Get Demo</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content animate-on-scroll">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                Made in Moris Certified | Sustainability Champions
+            </div>
+            <p class="hero-tagline">Operate Your Business In The Cloud</p>
+            <h1 class="hero-title">Meet <span>EXRP</span><br>Your Hive of Productivity</h1>
+            <p class="hero-description">
+                EXRP <em>(pronounced X-R-P)</em> is a cloud-based ERP solution designed by Exera to help startups and SMEs
+                operate efficiently and scale rapidly. Streamline your business operations without high costs,
+                hidden charges, or complex configurations.
+            </p>
+            <div class="hero-cta">
+                <a href="mailto:info@exrp.mu?subject=EXRP Demo Request" class="btn-primary">Request Free Demo</a>
+                <a href="#modules" class="btn-secondary">Explore Modules</a>
+            </div>
+            <div class="unlimited-badge">
+                <svg viewBox="0 0 24 24"><path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z"/></svg>
+                <span><strong>Unlimited</strong> Invoices, Products, Customers & Transactions</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Why EXRP</span>
+                <h2 class="section-title">Built Different, Built Better</h2>
+                <p class="section-subtitle">Everything you need to run your business, nothing you don't</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h3>Cloud-Based ERP</h3>
+                    <p>Access your business data securely from anywhere, anytime. No installations, no servers to maintain — just pure productivity.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                    </div>
+                    <h3>Fixed Pricing</h3>
+                    <p>Straightforward pricing without hidden fees. Know exactly what you'll pay, every month, every year. No surprises.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                    </div>
+                    <h3>Fully Customizable</h3>
+                    <p>Every business is unique. We offer customizations to adapt EXRP to your specific workflows and requirements.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                    </div>
+                    <h3>Scalable</h3>
+                    <p>From startup to enterprise, EXRP grows with your business. Add users, modules, and capacity as you expand.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </div>
+                    <h3>Easy Data Migration</h3>
+                    <p>Import your existing data easily with our CSV templates. We'll help you transition smoothly from any system.</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Daily Backups</h3>
+                    <p>Your data is precious. We perform regular backups to ensure your business information is always safe and recoverable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Mission Section -->
+    <section class="vm-section">
+        <div class="container">
+            <div class="vision-mission">
+                <div class="vm-card vision animate-on-scroll">
+                    <div class="vm-icon">
+                        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To revolutionize business operations in the cloud era by offering an ERP solution that adapts to various business needs, eliminates hidden costs, and provides predictable pricing — ultimately enabling all types of businesses to thrive in a digital environment.</p>
+                </div>
+                <div class="vm-card mission animate-on-scroll">
+                    <div class="vm-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To provide businesses with a cloud-based ERP solution that operates transparently, flexibly, and cost-effectively, helping companies of all types manage their operations without unexpected expenses.</p>
+                </div>
+                <div class="vm-card values animate-on-scroll">
+                    <div class="vm-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    </div>
+                    <h3>Our Values</h3>
+                    <div class="values-list">
+                        <span class="value-item">Transparency</span>
+                        <span class="value-item">Flexibility</span>
+                        <span class="value-item">Fairness</span>
+                        <span class="value-item">Efficiency</span>
+                        <span class="value-item">Sustainability</span>
+                        <span class="value-item">Adaptability</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why EXRP Section -->
+    <section>
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-content animate-on-scroll">
+                    <h3>Why Choose <span>EXRP</span> Over The Big Names?</h3>
+                    <p>While big shots like SAP, Oracle, Odoo, Salesforce, or Microsoft Dynamics bring worldwide wisdom, EXRP brings a local flavor that's just right for Mauritian businesses.</p>
+                    <p>Running a small business is your gig, not a corporate giant! Let us handle the nitty-gritty while you focus on blossoming and booming!</p>
+                    <div class="competitors-list">
+                        <span class="competitor-tag">vs SAP</span>
+                        <span class="competitor-tag">vs Oracle</span>
+                        <span class="competitor-tag">vs Odoo</span>
+                        <span class="competitor-tag">vs Salesforce</span>
+                        <span class="competitor-tag">vs Dynamics</span>
+                    </div>
+                </div>
+                <div class="why-benefits animate-on-scroll">
+                    <div class="why-benefit">
+                        <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <span>Boost Productivity</span>
+                    </div>
+                    <div class="why-benefit">
+                        <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+                        <span>Predictable Costs</span>
+                    </div>
+                    <div class="why-benefit">
+                        <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg></div>
+                        <span>Full Customization</span>
+                    </div>
+                    <div class="why-benefit">
+                        <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+                        <span>Regular Backups</span>
+                    </div>
+                    <div class="why-benefit">
+                        <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                        <span>Easy Data Migration</span>
+                    </div>
+                    <div class="why-benefit">
+                        <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                        <span>Local Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="modules-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Build Your Hive</span>
+                <h2 class="section-title">Choose Your Modules</h2>
+                <p class="section-subtitle">Select modules to craft a solution tailored to your business needs</p>
+            </div>
+
+            <div class="modules-grid">
+                <!-- Compulsory Modules -->
+                <div class="module-card compulsory animate-on-scroll">
+                    <span class="module-badge compulsory">Core</span>
+                    <div class="module-header">
+                        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                        <div>
+                            <h3>Worker Bee</h3>
+                            <p>Customer Management</p>
+                        </div>
+                    </div>
+                    <p class="module-description">Manage your customer database, track interactions, store contact details, and build lasting relationships with your clientele.</p>
+                </div>
+
+                <div class="module-card compulsory animate-on-scroll">
+                    <span class="module-badge compulsory">Core</span>
+                    <div class="module-header">
+                        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                        <div>
+                            <h3>Honey Maker</h3>
+                            <p>Invoicing</p>
+                        </div>
+                    </div>
+                    <p class="module-description">Create professional invoices, track payments, manage credit notes, and keep your accounts receivable organized. MRA E-Invoicing available.</p>
+                </div>
+
+                <!-- Popular Modules -->
+                <div class="module-card animate-on-scroll">
+                    <span class="module-badge popular">Popular</span>
+                    <div class="module-header">
+                        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
+                        <div>
+                            <h3>Hive Keeper</h3>
+                            <p>Inventory Management</p>
+                        </div>
+                    </div>
+                    <p class="module-description">Track stock levels, manage multiple warehouses, set reorder points, and never run out of your best-selling products again.</p>
+                </div>
+
+                <div class="module-card animate-on-scroll">
+                    <span class="module-badge popular">Popular</span>
+                    <div class="module-header">
+                        <div class="module-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div>
+                        <div>
+                            <h3>Queen Bee</h3>
+                            <p>Order Management</p>
+                        </div>
+                    </div>
+                    <p class="module-description">Process orders efficiently from receipt to delivery. Track order status, manage fulfillment, and keep customers informed every step of the way.</p>
+                </div>
+
+                <div class="module-card animate-on-scroll">
+                    <span class="module-badge popular">Popular</span>
+                    <div class="module-header">
+                        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                        <div>
+                            <h3>Consult Bee</h3>
+                            <p>Optometrist / Doctor</p>
+                        </div>
+                    </div>
+                    <p class="module-description">Specialized module for healthcare professionals. Manage patient records, prescriptions, appointments, and medical history with compliance.</p>
+                </div>
+
+                <!-- Standard Modules -->
+                <div class="module-card animate-on-scroll">
+                    <div class="module-header">
+                        <div class="module-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                        <div>
+                            <h3>Busy Bee</h3>
+                            <p>Appointment Management</p>
+                        </div>
+                    </div>
+                    <p class="module-description">Schedule appointments, send reminders, manage calendars, and reduce no-shows with automated notifications to your clients.</p>
+                </div>
+
+                <div class="module-card animate-on-scroll">
+                    <div class="module-header">
+                        <div class="module-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                        <div>
+                            <h3>Collector Bee</h3>
+                            <p>POS System</p>
+                        </div>
+                    </div>
+                    <p class="module-description">Point of Sale without the hardware headache. Process sales, accept payments, and print receipts using your existing devices.</p>
+                </div>
+
+                <div class="module-card animate-on-scroll">
+                    <div class="module-header">
+                        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></div>
+                        <div>
+                            <h3>Wise Bee</h3>
+                            <p>Analytics & Reporting</p>
+                        </div>
+                    </div>
+                    <p class="module-description">Make data-driven decisions with comprehensive analytics. Visualize trends, track KPIs, and generate reports that matter to your business.</p>
+                </div>
+
+                <div class="module-card animate-on-scroll">
+                    <div class="module-header">
+                        <div class="module-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+                        <div>
+                            <h3>Scout Bee</h3>
+                            <p>Campaigns Management</p>
+                        </div>
+                    </div>
+                    <p class="module-description">Create and manage promotional campaigns, track performance, and engage customers with targeted marketing initiatives.</p>
+                </div>
+
+                <!-- Coming Soon Modules -->
+                <div class="module-card coming-soon animate-on-scroll">
+                    <span class="module-badge soon">Coming Soon</span>
+                    <div class="module-header">
+                        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10H12V2z"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                        <div>
+                            <h3>AI Insights</h3>
+                            <p>Smart Automation</p>
+                        </div>
+                    </div>
+                    <p class="module-description">Harness the power of artificial intelligence for predictive analytics, automated recommendations, and intelligent business insights.</p>
+                </div>
+
+                <div class="module-card coming-soon animate-on-scroll">
+                    <span class="module-badge free">Free</span>
+                    <div class="module-header">
+                        <div class="module-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+                        <div>
+                            <h3>Mobile App</h3>
+                            <p>On The Go</p>
+                        </div>
+                    </div>
+                    <p class="module-description">Access EXRP from your smartphone. Manage your business on the go with our intuitive mobile application — included free with your subscription.</p>
+                </div>
+
+                <div class="module-card coming-soon animate-on-scroll">
+                    <span class="module-badge soon">Coming Soon</span>
+                    <div class="module-header">
+                        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+                        <div>
+                            <h3>Payroll</h3>
+                            <p>Staff Management</p>
+                        </div>
+                    </div>
+                    <p class="module-description">Manage employee salaries, track attendance, calculate deductions, and generate payslips with our comprehensive payroll module.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Dashboard Section -->
+    <section id="analytics" class="analytics-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Numbers Don't Lie</span>
+                <h2 class="section-title">Live Analytics Dashboard</h2>
+                <p class="section-subtitle">Real metrics from all EXRP deployments</p>
+            </div>
+
+            <div class="analytics-grid">
+                <div class="analytics-card animate-on-scroll">
+                    <div class="analytics-value">99.9%</div>
+                    <div class="analytics-label">Uptime</div>
+                    <div class="analytics-change">Guaranteed SLA</div>
+                </div>
+                <div class="analytics-card animate-on-scroll">
+                    <div class="analytics-value">4.3k+</div>
+                    <div class="analytics-label">EXRP Users</div>
+                    <div class="analytics-change">+12% vs Last Month</div>
+                </div>
+                <div class="analytics-card animate-on-scroll">
+                    <div class="analytics-value">3.5M+</div>
+                    <div class="analytics-label">Monthly Transactions</div>
+                    <div class="analytics-change">+15.4% vs Last Month</div>
+                </div>
+                <div class="analytics-card animate-on-scroll">
+                    <div class="analytics-value">2.8k+</div>
+                    <div class="analytics-label">Invoices Issued</div>
+                    <div class="analytics-change">+3.7% vs Last Month</div>
+                </div>
+                <div class="analytics-card animate-on-scroll">
+                    <div class="analytics-value">2.2k+</div>
+                    <div class="analytics-label">Hours On EXRP</div>
+                    <div class="analytics-change">Active Usage</div>
+                </div>
+                <div class="analytics-card animate-on-scroll">
+                    <div class="analytics-value">2</div>
+                    <div class="analytics-label">Incidents Resolved</div>
+                    <div class="analytics-change">0 Major / 2 Minor</div>
+                </div>
+                <div class="analytics-card animate-on-scroll">
+                    <div class="analytics-value">3</div>
+                    <div class="analytics-label">Instances Deployed</div>
+                    <div class="analytics-change">+50% vs Last Month</div>
+                </div>
+                <div class="analytics-card animate-on-scroll">
+                    <div class="analytics-value">Rs 2.98M</div>
+                    <div class="analytics-label">Dec 2024 Transactions</div>
+                    <div class="analytics-change">Peak Month</div>
+                </div>
+            </div>
+
+            <div class="analytics-row">
+                <div class="diversity-card animate-on-scroll">
+                    <h4>Business Diversity</h4>
+                    <div class="diversity-bar">
+                        <div class="diversity-bar-header">
+                            <span>Cosmetics</span>
+                            <span>36.4%</span>
+                        </div>
+                        <div class="diversity-bar-track">
+                            <div class="diversity-bar-fill" style="width: 36.4%"></div>
+                        </div>
+                    </div>
+                    <div class="diversity-bar">
+                        <div class="diversity-bar-header">
+                            <span>Processed Foods</span>
+                            <span>18.2%</span>
+                        </div>
+                        <div class="diversity-bar-track">
+                            <div class="diversity-bar-fill" style="width: 18.2%"></div>
+                        </div>
+                    </div>
+                    <div class="diversity-bar">
+                        <div class="diversity-bar-header">
+                            <span>Clothing</span>
+                            <span>18.2%</span>
+                        </div>
+                        <div class="diversity-bar-track">
+                            <div class="diversity-bar-fill" style="width: 18.2%"></div>
+                        </div>
+                    </div>
+                    <div class="diversity-bar">
+                        <div class="diversity-bar-header">
+                            <span>Medical</span>
+                            <span>18.2%</span>
+                        </div>
+                        <div class="diversity-bar-track">
+                            <div class="diversity-bar-fill" style="width: 18.2%"></div>
+                        </div>
+                    </div>
+                    <div class="diversity-bar">
+                        <div class="diversity-bar-header">
+                            <span>Service Shop</span>
+                            <span>9.1%</span>
+                        </div>
+                        <div class="diversity-bar-track">
+                            <div class="diversity-bar-fill" style="width: 9.1%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="impact-card animate-on-scroll">
+                    <h4>Environmental Impact</h4>
+                    <div class="impact-items">
+                        <div class="impact-item">
+                            <div class="impact-icon">🌳</div>
+                            <div class="impact-item-content">
+                                <span class="value">10</span>
+                                <span class="label">Trees Planted</span>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-icon">🐝</div>
+                            <div class="impact-item-content">
+                                <span class="value">200+</span>
+                                <span class="label">Bees Saved</span>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-icon">🌍</div>
+                            <div class="impact-item-content">
+                                <span class="value">302g</span>
+                                <span class="label">CO2 Offset</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Section -->
+    <section>
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Trust & Compliance</span>
+                <h2 class="section-title">Certified & Compliant</h2>
+                <p class="section-subtitle">We take security and compliance seriously</p>
+            </div>
+
+            <div class="compliance-grid">
+                <div class="compliance-card animate-on-scroll">
+                    <div class="compliance-icon">
+                        <img src="../mim.png" alt="Made in Moris" loading="lazy">
+                    </div>
+                    <h4>Made in Moris</h4>
+                    <p>Quality certified Mauritian product</p>
+                </div>
+                <div class="compliance-card animate-on-scroll">
+                    <div class="compliance-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h4>MRA Compliant</h4>
+                    <p>Registered EBS Solution Provider</p>
+                </div>
+                <div class="compliance-card animate-on-scroll">
+                    <div class="compliance-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h4>DPO Registered</h4>
+                    <p>Data Protection Act compliant</p>
+                </div>
+                <div class="compliance-card animate-on-scroll">
+                    <div class="compliance-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                    </div>
+                    <h4>Secure & Encrypted</h4>
+                    <p>Enterprise-grade security</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Industries</span>
+                <h2 class="section-title">Perfect For Your Business</h2>
+                <p class="section-subtitle">EXRP adapts to various business types and needs</p>
+            </div>
+
+            <div class="industries-hex-grid">
+                <div class="industry-hex animate-on-scroll">
+                    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span>Retail Shops</span>
+                </div>
+                <div class="industry-hex animate-on-scroll">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg>
+                    <span>Service Shops</span>
+                </div>
+                <div class="industry-hex animate-on-scroll">
+                    <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></svg>
+                    <span>Pharmacies</span>
+                </div>
+                <div class="industry-hex animate-on-scroll">
+                    <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <span>Optometrists</span>
+                </div>
+                <div class="industry-hex animate-on-scroll">
+                    <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    <span>Doctors</span>
+                </div>
+                <div class="industry-hex animate-on-scroll">
+                    <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+                    <span>SPAs</span>
+                </div>
+                <div class="industry-hex animate-on-scroll">
+                    <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                    <span>Food Processing</span>
+                </div>
+                <div class="industry-hex animate-on-scroll">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    <span>SMEs</span>
+                </div>
+                <div class="industry-hex animate-on-scroll">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <span>You Name It!</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2>Ready to Elevate Your Business?</h2>
+                <p>Experience the local advantage with EXRP — tailored for Mauritian businesses, built to scale globally.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:info@exrp.mu?subject=EXRP Demo Request" class="btn-primary">Get Your Free Demo</a>
+                    <a href="https://wa.me/23059440110?text=Hi! I'm interested in EXRP" target="_blank" class="btn-secondary">WhatsApp Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <img src="../logo.webp" alt="Exera Ltd" class="footer-logo">
+            <p class="footer-text">EXRP by Exera Ltd — <em>Stay Low, Stay Humble</em></p>
+            <div class="footer-links">
+                <a href="../">Back to Exera</a>
+                <a href="mailto:info@exrp.mu">info@exrp.mu</a>
+                <a href="tel:+23059440110">+230 5944 0110</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Create animated hexagons
+        function createHexagons() {
+            const hexBg = document.getElementById('hexBg');
+            const hexCount = 15;
+
+            for (let i = 0; i < hexCount; i++) {
+                const hex = document.createElement('div');
+                hex.className = 'hexagon' + (Math.random() > 0.5 ? ' filled' : '');
+
+                const size = Math.random() * 80 + 40;
+                hex.style.width = size + 'px';
+                hex.style.height = (size * 1.15) + 'px';
+                hex.style.left = Math.random() * 100 + '%';
+                hex.style.animationDuration = (Math.random() * 20 + 15) + 's';
+                hex.style.animationDelay = (Math.random() * 10) + 's';
+
+                const isFilled = hex.classList.contains('filled');
+                hex.innerHTML = `<svg viewBox="0 0 100 115.47">
+                    <polygon points="50,0 100,28.87 100,86.6 50,115.47 0,86.6 0,28.87"
+                        fill="${isFilled ? '#024056' : 'none'}"
+                        stroke="${isFilled ? 'none' : '#024056'}"
+                        stroke-width="2"/>
+                </svg>`;
+
+                hexBg.appendChild(hex);
+            }
+        }
+
+        createHexagons();
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
