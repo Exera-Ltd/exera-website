@@ -732,7 +732,7 @@
 
         /* Analytics Dashboard Section */
         .analytics-section {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--dark) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: var(--white);
         }
 
@@ -1083,6 +1083,90 @@
             color: var(--primary);
         }
 
+        /* Scroll to Top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 55px;
+            background: var(--primary);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+        }
+
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--white);
+        }
+
+        /* Clients Section */
+        .clients-section {
+            background: transparent;
+        }
+
+        .clients-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .client-logo {
+            height: 60px;
+            width: auto;
+            max-width: 150px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .salesforce-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid #22c55e;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #22c55e;
+            margin-top: 1.5rem;
+        }
+
+        .salesforce-highlight svg {
+            width: 16px;
+            height: 16px;
+            fill: #22c55e;
+        }
+
         /* Animations */
         .animate-on-scroll {
             opacity: 0;
@@ -1325,6 +1409,10 @@
                         <span class="competitor-tag">vs Odoo</span>
                         <span class="competitor-tag">vs Salesforce</span>
                         <span class="competitor-tag">vs Dynamics</span>
+                    </div>
+                    <div class="salesforce-highlight">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                        <span>A client replaced Salesforce with EXRP — better, cheaper, more flexible!</span>
                     </div>
                 </div>
                 <div class="why-benefits animate-on-scroll">
@@ -1738,6 +1826,25 @@
         </div>
     </section>
 
+    <!-- Trusted By Section -->
+    <section class="clients-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Trusted By</span>
+                <h2 class="section-title">Businesses Using EXRP</h2>
+                <p class="section-subtitle">Join growing Mauritian businesses who chose EXRP</p>
+            </div>
+            <div class="clients-grid animate-on-scroll">
+                <img src="../clients/kler-optics.png" alt="Kler Optics" class="client-logo" loading="lazy">
+                <img src="../clients/alfarglobal.webp" alt="Alfar Global" class="client-logo" loading="lazy">
+                <img src="../clients/home-classics.png" alt="Home Classics" class="client-logo" loading="lazy">
+                <img src="../clients/promoshop.png" alt="Promoshop" class="client-logo" loading="lazy">
+                <img src="../clients/mr-salami.png" alt="Mr Salami" class="client-logo" loading="lazy">
+                <img src="../clients/optimum-line.png" alt="Optimum Line" class="client-logo" loading="lazy">
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -1751,6 +1858,11 @@
             </div>
         </div>
     </section>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
 
     <!-- Footer -->
     <footer>
@@ -1823,6 +1935,21 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
+        });
+
+        // Scroll to top button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
