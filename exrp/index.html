@@ -669,7 +669,7 @@
         .module-hex {
             width: 180px;
             height: 198px;
-            background: linear-gradient(135deg, var(--gray-100), var(--gray-50));
+            background: linear-gradient(135deg, #b8d4e3, #d0e8f2);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             display: flex;
             flex-direction: column;
@@ -680,14 +680,14 @@
             transition: all 0.3s ease;
             cursor: default;
             position: relative;
-            box-shadow: 0 4px 20px rgba(2, 64, 86, 0.12);
+            box-shadow: 0 4px 20px rgba(2, 64, 86, 0.15);
         }
 
         .module-hex::before {
             content: '';
             position: absolute;
             inset: 3px;
-            background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
+            background: linear-gradient(180deg, #f0f7fb 0%, #e3f1f8 100%);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             z-index: -1;
         }
@@ -703,6 +703,22 @@
 
         .module-hex.core::before {
             background: linear-gradient(180deg, #fef9e7 0%, #fdf2d0 100%);
+        }
+
+        .module-hex.free {
+            background: linear-gradient(135deg, #22c55e, #4ade80);
+        }
+
+        .module-hex.free::before {
+            background: linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%);
+        }
+
+        .module-hex.free .module-hex-icon svg {
+            stroke: #166534;
+        }
+
+        .module-hex.free .module-hex-subtitle {
+            color: #166534;
         }
 
         .module-hex.popular {
@@ -784,8 +800,8 @@
         }
 
         .module-hex-badge.free-badge {
-            background: var(--green);
-            color: var(--white);
+            background: #166534;
+            color: #dcfce7;
         }
 
         .module-hex-badge.popular-badge {
@@ -795,11 +811,6 @@
 
         .module-hex-badge.soon-badge {
             background: var(--gray-500);
-            color: var(--white);
-        }
-
-        .module-hex-badge.free-badge {
-            background: #22c55e;
             color: var(--white);
         }
 
@@ -970,14 +981,16 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            align-items: start;
+            align-items: stretch;
         }
 
         .diversity-card {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
-            padding: 1.5rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
         }
 
         .diversity-card h4 {
@@ -990,7 +1003,9 @@
         .diversity-pie-container {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 1.5rem;
+            flex: 1;
         }
 
         .diversity-pie {
@@ -1170,7 +1185,7 @@
         .industry-hex {
             width: 140px;
             height: 154px;
-            background: var(--white);
+            background: linear-gradient(135deg, var(--gray-200), var(--gray-100));
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             display: flex;
             flex-direction: column;
@@ -1178,14 +1193,27 @@
             justify-content: center;
             text-align: center;
             padding: 1rem;
-            border: 2px solid var(--gray-200);
             transition: all 0.3s ease;
             cursor: default;
+            position: relative;
+        }
+
+        .industry-hex::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: var(--white);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            z-index: -1;
+            transition: all 0.3s ease;
         }
 
         .industry-hex:hover {
             background: var(--primary);
-            border-color: var(--primary);
+        }
+
+        .industry-hex:hover::before {
+            background: var(--primary);
         }
 
         .industry-hex svg {
@@ -1805,8 +1833,8 @@
                         <span class="module-hex-subtitle">Customer Management</span>
                         <span class="module-hex-title">Worker Bee</span>
                     </div>
-                    <div class="module-hex core animate-on-scroll">
-                        <span class="module-hex-badge core-badge">Core</span>
+                    <div class="module-hex free animate-on-scroll">
+                        <span class="module-hex-badge free-badge">Free</span>
                         <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
                         <span class="module-hex-subtitle">Invoicing</span>
                         <span class="module-hex-title">Honey Maker</span>
@@ -1878,7 +1906,7 @@
                 <!-- Row 4 - Coming Soon -->
                 <div class="modules-honeycomb-row offset">
                     <div class="module-hex coming-soon animate-on-scroll">
-                        <span class="module-hex-badge free-badge">Free</span>
+                        <span class="module-hex-badge soon-badge">Soon</span>
                         <div class="module-hex-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
                         <span class="module-hex-subtitle">On The Go</span>
                         <span class="module-hex-title">Mobile App</span>
