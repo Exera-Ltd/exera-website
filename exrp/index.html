@@ -591,143 +591,262 @@
             color: var(--gray-500);
         }
 
-        /* Modules Section */
+        /* Modules Section - Honeycomb Style */
         .modules-section {
             background: transparent;
         }
 
-        .modules-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+        .modules-honeycomb {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        .module-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            padding: 2rem;
+        .modules-honeycomb-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .modules-honeycomb-row.offset {
+            margin-top: -2.75rem;
+            margin-left: 95px;
+        }
+
+        .module-hex {
+            width: 180px;
+            height: 198px;
+            background: linear-gradient(135deg, var(--gray-100), var(--gray-50));
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1.5rem 1rem;
             transition: all 0.3s ease;
+            cursor: default;
             position: relative;
-            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(2, 64, 86, 0.12);
         }
 
-        .module-card::before {
+        .module-hex::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--primary-light));
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            inset: 3px;
+            background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            z-index: -1;
         }
 
-        .module-card:hover::before {
-            opacity: 1;
+        .module-hex:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(2, 64, 86, 0.2);
         }
 
-        .module-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(2, 64, 86, 0.1);
+        .module-hex.core {
+            background: linear-gradient(135deg, var(--gold), #f4d03f);
         }
 
-        .module-card.compulsory {
-            border-color: var(--gold);
+        .module-hex.core::before {
+            background: linear-gradient(180deg, #fef9e7 0%, #fdf2d0 100%);
         }
 
-        .module-card.compulsory::before {
-            background: linear-gradient(90deg, var(--gold), #f4d03f);
-            opacity: 1;
+        .module-hex.popular {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
         }
 
-        .module-card.coming-soon {
+        .module-hex.popular::before {
+            background: var(--white);
+        }
+
+        .module-hex.coming-soon {
             opacity: 0.7;
-            border-style: dashed;
+            background: linear-gradient(135deg, var(--gray-300), var(--gray-200));
         }
 
-        .module-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            padding: 0.25rem 0.75rem;
-            font-size: 0.7rem;
+        .module-hex.coming-soon::before {
+            background: linear-gradient(180deg, var(--gray-100) 0%, var(--gray-50) 100%);
+        }
+
+        .module-hex-icon {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .module-hex-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .module-hex.core .module-hex-icon svg {
+            stroke: #1a1a1a;
+        }
+
+        .module-hex.popular .module-hex-icon svg {
+            stroke: var(--primary);
+        }
+
+        .module-hex-subtitle {
+            font-size: 0.65rem;
             font-weight: 600;
-            border-radius: 4px;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
         }
 
-        .module-badge.compulsory {
-            background: var(--gold);
-            color: #1a1a1a;
+        .module-hex.core .module-hex-subtitle {
+            color: #8B6914;
         }
 
-        .module-badge.popular {
+        .module-hex-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            line-height: 1.2;
+        }
+
+        .module-hex-badge {
+            position: absolute;
+            top: 2rem;
+            font-size: 0.55rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+        }
+
+        .module-hex-badge.core-badge {
+            background: #1a1a1a;
+            color: var(--gold);
+        }
+
+        .module-hex-badge.popular-badge {
             background: var(--primary);
             color: var(--white);
         }
 
-        .module-badge.soon {
-            background: var(--gray-200);
-            color: var(--gray-600);
+        .module-hex-badge.soon-badge {
+            background: var(--gray-500);
+            color: var(--white);
         }
 
-        .module-badge.free {
+        .module-hex-badge.free-badge {
             background: #22c55e;
             color: var(--white);
         }
 
-        .module-header {
-            display: flex;
+        /* Payment Integration Section */
+        .payment-section {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        }
+
+        .payment-section .section-tag {
+            color: #16a34a;
+        }
+
+        .payment-section .section-tag::before {
+            background: #16a34a;
+        }
+
+        .payment-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
             align-items: center;
-            gap: 1rem;
+        }
+
+        .payment-info h3 {
+            font-size: 2rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-        }
-
-        .module-icon {
-            width: 50px;
-            height: 55px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .module-card.compulsory .module-icon {
-            background: linear-gradient(135deg, var(--gold), #f4d03f);
-        }
-
-        .module-icon svg {
-            width: 22px;
-            height: 22px;
-            stroke: var(--white);
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .module-card.compulsory .module-icon svg {
-            stroke: #1a1a1a;
-        }
-
-        .module-header h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
             color: var(--gray-900);
         }
 
-        .module-header p {
-            font-size: 0.85rem;
-            color: var(--gray-500);
+        .payment-info h3 span {
+            color: #16a34a;
         }
 
-        .module-description {
+        .payment-info p {
             color: var(--gray-600);
-            font-size: 0.9rem;
-            line-height: 1.7;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-features {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .payment-feature {
+            text-align: center;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 12px;
+            flex: 1;
+            box-shadow: 0 4px 15px rgba(22, 163, 74, 0.1);
+        }
+
+        .payment-feature-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #16a34a;
+        }
+
+        .payment-feature-label {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .payment-providers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .payment-provider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 1.25rem;
+            background: var(--white);
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .payment-provider:hover {
+            border-color: #16a34a;
+            transform: translateY(-3px);
+        }
+
+        .payment-provider svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .payment-provider span {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--gray-700);
         }
 
         /* Analytics Dashboard Section */
@@ -877,7 +996,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+        }
+
+        .impact-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: #22c55e;
         }
 
         .impact-item-content span {
@@ -1149,22 +1273,49 @@
         }
 
         .salesforce-highlight {
+            display: block;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+        }
+
+        .salesforce-highlight .highlight-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(34, 197, 94, 0.15);
-            border: 1px solid #22c55e;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            color: #22c55e;
-            margin-top: 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--white);
+            margin-bottom: 0.75rem;
         }
 
-        .salesforce-highlight svg {
-            width: 16px;
-            height: 16px;
-            fill: #22c55e;
+        .salesforce-highlight .highlight-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1.5;
+        }
+
+        .salesforce-highlight .highlight-company {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 0.5rem;
+        }
+
+        .clients-more {
+            text-align: center;
+            color: var(--gray-500);
+            font-style: italic;
+            margin-top: 1.5rem;
+            font-size: 1rem;
         }
 
         /* Animations */
@@ -1196,6 +1347,29 @@
 
             .analytics-row {
                 grid-template-columns: 1fr;
+            }
+
+            .payment-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .module-hex {
+                width: 150px;
+                height: 165px;
+            }
+
+            .module-hex-title {
+                font-size: 0.8rem;
+            }
+
+            .module-hex-subtitle {
+                font-size: 0.6rem;
+            }
+
+            .modules-honeycomb-row.offset {
+                margin-top: -2.25rem;
+                margin-left: 78px;
             }
         }
 
@@ -1233,6 +1407,35 @@
             .cta-content h2 {
                 font-size: 1.75rem;
             }
+
+            .payment-features {
+                flex-direction: column;
+            }
+
+            .payment-providers {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .module-hex {
+                width: 120px;
+                height: 132px;
+            }
+
+            .module-hex-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .modules-honeycomb-row.offset {
+                margin-top: -1.85rem;
+                margin-left: 63px;
+            }
+
+            .module-hex-badge {
+                font-size: 0.5rem;
+                padding: 0.15rem 0.4rem;
+                top: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1245,16 +1448,44 @@
                 text-align: center;
             }
 
-            .modules-grid {
-                grid-template-columns: 1fr;
-            }
-
             .compliance-grid {
                 grid-template-columns: 1fr 1fr;
             }
 
             .analytics-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .payment-providers {
+                grid-template-columns: 1fr;
+            }
+
+            .modules-honeycomb-row {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .modules-honeycomb-row.offset {
+                margin-top: 0.5rem;
+                margin-left: 0;
+            }
+
+            .module-hex {
+                width: 140px;
+                height: 154px;
+            }
+
+            .module-hex-title {
+                font-size: 0.75rem;
+            }
+
+            .module-hex-subtitle {
+                font-size: 0.55rem;
+            }
+
+            .module-hex-badge {
+                font-size: 0.45rem;
+                top: 1.75rem;
             }
         }
     </style>
@@ -1411,8 +1642,9 @@
                         <span class="competitor-tag">vs Dynamics</span>
                     </div>
                     <div class="salesforce-highlight">
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                        <span>A client replaced Salesforce with EXRP — better, cheaper, more flexible!</span>
+                        <span class="highlight-badge">Success Story</span>
+                        <p class="highlight-text">"We replaced Salesforce with EXRP — BETTER in every aspect, CHEAPER, and more FLEXIBLE."</p>
+                        <p class="highlight-company">— Alfar Global (Subsidiary of Home Classics)</p>
                     </div>
                 </div>
                 <div class="why-benefits animate-on-scroll">
@@ -1454,149 +1686,99 @@
                 <p class="section-subtitle">Select modules to craft a solution tailored to your business needs</p>
             </div>
 
-            <div class="modules-grid">
-                <!-- Compulsory Modules -->
-                <div class="module-card compulsory animate-on-scroll">
-                    <span class="module-badge compulsory">Core</span>
-                    <div class="module-header">
-                        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                        <div>
-                            <h3>Worker Bee</h3>
-                            <p>Customer Management</p>
-                        </div>
+            <div class="modules-honeycomb">
+                <!-- Row 1 - Core Modules -->
+                <div class="modules-honeycomb-row">
+                    <div class="module-hex core animate-on-scroll">
+                        <span class="module-hex-badge core-badge">Core</span>
+                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                        <span class="module-hex-subtitle">Customer Management</span>
+                        <span class="module-hex-title">Worker Bee</span>
                     </div>
-                    <p class="module-description">Manage your customer database, track interactions, store contact details, and build lasting relationships with your clientele.</p>
+                    <div class="module-hex core animate-on-scroll">
+                        <span class="module-hex-badge core-badge">Core</span>
+                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                        <span class="module-hex-subtitle">Invoicing</span>
+                        <span class="module-hex-title">Honey Maker</span>
+                    </div>
+                    <div class="module-hex popular animate-on-scroll">
+                        <span class="module-hex-badge popular-badge">Popular</span>
+                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
+                        <span class="module-hex-subtitle">Inventory</span>
+                        <span class="module-hex-title">Hive Keeper</span>
+                    </div>
+                    <div class="module-hex popular animate-on-scroll">
+                        <span class="module-hex-badge popular-badge">Popular</span>
+                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div>
+                        <span class="module-hex-subtitle">Orders</span>
+                        <span class="module-hex-title">Queen Bee</span>
+                    </div>
                 </div>
 
-                <div class="module-card compulsory animate-on-scroll">
-                    <span class="module-badge compulsory">Core</span>
-                    <div class="module-header">
-                        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-                        <div>
-                            <h3>Honey Maker</h3>
-                            <p>Invoicing</p>
-                        </div>
+                <!-- Row 2 - Offset -->
+                <div class="modules-honeycomb-row offset">
+                    <div class="module-hex popular animate-on-scroll">
+                        <span class="module-hex-badge popular-badge">Popular</span>
+                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                        <span class="module-hex-subtitle">Healthcare</span>
+                        <span class="module-hex-title">Consult Bee</span>
                     </div>
-                    <p class="module-description">Create professional invoices, track payments, manage credit notes, and keep your accounts receivable organized. MRA E-Invoicing available.</p>
+                    <div class="module-hex animate-on-scroll">
+                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                        <span class="module-hex-subtitle">Appointments</span>
+                        <span class="module-hex-title">Busy Bee</span>
+                    </div>
+                    <div class="module-hex animate-on-scroll">
+                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                        <span class="module-hex-subtitle">Point of Sale</span>
+                        <span class="module-hex-title">Collector Bee</span>
+                    </div>
+                    <div class="module-hex animate-on-scroll">
+                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></div>
+                        <span class="module-hex-subtitle">Analytics</span>
+                        <span class="module-hex-title">Wise Bee</span>
+                    </div>
                 </div>
 
-                <!-- Popular Modules -->
-                <div class="module-card animate-on-scroll">
-                    <span class="module-badge popular">Popular</span>
-                    <div class="module-header">
-                        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
-                        <div>
-                            <h3>Hive Keeper</h3>
-                            <p>Inventory Management</p>
-                        </div>
+                <!-- Row 3 - No offset -->
+                <div class="modules-honeycomb-row">
+                    <div class="module-hex animate-on-scroll">
+                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+                        <span class="module-hex-subtitle">Campaigns</span>
+                        <span class="module-hex-title">Scout Bee</span>
                     </div>
-                    <p class="module-description">Track stock levels, manage multiple warehouses, set reorder points, and never run out of your best-selling products again.</p>
+                    <div class="module-hex animate-on-scroll">
+                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+                        <span class="module-hex-subtitle">Bank Reconciliation</span>
+                        <span class="module-hex-title">Banker Bee</span>
+                    </div>
+                    <div class="module-hex animate-on-scroll">
+                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+                        <span class="module-hex-subtitle">Reporting</span>
+                        <span class="module-hex-title">Educator Bee</span>
+                    </div>
+                    <div class="module-hex coming-soon animate-on-scroll">
+                        <span class="module-hex-badge soon-badge">Soon</span>
+                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10H12V2z"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                        <span class="module-hex-subtitle">Smart Automation</span>
+                        <span class="module-hex-title">AI Insights</span>
+                    </div>
                 </div>
 
-                <div class="module-card animate-on-scroll">
-                    <span class="module-badge popular">Popular</span>
-                    <div class="module-header">
-                        <div class="module-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div>
-                        <div>
-                            <h3>Queen Bee</h3>
-                            <p>Order Management</p>
-                        </div>
+                <!-- Row 4 - Coming Soon -->
+                <div class="modules-honeycomb-row offset">
+                    <div class="module-hex coming-soon animate-on-scroll">
+                        <span class="module-hex-badge free-badge">Free</span>
+                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+                        <span class="module-hex-subtitle">On The Go</span>
+                        <span class="module-hex-title">Mobile App</span>
                     </div>
-                    <p class="module-description">Process orders efficiently from receipt to delivery. Track order status, manage fulfillment, and keep customers informed every step of the way.</p>
-                </div>
-
-                <div class="module-card animate-on-scroll">
-                    <span class="module-badge popular">Popular</span>
-                    <div class="module-header">
-                        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-                        <div>
-                            <h3>Consult Bee</h3>
-                            <p>Optometrist / Doctor</p>
-                        </div>
+                    <div class="module-hex coming-soon animate-on-scroll">
+                        <span class="module-hex-badge soon-badge">Soon</span>
+                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+                        <span class="module-hex-subtitle">Staff Management</span>
+                        <span class="module-hex-title">Payroll</span>
                     </div>
-                    <p class="module-description">Specialized module for healthcare professionals. Manage patient records, prescriptions, appointments, and medical history with compliance.</p>
-                </div>
-
-                <!-- Standard Modules -->
-                <div class="module-card animate-on-scroll">
-                    <div class="module-header">
-                        <div class="module-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-                        <div>
-                            <h3>Busy Bee</h3>
-                            <p>Appointment Management</p>
-                        </div>
-                    </div>
-                    <p class="module-description">Schedule appointments, send reminders, manage calendars, and reduce no-shows with automated notifications to your clients.</p>
-                </div>
-
-                <div class="module-card animate-on-scroll">
-                    <div class="module-header">
-                        <div class="module-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-                        <div>
-                            <h3>Collector Bee</h3>
-                            <p>POS System</p>
-                        </div>
-                    </div>
-                    <p class="module-description">Point of Sale without the hardware headache. Process sales, accept payments, and print receipts using your existing devices.</p>
-                </div>
-
-                <div class="module-card animate-on-scroll">
-                    <div class="module-header">
-                        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></div>
-                        <div>
-                            <h3>Wise Bee</h3>
-                            <p>Analytics & Reporting</p>
-                        </div>
-                    </div>
-                    <p class="module-description">Make data-driven decisions with comprehensive analytics. Visualize trends, track KPIs, and generate reports that matter to your business.</p>
-                </div>
-
-                <div class="module-card animate-on-scroll">
-                    <div class="module-header">
-                        <div class="module-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-                        <div>
-                            <h3>Scout Bee</h3>
-                            <p>Campaigns Management</p>
-                        </div>
-                    </div>
-                    <p class="module-description">Create and manage promotional campaigns, track performance, and engage customers with targeted marketing initiatives.</p>
-                </div>
-
-                <!-- Coming Soon Modules -->
-                <div class="module-card coming-soon animate-on-scroll">
-                    <span class="module-badge soon">Coming Soon</span>
-                    <div class="module-header">
-                        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10H12V2z"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-                        <div>
-                            <h3>AI Insights</h3>
-                            <p>Smart Automation</p>
-                        </div>
-                    </div>
-                    <p class="module-description">Harness the power of artificial intelligence for predictive analytics, automated recommendations, and intelligent business insights.</p>
-                </div>
-
-                <div class="module-card coming-soon animate-on-scroll">
-                    <span class="module-badge free">Free</span>
-                    <div class="module-header">
-                        <div class="module-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-                        <div>
-                            <h3>Mobile App</h3>
-                            <p>On The Go</p>
-                        </div>
-                    </div>
-                    <p class="module-description">Access EXRP from your smartphone. Manage your business on the go with our intuitive mobile application — included free with your subscription.</p>
-                </div>
-
-                <div class="module-card coming-soon animate-on-scroll">
-                    <span class="module-badge soon">Coming Soon</span>
-                    <div class="module-header">
-                        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-                        <div>
-                            <h3>Payroll</h3>
-                            <p>Staff Management</p>
-                        </div>
-                    </div>
-                    <p class="module-description">Manage employee salaries, track attendance, calculate deductions, and generate payslips with our comprehensive payroll module.</p>
                 </div>
             </div>
         </div>
@@ -1618,22 +1800,22 @@
                     <div class="analytics-change">Guaranteed SLA</div>
                 </div>
                 <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">4.3k+</div>
+                    <div class="analytics-value">4.8k+</div>
                     <div class="analytics-label">EXRP Users</div>
-                    <div class="analytics-change">+12% vs Last Month</div>
+                    <div class="analytics-change">Growing Daily</div>
                 </div>
                 <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">3.5M+</div>
-                    <div class="analytics-label">Monthly Transactions</div>
-                    <div class="analytics-change">+15.4% vs Last Month</div>
+                    <div class="analytics-value">1.6M+</div>
+                    <div class="analytics-label">Total Transactions</div>
+                    <div class="analytics-change">And Counting</div>
                 </div>
                 <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">2.8k+</div>
+                    <div class="analytics-value">11.5k+</div>
                     <div class="analytics-label">Invoices Issued</div>
-                    <div class="analytics-change">+3.7% vs Last Month</div>
+                    <div class="analytics-change">Across All Instances</div>
                 </div>
                 <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">2.2k+</div>
+                    <div class="analytics-value">14.4k+</div>
                     <div class="analytics-label">Hours On EXRP</div>
                     <div class="analytics-change">Active Usage</div>
                 </div>
@@ -1643,9 +1825,9 @@
                     <div class="analytics-change">0 Major / 2 Minor</div>
                 </div>
                 <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">3</div>
+                    <div class="analytics-value">6</div>
                     <div class="analytics-label">Instances Deployed</div>
-                    <div class="analytics-change">+50% vs Last Month</div>
+                    <div class="analytics-change">+100% Growth</div>
                 </div>
                 <div class="analytics-card animate-on-scroll">
                     <div class="analytics-value">Rs 2.98M</div>
@@ -1686,7 +1868,7 @@
                     </div>
                     <div class="diversity-bar">
                         <div class="diversity-bar-header">
-                            <span>Medical</span>
+                            <span>Fishing</span>
                             <span>18.2%</span>
                         </div>
                         <div class="diversity-bar-track">
@@ -1708,26 +1890,86 @@
                     <h4>Environmental Impact</h4>
                     <div class="impact-items">
                         <div class="impact-item">
-                            <div class="impact-icon">🌳</div>
+                            <div class="impact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-7m0 0c-4 0-7-3-7-7 0-3 2-5 5-6 1-2 3-3 5-3s4 1 5 3c3 1 5 3 5 6 0 4-3 7-7 7h-6z"/></svg></div>
                             <div class="impact-item-content">
                                 <span class="value">10</span>
                                 <span class="label">Trees Planted</span>
                             </div>
                         </div>
                         <div class="impact-item">
-                            <div class="impact-icon">🐝</div>
+                            <div class="impact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="14" rx="5" ry="4"/><path d="M12 10V4M9 6l3-2 3 2M7 13c-2 0-4-1-4-3 2 0 4 1 4 3zm10 0c2 0 4-1 4-3-2 0-4 1-4 3z"/></svg></div>
                             <div class="impact-item-content">
                                 <span class="value">200+</span>
                                 <span class="label">Bees Saved</span>
                             </div>
                         </div>
                         <div class="impact-item">
-                            <div class="impact-icon">🌍</div>
+                            <div class="impact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
                             <div class="impact-item-content">
                                 <span class="value">302g</span>
                                 <span class="label">CO2 Offset</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Integration Section -->
+    <section class="payment-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Accept Payments</span>
+                <h2 class="section-title">Seamless Payment Integration</h2>
+                <p class="section-subtitle">Accept payments directly through EXRP with our integrated payment solutions</p>
+            </div>
+
+            <div class="payment-content">
+                <div class="payment-info animate-on-scroll">
+                    <h3>Get Paid <span>Faster</span></h3>
+                    <p>Accept payments from your customers through multiple channels — all integrated directly into your EXRP invoicing system. No more chasing payments or manual reconciliation.</p>
+
+                    <div class="payment-features">
+                        <div class="payment-feature">
+                            <div class="payment-feature-value">Rs 0</div>
+                            <div class="payment-feature-label">Setup Fee</div>
+                        </div>
+                        <div class="payment-feature">
+                            <div class="payment-feature-value">Rs 0</div>
+                            <div class="payment-feature-label">Monthly Fee</div>
+                        </div>
+                        <div class="payment-feature">
+                            <div class="payment-feature-value">0.9%</div>
+                            <div class="payment-feature-label">As Low As</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-providers animate-on-scroll">
+                    <div class="payment-provider">
+                        <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                        <span>MauCAS</span>
+                    </div>
+                    <div class="payment-provider">
+                        <svg viewBox="0 0 24 24" fill="#E31937"><rect x="2" y="5" width="20" height="14" rx="2"/><path fill="#fff" d="M7 12h10M12 9v6"/></svg>
+                        <span>MCB Juice</span>
+                    </div>
+                    <div class="payment-provider">
+                        <svg viewBox="0 0 24 24" fill="#6366F1"><circle cx="12" cy="12" r="10"/><path fill="#fff" d="M8 12l2 2 4-4"/></svg>
+                        <span>Blink</span>
+                    </div>
+                    <div class="payment-provider">
+                        <svg viewBox="0 0 24 24" fill="#FF6B00"><circle cx="12" cy="12" r="10"/><path fill="#fff" d="M12 6v12M8 10l4-4 4 4"/></svg>
+                        <span>my.t money</span>
+                    </div>
+                    <div class="payment-provider">
+                        <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        <span>Google Pay</span>
+                    </div>
+                    <div class="payment-provider">
+                        <svg viewBox="0 0 24 24" fill="#000"><path d="M17.05 12.72c-.04-1.65.87-2.89 2.35-3.66-.87-1.31-2.22-2.06-4-2.19-1.7-.12-3.5 1.05-4.16 1.05-.7 0-2.27-1-3.57-.97C5.5 7 3.36 8.55 2.2 10.91c-2.38 4.18-.61 10.37 1.68 13.77 1.13 1.67 2.48 3.54 4.26 3.47 1.7-.07 2.34-1.12 4.4-1.12s2.63 1.12 4.43 1.08c1.84-.03 3-1.7 4.12-3.38.85-1.24 1.5-2.52 1.82-3.17-3.55-1.38-4.19-6.54-4.86-8.84zM14.58.03c-1.23.1-2.72 1-3.59 2.16-.78.97-1.47 2.52-1.28 4 1.35.1 2.74-.83 3.58-1.94.79-1.05 1.4-2.53 1.29-4.22z"/></svg>
+                        <span>Apple Pay</span>
                     </div>
                 </div>
             </div>
@@ -1836,12 +2078,11 @@
             </div>
             <div class="clients-grid animate-on-scroll">
                 <img src="../clients/kler-optics.png" alt="Kler Optics" class="client-logo" loading="lazy">
+                <img src="../clients/abus-tackle.png" alt="Abu's Tackle" class="client-logo" loading="lazy">
+                <img src="../clients/zariya.png" alt="Zariya" class="client-logo" loading="lazy">
                 <img src="../clients/alfarglobal.webp" alt="Alfar Global" class="client-logo" loading="lazy">
-                <img src="../clients/home-classics.png" alt="Home Classics" class="client-logo" loading="lazy">
-                <img src="../clients/promoshop.png" alt="Promoshop" class="client-logo" loading="lazy">
-                <img src="../clients/mr-salami.png" alt="Mr Salami" class="client-logo" loading="lazy">
-                <img src="../clients/optimum-line.png" alt="Optimum Line" class="client-logo" loading="lazy">
             </div>
+            <p class="clients-more animate-on-scroll">...among others</p>
         </div>
     </section>
 
