@@ -510,8 +510,8 @@
         /* Why EXRP Section */
         .why-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
             align-items: center;
         }
 
@@ -536,17 +536,18 @@
 
         .why-benefits {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
         }
 
         .why-benefit {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
+            gap: 0.5rem;
+            padding: 0.75rem;
             background: var(--white);
-            border-radius: 10px;
+            border-radius: 8px;
             border: 1px solid var(--gray-200);
             transition: all 0.3s ease;
         }
@@ -556,8 +557,8 @@
         }
 
         .why-benefit-icon {
-            width: 40px;
-            height: 44px;
+            width: 32px;
+            height: 35px;
             background: rgba(2, 64, 86, 0.1);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             display: flex;
@@ -567,15 +568,15 @@
         }
 
         .why-benefit-icon svg {
-            width: 18px;
-            height: 18px;
+            width: 14px;
+            height: 14px;
             stroke: var(--primary);
             fill: none;
             stroke-width: 2;
         }
 
         .why-benefit span {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             color: var(--gray-700);
         }
 
@@ -593,6 +594,50 @@
             color: var(--gray-500);
         }
 
+        /* Success Story Card - Right Side */
+        .why-grid > .salesforce-highlight {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(34, 197, 94, 0.35);
+            margin: 0;
+            min-height: 350px;
+        }
+
+        .why-grid > .salesforce-highlight .highlight-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .why-grid > .salesforce-highlight .highlight-text {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .why-grid > .salesforce-highlight .highlight-company {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+        }
+
         /* Modules Section - Honeycomb Style */
         .modules-section {
             background: transparent;
@@ -602,7 +647,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0;
             max-width: 1100px;
             margin: 0 auto;
         }
@@ -610,12 +654,16 @@
         .modules-honeycomb-row {
             display: flex;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 8px;
+            margin-top: -48px;
+        }
+
+        .modules-honeycomb-row:first-child {
+            margin-top: 0;
         }
 
         .modules-honeycomb-row.offset {
-            margin-top: -2.75rem;
-            margin-left: 95px;
+            transform: translateX(94px);
         }
 
         .module-hex {
@@ -920,7 +968,7 @@
 
         .analytics-row {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 2rem;
             align-items: start;
         }
@@ -929,45 +977,70 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
         .diversity-card h4 {
             font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-        }
-
-        .diversity-bar {
             margin-bottom: 1rem;
+            color: var(--white);
+            text-align: center;
         }
 
-        .diversity-bar-header {
+        .diversity-pie-container {
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-            font-size: 0.85rem;
+            align-items: center;
+            gap: 1.5rem;
         }
 
-        .diversity-bar-header span:first-child {
+        .diversity-pie {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #097992 0deg 131deg,
+                #0a9396 131deg 196deg,
+                #94d2bd 196deg 262deg,
+                #e9d8a6 262deg 327deg,
+                #ee9b00 327deg 360deg
+            );
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .diversity-pie::before {
+            content: '';
+            position: absolute;
+            inset: 25%;
+            background: var(--primary-dark);
+            border-radius: 50%;
+        }
+
+        .diversity-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .diversity-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
             color: var(--gray-300);
         }
 
-        .diversity-bar-header span:last-child {
+        .diversity-legend-item .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .diversity-legend-item .percent {
             color: var(--primary-light);
-        }
-
-        .diversity-bar-track {
-            height: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .diversity-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--primary-light));
-            border-radius: 4px;
+            font-weight: 600;
+            margin-left: auto;
         }
 
         .impact-card {
@@ -1279,44 +1352,6 @@
             opacity: 1;
         }
 
-        .salesforce-highlight {
-            display: block;
-            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-top: 2rem;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
-        }
-
-        .salesforce-highlight .highlight-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.35rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--white);
-            margin-bottom: 0.75rem;
-        }
-
-        .salesforce-highlight .highlight-text {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--white);
-            line-height: 1.5;
-        }
-
-        .salesforce-highlight .highlight-company {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 0.5rem;
-        }
-
         .clients-more {
             text-align: center;
             color: var(--gray-500);
@@ -1348,12 +1383,25 @@
                 gap: 2rem;
             }
 
+            .why-grid > .salesforce-highlight {
+                min-height: auto;
+                padding: 2rem;
+            }
+
+            .why-benefits {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
             .analytics-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
             .analytics-row {
                 grid-template-columns: 1fr;
+            }
+
+            .diversity-pie-container {
+                justify-content: center;
             }
 
             .payment-content {
@@ -1374,9 +1422,17 @@
                 font-size: 0.6rem;
             }
 
+            .modules-honeycomb-row {
+                margin-top: -40px;
+                gap: 6px;
+            }
+
+            .modules-honeycomb-row:first-child {
+                margin-top: 0;
+            }
+
             .modules-honeycomb-row.offset {
-                margin-top: -2.25rem;
-                margin-left: 78px;
+                transform: translateX(78px);
             }
         }
 
@@ -1394,7 +1450,27 @@
             }
 
             .why-benefits {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid > .salesforce-highlight .highlight-text {
+                font-size: 1.15rem;
+            }
+
+            .diversity-pie-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .diversity-legend {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.75rem;
+            }
+
+            .diversity-legend-item .percent {
+                margin-left: 0.5rem;
             }
 
             .analytics-grid {
@@ -1424,24 +1500,40 @@
             }
 
             .module-hex {
-                width: 120px;
-                height: 132px;
+                width: 110px;
+                height: 121px;
             }
 
             .module-hex-icon svg {
-                width: 24px;
-                height: 24px;
+                width: 22px;
+                height: 22px;
+            }
+
+            .modules-honeycomb-row {
+                margin-top: -30px;
+                gap: 5px;
+            }
+
+            .modules-honeycomb-row:first-child {
+                margin-top: 0;
             }
 
             .modules-honeycomb-row.offset {
-                margin-top: -1.85rem;
-                margin-left: 63px;
+                transform: translateX(58px);
             }
 
             .module-hex-badge {
                 font-size: 0.5rem;
                 padding: 0.15rem 0.4rem;
-                top: 1.5rem;
+                top: 1.25rem;
+            }
+
+            .module-hex-subtitle {
+                font-size: 0.5rem;
+            }
+
+            .module-hex-title {
+                font-size: 0.7rem;
             }
         }
 
@@ -1467,32 +1559,43 @@
                 grid-template-columns: 1fr;
             }
 
+            .modules-honeycomb {
+                gap: 0.75rem;
+            }
+
             .modules-honeycomb-row {
                 flex-wrap: wrap;
                 gap: 0.5rem;
+                margin-top: 0;
+                justify-content: center;
             }
 
             .modules-honeycomb-row.offset {
-                margin-top: 0.5rem;
-                margin-left: 0;
+                transform: none;
             }
 
             .module-hex {
-                width: 140px;
-                height: 154px;
+                width: 100px;
+                height: 110px;
             }
 
             .module-hex-title {
-                font-size: 0.75rem;
+                font-size: 0.65rem;
             }
 
             .module-hex-subtitle {
-                font-size: 0.55rem;
+                font-size: 0.45rem;
             }
 
             .module-hex-badge {
-                font-size: 0.45rem;
-                top: 1.75rem;
+                font-size: 0.4rem;
+                top: 1rem;
+                padding: 0.1rem 0.3rem;
+            }
+
+            .module-hex-icon svg {
+                width: 20px;
+                height: 20px;
             }
         }
     </style>
@@ -1648,37 +1751,37 @@
                         <span class="competitor-tag">vs Salesforce</span>
                         <span class="competitor-tag">vs Dynamics</span>
                     </div>
-                    <div class="salesforce-highlight">
-                        <span class="highlight-badge">Success Story</span>
-                        <p class="highlight-text">"We replaced Salesforce with EXRP — BETTER in every aspect, CHEAPER, and more FLEXIBLE."</p>
-                        <p class="highlight-company">— Alfar Global (Subsidiary of Home Classics)</p>
+                    <div class="why-benefits">
+                        <div class="why-benefit">
+                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                            <span>Boost Productivity</span>
+                        </div>
+                        <div class="why-benefit">
+                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+                            <span>Predictable Costs</span>
+                        </div>
+                        <div class="why-benefit">
+                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg></div>
+                            <span>Full Customization</span>
+                        </div>
+                        <div class="why-benefit">
+                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+                            <span>Regular Backups</span>
+                        </div>
+                        <div class="why-benefit">
+                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                            <span>Easy Data Migration</span>
+                        </div>
+                        <div class="why-benefit">
+                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                            <span>Local Support</span>
+                        </div>
                     </div>
                 </div>
-                <div class="why-benefits animate-on-scroll">
-                    <div class="why-benefit">
-                        <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                        <span>Boost Productivity</span>
-                    </div>
-                    <div class="why-benefit">
-                        <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
-                        <span>Predictable Costs</span>
-                    </div>
-                    <div class="why-benefit">
-                        <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg></div>
-                        <span>Full Customization</span>
-                    </div>
-                    <div class="why-benefit">
-                        <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
-                        <span>Regular Backups</span>
-                    </div>
-                    <div class="why-benefit">
-                        <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-                        <span>Easy Data Migration</span>
-                    </div>
-                    <div class="why-benefit">
-                        <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                        <span>Local Support</span>
-                    </div>
+                <div class="salesforce-highlight animate-on-scroll">
+                    <span class="highlight-badge">Success Story</span>
+                    <p class="highlight-text">"We replaced Salesforce with EXRP — BETTER in every aspect, CHEAPER, and more FLEXIBLE."</p>
+                    <p class="highlight-company">— Alfar Global (Subsidiary of Home Classics)</p>
                 </div>
             </div>
         </div>
@@ -1846,49 +1949,34 @@
             <div class="analytics-row">
                 <div class="diversity-card animate-on-scroll">
                     <h4>Business Diversity</h4>
-                    <div class="diversity-bar">
-                        <div class="diversity-bar-header">
-                            <span>Cosmetics</span>
-                            <span>36.4%</span>
-                        </div>
-                        <div class="diversity-bar-track">
-                            <div class="diversity-bar-fill" style="width: 36.4%"></div>
-                        </div>
-                    </div>
-                    <div class="diversity-bar">
-                        <div class="diversity-bar-header">
-                            <span>Processed Foods</span>
-                            <span>18.2%</span>
-                        </div>
-                        <div class="diversity-bar-track">
-                            <div class="diversity-bar-fill" style="width: 18.2%"></div>
-                        </div>
-                    </div>
-                    <div class="diversity-bar">
-                        <div class="diversity-bar-header">
-                            <span>Clothing</span>
-                            <span>18.2%</span>
-                        </div>
-                        <div class="diversity-bar-track">
-                            <div class="diversity-bar-fill" style="width: 18.2%"></div>
-                        </div>
-                    </div>
-                    <div class="diversity-bar">
-                        <div class="diversity-bar-header">
-                            <span>Fishing</span>
-                            <span>18.2%</span>
-                        </div>
-                        <div class="diversity-bar-track">
-                            <div class="diversity-bar-fill" style="width: 18.2%"></div>
-                        </div>
-                    </div>
-                    <div class="diversity-bar">
-                        <div class="diversity-bar-header">
-                            <span>Service Shop</span>
-                            <span>9.1%</span>
-                        </div>
-                        <div class="diversity-bar-track">
-                            <div class="diversity-bar-fill" style="width: 9.1%"></div>
+                    <div class="diversity-pie-container">
+                        <div class="diversity-pie"></div>
+                        <div class="diversity-legend">
+                            <div class="diversity-legend-item">
+                                <span class="dot" style="background: #097992"></span>
+                                <span>Cosmetics</span>
+                                <span class="percent">36.4%</span>
+                            </div>
+                            <div class="diversity-legend-item">
+                                <span class="dot" style="background: #0a9396"></span>
+                                <span>Foods</span>
+                                <span class="percent">18.2%</span>
+                            </div>
+                            <div class="diversity-legend-item">
+                                <span class="dot" style="background: #94d2bd"></span>
+                                <span>Clothing</span>
+                                <span class="percent">18.2%</span>
+                            </div>
+                            <div class="diversity-legend-item">
+                                <span class="dot" style="background: #e9d8a6"></span>
+                                <span>Fishing</span>
+                                <span class="percent">18.2%</span>
+                            </div>
+                            <div class="diversity-legend-item">
+                                <span class="dot" style="background: #ee9b00"></span>
+                                <span>Service</span>
+                                <span class="percent">9.1%</span>
+                            </div>
                         </div>
                     </div>
                 </div>
