@@ -325,6 +325,30 @@
         .foot-social a:hover { background: var(--paper); } .foot-social a:hover svg { fill: var(--ink); }
         .foot-social svg { width: 16px; height: 16px; fill: rgba(241,236,225,0.7); transition: fill 0.3s; }
 
+        /* ===== STORY (origin) ===== */
+        #story { background: var(--paper); }
+        .story-grid { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
+        .story-mark svg { width: min(380px, 88%); height: auto; }
+        .story-mark .cap { margin-top: 1rem; font-family: 'Space Grotesk', monospace; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--muted); }
+        .story-h { font-size: clamp(2.8rem, 8vw, 6.5rem); margin-bottom: 1.6rem; }
+        .story-h .serif-i { color: var(--honey); }
+        .story-copy p { color: var(--ink-2); margin-bottom: 1.1rem; max-width: 50ch; }
+        .story-copy p strong { color: var(--ink); font-weight: 500; }
+        .story-copy .lead { font-family: 'Fraunces', serif; font-style: italic; font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.35; color: var(--ink); }
+        @media (max-width: 880px) { .story-grid { grid-template-columns: 1fr; } .story-mark { order: -1; } }
+
+        /* ===== editorial edge labels + wax seal ===== */
+        .edge { position: fixed; top: 50%; z-index: 6; writing-mode: vertical-rl; font-family: 'Space Grotesk', monospace; font-size: 0.6rem; letter-spacing: 0.42em; text-transform: uppercase; color: #8a8472; mix-blend-mode: difference; pointer-events: none; }
+        .edge.l { left: 0.85rem; transform: translateY(-50%) rotate(180deg); }
+        .edge.r { right: 0.85rem; transform: translateY(-50%); }
+        @media (max-width: 1180px) { .edge { display: none; } }
+        .seal { position: absolute; width: 132px; height: 132px; z-index: 2; pointer-events: none; }
+        .seal-hero { right: 7%; bottom: 13%; }
+        .seal .rot { transform-origin: 50% 50%; animation: spin 26s linear infinite; }
+        .seal text { font-family: 'Space Grotesk', monospace; font-size: 8.4px; letter-spacing: 2.3px; fill: var(--ink); }
+        .seal .mk { stroke: var(--honey); }
+        @media (max-width: 900px) { .seal-hero { display: none; } }
+
         /* mobile nav */
         @media (max-width: 880px) {
             nav { mix-blend-mode: normal; background: rgba(241,236,225,0.0); }
@@ -351,6 +375,8 @@
     <div class="progress" id="progress" aria-hidden="true"></div>
     <div class="cur" id="cur" aria-hidden="true"><svg viewBox="0 0 30 34"><polygon points="15,1 29,9 29,25 15,33 1,25 1,9"/></svg></div>
     <div class="cur-dot" id="curDot" aria-hidden="true"></div>
+    <span class="edge l" aria-hidden="true">Exera — software studio</span>
+    <span class="edge r" aria-hidden="true">20.3°S · 57.5°E — Indian Ocean</span>
 
     <!-- Preloader -->
     <div class="pre" id="pre" aria-hidden="true">
@@ -381,8 +407,8 @@
             <div class="hero-inner">
                 <div class="hero-top">
                     <div class="hero-eye">
-                        <span class="label">Exera Ltd — Est. 2014, Ebene</span>
-                        <p>A software studio that builds bespoke digital products for businesses that refuse the off-the-shelf.</p>
+                        <span class="label">Exera Ltd · Ebène, Mauritius · Since 2014</span>
+                        <p>A small software studio for businesses that refuse the off-the-shelf.</p>
                     </div>
                     <div class="hero-availability"><span class="dot"></span> Taking on new projects</div>
                 </div>
@@ -393,12 +419,22 @@
                     <span class="ln"><span>assemble it.</span></span>
                 </h1>
                 <div class="hero-foot">
-                    <p class="hero-sub">Tailor-made digital products, hand-shaped around the way <em>you</em> work and grown on green servers in Mauritius. No templates. No shortcuts.</p>
+                    <p class="hero-sub">We come to your floor, learn how you <em>really</em> work, then build the software for it &mdash; by hand, on green servers, from a small island that punches well above its weight.</p>
                     <div class="hero-cta">
                         <a href="#contact" class="pill pill-dark" data-cur="big" data-mag><span class="lbl">Start a project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
                         <a href="#services" class="pill pill-line" data-cur="big" data-mag><span class="lbl">See the craft</span></a>
                     </div>
                 </div>
+            </div>
+            <div class="seal seal-hero" aria-hidden="true">
+                <svg viewBox="0 0 132 132">
+                    <defs><path id="sealPath" d="M66,66 m-49,0 a49,49 0 1,1 98,0 a49,49 0 1,1 -98,0"/></defs>
+                    <g class="rot"><text><textPath href="#sealPath" startOffset="0">STAY LOW · STAY HUMBLE · EST. 2014 · MADE IN MORIS · </textPath></text></g>
+                    <g transform="translate(66,66)">
+                        <path class="mk" d="M-22,0 C-22,-13 -8,-13 0,0 C8,13 22,13 22,0 C22,-13 8,-13 0,0 C-8,13 -22,13 -22,0" fill="none" stroke-width="2.4" stroke-linecap="round"/>
+                        <line class="mk" x1="-25" y1="9" x2="25" y2="-9" stroke-width="2.4" stroke-linecap="round"/>
+                    </g>
+                </svg>
             </div>
             <div class="hero-scroll" aria-hidden="true"><span>Scroll</span><div class="ln"></div></div>
         </section>
@@ -406,15 +442,37 @@
         <!-- TICKER -->
         <div class="ticker" aria-hidden="true">
             <div class="ticker-track" id="ticker">
-                <span>Tailor-made</span><span>Made in Moris</span><span>Green servers</span><span>On-site discovery</span><span>10 years deep</span><span>7 countries</span>
-                <span>Tailor-made</span><span>Made in Moris</span><span>Green servers</span><span>On-site discovery</span><span>10 years deep</span><span>7 countries</span>
+                <span>By hand</span><span>No templates</span><span>Made in Moris</span><span>Green servers</span><span>Since 2014</span><span>Stay humble</span>
+                <span>By hand</span><span>No templates</span><span>Made in Moris</span><span>Green servers</span><span>Since 2014</span><span>Stay humble</span>
             </div>
         </div>
+
+        <!-- STORY -->
+        <section id="story" class="sec-pad">
+            <div class="wrap">
+                <div class="sec-label"><span class="n">00</span><span class="t">Where we started</span><span class="rule"></span></div>
+                <div class="story-grid">
+                    <div class="story-mark" data-reveal>
+                        <svg viewBox="0 0 200 110" aria-hidden="true">
+                            <path d="M44 55 C44 24, 84 24, 100 55 C116 86, 156 86, 156 55 C156 24, 116 24, 100 55 C84 86, 44 86, 44 55" fill="none" stroke="#16140f" stroke-width="4" stroke-linecap="round"/>
+                            <line x1="30" y1="86" x2="170" y2="24" stroke="#d98a2b" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                        <div class="cap">Fig. 00 — the mark: an infinity, struck through.</div>
+                    </div>
+                    <div class="story-copy" data-reveal>
+                        <h2 class="story-h">From <span class="serif-i">zero</span>.</h2>
+                        <p class="lead">No backing. No advantages. No safety net. Just a stubborn belief that you can build something that matters out of nothing.</p>
+                        <p><strong>&ldquo;Xera&rdquo;</strong> comes from <strong>zero</strong> &mdash; where we began. The <strong>&ldquo;exe&rdquo;</strong> is a wink to the old <strong>.exe</strong> files we grew up running &mdash; the day we fell for this whole computing thing and never looked back.</p>
+                        <p>Our logo is an infinity with a line through it: <em>nothing lasts forever.</em> It keeps us honest &mdash; never take a client, a teammate, or a good day for granted. Stay low. Stay humble. Build like it counts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- MANIFESTO -->
         <section id="manifesto" class="sec-pad">
             <div class="wrap">
-                <div class="sec-label"><span class="n">01</span><span class="t">Our belief</span><span class="rule"></span></div>
+                <div class="sec-label"><span class="n">01</span><span class="t">What we actually believe</span><span class="rule"></span></div>
                 <p class="manifesto-text" id="manifestoText"></p>
                 <div class="manifesto-sign">
                     <span class="label">The Exera way</span>
@@ -476,7 +534,7 @@
         <!-- GREEN -->
         <section id="green" class="sec-pad">
             <div class="wrap">
-                <div class="sec-label"><span class="n">02</span><span class="t">The green difference</span><span class="rule"></span></div>
+                <div class="sec-label"><span class="n">02</span><span class="t">The green part — for real</span><span class="rule"></span></div>
                 <div class="green-grid">
                     <div class="green-copy" data-reveal>
                         <h2 class="green-h">Great software<br>shouldn't cost<br>the <span class="serif-i">earth</span>.</h2>
@@ -500,7 +558,7 @@
         <!-- MORIS -->
         <section id="moris" class="sec-pad">
             <div class="wrap">
-                <div class="sec-label"><span class="n">03</span><span class="t">Made in Moris</span><span class="rule"></span></div>
+                <div class="sec-label"><span class="n">03</span><span class="t">Made in Moris, no asterisks</span><span class="rule"></span></div>
                 <div class="moris-grid">
                     <div class="moris-badge" data-reveal>
                         <div class="ring"></div>
@@ -524,7 +582,7 @@
         <!-- PROOF -->
         <section id="proof" class="sec-pad">
             <div class="wrap">
-                <div class="sec-label"><span class="n">04</span><span class="t">The proof</span><span class="rule"></span></div>
+                <div class="sec-label"><span class="n">04</span><span class="t">Receipts</span><span class="rule"></span></div>
                 <div class="proof-head">
                     <h2 data-reveal>You'd be in<br><span class="serif-i">good</span> company.</h2>
                     <p data-reveal>From boutique retailers to international names, businesses across Mauritius and beyond run on software we built — and host responsibly.</p>
@@ -550,7 +608,7 @@
         <!-- VOICES -->
         <section id="voices" class="sec-pad">
             <div class="wrap">
-                <div class="sec-label"><span class="n">05</span><span class="t">In their words</span><span class="rule"></span></div>
+                <div class="sec-label"><span class="n">05</span><span class="t">But don't take our word</span><span class="rule"></span></div>
                 <div class="quote-wrap" id="quoteWrap"></div>
                 <div class="quote-nav">
                     <button id="qPrev" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
@@ -579,9 +637,9 @@
         <!-- CONTACT -->
         <section id="contact" class="sec-pad">
             <div class="wrap">
-                <div class="sec-label" style="justify-content:center;"><span class="t">06 — Let's talk</span></div>
-                <h2 class="contact-h">Tell us about<br>your <a href="mailto:info@exera.mu" data-cur="big" data-mag><span class="serif-i">business</span>.</a></h2>
-                <p class="contact-sub">Ready for software that fits the way you work — and runs green? We'll come to you, learn your business, and grow it right.</p>
+                <div class="sec-label" style="justify-content:center;"><span class="t">06 — Let's build something</span></div>
+                <h2 class="contact-h">So — what<br>are <a href="mailto:info@exera.mu" data-cur="big" data-mag><span class="serif-i">we building?</span></a></h2>
+                <p class="contact-sub">Tell us what's slowing your business down. We'll come to you, figure it out together, and grow the software for it.</p>
                 <div class="contact-links">
                     <a href="https://wa.me/23059440110" target="_blank" rel="noopener" data-cur><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
                     <a href="mailto:info@exera.mu" data-cur><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> info@exera.mu</a>
@@ -700,8 +758,8 @@
         /* ---------------- Manifesto split ---------------- */
         var mEl = document.getElementById('manifestoText');
         if (mEl) {
-            var txt = "We learn your business first. Then we shape software that fits you, delights your customers, and runs clean.";
-            var hl = { 'fits': 1, 'you,': 1, 'customers,': 1, 'clean.': 1 };
+            var txt = "We come to your floor. We learn your trade. We build the software for it — by hand. And we don't disappear after launch.";
+            var hl = { 'floor.': 1, 'trade.': 1, 'hand.': 1, "disappear": 1 };
             mEl.innerHTML = txt.split(' ').map(function (w) { return '<span class="w' + (hl[w] ? ' hl' : '') + '">' + w + '</span>'; }).join(' ');
         }
 
@@ -818,7 +876,7 @@
                     .from('.hero-foot', { y: 30, opacity: 0, duration: 0.9 }, 0.7);
             });
 
-            gsap.utils.toArray('[data-reveal]').forEach(function (el) { gsap.from(el, { y: 60, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 86%' } }); });
+            gsap.utils.toArray('[data-reveal]').forEach(function (el) { gsap.from(el, { y: 80, opacity: 0, skewY: 1.5, duration: 1.1, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 88%' } }); });
 
             /* manifesto word reveal */
             gsap.to('.manifesto-text .w:not(.hl)', { color: '#f1ece1', stagger: 0.08, ease: 'none', scrollTrigger: { trigger: '#manifesto', start: 'top 62%', end: 'bottom 70%', scrub: true } });
