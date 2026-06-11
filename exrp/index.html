@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Primary Meta Tags -->
-    <title>EXRP | Cloud-Based ERP Solution for Mauritian Businesses</title>
-    <meta name="title" content="EXRP | Cloud-Based ERP Solution for Mauritian Businesses">
-    <meta name="description" content="EXRP - Operate your business in the cloud. Affordable, scalable ERP with unlimited invoices, customers & transactions. Made in Moris certified. MRA E-Invoicing compliant.">
-    <meta name="keywords" content="EXRP, ERP mauritius, cloud ERP, business management software, POS system, inventory management, MRA e-invoicing, made in moris, exera">
+    <title>EXRP | Cloud-Based ERP for Mauritian Businesses, Built Green</title>
+    <meta name="title" content="EXRP | Cloud-Based ERP for Mauritian Businesses, Built Green">
+    <meta name="description" content="EXRP - Operate your business in the cloud. Affordable, scalable ERP with unlimited invoices, customers & transactions, hosted on green servers. Made in Moris certified. MRA E-Invoicing compliant.">
+    <meta name="keywords" content="EXRP, ERP mauritius, cloud ERP, business management software, POS system, inventory management, MRA e-invoicing, made in moris, green erp, exera">
     <meta name="author" content="Exera Ltd">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://exrp.mu/">
@@ -18,2592 +18,765 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://exrp.mu/">
-    <meta property="og:title" content="EXRP | Cloud-Based ERP Solution">
-    <meta property="og:description" content="Operate your business in the cloud. Affordable ERP with unlimited transactions. Made in Moris certified.">
+    <meta property="og:title" content="EXRP | Cloud-Based ERP Solution, Built Green">
+    <meta property="og:description" content="Operate your business in the cloud. Affordable ERP with unlimited transactions, hosted green. Made in Moris certified.">
     <meta property="og:image" content="https://exera.mu/logo.webp">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="EXRP | Cloud-Based ERP Solution">
+    <meta name="twitter:title" content="EXRP | Cloud-Based ERP Solution, Built Green">
     <meta name="twitter:description" content="Operate your business in the cloud. Affordable ERP with unlimited transactions. Made in Moris certified.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../favicon.png">
     <link rel="apple-touch-icon" href="../favicon.png">
-    <meta name="theme-color" content="#024056">
+    <meta name="theme-color" content="#050813">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #024056;
-            --primary-light: #097992;
-            --primary-dark: #012a38;
-            --accent: #0FF0FC;
-            --gold: #daa520;
-            --green: #2cda20;
-            --dark: #0A0A0A;
-            --gray-900: #111827;
-            --gray-700: #374151;
-            --gray-600: #4B5563;
-            --gray-500: #6B7280;
-            --gray-400: #9CA3AF;
-            --gray-300: #D1D5DB;
-            --gray-200: #E5E7EB;
-            --gray-100: #F3F4F6;
-            --gray-50: #F9FAFB;
-            --white: #FFFFFF;
+            --bg: #050813;
+            --bg-2: #080e22;
+            --hive: #0c1838;
+            --blue: #2f6bff;
+            --blue-bright: #5b8cff;
+            --cyan: #3fe0ff;
+            --eco: #36f5a0;
+            --eco-deep: #00c986;
+            --gold: #ffcf5c;
+            --text: #eef3ff;
+            --muted: #94a6cc;
+            --muted-dim: #5e6f96;
+            --card: rgba(255, 255, 255, 0.03);
+            --card-line: rgba(255, 255, 255, 0.08);
+            --grad-blue: linear-gradient(135deg, #5b8cff 0%, #3fe0ff 100%);
+            --grad-eco: linear-gradient(135deg, #36f5a0 0%, #3fe0ff 100%);
+            --grad-honey: linear-gradient(135deg, #ffcf5c 0%, #ff9f45 100%);
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-stopped { overflow: hidden; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--white);
-            color: var(--gray-900);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        ::selection {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        /* Animated Hexagon Background */
-        .hex-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .hexagon {
-            position: absolute;
-            opacity: 0.15;
-            animation: floatHex linear infinite;
-        }
-
-        .hexagon.filled {
-            opacity: 0.05;
-        }
-
-        .hexagon svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        @keyframes floatHex {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-            }
-        }
-
-        /* Navigation */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--gray-200);
-        }
-
-        .nav-logo {
-            height: 40px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .nav-links a {
-            color: var(--gray-700);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-cta {
-            padding: 0.6rem 1.25rem;
-            background: var(--primary);
-            color: var(--white) !important;
-            text-decoration: none;
-            clip-path: polygon(8px 0%, calc(100% - 8px) 0%, 100% 50%, calc(100% - 8px) 100%, 8px 100%, 0% 50%);
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .nav-cta:hover {
-            background: var(--primary-light);
-        }
-
-        /* Sections */
-        section {
-            padding: 100px 5%;
-            position: relative;
-            z-index: 1;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-top: 80px;
-        }
-
-        .hero-content {
-            max-width: 900px;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.25rem;
-            background: rgba(218, 165, 32, 0.15);
-            border: 1px solid var(--gold);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            color: #b8860b;
-            margin-bottom: 2rem;
-        }
-
-        .hero-badge svg {
-            width: 18px;
-            height: 18px;
-            fill: var(--gold);
-        }
-
-        .hero-tagline {
-            font-size: 1.25rem;
-            color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--gray-900);
-        }
-
-        .hero-title span {
-            color: var(--primary);
-        }
-
-        .hero-description {
-            font-size: 1.2rem;
-            color: var(--gray-600);
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            line-height: 1.8;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .btn-primary {
-            padding: 1rem 2.5rem;
-            background: var(--primary);
-            color: var(--white);
-            border: none;
-            clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0% 50%);
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            padding: 1rem 2.5rem;
-            background: var(--gray-100);
-            color: var(--gray-700);
-            border: none;
-            clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0% 50%);
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        /* Unlimited Badge */
-        .unlimited-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: rgba(2, 64, 86, 0.08);
-            padding: 1rem 2rem;
-            border-radius: 60px;
-            border: 1px solid rgba(2, 64, 86, 0.15);
-        }
-
-        .unlimited-badge svg {
-            width: 28px;
-            height: 28px;
-            stroke: var(--primary);
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .unlimited-badge span {
-            color: var(--gray-700);
-            font-size: 0.95rem;
-        }
-
-        .unlimited-badge strong {
-            color: var(--primary);
-        }
-
-        /* Section Headers */
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--primary);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .section-tag::before {
-            content: '';
-            width: 12px;
-            height: 14px;
-            background: var(--primary);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--gray-900);
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--gray-600);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Features Grid */
-        .features-section {
-            background: transparent;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(2, 64, 86, 0.1);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 66px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-icon svg {
-            width: 28px;
-            height: 28px;
-            stroke: var(--white);
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--gray-900);
-        }
-
-        .feature-card p {
-            color: var(--gray-600);
-            line-height: 1.7;
-        }
-
-        /* Vision Mission Section */
-        .vm-section {
-            background: transparent;
-        }
-
-        .vision-mission {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .vm-card {
-            padding: 2.5rem;
-            border-radius: 16px;
-            position: relative;
-        }
-
-        .vm-card.vision {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-        }
-
-        .vm-card.mission {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-        }
-
-        .vm-card.values {
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
-            color: var(--white);
-        }
-
-        .vm-icon {
-            width: 50px;
-            height: 55px;
-            background: rgba(255, 255, 255, 0.15);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .vm-card.mission .vm-icon {
-            background: rgba(2, 64, 86, 0.1);
-        }
-
-        .vm-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .vm-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .vm-card p {
-            line-height: 1.8;
-            opacity: 0.9;
-        }
-
-        .vm-card.mission h3,
-        .vm-card.mission p {
-            color: var(--gray-900);
-        }
-
-        .vm-card.mission p {
-            color: var(--gray-600);
-        }
-
-        .values-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-
-        .value-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .value-item::before {
-            content: '';
-            width: 8px;
-            height: 9px;
-            background: rgba(255, 255, 255, 0.5);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        }
-
-        /* Why EXRP Section */
-        .why-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .why-content h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-            color: var(--gray-900);
-        }
-
-        .why-content h3 span {
-            color: var(--primary);
-        }
-
-        .why-content p {
-            color: var(--gray-600);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .why-benefits {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-
-        .why-benefit {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem;
-            background: var(--white);
-            border-radius: 8px;
-            border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
-        }
-
-        .why-benefit:hover {
-            border-color: var(--primary);
-        }
-
-        .why-benefit-icon {
-            width: 32px;
-            height: 35px;
-            background: rgba(2, 64, 86, 0.1);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .why-benefit-icon svg {
-            width: 14px;
-            height: 14px;
-            stroke: var(--primary);
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .why-benefit span {
-            font-size: 0.75rem;
-            color: var(--gray-700);
-        }
-
-        .competitors-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .competitor-tag {
-            padding: 0.5rem 1rem;
-            background: var(--gray-100);
-            border-radius: 6px;
-            font-size: 0.85rem;
-            color: var(--gray-500);
-        }
-
-        /* Success Story Card - Right Side */
-        .why-grid > .salesforce-highlight {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(34, 197, 94, 0.35);
-            margin: 0;
-            min-height: 350px;
-        }
-
-        .why-grid > .salesforce-highlight .highlight-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.25);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--white);
-            margin-bottom: 1.5rem;
-        }
-
-        .why-grid > .salesforce-highlight .highlight-text {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--white);
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-        }
-
-        .why-grid > .salesforce-highlight .highlight-company {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.85);
-            font-weight: 500;
-        }
-
-        /* Modules Section - Honeycomb Style */
-        .modules-section {
-            background: transparent;
-        }
-
-        .modules-honeycomb {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .modules-honeycomb-row {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: -48px;
-        }
-
-        .modules-honeycomb-row:first-child {
-            margin-top: 0;
-        }
-
-        .modules-honeycomb-row.offset {
-            transform: translateX(94px);
-        }
-
-        .module-hex {
-            width: 180px;
-            height: 198px;
-            background: linear-gradient(135deg, #b8d4e3, #d0e8f2);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 1.5rem 1rem;
-            transition: all 0.3s ease;
-            cursor: default;
-            position: relative;
-            box-shadow: 0 4px 20px rgba(2, 64, 86, 0.15);
-        }
-
-        .module-hex::before {
-            content: '';
-            position: absolute;
-            inset: 3px;
-            background: linear-gradient(180deg, #f0f7fb 0%, #e3f1f8 100%);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            z-index: -1;
-        }
-
-        .module-hex:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 30px rgba(2, 64, 86, 0.2);
-        }
-
-        .module-hex.core {
-            background: linear-gradient(135deg, var(--gold), #f4d03f);
-        }
-
-        .module-hex.core::before {
-            background: linear-gradient(180deg, #fef9e7 0%, #fdf2d0 100%);
-        }
-
-        .module-hex.free {
-            background: linear-gradient(135deg, #22c55e, #4ade80);
-        }
-
-        .module-hex.free::before {
-            background: linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%);
-        }
-
-        .module-hex.free .module-hex-icon svg {
-            stroke: #166534;
-        }
-
-        .module-hex.free .module-hex-subtitle {
-            color: #166534;
-        }
-
-        .module-hex.popular {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-        }
-
-        .module-hex.popular::before {
-            background: var(--white);
-        }
-
-        .module-hex.coming-soon {
-            opacity: 0.7;
-            background: linear-gradient(135deg, var(--gray-300), var(--gray-200));
-        }
-
-        .module-hex.coming-soon::before {
-            background: linear-gradient(180deg, var(--gray-100) 0%, var(--gray-50) 100%);
-        }
-
-        .module-hex-icon {
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .module-hex-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--primary);
-            fill: none;
-            stroke-width: 1.5;
-        }
-
-        .module-hex.core .module-hex-icon svg {
-            stroke: #1a1a1a;
-        }
-
-        .module-hex.popular .module-hex-icon svg {
-            stroke: var(--primary);
-        }
-
-        .module-hex-subtitle {
-            font-size: 0.65rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .module-hex.core .module-hex-subtitle {
-            color: #8B6914;
-        }
-
-        .module-hex-title {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            line-height: 1.2;
-        }
-
-        .module-hex-badge {
-            position: absolute;
-            top: 2rem;
-            font-size: 0.55rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 0.2rem 0.5rem;
-            border-radius: 3px;
-        }
-
-        .module-hex-badge.core-badge {
-            background: #1a1a1a;
-            color: var(--gold);
-        }
-
-        .module-hex-badge.free-badge {
-            background: #166534;
-            color: #dcfce7;
-        }
-
-        .module-hex-badge.popular-badge {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        .module-hex-badge.soon-badge {
-            background: var(--gray-500);
-            color: var(--white);
-        }
-
-        /* Payment Integration Section */
-        .payment-section {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-        }
-
-        .payment-section .section-tag {
-            color: #16a34a;
-        }
-
-        .payment-section .section-tag::before {
-            background: #16a34a;
-        }
-
-        .payment-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .payment-info h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--gray-900);
-        }
-
-        .payment-info h3 span {
-            color: #16a34a;
-        }
-
-        .payment-info p {
-            color: var(--gray-600);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .payment-features {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .payment-feature {
-            text-align: center;
-            padding: 1rem;
-            background: var(--white);
-            border-radius: 12px;
-            flex: 1;
-            box-shadow: 0 4px 15px rgba(22, 163, 74, 0.1);
-        }
-
-        .payment-feature-value {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #16a34a;
-        }
-
-        .payment-feature-label {
-            font-size: 0.75rem;
-            color: var(--gray-500);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .payment-providers {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-
-        .payment-provider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 1rem 1.25rem;
-            background: var(--white);
-            border-radius: 12px;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .payment-provider:hover {
-            border-color: #16a34a;
-            transform: translateY(-3px);
-        }
-
-        .payment-provider svg {
-            width: 28px;
-            height: 28px;
-        }
-
-        .payment-provider span {
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: var(--gray-700);
-        }
-
-        /* WhatsApp Integration Section */
-        .whatsapp-section {
-            background: linear-gradient(135deg, #075e54 0%, #128c7e 100%);
-            color: var(--white);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .whatsapp-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: rgba(37, 211, 102, 0.1);
-            border-radius: 50%;
-        }
-
-        .whatsapp-section::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -5%;
-            width: 300px;
-            height: 300px;
-            background: rgba(37, 211, 102, 0.08);
-            border-radius: 50%;
-        }
-
-        .whatsapp-section .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .whatsapp-section .section-tag {
-            color: #25d366;
-        }
-
-        .whatsapp-section .section-tag::before {
-            background: #25d366;
-        }
-
-        .whatsapp-section .section-title {
-            color: var(--white);
-        }
-
-        .whatsapp-section .section-subtitle {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .whatsapp-content {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .whatsapp-phone {
-            display: flex;
-            justify-content: center;
-        }
-
-        .phone-mockup {
-            width: 280px;
-            background: #1a1a1a;
-            border-radius: 40px;
-            padding: 12px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .phone-screen {
-            background: #ece5dd;
-            border-radius: 30px;
-            overflow: hidden;
-        }
-
-        .phone-header {
-            background: #075e54;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .phone-header-avatar {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
-        .phone-header-info {
-            flex: 1;
-        }
-
-        .phone-header-name {
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .phone-header-status {
-            font-size: 0.7rem;
-            opacity: 0.8;
-        }
-
-        .phone-messages {
-            padding: 1rem;
-            min-height: 320px;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .chat-bubble {
-            max-width: 85%;
-            padding: 0.6rem 0.9rem;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            line-height: 1.4;
-            color: #1a1a1a;
-        }
-
-        .chat-bubble.incoming {
-            background: var(--white);
-            align-self: flex-start;
-            border-bottom-left-radius: 2px;
-        }
-
-        .chat-bubble.outgoing {
-            background: #dcf8c6;
-            align-self: flex-end;
-            border-bottom-right-radius: 2px;
-        }
-
-        .chat-bubble .time {
-            font-size: 0.6rem;
-            color: #667781;
-            text-align: right;
-            margin-top: 0.25rem;
-        }
-
-        .chat-bubble strong {
-            color: #075e54;
-        }
-
-        .whatsapp-features {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .whatsapp-feature {
-            display: flex;
-            gap: 1.25rem;
-            align-items: flex-start;
-        }
-
-        .whatsapp-feature-icon {
-            width: 60px;
-            height: 66px;
-            background: rgba(37, 211, 102, 0.2);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .whatsapp-feature-icon svg {
-            width: 26px;
-            height: 26px;
-            stroke: #25d366;
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .whatsapp-feature-content h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.35rem;
-        }
-
-        .whatsapp-feature-content p {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.6;
-        }
-
-        .whatsapp-cta {
-            margin-top: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .whatsapp-cta a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: #25d366;
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-cta a:hover {
-            background: #20bd5a;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-        }
-
-        .whatsapp-cta a svg {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
-        }
-
-        /* Analytics Dashboard Section */
-        .analytics-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-        }
-
-        .analytics-section .section-tag {
-            color: var(--primary-light);
-        }
-
-        .analytics-section .section-tag::before {
-            background: var(--primary-light);
-        }
-
-        .analytics-section .section-title {
-            color: var(--white);
-        }
-
-        .analytics-section .section-subtitle {
-            color: var(--gray-400);
-        }
-
-        .analytics-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .analytics-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .analytics-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-3px);
-        }
-
-        .analytics-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-light);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .analytics-label {
-            font-size: 0.85rem;
-            color: var(--gray-400);
-            margin-bottom: 0.5rem;
-        }
-
-        .analytics-change {
-            font-size: 0.75rem;
-            color: #22c55e;
-        }
-
-        .analytics-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: stretch;
-        }
-
-        .diversity-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .diversity-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-            text-align: center;
-        }
-
-        .diversity-pie-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-            flex: 1;
-        }
-
-        .diversity-pie {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            background: conic-gradient(
-                #097992 0deg 131deg,
-                #0a9396 131deg 196deg,
-                #94d2bd 196deg 262deg,
-                #e9d8a6 262deg 327deg,
-                #ee9b00 327deg 360deg
-            );
-            flex-shrink: 0;
-            position: relative;
-        }
-
-        .diversity-pie::before {
-            content: '';
-            position: absolute;
-            inset: 25%;
-            background: var(--primary-dark);
-            border-radius: 50%;
-        }
-
-        .diversity-legend {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .diversity-legend-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.75rem;
-            color: var(--gray-300);
-        }
-
-        .diversity-legend-item .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        .diversity-legend-item .percent {
-            color: var(--primary-light);
-            font-weight: 600;
-            margin-left: auto;
-        }
-
-        .impact-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 2rem;
-        }
-
-        .impact-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-        }
-
-        .impact-items {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .impact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .impact-icon {
-            width: 50px;
-            height: 55px;
-            background: rgba(34, 197, 94, 0.2);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .impact-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: #22c55e;
-        }
-
-        .impact-item-content span {
-            display: block;
-        }
-
-        .impact-item-content .value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #22c55e;
-        }
-
-        .impact-item-content .label {
-            font-size: 0.8rem;
-            color: var(--gray-400);
-        }
-
-        /* Compliance Section */
-        .compliance-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .compliance-card {
-            text-align: center;
-            padding: 2rem;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .compliance-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .compliance-icon {
-            width: 70px;
-            height: 77px;
-            background: rgba(2, 64, 86, 0.08);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-        }
-
-        .compliance-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--primary);
-            fill: none;
-            stroke-width: 1.5;
-        }
-
-        .compliance-icon img {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-        }
-
-        .compliance-card h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--gray-900);
-        }
-
-        .compliance-card p {
-            font-size: 0.85rem;
-            color: var(--gray-500);
-        }
-
-        /* Industries Section */
-        .industries-hex-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .industry-hex {
-            width: 140px;
-            height: 154px;
-            background: linear-gradient(135deg, var(--gray-200), var(--gray-100));
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 1rem;
-            transition: all 0.3s ease;
-            cursor: default;
-            position: relative;
-        }
-
-        .industry-hex::before {
-            content: '';
-            position: absolute;
-            inset: 2px;
-            background: var(--white);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            z-index: -1;
-            transition: all 0.3s ease;
-        }
-
-        .industry-hex:hover {
-            background: var(--primary);
-        }
-
-        .industry-hex:hover::before {
-            background: var(--primary);
-        }
-
-        .industry-hex svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--primary);
-            fill: none;
-            stroke-width: 1.5;
-            margin-bottom: 0.5rem;
-            transition: stroke 0.3s ease;
-        }
-
-        .industry-hex:hover svg {
-            stroke: var(--white);
-        }
-
-        .industry-hex span {
-            font-size: 0.85rem;
-            color: var(--gray-700);
-            transition: color 0.3s ease;
-        }
-
-        .industry-hex:hover span {
-            color: var(--white);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            background: transparent;
-        }
-
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cta-content h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--gray-900);
-        }
-
-        .cta-content p {
-            font-size: 1.1rem;
-            color: var(--gray-600);
-            margin-bottom: 2rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+            background: var(--bg); color: var(--text); line-height: 1.6;
+            overflow-x: hidden; -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4, .display { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.02em; line-height: 1.06; }
+        a { color: inherit; text-decoration: none; }
+        ::selection { background: var(--cyan); color: #02060f; }
+        ::-webkit-scrollbar { width: 9px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(var(--blue), var(--cyan)); border-radius: 6px; }
+
+        /* Ambient background */
+        .bg-field {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+            background:
+                radial-gradient(1100px 650px at 78% -10%, rgba(47,107,255,0.22), transparent 60%),
+                radial-gradient(900px 600px at 8% 108%, rgba(255,207,92,0.07), transparent 60%),
+                var(--bg);
+        }
+        .bg-hex {
+            position: absolute; inset: -10%; opacity: 0.06; background-size: 56px 100px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 0L56 16v32L28 64 0 48V16z' fill='none' stroke='%234f8cff' stroke-width='1'/%3E%3Cpath d='M28 64L56 80v32L28 128 0 112V80z' fill='none' stroke='%234f8cff' stroke-width='1'/%3E%3C/svg%3E");
+        }
+
+        /* Cursor */
+        .cursor-dot, .cursor-ring { position: fixed; top: 0; left: 0; z-index: 9000; pointer-events: none; border-radius: 50%; transform: translate(-50%, -50%); mix-blend-mode: difference; }
+        .cursor-dot { width: 7px; height: 7px; background: #fff; }
+        .cursor-ring { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.6); transition: width 0.25s var(--ease), height 0.25s var(--ease), background 0.25s; }
+        .cursor-ring.hovered { width: 64px; height: 64px; background: rgba(255,255,255,0.12); border-color: transparent; }
+        @media (hover: none), (max-width: 900px) { .cursor-dot, .cursor-ring { display: none; } }
+
+        /* Preloader */
+        .preloader { position: fixed; inset: 0; z-index: 9999; background: var(--bg); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1.4rem; }
+        .preloader.done { opacity: 0; visibility: hidden; transition: opacity 0.8s var(--ease), visibility 0.8s; }
+        .pre-hex { width: 64px; height: 72px; }
+        .pre-hex svg { width: 100%; height: 100%; }
+        .pre-hex .fill { transform-origin: center; transform: scaleY(0); transition: transform 0.1s linear; }
+        .pre-count { font-family: 'Space Grotesk', sans-serif; font-size: 0.9rem; letter-spacing: 0.4em; color: var(--muted); text-transform: uppercase; }
+        .pre-count b { color: var(--cyan); font-weight: 600; }
+
+        .progress { position: fixed; top: 0; left: 0; height: 3px; z-index: 1100; width: 0; background: var(--grad-honey); }
+
+        /* Layout */
+        .wrap { width: min(1240px, 92%); margin: 0 auto; }
+        main { position: relative; z-index: 1; }
+        section { position: relative; padding: clamp(80px, 12vh, 150px) 0; }
+
+        .eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1.2rem; font-weight: 500; }
+        .eyebrow::before { content: ''; width: 13px; height: 15px; background: var(--grad-blue); clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+        .eyebrow.honey { color: var(--gold); }
+        .eyebrow.honey::before { background: var(--grad-honey); }
+        .eyebrow.eco { color: var(--eco); }
+        .eyebrow.eco::before { background: var(--grad-eco); }
+
+        .sec-head { text-align: center; max-width: 680px; margin: 0 auto clamp(3rem, 6vw, 4.5rem); }
+        .h-sec { font-size: clamp(2rem, 4.6vw, 3.4rem); margin-bottom: 1rem; }
+        .sub { color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.12rem); }
+        .grad-text { background: var(--grad-blue); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .grad-honey-text { background: var(--grad-honey); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .grad-eco-text { background: var(--grad-eco); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Buttons */
+        .btn { position: relative; display: inline-flex; align-items: center; gap: 0.6rem; padding: 1rem 1.9rem; font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 0.95rem; cursor: pointer; border: none; overflow: hidden; clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px); transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease); }
+        .btn-primary { background: var(--grad-blue); color: #02060f; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 50px rgba(63,224,255,0.3); }
+        .btn-honey { background: var(--grad-honey); color: #2a1d00; }
+        .btn-honey:hover { transform: translateY(-3px); box-shadow: 0 18px 50px rgba(255,159,69,0.3); }
+        .btn-ghost { background: rgba(255,255,255,0.04); color: var(--text); border: 1px solid var(--card-line); }
+        .btn-ghost:hover { background: rgba(255,255,255,0.09); transform: translateY(-3px); }
+        .btn svg { width: 18px; height: 18px; }
+
+        /* Nav */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 1.4rem clamp(1.2rem, 4vw, 3rem); transition: padding 0.4s var(--ease), background 0.4s var(--ease); }
+        nav.scrolled { padding: 0.85rem clamp(1.2rem, 4vw, 3rem); background: rgba(5,8,19,0.72); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--card-line); }
+        .nav-logo { height: 32px; transition: transform 0.3s var(--ease); }
+        .nav-logo:hover { transform: scale(1.06); }
+        .nav-links { display: flex; gap: 2.2rem; align-items: center; list-style: none; }
+        .nav-links a.link { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; color: var(--muted); position: relative; transition: color 0.3s; }
+        .nav-links a.link::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 0; height: 2px; background: var(--grad-blue); transition: width 0.3s var(--ease); }
+        .nav-links a.link:hover, .nav-links a.link.active { color: var(--text); }
+        .nav-links a.link:hover::after, .nav-links a.link.active::after { width: 100%; }
+        .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
+        .menu-toggle span { width: 26px; height: 2px; background: var(--text); transition: all 0.3s var(--ease); }
+
+        /* Hero */
+        #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 120px; padding-bottom: 60px; overflow: hidden; perspective: 1400px; }
+        .hero-inner { position: relative; z-index: 2; width: min(1240px, 92%); margin: 0 auto; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.5rem 1.1rem; margin-bottom: 1.8rem; background: rgba(255,207,92,0.08); border: 1px solid rgba(255,207,92,0.28); border-radius: 100px; font-size: 0.78rem; color: var(--gold); }
+        .hero-badge svg { width: 15px; height: 15px; fill: var(--gold); }
+        .hero-tagline { color: var(--cyan); font-family: 'Space Grotesk'; font-weight: 500; letter-spacing: 0.02em; margin-bottom: 0.9rem; }
+        .hero-title { font-size: clamp(2.6rem, 7vw, 5.6rem); line-height: 0.98; }
+        .hero-title .line { display: block; overflow: hidden; }
+        .hero-title .line > span { display: inline-block; }
+        .hero-title em { font-style: normal; background: var(--grad-honey); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-desc { margin: 1.8rem 0 2.4rem; color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.18rem); max-width: 58ch; }
+        .hero-desc em { color: var(--muted); font-style: italic; }
+        .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .hero-unlimited { display: inline-flex; align-items: center; gap: 0.7rem; margin-top: 2.4rem; padding: 0.8rem 1.3rem; border-radius: 100px; background: rgba(63,224,255,0.07); border: 1px solid rgba(63,224,255,0.25); font-size: 0.9rem; color: var(--text); }
+        .hero-unlimited svg { width: 24px; height: 24px; fill: var(--cyan); flex-shrink: 0; }
+        .hero-unlimited strong { color: var(--cyan); }
+
+        .hero-hive { position: absolute; top: 50%; right: -3%; width: 44%; max-width: 600px; aspect-ratio: 1; transform: translateY(-50%); z-index: 1; transform-style: preserve-3d; pointer-events: none; }
+        .hero-hive .hx { position: absolute; width: 24%; aspect-ratio: 0.866; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background: linear-gradient(150deg, rgba(91,140,255,0.5), rgba(63,224,255,0.08)); border: 1px solid rgba(120,180,255,0.35); display: flex; align-items: center; justify-content: center; will-change: transform; }
+        .hero-hive .hx.honey { background: linear-gradient(150deg, rgba(255,207,92,0.55), rgba(255,159,69,0.1)); border-color: rgba(255,207,92,0.45); }
+        .hero-hive .hx svg { width: 36%; height: 36%; stroke: rgba(255,255,255,0.9); fill: none; stroke-width: 1.6; }
+        .hero-hive .hx.core { width: 32%; background: var(--grad-honey); border: none; box-shadow: 0 30px 80px rgba(255,159,69,0.4); }
+        .hero-hive .hx.core span { font-family: 'Space Grotesk'; font-weight: 700; color: #2a1d00; font-size: clamp(0.85rem, 1.8vw, 1.3rem); }
+        @media (max-width: 980px) { .hero-hive { display: none; } }
+
+        .scroll-cue { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.6rem; font-size: 0.7rem; letter-spacing: 0.3em; color: var(--muted-dim); text-transform: uppercase; }
+        .scroll-cue .bar { width: 1px; height: 38px; background: linear-gradient(var(--cyan), transparent); animation: cue 2s var(--ease) infinite; transform-origin: top; }
+        @keyframes cue { 0%,100% { transform: scaleY(0.3); opacity: 0.4; } 50% { transform: scaleY(1); opacity: 1; } }
+
+        /* Marquee */
+        .marquee { position: relative; z-index: 1; overflow: hidden; border-top: 1px solid var(--card-line); border-bottom: 1px solid var(--card-line); padding: 1.3rem 0; background: rgba(255,255,255,0.015); }
+        .marquee-track { display: flex; gap: 3rem; white-space: nowrap; width: max-content; animation: marq 26s linear infinite; }
+        .marquee:hover .marquee-track { animation-play-state: paused; }
+        .marquee-track span { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1rem, 2.2vw, 1.6rem); font-weight: 600; color: var(--muted); display: inline-flex; align-items: center; gap: 3rem; }
+        .marquee-track span b { color: var(--cyan); } .marquee-track span em { color: var(--gold); font-style: normal; }
+        .marquee-track i { width: 12px; height: 14px; background: var(--card-line); clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+        @keyframes marq { to { transform: translateX(-50%); } }
+
+        /* Generic card grids */
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; perspective: 1600px; }
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+        @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } .grid-2 { grid-template-columns: 1fr; } }
+
+        .card { position: relative; padding: 2rem 1.8rem; border-radius: 20px; background: var(--card); border: 1px solid var(--card-line); overflow: hidden; transition: border-color 0.4s, transform 0.4s var(--ease), box-shadow 0.4s; will-change: transform; transform-style: preserve-3d; }
+        .card::after { content: ''; position: absolute; top: -40px; right: -40px; width: 110px; height: 127px; background: radial-gradient(circle, rgba(63,224,255,0.16), transparent 70%); clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); transition: transform 0.5s var(--ease); }
+        .card:hover { border-color: rgba(91,140,255,0.5); box-shadow: 0 30px 70px rgba(0,0,0,0.45); }
+        .card:hover::after { transform: scale(1.5) rotate(40deg); }
+        .card-ic { width: 52px; height: 58px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.3rem; background: rgba(91,140,255,0.12); border: 1px solid rgba(91,140,255,0.3); clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+        .card-ic svg { width: 24px; height: 24px; stroke: var(--cyan); fill: none; stroke-width: 1.8; }
+        .card h3 { font-size: 1.25rem; margin-bottom: 0.55rem; }
+        .card p { color: var(--muted); font-size: 0.92rem; }
+
+        /* Vision / Mission / Values */
+        .vm-card .card-ic { background: rgba(54,245,160,0.1); border-color: rgba(54,245,160,0.3); }
+        .vm-card .card-ic svg { stroke: var(--eco); }
+        .values-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .value-item { padding: 0.4rem 0.9rem; font-size: 0.78rem; border-radius: 100px; background: rgba(54,245,160,0.08); border: 1px solid rgba(54,245,160,0.22); color: var(--eco); }
+
+        /* Why EXRP */
+        .why-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+        .why-content h3 { font-size: clamp(1.7rem, 3.6vw, 2.6rem); margin-bottom: 1.2rem; }
+        .why-content h3 span { background: var(--grad-blue); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .why-content p { color: var(--muted); margin-bottom: 1rem; max-width: 56ch; }
+        .competitors-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.6rem 0; }
+        .competitor-tag { padding: 0.45rem 1rem; font-size: 0.8rem; font-family: 'Space Grotesk'; border-radius: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--card-line); color: var(--muted); text-decoration: line-through; text-decoration-color: rgba(255,90,90,0.6); }
+        .why-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 1.8rem; }
+        .why-benefit { display: flex; align-items: center; gap: 0.7rem; padding: 0.8rem 1rem; border-radius: 12px; background: var(--card); border: 1px solid var(--card-line); }
+        .why-benefit-icon { width: 30px; height: 34px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: rgba(54,245,160,0.1); clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+        .why-benefit-icon svg { width: 15px; height: 15px; stroke: var(--eco); fill: none; stroke-width: 2; }
+        .why-benefit span { font-size: 0.84rem; }
+        .success-card { position: relative; padding: clamp(2rem,4vw,2.8rem); border-radius: 22px; background: linear-gradient(160deg, rgba(255,207,92,0.08), rgba(47,107,255,0.05)); border: 1px solid rgba(255,207,92,0.25); overflow: hidden; }
+        .success-card .hb { display: inline-block; padding: 0.4rem 0.9rem; border-radius: 100px; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); background: rgba(255,207,92,0.12); margin-bottom: 1.2rem; }
+        .success-card .qt { font-family: 'Space Grotesk'; font-size: clamp(1.2rem, 2.4vw, 1.6rem); line-height: 1.4; margin-bottom: 1rem; }
+        .success-card .co { color: var(--muted); font-size: 0.9rem; }
+        @media (max-width: 900px) { .why-grid { grid-template-columns: 1fr; } .why-benefits { grid-template-columns: 1fr 1fr; } }
+
+        /* Modules honeycomb */
+        #modules { overflow: hidden; }
+        .hive-grid { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .hive-row { display: flex; gap: 14px; }
+        .hive-row.offset { margin-top: -42px; }
+        .mod-hex { position: relative; width: 150px; height: 173px; cursor: pointer; will-change: transform; }
+        .mod-inner { width: 100%; height: 100%; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background: linear-gradient(150deg, rgba(91,140,255,0.32), rgba(12,24,56,0.95)); border: 1px solid transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1rem 0.6rem; transition: transform 0.35s var(--ease), background 0.35s; }
+        .mod-hex:hover .mod-inner { transform: scale(1.07); background: linear-gradient(150deg, var(--blue), var(--cyan)); }
+        .mod-hex.core .mod-inner { background: linear-gradient(150deg, rgba(54,245,160,0.4), rgba(12,24,56,0.95)); }
+        .mod-hex.core:hover .mod-inner { background: var(--grad-eco); }
+        .mod-hex.free .mod-inner { background: linear-gradient(150deg, rgba(255,207,92,0.4), rgba(12,24,56,0.95)); }
+        .mod-hex.free:hover .mod-inner { background: var(--grad-honey); }
+        .mod-hex.coming-soon .mod-inner { background: rgba(255,255,255,0.03); border: 1.5px dashed rgba(255,255,255,0.18); }
+        .mod-ic { width: 30px; height: 30px; margin-bottom: 0.4rem; }
+        .mod-ic svg { width: 100%; height: 100%; stroke: #fff; fill: none; stroke-width: 1.6; }
+        .mod-sub { font-size: 0.66rem; color: rgba(255,255,255,0.72); text-transform: uppercase; letter-spacing: 0.04em; }
+        .mod-title { font-family: 'Space Grotesk'; font-size: 0.86rem; font-weight: 600; color: #fff; margin-top: 0.15rem; }
+        .mod-badge { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); font-size: 0.58rem; font-weight: 600; padding: 0.12rem 0.5rem; border-radius: 5px; z-index: 2; white-space: nowrap; }
+        .badge-core { background: var(--eco); color: #022016; }
+        .badge-free { background: var(--gold); color: #2a1d00; }
+        .badge-popular { background: #fff; color: #02060f; }
+        .badge-soon { background: rgba(255,255,255,0.15); color: var(--muted); }
+        @media (max-width: 760px) {
+            .mod-hex { width: 104px; height: 120px; }
+            .hive-row { gap: 8px; }
+            .hive-row.offset { margin-top: -30px; }
+            .mod-title { font-size: 0.68rem; } .mod-sub { font-size: 0.54rem; }
+            .mod-ic { width: 22px; height: 22px; }
+        }
+
+        /* Analytics */
+        #analytics { background: linear-gradient(180deg, transparent, rgba(47,107,255,0.04), transparent); }
+        .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+        @media (max-width: 900px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+        .stat-card { padding: 1.6rem; border-radius: 16px; background: var(--card); border: 1px solid var(--card-line); text-align: center; transition: transform 0.4s var(--ease), border-color 0.4s; will-change: transform; }
+        .stat-card:hover { transform: translateY(-5px); border-color: rgba(91,140,255,0.45); }
+        .stat-val { font-family: 'Space Grotesk'; font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 700; background: var(--grad-blue); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
+        .stat-lab { font-size: 0.88rem; margin-top: 0.5rem; }
+        .stat-chg { font-size: 0.72rem; color: var(--muted-dim); margin-top: 0.2rem; }
+        .analytics-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-top: 1.4rem; }
+        @media (max-width: 900px) { .analytics-row { grid-template-columns: 1fr; } }
+        .panel { padding: 2rem; border-radius: 20px; background: var(--card); border: 1px solid var(--card-line); }
+        .panel h4 { font-size: 1.1rem; margin-bottom: 1.4rem; }
+        .pie-row { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+        .pie { width: 150px; height: 150px; border-radius: 50%; flex-shrink: 0; background: conic-gradient(#5b8cff 0% 36.4%, #3fe0ff 36.4% 54.6%, #36f5a0 54.6% 72.8%, #ffcf5c 72.8% 91%, #ff9f45 91% 100%); position: relative; }
+        .pie::after { content: ''; position: absolute; inset: 28%; border-radius: 50%; background: var(--bg-2); }
+        .legend { display: grid; gap: 0.5rem; flex: 1; min-width: 160px; }
+        .legend-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; }
+        .legend-item .dot { width: 11px; height: 11px; border-radius: 3px; }
+        .legend-item .pct { margin-left: auto; color: var(--muted); font-family: 'Space Grotesk'; }
+        .impact-items { display: grid; gap: 1rem; }
+        .impact-item { display: flex; align-items: center; gap: 1rem; padding: 1rem; border-radius: 14px; background: rgba(54,245,160,0.05); border: 1px solid rgba(54,245,160,0.18); }
+        .impact-ic { width: 42px; height: 47px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: rgba(54,245,160,0.12); clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+        .impact-ic svg { width: 20px; height: 20px; stroke: var(--eco); fill: none; }
+        .impact-item .v { font-family: 'Space Grotesk'; font-size: 1.5rem; font-weight: 700; color: var(--eco); display: block; line-height: 1; }
+        .impact-item .l { font-size: 0.8rem; color: var(--muted); }
+
+        /* Payments */
+        .pay-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+        @media (max-width: 900px) { .pay-grid { grid-template-columns: 1fr; } }
+        .pay-info h3 { font-size: clamp(1.7rem, 3.6vw, 2.6rem); margin-bottom: 1rem; }
+        .pay-info h3 span { background: var(--grad-eco); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .pay-info p { color: var(--muted); margin-bottom: 1.6rem; max-width: 52ch; }
+        .pay-feats { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+        .pay-feat b { font-family: 'Space Grotesk'; font-size: 1.7rem; display: block; background: var(--grad-blue); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .pay-feat span { font-size: 0.78rem; color: var(--muted-dim); }
+        .pay-providers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; }
+        .pay-prov { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; padding: 1.3rem 0.8rem; border-radius: 14px; background: var(--card); border: 1px solid var(--card-line); text-align: center; transition: transform 0.35s var(--ease), border-color 0.35s; }
+        .pay-prov:hover { transform: translateY(-4px); border-color: rgba(91,140,255,0.45); }
+        .pay-prov svg { width: 30px; height: 30px; }
+        .pay-prov span { font-size: 0.78rem; color: var(--muted); }
+
+        /* WhatsApp */
+        .wa-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+        @media (max-width: 900px) { .wa-grid { grid-template-columns: 1fr; } .phone { margin: 0 auto; } }
+        .phone { width: 290px; max-width: 100%; border-radius: 36px; padding: 12px; background: linear-gradient(150deg, #1a2342, #0a1024); border: 1px solid var(--card-line); box-shadow: 0 40px 90px rgba(0,0,0,0.5); }
+        .phone-screen { background: #0b141a; border-radius: 26px; overflow: hidden; height: 480px; display: flex; flex-direction: column; }
+        .phone-top { display: flex; align-items: center; gap: 0.7rem; padding: 1rem; background: #1f2c34; }
+        .phone-av { width: 38px; height: 38px; border-radius: 50%; background: var(--grad-eco); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk'; font-weight: 700; font-size: 0.8rem; color: #022016; }
+        .phone-name { font-size: 0.86rem; font-weight: 600; }
+        .phone-status { font-size: 0.7rem; color: var(--eco); }
+        .phone-msgs { flex: 1; padding: 1rem; display: flex; flex-direction: column; gap: 0.7rem; overflow: hidden; background: linear-gradient(rgba(11,20,26,0.9), rgba(11,20,26,0.9)); }
+        .bubble { max-width: 82%; padding: 0.6rem 0.8rem; border-radius: 12px; font-size: 0.72rem; line-height: 1.4; position: relative; }
+        .bubble.in { background: #1f2c34; align-self: flex-start; border-top-left-radius: 3px; }
+        .bubble.out { background: #056162; align-self: flex-end; border-top-right-radius: 3px; }
+        .bubble .t { display: block; font-size: 0.58rem; color: rgba(255,255,255,0.5); text-align: right; margin-top: 0.2rem; }
+        .wa-feats { display: grid; gap: 1rem; }
+        .wa-feat { display: flex; gap: 1rem; padding: 1.1rem; border-radius: 14px; background: var(--card); border: 1px solid var(--card-line); }
+        .wa-feat-ic { width: 38px; height: 43px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: rgba(54,245,160,0.1); clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+        .wa-feat-ic svg { width: 18px; height: 18px; stroke: var(--eco); fill: none; stroke-width: 1.8; }
+        .wa-feat h4 { font-size: 0.98rem; margin-bottom: 0.2rem; }
+        .wa-feat p { font-size: 0.82rem; color: var(--muted); }
+        .wa-cta { margin-top: 1rem; }
+        .wa-cta a { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.9rem 1.5rem; border-radius: 12px; background: var(--grad-eco); color: #022016; font-family: 'Space Grotesk'; font-weight: 600; font-size: 0.9rem; transition: transform 0.35s var(--ease); }
+        .wa-cta a:hover { transform: translateY(-3px); }
+        .wa-cta svg { width: 18px; height: 18px; fill: #022016; }
+
+        /* Compliance */
+        .comp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+        @media (max-width: 760px) { .comp-grid { grid-template-columns: repeat(2, 1fr); } }
+        .comp-card { padding: 2rem 1.4rem; border-radius: 18px; text-align: center; background: var(--card); border: 1px solid var(--card-line); transition: transform 0.4s var(--ease), border-color 0.4s; will-change: transform; }
+        .comp-card:hover { transform: translateY(-6px); border-color: rgba(91,140,255,0.45); }
+        .comp-ic { width: 64px; height: 64px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; }
+        .comp-ic svg { width: 40px; height: 40px; stroke: var(--cyan); fill: none; stroke-width: 1.6; }
+        .comp-ic img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .comp-card h4 { font-size: 1rem; margin-bottom: 0.3rem; }
+        .comp-card p { font-size: 0.8rem; color: var(--muted); }
+
+        /* Industries */
+        .ind-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+        .ind-hex { width: 150px; height: 130px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; text-align: center; padding: 1rem; background: var(--card); border: 1px solid var(--card-line); clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); transition: background 0.35s, transform 0.35s var(--ease); }
+        .ind-hex:hover { background: rgba(91,140,255,0.14); transform: translateY(-5px); }
+        .ind-hex svg { width: 26px; height: 26px; stroke: var(--cyan); fill: none; stroke-width: 1.7; }
+        .ind-hex span { font-size: 0.82rem; font-weight: 500; }
+
+        /* Clients */
+        .cl-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; }
+        .cl-grid img { height: 60px; max-width: 150px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.6; transition: opacity 0.4s, filter 0.4s; }
+        .cl-grid img:hover { opacity: 1; filter: none; }
+        .cl-more { text-align: center; color: var(--muted-dim); margin-top: 1.6rem; font-style: italic; }
+
+        /* CTA */
+        .cta-card { position: relative; border-radius: 28px; padding: clamp(2.6rem, 6vw, 5rem); text-align: center; overflow: hidden; background: linear-gradient(160deg, #0a1733, #0a1024); border: 1px solid rgba(91,140,255,0.25); }
+        .cta-card::before { content: ''; position: absolute; inset: 0; opacity: 0.4; pointer-events: none; background-size: 56px 100px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 0L56 16v32L28 64 0 48V16z' fill='none' stroke='%235b8cff' stroke-width='1'/%3E%3C/svg%3E"); }
+        .cta-card > * { position: relative; }
+        .cta-card h2 { font-size: clamp(2rem, 5vw, 3.4rem); margin-bottom: 1rem; }
+        .cta-card p { color: var(--muted); max-width: 52ch; margin: 0 auto 2.2rem; }
+        .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
         /* Footer */
-        footer {
-            padding: 3rem 5%;
-            border-top: 1px solid var(--gray-200);
-            text-align: center;
-            background: var(--white);
+        footer { position: relative; z-index: 1; padding: 3rem 0 2.5rem; border-top: 1px solid var(--card-line); }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+        .footer-logo { height: 28px; opacity: 0.8; }
+        .footer-text { font-size: 0.82rem; color: var(--muted-dim); }
+        .footer-text em { color: var(--cyan); font-style: normal; }
+        .footer-links { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+        .footer-links a { font-size: 0.84rem; color: var(--muted); transition: color 0.3s; }
+        .footer-links a:hover { color: var(--text); }
+
+        .scroll-to-top { position: fixed; bottom: 1.8rem; right: 1.8rem; width: 48px; height: 53px; background: var(--grad-blue); border: none; clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 990; opacity: 0; visibility: hidden; transform: translateY(16px); transition: all 0.35s var(--ease); }
+        .scroll-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+        .scroll-to-top svg { width: 22px; height: 22px; fill: #02060f; }
+
+        /* Mobile nav */
+        @media (max-width: 880px) {
+            .nav-links { position: fixed; inset: 0; flex-direction: column; justify-content: center; gap: 2rem; background: rgba(5,8,19,0.97); backdrop-filter: blur(20px); transform: translateX(100%); transition: transform 0.5s var(--ease); }
+            .nav-links.open { transform: translateX(0); }
+            .nav-links a.link { font-size: 1.4rem; color: var(--text); }
+            .nav-links .btn { display: none; }
+            .menu-toggle { display: flex; }
+            .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+            .menu-toggle.open span:nth-child(2) { opacity: 0; }
+            .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
         }
 
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            height: 30px;
-            opacity: 0.7;
-        }
-
-        .footer-text {
-            color: var(--gray-500);
-            font-size: 0.85rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .footer-links a {
-            color: var(--gray-500);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Scroll to Top */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 55px;
-            background: var(--primary);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            border: none;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .scroll-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-to-top:hover {
-            background: var(--primary-light);
-            transform: translateY(-3px);
-        }
-
-        .scroll-to-top svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--white);
-        }
-
-        /* Clients Section */
-        .clients-section {
-            background: transparent;
-        }
-
-        .clients-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .client-logo {
-            height: 60px;
-            width: auto;
-            max-width: 150px;
-            object-fit: contain;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: all 0.3s ease;
-        }
-
-        .client-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-
-        .clients-more {
-            text-align: center;
-            color: var(--gray-500);
-            font-style: italic;
-            margin-top: 1.5rem;
-            font-size: 1rem;
-        }
-
-        /* Animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .vision-mission {
-                grid-template-columns: 1fr;
-            }
-
-            .why-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .why-grid > .salesforce-highlight {
-                min-height: auto;
-                padding: 2rem;
-            }
-
-            .why-benefits {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .analytics-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .analytics-row {
-                grid-template-columns: 1fr;
-            }
-
-            .diversity-pie-container {
-                justify-content: center;
-            }
-
-            .payment-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .whatsapp-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .whatsapp-phone {
-                order: -1;
-            }
-
-            .phone-mockup {
-                width: 260px;
-            }
-
-            .module-hex {
-                width: 150px;
-                height: 165px;
-            }
-
-            .module-hex-title {
-                font-size: 0.8rem;
-            }
-
-            .module-hex-subtitle {
-                font-size: 0.6rem;
-            }
-
-            .modules-honeycomb-row {
-                margin-top: -40px;
-                gap: 6px;
-            }
-
-            .modules-honeycomb-row:first-child {
-                margin-top: 0;
-            }
-
-            .modules-honeycomb-row.offset {
-                transform: translateX(78px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-            }
-
-            .why-benefits {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .why-grid > .salesforce-highlight .highlight-text {
-                font-size: 1.15rem;
-            }
-
-            .diversity-pie-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .diversity-legend {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.75rem;
-            }
-
-            .diversity-legend-item .percent {
-                margin-left: 0.5rem;
-            }
-
-            .analytics-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
-            }
-
-            .analytics-value {
-                font-size: 1.75rem;
-            }
-
-            .industry-hex {
-                width: 110px;
-                height: 121px;
-            }
-
-            .cta-content h2 {
-                font-size: 1.75rem;
-            }
-
-            .payment-features {
-                flex-direction: column;
-            }
-
-            .payment-providers {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .phone-mockup {
-                width: 240px;
-            }
-
-            .phone-messages {
-                min-height: 280px;
-            }
-
-            .chat-bubble {
-                font-size: 0.75rem;
-            }
-
-            .whatsapp-feature-icon {
-                width: 50px;
-                height: 55px;
-            }
-
-            .whatsapp-feature-icon svg {
-                width: 22px;
-                height: 22px;
-            }
-
-            .whatsapp-feature-content h4 {
-                font-size: 1rem;
-            }
-
-            .whatsapp-feature-content p {
-                font-size: 0.85rem;
-            }
-
-            .module-hex {
-                width: 110px;
-                height: 121px;
-            }
-
-            .module-hex-icon svg {
-                width: 22px;
-                height: 22px;
-            }
-
-            .modules-honeycomb-row {
-                margin-top: -30px;
-                gap: 5px;
-            }
-
-            .modules-honeycomb-row:first-child {
-                margin-top: 0;
-            }
-
-            .modules-honeycomb-row.offset {
-                transform: translateX(58px);
-            }
-
-            .module-hex-badge {
-                font-size: 0.5rem;
-                padding: 0.15rem 0.4rem;
-                top: 1.25rem;
-            }
-
-            .module-hex-subtitle {
-                font-size: 0.5rem;
-            }
-
-            .module-hex-title {
-                font-size: 0.7rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            section {
-                padding: 60px 4%;
-            }
-
-            .unlimited-badge {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .compliance-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .analytics-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .payment-providers {
-                grid-template-columns: 1fr;
-            }
-
-            .modules-honeycomb {
-                gap: 0.75rem;
-            }
-
-            .modules-honeycomb-row {
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                margin-top: 0;
-                justify-content: center;
-            }
-
-            .modules-honeycomb-row.offset {
-                transform: none;
-            }
-
-            .module-hex {
-                width: 100px;
-                height: 110px;
-            }
-
-            .module-hex-title {
-                font-size: 0.65rem;
-            }
-
-            .module-hex-subtitle {
-                font-size: 0.45rem;
-            }
-
-            .module-hex-badge {
-                font-size: 0.4rem;
-                top: 1rem;
-                padding: 0.1rem 0.3rem;
-            }
-
-            .module-hex-icon svg {
-                width: 20px;
-                height: 20px;
-            }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+            html { scroll-behavior: auto; }
+            .marquee-track { animation: none !important; }
         }
     </style>
 </head>
 
 <body>
-    <!-- Animated Hexagon Background -->
-    <div class="hex-bg" id="hexBg"></div>
+    <div class="bg-field" aria-hidden="true"><div class="bg-hex" id="bgHex"></div></div>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="pre-hex">
+            <svg viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b8cff"/><stop offset="1" stop-color="#ffcf5c"/></linearGradient>
+                    <clipPath id="hexClip"><polygon points="50,2 96,28 96,86 50,113 4,86 4,28"/></clipPath>
+                </defs>
+                <polygon points="50,2 96,28 96,86 50,113 4,86 4,28" fill="none" stroke="#1f2c52" stroke-width="3"/>
+                <g clip-path="url(#hexClip)"><rect class="fill" id="preFill" x="0" y="0" width="100" height="115" fill="url(#pg)"/></g>
+            </svg>
+        </div>
+        <div class="pre-count">EXRP <b id="preNum">0</b>%</div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="nav">
-        <a href="../">
-            <img src="../logo.webp" alt="Exera Ltd" class="nav-logo">
-        </a>
-        <div class="nav-links">
-            <a href="../">Home</a>
-            <a href="#features">Features</a>
-            <a href="#modules">Modules</a>
-            <a href="#analytics">Analytics</a>
-            <a href="mailto:info@exera.mu?subject=EXRP Demo Request" class="nav-cta">Get Demo</a>
-        </div>
+    <nav id="nav">
+        <a href="../" aria-label="Exera home"><img src="../logo.webp" alt="Exera Ltd" class="nav-logo" height="32"></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../" class="link">Home</a></li>
+            <li><a href="#features" class="link">Features</a></li>
+            <li><a href="#modules" class="link">Modules</a></li>
+            <li><a href="#analytics" class="link">Analytics</a></li>
+            <li><a href="mailto:info@exera.mu?subject=EXRP Demo Request" class="btn btn-primary link">Get Demo</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle" role="button" tabindex="0" aria-label="Toggle menu"><span></span><span></span><span></span></div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content animate-on-scroll">
-            <div class="hero-badge">
-                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-                Made in Moris Certified | Sustainability Champions
+    <main>
+        <!-- HERO -->
+        <section id="hero">
+            <div class="hero-hive" id="heroHive" aria-hidden="true"></div>
+            <div class="hero-inner">
+                <div class="hero-badge">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                    Made in Moris &middot; Sustainability Champions
+                </div>
+                <p class="hero-tagline">Operate Your Business In The Cloud</p>
+                <h1 class="hero-title">
+                    <span class="line"><span>Meet <em>EXRP</em></span></span>
+                    <span class="line"><span>Your Hive of</span></span>
+                    <span class="line"><span class="grad-text">Productivity.</span></span>
+                </h1>
+                <p class="hero-desc">
+                    EXRP <em>(pronounced X-R-P)</em> is a cloud-based ERP designed by Exera to help startups and SMEs
+                    operate efficiently and scale rapidly &mdash; hosted on green servers, with no high costs,
+                    hidden charges, or complex configurations.
+                </p>
+                <div class="hero-cta">
+                    <a href="mailto:info@exrp.mu?subject=EXRP Demo Request" class="btn btn-primary link">Request Free Demo
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                    <a href="#modules" class="btn btn-ghost link">Explore Modules</a>
+                </div>
+                <div class="hero-unlimited">
+                    <svg viewBox="0 0 24 24"><path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z"/></svg>
+                    <span><strong>Unlimited</strong> Invoices, Products, Customers &amp; Transactions</span>
+                </div>
             </div>
-            <p class="hero-tagline">Operate Your Business In The Cloud</p>
-            <h1 class="hero-title">Meet <span>EXRP</span><br>Your Hive of Productivity</h1>
-            <p class="hero-description">
-                EXRP <em>(pronounced X-R-P)</em> is a cloud-based ERP solution designed by Exera to help startups and SMEs
-                operate efficiently and scale rapidly. Streamline your business operations without high costs,
-                hidden charges, or complex configurations.
-            </p>
-            <div class="hero-cta">
-                <a href="mailto:info@exrp.mu?subject=EXRP Demo Request" class="btn-primary">Request Free Demo</a>
-                <a href="#modules" class="btn-secondary">Explore Modules</a>
-            </div>
-            <div class="unlimited-badge">
-                <svg viewBox="0 0 24 24"><path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z"/></svg>
-                <span><strong>Unlimited</strong> Invoices, Products, Customers & Transactions</span>
-            </div>
-        </div>
-    </section>
+            <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><div class="bar"></div></div>
+        </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Why EXRP</span>
-                <h2 class="section-title">Built Different, Built Better</h2>
-                <p class="section-subtitle">Everything you need to run your business, nothing you don't</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    </div>
-                    <h3>Cloud-Based ERP</h3>
-                    <p>Access your business data securely from anywhere, anytime. No installations, no servers to maintain — just pure productivity.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                    </div>
-                    <h3>Fixed Pricing</h3>
-                    <p>Straightforward pricing without hidden fees. Know exactly what you'll pay, every month, every year. No surprises.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-                    </div>
-                    <h3>Fully Customizable</h3>
-                    <p>Every business is unique. We offer customizations to adapt EXRP to your specific workflows and requirements.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                    </div>
-                    <h3>Scalable</h3>
-                    <p>From startup to enterprise, EXRP grows with your business. Add users, modules, and capacity as you expand.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    </div>
-                    <h3>Easy Data Migration</h3>
-                    <p>Import your existing data easily with our CSV templates. We'll help you transition smoothly from any system.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <h3>Daily Backups</h3>
-                    <p>Your data is precious. We perform regular backups to ensure your business information is always safe and recoverable.</p>
-                </div>
+        <!-- MARQUEE -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span><em>Unlimited Everything</em><i></i></span><span><b>Fixed Pricing</b><i></i></span>
+                <span>Made in Moris<i></i></span><span><em>MRA Compliant</em><i></i></span>
+                <span><b>Green Hosted</b><i></i></span><span>Cloud-Based<i></i></span>
+                <span><em>Unlimited Everything</em><i></i></span><span><b>Fixed Pricing</b><i></i></span>
+                <span>Made in Moris<i></i></span><span><em>MRA Compliant</em><i></i></span>
+                <span><b>Green Hosted</b><i></i></span><span>Cloud-Based<i></i></span>
             </div>
         </div>
-    </section>
 
-    <!-- Vision Mission Section -->
-    <section class="vm-section">
-        <div class="container">
-            <div class="vision-mission">
-                <div class="vm-card vision animate-on-scroll">
-                    <div class="vm-icon">
-                        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                    </div>
-                    <h3>Our Vision</h3>
-                    <p>To revolutionize business operations in the cloud era by offering an ERP solution that adapts to various business needs, eliminates hidden costs, and provides predictable pricing — ultimately enabling all types of businesses to thrive in a digital environment.</p>
+        <!-- FEATURES -->
+        <section id="features">
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="eyebrow">Why EXRP</span>
+                    <h2 class="h-sec">Built different, <span class="grad-text">built better.</span></h2>
+                    <p class="sub">Everything you need to run your business, nothing you don't.</p>
                 </div>
-                <div class="vm-card mission animate-on-scroll">
-                    <div class="vm-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-                    </div>
-                    <h3>Our Mission</h3>
-                    <p>To provide businesses with a cloud-based ERP solution that operates transparently, flexibly, and cost-effectively, helping companies of all types manage their operations without unexpected expenses.</p>
+                <div class="grid-3">
+                    <article class="card" data-card data-tilt>
+                        <div class="card-ic"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                        <h3>Cloud-Based ERP</h3><p>Access your business data securely from anywhere, anytime. No installations, no servers to maintain &mdash; just pure productivity.</p>
+                    </article>
+                    <article class="card" data-card data-tilt>
+                        <div class="card-ic"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+                        <h3>Fixed Pricing</h3><p>Straightforward pricing without hidden fees. Know exactly what you'll pay, every month, every year. No surprises.</p>
+                    </article>
+                    <article class="card" data-card data-tilt>
+                        <div class="card-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-2.82 1.17V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9z"/></svg></div>
+                        <h3>Fully Customizable</h3><p>Every business is unique. We offer customizations to adapt EXRP to your specific workflows and requirements.</p>
+                    </article>
+                    <article class="card" data-card data-tilt>
+                        <div class="card-ic"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+                        <h3>Scalable</h3><p>From startup to enterprise, EXRP grows with your business. Add users, modules and capacity as you expand.</p>
+                    </article>
+                    <article class="card" data-card data-tilt>
+                        <div class="card-ic"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+                        <h3>Easy Data Migration</h3><p>Import your existing data easily with our CSV templates. We'll help you transition smoothly from any system.</p>
+                    </article>
+                    <article class="card" data-card data-tilt>
+                        <div class="card-ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <h3>Daily Backups</h3><p>Your data is precious. We perform regular backups to ensure your business information is always safe and recoverable.</p>
+                    </article>
                 </div>
-                <div class="vm-card values animate-on-scroll">
-                    <div class="vm-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+        </section>
+
+        <!-- VISION / MISSION / VALUES -->
+        <section>
+            <div class="wrap">
+                <div class="grid-3">
+                    <article class="card vm-card" data-card>
+                        <div class="card-ic"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                        <h3>Our Vision</h3><p>To revolutionize business operations in the cloud era with an ERP that adapts to various needs, eliminates hidden costs, and provides predictable pricing &mdash; enabling all businesses to thrive digitally.</p>
+                    </article>
+                    <article class="card vm-card" data-card>
+                        <div class="card-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
+                        <h3>Our Mission</h3><p>To give businesses a cloud-based ERP that operates transparently, flexibly and cost-effectively, helping companies of all types manage operations without unexpected expenses.</p>
+                    </article>
+                    <article class="card vm-card" data-card>
+                        <div class="card-ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+                        <h3>Our Values</h3>
+                        <div class="values-list">
+                            <span class="value-item">Transparency</span><span class="value-item">Flexibility</span><span class="value-item">Fairness</span>
+                            <span class="value-item">Efficiency</span><span class="value-item">Sustainability</span><span class="value-item">Adaptability</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY EXRP -->
+        <section>
+            <div class="wrap">
+                <div class="why-grid">
+                    <div class="why-content" data-reveal>
+                        <h3>Why choose <span>EXRP</span> over the big names?</h3>
+                        <p>While big shots like SAP, Oracle, Odoo, Salesforce or Microsoft Dynamics bring worldwide wisdom, EXRP brings a local flavour that's just right for Mauritian businesses.</p>
+                        <p>Running a small business is your gig, not a corporate giant's! Let us handle the nitty-gritty while you focus on blossoming and booming.</p>
+                        <div class="competitors-list">
+                            <span class="competitor-tag">SAP</span><span class="competitor-tag">Oracle</span><span class="competitor-tag">Odoo</span><span class="competitor-tag">Salesforce</span><span class="competitor-tag">Dynamics</span>
+                        </div>
+                        <div class="why-benefits">
+                            <div class="why-benefit"><div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span>Boost Productivity</span></div>
+                            <div class="why-benefit"><div class="why-benefit-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><span>Predictable Costs</span></div>
+                            <div class="why-benefit"><div class="why-benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg></div><span>Full Customization</span></div>
+                            <div class="why-benefit"><div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div><span>Regular Backups</span></div>
+                            <div class="why-benefit"><div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><span>Easy Migration</span></div>
+                            <div class="why-benefit"><div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><span>Local Support</span></div>
+                        </div>
                     </div>
-                    <h3>Our Values</h3>
-                    <div class="values-list">
-                        <span class="value-item">Transparency</span>
-                        <span class="value-item">Flexibility</span>
-                        <span class="value-item">Fairness</span>
-                        <span class="value-item">Efficiency</span>
-                        <span class="value-item">Sustainability</span>
-                        <span class="value-item">Adaptability</span>
+                    <div class="success-card" data-reveal data-tilt>
+                        <span class="hb">Success Story</span>
+                        <p class="qt">&ldquo;We replaced Salesforce with EXRP &mdash; better in every aspect, cheaper, and more flexible.&rdquo;</p>
+                        <p class="co">&mdash; Alfar Global (Subsidiary of Home Classics)</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Why EXRP Section -->
-    <section>
-        <div class="container">
-            <div class="why-grid">
-                <div class="why-content animate-on-scroll">
-                    <h3>Why Choose <span>EXRP</span> Over The Big Names?</h3>
-                    <p>While big shots like SAP, Oracle, Odoo, Salesforce, or Microsoft Dynamics bring worldwide wisdom, EXRP brings a local flavor that's just right for Mauritian businesses.</p>
-                    <p>Running a small business is your gig, not a corporate giant! Let us handle the nitty-gritty while you focus on blossoming and booming!</p>
-                    <div class="competitors-list">
-                        <span class="competitor-tag">vs SAP</span>
-                        <span class="competitor-tag">vs Oracle</span>
-                        <span class="competitor-tag">vs Odoo</span>
-                        <span class="competitor-tag">vs Salesforce</span>
-                        <span class="competitor-tag">vs Dynamics</span>
-                    </div>
-                    <div class="why-benefits">
-                        <div class="why-benefit">
-                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                            <span>Boost Productivity</span>
-                        </div>
-                        <div class="why-benefit">
-                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
-                            <span>Predictable Costs</span>
-                        </div>
-                        <div class="why-benefit">
-                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg></div>
-                            <span>Full Customization</span>
-                        </div>
-                        <div class="why-benefit">
-                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
-                            <span>Regular Backups</span>
-                        </div>
-                        <div class="why-benefit">
-                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-                            <span>Easy Data Migration</span>
-                        </div>
-                        <div class="why-benefit">
-                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                            <span>Local Support</span>
-                        </div>
-                    </div>
+        <!-- MODULES HONEYCOMB -->
+        <section id="modules">
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="eyebrow honey">Build Your Hive</span>
+                    <h2 class="h-sec">Choose your <span class="grad-honey-text">modules.</span></h2>
+                    <p class="sub">Select modules to craft a solution tailored to your business &mdash; each one a worker in your hive.</p>
                 </div>
-                <div class="salesforce-highlight animate-on-scroll">
-                    <span class="highlight-badge">Success Story</span>
-                    <p class="highlight-text">"We replaced Salesforce with EXRP — BETTER in every aspect, CHEAPER, and more FLEXIBLE."</p>
-                    <p class="highlight-company">— Alfar Global (Subsidiary of Home Classics)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modules Section -->
-    <section id="modules" class="modules-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Build Your Hive</span>
-                <h2 class="section-title">Choose Your Modules</h2>
-                <p class="section-subtitle">Select modules to craft a solution tailored to your business needs</p>
-            </div>
-
-            <div class="modules-honeycomb">
-                <!-- Row 1 - Core Modules -->
-                <div class="modules-honeycomb-row">
-                    <div class="module-hex core animate-on-scroll">
-                        <span class="module-hex-badge core-badge">Core</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                        <span class="module-hex-subtitle">Customer Management</span>
-                        <span class="module-hex-title">Worker Bee</span>
+                <div class="hive-grid" data-reveal>
+                    <div class="hive-row">
+                        <div class="mod-hex core" data-tilt><span class="mod-badge badge-core">Core</span><div class="mod-inner"><div class="mod-ic"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><span class="mod-sub">Customers</span><span class="mod-title">Worker Bee</span></div></div>
+                        <div class="mod-hex free" data-tilt><span class="mod-badge badge-free">Rs 1 Only!</span><div class="mod-inner"><div class="mod-ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><span class="mod-sub">Invoicing</span><span class="mod-title">Honey Maker</span></div></div>
+                        <div class="mod-hex popular" data-tilt><span class="mod-badge badge-popular">Popular</span><div class="mod-inner"><div class="mod-ic"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div><span class="mod-sub">Inventory</span><span class="mod-title">Hive Keeper</span></div></div>
+                        <div class="mod-hex popular" data-tilt><span class="mod-badge badge-popular">Popular</span><div class="mod-inner"><div class="mod-ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div><span class="mod-sub">Orders</span><span class="mod-title">Queen Bee</span></div></div>
                     </div>
-                    <div class="module-hex free animate-on-scroll">
-                        <span class="module-hex-badge free-badge">Rs 1 Only!</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-                        <span class="module-hex-subtitle">Invoicing</span>
-                        <span class="module-hex-title">Honey Maker</span>
+                    <div class="hive-row offset">
+                        <div class="mod-hex popular" data-tilt><span class="mod-badge badge-popular">Popular</span><div class="mod-inner"><div class="mod-ic"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><span class="mod-sub">Healthcare</span><span class="mod-title">Consult Bee</span></div></div>
+                        <div class="mod-hex" data-tilt><div class="mod-inner"><div class="mod-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><span class="mod-sub">Appointments</span><span class="mod-title">Busy Bee</span></div></div>
+                        <div class="mod-hex" data-tilt><div class="mod-inner"><div class="mod-ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><span class="mod-sub">Point of Sale</span><span class="mod-title">Collector Bee</span></div></div>
+                        <div class="mod-hex" data-tilt><div class="mod-inner"><div class="mod-ic"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></div><span class="mod-sub">Analytics</span><span class="mod-title">Wise Bee</span></div></div>
                     </div>
-                    <div class="module-hex popular animate-on-scroll">
-                        <span class="module-hex-badge popular-badge">Popular</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
-                        <span class="module-hex-subtitle">Inventory</span>
-                        <span class="module-hex-title">Hive Keeper</span>
+                    <div class="hive-row">
+                        <div class="mod-hex" data-tilt><div class="mod-inner"><div class="mod-ic"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><span class="mod-sub">Campaigns</span><span class="mod-title">Scout Bee</span></div></div>
+                        <div class="mod-hex" data-tilt><div class="mod-inner"><div class="mod-ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div><span class="mod-sub">Bank Recon</span><span class="mod-title">Banker Bee</span></div></div>
+                        <div class="mod-hex" data-tilt><div class="mod-inner"><div class="mod-ic"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><span class="mod-sub">Reporting</span><span class="mod-title">Educator Bee</span></div></div>
+                        <div class="mod-hex coming-soon" data-tilt><span class="mod-badge badge-soon">Soon</span><div class="mod-inner"><div class="mod-ic"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10H12V2z"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><span class="mod-sub">Automation</span><span class="mod-title">AI Insights</span></div></div>
                     </div>
-                    <div class="module-hex popular animate-on-scroll">
-                        <span class="module-hex-badge popular-badge">Popular</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div>
-                        <span class="module-hex-subtitle">Orders</span>
-                        <span class="module-hex-title">Queen Bee</span>
-                    </div>
-                </div>
-
-                <!-- Row 2 - Offset -->
-                <div class="modules-honeycomb-row offset">
-                    <div class="module-hex popular animate-on-scroll">
-                        <span class="module-hex-badge popular-badge">Popular</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-                        <span class="module-hex-subtitle">Healthcare</span>
-                        <span class="module-hex-title">Consult Bee</span>
-                    </div>
-                    <div class="module-hex animate-on-scroll">
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-                        <span class="module-hex-subtitle">Appointments</span>
-                        <span class="module-hex-title">Busy Bee</span>
-                    </div>
-                    <div class="module-hex animate-on-scroll">
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-                        <span class="module-hex-subtitle">Point of Sale</span>
-                        <span class="module-hex-title">Collector Bee</span>
-                    </div>
-                    <div class="module-hex animate-on-scroll">
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></div>
-                        <span class="module-hex-subtitle">Analytics</span>
-                        <span class="module-hex-title">Wise Bee</span>
-                    </div>
-                </div>
-
-                <!-- Row 3 - No offset -->
-                <div class="modules-honeycomb-row">
-                    <div class="module-hex animate-on-scroll">
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-                        <span class="module-hex-subtitle">Campaigns</span>
-                        <span class="module-hex-title">Scout Bee</span>
-                    </div>
-                    <div class="module-hex animate-on-scroll">
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-                        <span class="module-hex-subtitle">Bank Reconciliation</span>
-                        <span class="module-hex-title">Banker Bee</span>
-                    </div>
-                    <div class="module-hex animate-on-scroll">
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
-                        <span class="module-hex-subtitle">Reporting</span>
-                        <span class="module-hex-title">Educator Bee</span>
-                    </div>
-                    <div class="module-hex coming-soon animate-on-scroll">
-                        <span class="module-hex-badge soon-badge">Soon</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10H12V2z"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-                        <span class="module-hex-subtitle">Smart Automation</span>
-                        <span class="module-hex-title">AI Insights</span>
-                    </div>
-                </div>
-
-                <!-- Row 4 - Coming Soon -->
-                <div class="modules-honeycomb-row offset">
-                    <div class="module-hex coming-soon animate-on-scroll">
-                        <span class="module-hex-badge soon-badge">Soon</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-                        <span class="module-hex-subtitle">On The Go</span>
-                        <span class="module-hex-title">Mobile App</span>
-                    </div>
-                    <div class="module-hex coming-soon animate-on-scroll">
-                        <span class="module-hex-badge soon-badge">Soon</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-                        <span class="module-hex-subtitle">Staff Management</span>
-                        <span class="module-hex-title">Payroll</span>
+                    <div class="hive-row offset">
+                        <div class="mod-hex coming-soon" data-tilt><span class="mod-badge badge-soon">Soon</span><div class="mod-inner"><div class="mod-ic"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><span class="mod-sub">On The Go</span><span class="mod-title">Mobile App</span></div></div>
+                        <div class="mod-hex coming-soon" data-tilt><span class="mod-badge badge-soon">Soon</span><div class="mod-inner"><div class="mod-ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><span class="mod-sub">Staff</span><span class="mod-title">Payroll</span></div></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Analytics Dashboard Section -->
-    <section id="analytics" class="analytics-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Numbers Don't Lie</span>
-                <h2 class="section-title">Live Analytics Dashboard</h2>
-                <p class="section-subtitle">Real metrics from all EXRP deployments</p>
-            </div>
-
-            <div class="analytics-grid">
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">99.9%</div>
-                    <div class="analytics-label">Uptime</div>
-                    <div class="analytics-change">Guaranteed SLA</div>
+        <!-- ANALYTICS -->
+        <section id="analytics">
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="eyebrow">Numbers Don't Lie</span>
+                    <h2 class="h-sec">Live analytics <span class="grad-text">dashboard.</span></h2>
+                    <p class="sub">Real metrics from across all EXRP deployments.</p>
                 </div>
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">4.8k+</div>
-                    <div class="analytics-label">EXRP Users</div>
-                    <div class="analytics-change">Growing Daily</div>
+                <div class="stat-grid">
+                    <div class="stat-card" data-card><div class="stat-val">99.9%</div><div class="stat-lab">Uptime</div><div class="stat-chg">Guaranteed SLA</div></div>
+                    <div class="stat-card" data-card><div class="stat-val">4.8k+</div><div class="stat-lab">EXRP Users</div><div class="stat-chg">Growing Daily</div></div>
+                    <div class="stat-card" data-card><div class="stat-val">1.6M+</div><div class="stat-lab">Total Transactions</div><div class="stat-chg">And Counting</div></div>
+                    <div class="stat-card" data-card><div class="stat-val">11.5k+</div><div class="stat-lab">Invoices Issued</div><div class="stat-chg">Across All Instances</div></div>
+                    <div class="stat-card" data-card><div class="stat-val">14.4k+</div><div class="stat-lab">Hours On EXRP</div><div class="stat-chg">Active Usage</div></div>
+                    <div class="stat-card" data-card><div class="stat-val">2</div><div class="stat-lab">Incidents Resolved</div><div class="stat-chg">0 Major / 2 Minor</div></div>
+                    <div class="stat-card" data-card><div class="stat-val">6</div><div class="stat-lab">Instances Deployed</div><div class="stat-chg">+100% Growth</div></div>
+                    <div class="stat-card" data-card><div class="stat-val">Rs 2.98M</div><div class="stat-lab">Dec 2024 Transactions</div><div class="stat-chg">Peak Month</div></div>
                 </div>
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">1.6M+</div>
-                    <div class="analytics-label">Total Transactions</div>
-                    <div class="analytics-change">And Counting</div>
-                </div>
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">11.5k+</div>
-                    <div class="analytics-label">Invoices Issued</div>
-                    <div class="analytics-change">Across All Instances</div>
-                </div>
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">14.4k+</div>
-                    <div class="analytics-label">Hours On EXRP</div>
-                    <div class="analytics-change">Active Usage</div>
-                </div>
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">2</div>
-                    <div class="analytics-label">Incidents Resolved</div>
-                    <div class="analytics-change">0 Major / 2 Minor</div>
-                </div>
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">6</div>
-                    <div class="analytics-label">Instances Deployed</div>
-                    <div class="analytics-change">+100% Growth</div>
-                </div>
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">Rs 2.98M</div>
-                    <div class="analytics-label">Dec 2024 Transactions</div>
-                    <div class="analytics-change">Peak Month</div>
-                </div>
-            </div>
-
-            <div class="analytics-row">
-                <div class="diversity-card animate-on-scroll">
-                    <h4>Business Diversity</h4>
-                    <div class="diversity-pie-container">
-                        <div class="diversity-pie"></div>
-                        <div class="diversity-legend">
-                            <div class="diversity-legend-item">
-                                <span class="dot" style="background: #097992"></span>
-                                <span>Cosmetics</span>
-                                <span class="percent">36.4%</span>
-                            </div>
-                            <div class="diversity-legend-item">
-                                <span class="dot" style="background: #0a9396"></span>
-                                <span>Foods</span>
-                                <span class="percent">18.2%</span>
-                            </div>
-                            <div class="diversity-legend-item">
-                                <span class="dot" style="background: #94d2bd"></span>
-                                <span>Clothing</span>
-                                <span class="percent">18.2%</span>
-                            </div>
-                            <div class="diversity-legend-item">
-                                <span class="dot" style="background: #e9d8a6"></span>
-                                <span>Fishing</span>
-                                <span class="percent">18.2%</span>
-                            </div>
-                            <div class="diversity-legend-item">
-                                <span class="dot" style="background: #ee9b00"></span>
-                                <span>Service</span>
-                                <span class="percent">9.1%</span>
+                <div class="analytics-row">
+                    <div class="panel" data-reveal>
+                        <h4>Business Diversity</h4>
+                        <div class="pie-row">
+                            <div class="pie" aria-hidden="true"></div>
+                            <div class="legend">
+                                <div class="legend-item"><span class="dot" style="background:#5b8cff"></span> Cosmetics <span class="pct">36.4%</span></div>
+                                <div class="legend-item"><span class="dot" style="background:#3fe0ff"></span> Foods <span class="pct">18.2%</span></div>
+                                <div class="legend-item"><span class="dot" style="background:#36f5a0"></span> Clothing <span class="pct">18.2%</span></div>
+                                <div class="legend-item"><span class="dot" style="background:#ffcf5c"></span> Fishing <span class="pct">18.2%</span></div>
+                                <div class="legend-item"><span class="dot" style="background:#ff9f45"></span> Service <span class="pct">9.1%</span></div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="impact-card animate-on-scroll">
-                    <h4>Environmental Impact</h4>
-                    <div class="impact-items">
-                        <div class="impact-item">
-                            <div class="impact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-7m0 0c-4 0-7-3-7-7 0-3 2-5 5-6 1-2 3-3 5-3s4 1 5 3c3 1 5 3 5 6 0 4-3 7-7 7h-6z"/></svg></div>
-                            <div class="impact-item-content">
-                                <span class="value">10</span>
-                                <span class="label">Trees Planted</span>
-                            </div>
-                        </div>
-                        <div class="impact-item">
-                            <div class="impact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="14" rx="5" ry="4"/><path d="M12 10V4M9 6l3-2 3 2M7 13c-2 0-4-1-4-3 2 0 4 1 4 3zm10 0c2 0 4-1 4-3-2 0-4 1-4 3z"/></svg></div>
-                            <div class="impact-item-content">
-                                <span class="value">200+</span>
-                                <span class="label">Bees Saved</span>
-                            </div>
-                        </div>
-                        <div class="impact-item">
-                            <div class="impact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
-                            <div class="impact-item-content">
-                                <span class="value">302g</span>
-                                <span class="label">CO2 Offset</span>
-                            </div>
+                    <div class="panel" data-reveal>
+                        <h4>Environmental Impact</h4>
+                        <div class="impact-items">
+                            <div class="impact-item"><div class="impact-ic"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 22v-7m0 0c-4 0-7-3-7-7 0-3 2-5 5-6 1-2 3-3 5-3s4 1 5 3c3 1 5 3 5 6 0 4-3 7-7 7h-6z"/></svg></div><div><span class="v">10</span><span class="l">Trees Planted</span></div></div>
+                            <div class="impact-item"><div class="impact-ic"><svg viewBox="0 0 24 24" stroke-width="1.5"><ellipse cx="12" cy="14" rx="5" ry="4"/><path d="M12 10V4M9 6l3-2 3 2M7 13c-2 0-4-1-4-3 2 0 4 1 4 3zm10 0c2 0 4-1 4-3-2 0-4 1-4 3z"/></svg></div><div><span class="v">200+</span><span class="l">Bees Saved</span></div></div>
+                            <div class="impact-item"><div class="impact-ic"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><div><span class="v">302g</span><span class="l">CO&#8322; Offset</span></div></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Payment Integration Section -->
-    <section class="payment-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Accept Payments</span>
-                <h2 class="section-title">Seamless Payment Integration</h2>
-                <p class="section-subtitle">Accept payments directly through EXRP with our integrated payment solutions</p>
-            </div>
-
-            <div class="payment-content">
-                <div class="payment-info animate-on-scroll">
-                    <h3>Get Paid <span>Faster</span></h3>
-                    <p>Accept payments from your customers through multiple channels — all integrated directly into your EXRP invoicing system. No more chasing payments or manual reconciliation.</p>
-
-                    <div class="payment-features">
-                        <div class="payment-feature">
-                            <div class="payment-feature-value">Rs 0</div>
-                            <div class="payment-feature-label">Setup Fee</div>
-                        </div>
-                        <div class="payment-feature">
-                            <div class="payment-feature-value">Rs 0</div>
-                            <div class="payment-feature-label">Monthly Fee</div>
-                        </div>
-                        <div class="payment-feature">
-                            <div class="payment-feature-value">0.9%</div>
-                            <div class="payment-feature-label">As Low As</div>
-                        </div>
-                    </div>
+        <!-- PAYMENTS -->
+        <section>
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="eyebrow eco">Accept Payments</span>
+                    <h2 class="h-sec">Seamless payment <span class="grad-eco-text">integration.</span></h2>
+                    <p class="sub">Accept payments directly through EXRP with our integrated payment solutions.</p>
                 </div>
-
-                <div class="payment-providers animate-on-scroll">
-                    <div class="payment-provider">
-                        <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
-                        <span>MauCAS</span>
+                <div class="pay-grid">
+                    <div class="pay-info" data-reveal>
+                        <h3>Get paid <span>faster</span></h3>
+                        <p>Accept payments from your customers through multiple channels &mdash; all integrated directly into your EXRP invoicing system. No more chasing payments or manual reconciliation.</p>
+                        <div class="pay-feats">
+                            <div class="pay-feat"><b>Rs 0</b><span>Setup Fee</span></div>
+                            <div class="pay-feat"><b>Rs 0</b><span>Monthly Fee</span></div>
+                            <div class="pay-feat"><b>0.9%</b><span>As Low As</span></div>
+                        </div>
                     </div>
-                    <div class="payment-provider">
-                        <svg viewBox="0 0 24 24" fill="#E31937"><rect x="2" y="5" width="20" height="14" rx="2"/><path fill="#fff" d="M7 12h10M12 9v6"/></svg>
-                        <span>MCB Juice</span>
-                    </div>
-                    <div class="payment-provider">
-                        <svg viewBox="0 0 24 24" fill="#6366F1"><circle cx="12" cy="12" r="10"/><path fill="#fff" d="M8 12l2 2 4-4"/></svg>
-                        <span>Blink</span>
-                    </div>
-                    <div class="payment-provider">
-                        <svg viewBox="0 0 24 24" fill="#FF6B00"><circle cx="12" cy="12" r="10"/><path fill="#fff" d="M12 6v12M8 10l4-4 4 4"/></svg>
-                        <span>my.t money</span>
-                    </div>
-                    <div class="payment-provider">
-                        <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-                        <span>Google Pay</span>
-                    </div>
-                    <div class="payment-provider">
-                        <svg viewBox="0 0 24 24" fill="#000"><path d="M17.05 12.72c-.04-1.65.87-2.89 2.35-3.66-.87-1.31-2.22-2.06-4-2.19-1.7-.12-3.5 1.05-4.16 1.05-.7 0-2.27-1-3.57-.97C5.5 7 3.36 8.55 2.2 10.91c-2.38 4.18-.61 10.37 1.68 13.77 1.13 1.67 2.48 3.54 4.26 3.47 1.7-.07 2.34-1.12 4.4-1.12s2.63 1.12 4.43 1.08c1.84-.03 3-1.7 4.12-3.38.85-1.24 1.5-2.52 1.82-3.17-3.55-1.38-4.19-6.54-4.86-8.84zM14.58.03c-1.23.1-2.72 1-3.59 2.16-.78.97-1.47 2.52-1.28 4 1.35.1 2.74-.83 3.58-1.94.79-1.05 1.4-2.53 1.29-4.22z"/></svg>
-                        <span>Apple Pay</span>
+                    <div class="pay-providers" data-reveal>
+                        <div class="pay-prov" data-tilt><svg viewBox="0 0 24 24" fill="#5b8cff"><circle cx="12" cy="12" r="10"/><path fill="#02060f" d="M11 7h2v6h-2zm0 8h2v2h-2z"/></svg><span>MauCAS</span></div>
+                        <div class="pay-prov" data-tilt><svg viewBox="0 0 24 24" fill="#E31937"><rect x="2" y="5" width="20" height="14" rx="2"/><path fill="#fff" d="M7 12h10M12 9v6"/></svg><span>MCB Juice</span></div>
+                        <div class="pay-prov" data-tilt><svg viewBox="0 0 24 24" fill="#36f5a0"><circle cx="12" cy="12" r="10"/><path fill="#02060f" d="M8 12l2 2 4-4"/></svg><span>Blink</span></div>
+                        <div class="pay-prov" data-tilt><svg viewBox="0 0 24 24" fill="#FF6B00"><circle cx="12" cy="12" r="10"/><path fill="#fff" d="M12 6v12M8 10l4-4 4 4"/></svg><span>my.t money</span></div>
+                        <div class="pay-prov" data-tilt><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><span>Google Pay</span></div>
+                        <div class="pay-prov" data-tilt><svg viewBox="0 0 24 24" fill="#fff"><path d="M17.05 12.72c-.04-1.65.87-2.89 2.35-3.66-.87-1.31-2.22-2.06-4-2.19-1.7-.12-3.5 1.05-4.16 1.05-.7 0-2.27-1-3.57-.97C5.5 7 3.36 8.55 2.2 10.91c-2.38 4.18-.61 10.37 1.68 13.77 1.13 1.67 2.48 3.54 4.26 3.47 1.7-.07 2.34-1.12 4.4-1.12s2.63 1.12 4.43 1.08c1.84-.03 3-1.7 4.12-3.38.85-1.24 1.5-2.52 1.82-3.17-3.55-1.38-4.19-6.54-4.86-8.84zM14.58.03c-1.23.1-2.72 1-3.59 2.16-.78.97-1.47 2.52-1.28 4 1.35.1 2.74-.83 3.58-1.94.79-1.05 1.4-2.53 1.29-4.22z"/></svg><span>Apple Pay</span></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- WhatsApp Integration Section -->
-    <section class="whatsapp-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Stay Connected</span>
-                <h2 class="section-title">Your Business, Right in WhatsApp</h2>
-                <p class="section-subtitle">Get real-time updates, share invoices, and never miss an appointment — all through the app you already use every day</p>
-            </div>
-
-            <div class="whatsapp-content">
-                <div class="whatsapp-phone animate-on-scroll">
-                    <div class="phone-mockup">
+        <!-- WHATSAPP -->
+        <section>
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="eyebrow eco">Stay Connected</span>
+                    <h2 class="h-sec">Your business, right in <span class="grad-eco-text">WhatsApp.</span></h2>
+                    <p class="sub">Real-time updates, shared invoices, and appointment reminders &mdash; through the app you already use every day.</p>
+                </div>
+                <div class="wa-grid">
+                    <div class="phone" data-reveal data-tilt>
                         <div class="phone-screen">
-                            <div class="phone-header">
-                                <div class="phone-header-avatar">EX</div>
-                                <div class="phone-header-info">
-                                    <div class="phone-header-name">EXRP Assistant</div>
-                                    <div class="phone-header-status">online</div>
-                                </div>
-                            </div>
-                            <div class="phone-messages">
-                                <div class="chat-bubble incoming">
-                                    <strong>📊 Daily Sales Report</strong><br>
-                                    Total Sales: Rs 45,230<br>
-                                    Transactions: 23<br>
-                                    Top Product: Face Cream
-                                    <div class="time">9:00 AM</div>
-                                </div>
-                                <div class="chat-bubble outgoing">
-                                    Send invoice #1247 to client (Coming Soon)
-                                    <div class="time">10:15 AM ✓✓</div>
-                                </div>
-                                <div class="chat-bubble incoming">
-                                    ✅ Invoice #1247 sent to<br>
-                                    +230 5XXX XXXX (Coming Soon)
-                                    <div class="time">10:15 AM</div>
-                                </div>
-                                <div class="chat-bubble incoming">
-                                    <strong>📅 Reminder</strong><br>
-                                    Appointment with Marie at 2:00 PM today
-                                    <div class="time">1:30 PM</div>
-                                </div>
-                                <div class="chat-bubble incoming">
-                                    <strong>📈 Monthly Summary</strong><br>
-                                    Revenue: Rs 1.2M (+15%)<br>
-                                    New Customers: 47
-                                    <div class="time">6:00 PM</div>
-                                </div>
+                            <div class="phone-top"><div class="phone-av">EX</div><div><div class="phone-name">EXRP Assistant</div><div class="phone-status">online</div></div></div>
+                            <div class="phone-msgs">
+                                <div class="bubble in"><strong>📊 Daily Sales Report</strong><br>Total Sales: Rs 45,230<br>Transactions: 23<br>Top Product: Face Cream<span class="t">9:00 AM</span></div>
+                                <div class="bubble out">Send invoice #1247 to client <em>(Soon)</em><span class="t">10:15 AM ✓✓</span></div>
+                                <div class="bubble in">✅ Invoice #1247 sent to<br>+230 5XXX XXXX <em>(Soon)</em><span class="t">10:15 AM</span></div>
+                                <div class="bubble in"><strong>📅 Reminder</strong><br>Appointment with Marie at 2:00 PM today<span class="t">1:30 PM</span></div>
+                                <div class="bubble in"><strong>📈 Monthly Summary</strong><br>Revenue: Rs 1.2M (+15%)<br>New Customers: 47<span class="t">6:00 PM</span></div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="whatsapp-features animate-on-scroll">
-                    <div class="whatsapp-feature">
-                        <div class="whatsapp-feature-icon">
-                            <svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg>
-                        </div>
-                        <div class="whatsapp-feature-content">
-                            <h4>Daily Sales Reports</h4>
-                            <p>Wake up to your sales summary every morning. Know exactly how your business performed yesterday without logging in.</p>
-                        </div>
-                    </div>
-                    <div class="whatsapp-feature">
-                        <div class="whatsapp-feature-icon">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                        </div>
-                        <div class="whatsapp-feature-content">
-                            <h4>Invoice via WhatsApp</h4>
-                            <p>Send professional invoices directly to your customers' WhatsApp. Faster delivery, instant confirmation, no more lost emails.</p>
-                        </div>
-                    </div>
-                    <div class="whatsapp-feature">
-                        <div class="whatsapp-feature-icon">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        </div>
-                        <div class="whatsapp-feature-content">
-                            <h4>Appointment Reminders</h4>
-                            <p>Automatic reminders sent to you and your clients. Reduce no-shows and keep your schedule running smoothly.</p>
-                        </div>
-                    </div>
-                    <div class="whatsapp-feature">
-                        <div class="whatsapp-feature-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
-                        </div>
-                        <div class="whatsapp-feature-content">
-                            <h4>Monthly Summaries</h4>
-                            <p>End-of-month business insights delivered to you. Track growth, compare performance, and plan ahead — all from a chat.</p>
-                        </div>
-                    </div>
-
-                    <div class="whatsapp-cta">
-                        <a href="mailto:info@exera.mu?subject=EXRP WhatsApp Integration">
-                            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-                            Enable WhatsApp Updates
-                        </a>
+                    <div class="wa-feats" data-reveal>
+                        <div class="wa-feat"><div class="wa-feat-ic"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></div><div><h4>Daily Sales Reports</h4><p>Wake up to your sales summary every morning &mdash; know exactly how your business performed without logging in.</p></div></div>
+                        <div class="wa-feat"><div class="wa-feat-ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div><div><h4>Invoice via WhatsApp</h4><p>Send professional invoices straight to your customers' WhatsApp. Faster delivery, instant confirmation.</p></div></div>
+                        <div class="wa-feat"><div class="wa-feat-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div><h4>Appointment Reminders</h4><p>Automatic reminders for you and your clients. Reduce no-shows and keep your schedule running smoothly.</p></div></div>
+                        <div class="wa-feat"><div class="wa-feat-ic"><svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div><div><h4>Monthly Summaries</h4><p>End-of-month insights delivered to you. Track growth, compare performance and plan ahead &mdash; from a chat.</p></div></div>
+                        <div class="wa-cta"><a href="mailto:info@exera.mu?subject=EXRP WhatsApp Integration"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg> Enable WhatsApp Updates</a></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Compliance Section -->
-    <section>
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Trust & Compliance</span>
-                <h2 class="section-title">Certified & Compliant</h2>
-                <p class="section-subtitle">We take security and compliance seriously</p>
+        <!-- COMPLIANCE -->
+        <section>
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="eyebrow">Trust &amp; Compliance</span>
+                    <h2 class="h-sec">Certified &amp; <span class="grad-text">compliant.</span></h2>
+                    <p class="sub">We take security and compliance seriously.</p>
+                </div>
+                <div class="comp-grid">
+                    <div class="comp-card" data-card><div class="comp-ic"><img src="../mim.png" alt="Made in Moris" loading="lazy"></div><h4>Made in Moris</h4><p>Quality certified Mauritian product</p></div>
+                    <div class="comp-card" data-card><div class="comp-ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h4>MRA Compliant</h4><p>Registered EBS Solution Provider</p></div>
+                    <div class="comp-card" data-card><div class="comp-ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>DPO Registered</h4><p>Data Protection Act compliant</p></div>
+                    <div class="comp-card" data-card><div class="comp-ic"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><h4>Secure &amp; Encrypted</h4><p>Enterprise-grade security</p></div>
+                </div>
             </div>
+        </section>
 
-            <div class="compliance-grid">
-                <div class="compliance-card animate-on-scroll">
-                    <div class="compliance-icon">
-                        <img src="../mim.png" alt="Made in Moris" loading="lazy">
+        <!-- INDUSTRIES -->
+        <section id="industries">
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="eyebrow honey">Industries</span>
+                    <h2 class="h-sec">Perfect for <span class="grad-honey-text">your business.</span></h2>
+                    <p class="sub">EXRP adapts to a wide range of business types and needs.</p>
+                </div>
+                <div class="ind-grid" data-reveal>
+                    <div class="ind-hex" data-tilt><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><span>Retail Shops</span></div>
+                    <div class="ind-hex" data-tilt><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4 12H1M23 12h-3"/></svg><span>Service Shops</span></div>
+                    <div class="ind-hex" data-tilt><svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></svg><span>Pharmacies</span></div>
+                    <div class="ind-hex" data-tilt><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><span>Optometrists</span></div>
+                    <div class="ind-hex" data-tilt><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span>Doctors</span></div>
+                    <div class="ind-hex" data-tilt><svg viewBox="0 0 24 24"><path d="M12 2v4M4.93 4.93l2.83 2.83M2 12h4M18 12h4M16.24 7.76l2.83-2.83"/><circle cx="12" cy="14" r="4"/></svg><span>SPAs</span></div>
+                    <div class="ind-hex" data-tilt><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg><span>Food Processing</span></div>
+                    <div class="ind-hex" data-tilt><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>SMEs</span></div>
+                    <div class="ind-hex" data-tilt><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span>You Name It!</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLIENTS -->
+        <section>
+            <div class="wrap">
+                <div class="sec-head" data-reveal>
+                    <span class="eyebrow">Trusted By</span>
+                    <h2 class="h-sec">Businesses using <span class="grad-text">EXRP.</span></h2>
+                    <p class="sub">Join growing Mauritian businesses who chose EXRP.</p>
+                </div>
+                <div class="cl-grid" data-reveal>
+                    <img src="../clients/kler-optics.png" alt="Kler Optics" loading="lazy">
+                    <img src="../clients/abus-tackle.png" alt="Abu's Tackle" loading="lazy">
+                    <img src="../clients/zariya.png" alt="Zariya" loading="lazy">
+                    <img src="../clients/alfarglobal.webp" alt="Alfar Global" loading="lazy">
+                </div>
+                <p class="cl-more">&hellip;among others</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section>
+            <div class="wrap">
+                <div class="cta-card" data-reveal data-tilt>
+                    <h2>Ready to elevate <span class="grad-text">your business?</span></h2>
+                    <p>Experience the local advantage with EXRP &mdash; tailored for Mauritian businesses, hosted green, built to scale globally.</p>
+                    <div class="cta-buttons">
+                        <a href="mailto:info@exrp.mu?subject=EXRP Demo Request" class="btn btn-primary link">Get Your Free Demo</a>
+                        <a href="https://wa.me/23059440110?text=Hi! I'm interested in EXRP" target="_blank" rel="noopener" class="btn btn-honey link">WhatsApp Us</a>
                     </div>
-                    <h4>Made in Moris</h4>
-                    <p>Quality certified Mauritian product</p>
-                </div>
-                <div class="compliance-card animate-on-scroll">
-                    <div class="compliance-icon">
-                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                    </div>
-                    <h4>MRA Compliant</h4>
-                    <p>Registered EBS Solution Provider</p>
-                </div>
-                <div class="compliance-card animate-on-scroll">
-                    <div class="compliance-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <h4>DPO Registered</h4>
-                    <p>Data Protection Act compliant</p>
-                </div>
-                <div class="compliance-card animate-on-scroll">
-                    <div class="compliance-icon">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                    </div>
-                    <h4>Secure & Encrypted</h4>
-                    <p>Enterprise-grade security</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Industries Section -->
-    <section id="industries">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Industries</span>
-                <h2 class="section-title">Perfect For Your Business</h2>
-                <p class="section-subtitle">EXRP adapts to various business types and needs</p>
-            </div>
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top"><svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></button>
 
-            <div class="industries-hex-grid">
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-                    <span>Retail Shops</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg>
-                    <span>Service Shops</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></svg>
-                    <span>Pharmacies</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                    <span>Optometrists</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    <span>Doctors</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
-                    <span>SPAs</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-                    <span>Food Processing</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                    <span>SMEs</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                    <span>You Name It!</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trusted By Section -->
-    <section class="clients-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Trusted By</span>
-                <h2 class="section-title">Businesses Using EXRP</h2>
-                <p class="section-subtitle">Join growing Mauritian businesses who chose EXRP</p>
-            </div>
-            <div class="clients-grid animate-on-scroll">
-                <img src="../clients/kler-optics.png" alt="Kler Optics" class="client-logo" loading="lazy">
-                <img src="../clients/abus-tackle.png" alt="Abu's Tackle" class="client-logo" loading="lazy">
-                <img src="../clients/zariya.png" alt="Zariya" class="client-logo" loading="lazy">
-                <img src="../clients/alfarglobal.webp" alt="Alfar Global" class="client-logo" loading="lazy">
-            </div>
-            <p class="clients-more animate-on-scroll">...among others</p>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content animate-on-scroll">
-                <h2>Ready to Elevate Your Business?</h2>
-                <p>Experience the local advantage with EXRP — tailored for Mauritian businesses, built to scale globally.</p>
-                <div class="cta-buttons">
-                    <a href="mailto:info@exrp.mu?subject=EXRP Demo Request" class="btn-primary">Get Your Free Demo</a>
-                    <a href="https://wa.me/23059440110?text=Hi! I'm interested in EXRP" target="_blank" class="btn-secondary">WhatsApp Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-        <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
-    </button>
-
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <img src="../logo.webp" alt="Exera Ltd" class="footer-logo">
-            <p class="footer-text">EXRP by Exera Ltd — <em>Stay Low, Stay Humble</em></p>
+        <div class="wrap footer-inner">
+            <img src="../logo.webp" alt="Exera Ltd" class="footer-logo" loading="lazy">
+            <p class="footer-text">EXRP by Exera Ltd &mdash; <em>Stay Low, Stay Humble</em></p>
             <div class="footer-links">
                 <a href="../">Back to Exera</a>
                 <a href="mailto:info@exrp.mu">info@exrp.mu</a>
@@ -2612,80 +785,177 @@
         </div>
     </footer>
 
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.1.13/lenis.min.js"></script>
     <script>
-        // Create animated hexagons
-        function createHexagons() {
-            const hexBg = document.getElementById('hexBg');
-            const hexCount = 15;
+    (function () {
+        'use strict';
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var hasGSAP = typeof window.gsap !== 'undefined';
 
-            for (let i = 0; i < hexCount; i++) {
-                const hex = document.createElement('div');
-                hex.className = 'hexagon' + (Math.random() > 0.5 ? ' filled' : '');
-
-                const size = Math.random() * 80 + 40;
-                hex.style.width = size + 'px';
-                hex.style.height = (size * 1.15) + 'px';
-                hex.style.left = Math.random() * 100 + '%';
-                hex.style.animationDuration = (Math.random() * 20 + 15) + 's';
-                hex.style.animationDelay = (Math.random() * 10) + 's';
-
-                const isFilled = hex.classList.contains('filled');
-                hex.innerHTML = `<svg viewBox="0 0 100 115.47">
-                    <polygon points="50,0 100,28.87 100,86.6 50,115.47 0,86.6 0,28.87"
-                        fill="${isFilled ? '#024056' : 'none'}"
-                        stroke="${isFilled ? 'none' : '#024056'}"
-                        stroke-width="2"/>
-                </svg>`;
-
-                hexBg.appendChild(hex);
-            }
+        /* Preloader */
+        var preloader = document.getElementById('preloader');
+        var preNum = document.getElementById('preNum');
+        var preFill = document.getElementById('preFill');
+        function finishLoad() { if (!preloader) return; preloader.classList.add('done'); document.body.style.overflow = ''; setTimeout(function () { if (preloader && preloader.parentNode) preloader.parentNode.removeChild(preloader); }, 900); }
+        if (reduce || !preNum) { finishLoad(); }
+        else {
+            var p = 0; document.body.style.overflow = 'hidden';
+            var tick = setInterval(function () {
+                p += Math.random() * 16 + 5;
+                if (p >= 100) { p = 100; clearInterval(tick); setTimeout(finishLoad, 300); }
+                preNum.textContent = Math.floor(p);
+                if (preFill) preFill.style.transform = 'scaleY(' + (p / 100) + ')';
+            }, 110);
         }
 
-        createHexagons();
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+        /* Hero hive */
+        var hive = document.getElementById('heroHive');
+        if (hive) {
+            var cells = [
+                { x: 48, y: 10, cls: 'core', z: 90, label: 'EXRP' },
+                { x: 12, y: 24, cls: 'honey', z: 45, icon: 'invoice' },
+                { x: 80, y: 28, z: 55, icon: 'box' },
+                { x: 6, y: 58, z: 30, icon: 'cart' },
+                { x: 44, y: 52, cls: 'honey', z: 70, icon: 'bee' },
+                { x: 82, y: 64, z: 38, icon: 'chart' },
+                { x: 22, y: 86, z: 50, icon: 'user' },
+                { x: 64, y: 88, cls: 'honey', z: 42, icon: 'invoice' }
+            ];
+            var icons = {
+                invoice: '<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>',
+                box: '<path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>',
+                cart: '<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>',
+                bee: '<ellipse cx="12" cy="14" rx="5" ry="4"/><path d="M12 10V4M9 6l3-2 3 2"/>',
+                chart: '<path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/>',
+                user: '<path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>'
+            };
+            cells.forEach(function (c) {
+                var el = document.createElement('div');
+                el.className = 'hx ' + (c.cls || '');
+                el.style.left = c.x + '%'; el.style.top = c.y + '%';
+                el.setAttribute('data-z', c.z);
+                el.innerHTML = c.cls === 'core' ? '<span>' + c.label + '</span>' : '<svg viewBox="0 0 24 24">' + (icons[c.icon] || '') + '</svg>';
+                hive.appendChild(el);
             });
-        }, observerOptions);
+        }
 
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
+        /* Lenis */
+        var lenis = null;
+        if (hasGSAP) window.gsap.registerPlugin(window.ScrollTrigger);
+        if (!reduce && typeof window.Lenis !== 'undefined') {
+            lenis = new window.Lenis({ duration: 1.1, smoothWheel: true, lerp: 0.1 });
+            lenis.on('scroll', function () { if (hasGSAP) window.ScrollTrigger.update(); });
+            if (window.gsap) { window.gsap.ticker.add(function (t) { lenis.raf(t * 1000); }); window.gsap.ticker.lagSmoothing(0); }
+            else { (function raf(time) { lenis.raf(time); requestAnimationFrame(raf); })(); }
+        }
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        /* Anchor links */
+        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+            a.addEventListener('click', function (e) {
+                var id = a.getAttribute('href'); if (id.length < 2) return;
+                var target = document.querySelector(id); if (!target) return;
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (lenis) lenis.scrollTo(target, { offset: -20, duration: 1.2 });
+                else target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+                closeMenu();
             });
         });
 
-        // Scroll to top button
-        const scrollToTopBtn = document.getElementById('scrollToTop');
+        /* Nav + progress */
+        var nav = document.getElementById('nav');
+        var progress = document.getElementById('progress');
+        var bgHex = document.getElementById('bgHex');
+        var stt = document.getElementById('scrollToTop');
+        var navAnchors = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+        function onScroll() {
+            var y = window.scrollY || window.pageYOffset;
+            if (nav) nav.classList.toggle('scrolled', y > 40);
+            if (stt) stt.classList.toggle('visible', y > 600);
+            if (progress) { var h = document.documentElement.scrollHeight - window.innerHeight; progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%'; }
+            if (bgHex && !reduce) bgHex.style.transform = 'translateY(' + (y * 0.04) + 'px)';
+        }
+        window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+        if (stt) stt.addEventListener('click', function () { if (lenis) lenis.scrollTo(0); else window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
-            }
-        });
+        /* Mobile menu */
+        var menuToggle = document.getElementById('menuToggle');
+        var navLinks = document.getElementById('navLinks');
+        function closeMenu() { if (menuToggle) menuToggle.classList.remove('open'); if (navLinks) navLinks.classList.remove('open'); }
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function () { menuToggle.classList.toggle('open'); navLinks.classList.toggle('open'); });
+            menuToggle.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); menuToggle.click(); } });
+        }
 
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        /* Cursor */
+        var ring = document.getElementById('cursorRing'); var dot = document.getElementById('cursorDot');
+        if (ring && dot && window.matchMedia('(hover: hover)').matches && window.innerWidth > 900) {
+            var mx = 0, my = 0, rx = 0, ry = 0;
+            window.addEventListener('mousemove', function (e) { mx = e.clientX; my = e.clientY; dot.style.transform = 'translate(' + mx + 'px,' + my + 'px) translate(-50%,-50%)'; });
+            (function loop() { rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18; ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px) translate(-50%,-50%)'; requestAnimationFrame(loop); })();
+            document.querySelectorAll('a, button, .link, [data-tilt], .menu-toggle, .mod-hex, .stat-card, .comp-card, .ind-hex').forEach(function (el) {
+                el.addEventListener('mouseenter', function () { ring.classList.add('hovered'); });
+                el.addEventListener('mouseleave', function () { ring.classList.remove('hovered'); });
+            });
+        }
+
+        if (hasGSAP && !reduce) {
+            var gsap = window.gsap, ST = window.ScrollTrigger;
+
+            var heroTl = gsap.timeline({ delay: 0.35 });
+            heroTl.from('.hero-title .line > span', { yPercent: 115, duration: 1.05, ease: 'power4.out', stagger: 0.12 })
+                  .from('.hero-badge', { y: 18, opacity: 0, duration: 0.6 }, 0.15)
+                  .from('.hero-tagline', { y: 18, opacity: 0, duration: 0.6 }, 0.3)
+                  .from('.hero-desc', { y: 22, opacity: 0, duration: 0.7 }, 0.6)
+                  .from('.hero-cta .btn', { y: 22, opacity: 0, duration: 0.6, stagger: 0.1 }, 0.8)
+                  .from('.hero-unlimited', { y: 22, opacity: 0, duration: 0.6 }, 1.0)
+                  .from('.hero-hive .hx', { scale: 0, opacity: 0, duration: 0.9, ease: 'back.out(1.6)', stagger: 0.06 }, 0.45);
+
+            gsap.utils.toArray('.hero-hive .hx').forEach(function (hx) {
+                var z = parseFloat(hx.getAttribute('data-z')) || 40;
+                gsap.to(hx, { yPercent: -z * 0.6, ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } });
+            });
+            var heroSec = document.getElementById('hero');
+            if (heroSec) heroSec.addEventListener('mousemove', function (e) {
+                var r = this.getBoundingClientRect();
+                var px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
+                gsap.to('.hero-hive .hx', { x: function (i, t) { return px * (parseFloat(t.getAttribute('data-z')) || 40) * 0.5; }, y: function (i, t) { return py * (parseFloat(t.getAttribute('data-z')) || 40) * 0.4; }, duration: 0.8, ease: 'power2.out', overwrite: 'auto' });
+            });
+
+            gsap.utils.toArray('[data-reveal]').forEach(function (el) {
+                gsap.from(el, { y: 70, opacity: 0, rotateX: -12, transformOrigin: 'center bottom', duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+            });
+            gsap.utils.toArray('[data-card]').forEach(function (el) {
+                gsap.from(el, { z: -250, y: 70, opacity: 0, rotateX: -18, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 92%' } });
+            });
+            gsap.utils.toArray('section').forEach(function (sec) {
+                if (sec.id === 'hero') return;
+                gsap.fromTo(sec, { scale: 0.97 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: sec, start: 'top 95%', end: 'top 55%', scrub: true } });
+            });
+            gsap.utils.toArray('.mod-hex').forEach(function (h, i) {
+                gsap.from(h, { scale: 0, opacity: 0, duration: 0.7, ease: 'back.out(1.5)', scrollTrigger: { trigger: '#modules .hive-grid', start: 'top 80%' }, delay: (i % 4) * 0.07 });
+            });
+
+            document.querySelectorAll('[data-tilt]').forEach(function (el) {
+                el.addEventListener('mousemove', function (e) {
+                    var r = el.getBoundingClientRect();
+                    var px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
+                    gsap.to(el, { rotateY: px * 8, rotateX: -py * 8, transformPerspective: 900, duration: 0.5, ease: 'power2.out' });
+                });
+                el.addEventListener('mouseleave', function () { gsap.to(el, { rotateY: 0, rotateX: 0, duration: 0.7, ease: 'elastic.out(1,0.5)' }); });
+            });
+
+            navAnchors.forEach(function (a) {
+                var sec = document.querySelector(a.getAttribute('href')); if (!sec) return;
+                ST.create({ trigger: sec, start: 'top 45%', end: 'bottom 45%', onToggle: function (self) { if (self.isActive) { navAnchors.forEach(function (x) { x.classList.remove('active'); }); a.classList.add('active'); } } });
+            });
+
+            ST.refresh();
+            window.addEventListener('load', function () { ST.refresh(); });
+        }
+    })();
     </script>
 </body>
 
