@@ -6,2686 +6,789 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Primary Meta Tags -->
-    <title>EXRP | Cloud-Based ERP Solution for Mauritian Businesses</title>
-    <meta name="title" content="EXRP | Cloud-Based ERP Solution for Mauritian Businesses">
-    <meta name="description" content="EXRP - Operate your business in the cloud. Affordable, scalable ERP with unlimited invoices, customers & transactions. Made in Moris certified. MRA E-Invoicing compliant.">
-    <meta name="keywords" content="EXRP, ERP mauritius, cloud ERP, business management software, POS system, inventory management, MRA e-invoicing, made in moris, exera">
+    <title>EXRP | Cloud-Based ERP for Mauritian Businesses · Made in Moris</title>
+    <meta name="title" content="EXRP | Cloud-Based ERP for Mauritian Businesses">
+    <meta name="description" content="EXRP is a cloud-based ERP for startups and SMEs. Unlimited invoices, products & transactions, fixed pricing, MRA E-Invoicing compliant, green-hosted and Made in Moris certified.">
+    <meta name="keywords" content="EXRP, ERP mauritius, cloud ERP, POS mauritius, MRA e-invoicing, invoicing software, inventory, SME software, made in moris">
     <meta name="author" content="Exera Ltd">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://exrp.mu/">
+    <link rel="canonical" href="https://exera.mu/exrp">
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://exrp.mu/">
-    <meta property="og:title" content="EXRP | Cloud-Based ERP Solution">
-    <meta property="og:description" content="Operate your business in the cloud. Affordable ERP with unlimited transactions. Made in Moris certified.">
-    <meta property="og:image" content="https://exera.mu/logo.webp">
+    <meta property="og:url" content="https://exera.mu/exrp">
+    <meta property="og:title" content="EXRP | Cloud-Based ERP for Mauritian Businesses">
+    <meta property="og:description" content="Cloud ERP for SMEs. Unlimited invoices, products & transactions. Fixed pricing. MRA E-Invoicing compliant. Made in Moris.">
+    <meta property="og:image" content="../logo.webp">
+    <meta property="og:site_name" content="Exera Ltd">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="EXRP | Cloud-Based ERP Solution">
-    <meta name="twitter:description" content="Operate your business in the cloud. Affordable ERP with unlimited transactions. Made in Moris certified.">
+    <meta name="twitter:title" content="EXRP | Cloud-Based ERP for Mauritian Businesses">
+    <meta name="twitter:description" content="Cloud ERP for SMEs. Unlimited everything, fixed pricing, MRA compliant. Made in Moris.">
+    <meta name="twitter:image" content="../logo.webp">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="../favicon.png">
     <link rel="apple-touch-icon" href="../favicon.png">
-    <meta name="theme-color" content="#024056">
+    <meta name="theme-color" content="#F6F8F2">
 
-    <!-- Fonts -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "EXRP",
+        "operatingSystem": "Web, iOS, Android", "applicationCategory": "BusinessApplication",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MUR" },
+        "provider": { "@type": "Organization", "name": "Exera Ltd", "url": "https://exera.mu" },
+        "description": "Cloud-based ERP for startups and SMEs. Unlimited invoices, products & transactions. MRA E-Invoicing compliant. Made in Moris certified."
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #024056;
-            --primary-light: #097992;
-            --primary-dark: #012a38;
-            --accent: #0FF0FC;
-            --gold: #daa520;
-            --green: #2cda20;
-            --dark: #0A0A0A;
-            --gray-900: #111827;
-            --gray-700: #374151;
-            --gray-600: #4B5563;
-            --gray-500: #6B7280;
-            --gray-400: #9CA3AF;
-            --gray-300: #D1D5DB;
-            --gray-200: #E5E7EB;
-            --gray-100: #F3F4F6;
-            --gray-50: #F9FAFB;
-            --white: #FFFFFF;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--white);
-            color: var(--gray-900);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        ::selection {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        /* Animated Hexagon Background */
-        .hex-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .hexagon {
-            position: absolute;
-            opacity: 0.15;
-            animation: floatHex linear infinite;
-        }
-
-        .hexagon.filled {
-            opacity: 0.05;
-        }
-
-        .hexagon svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        @keyframes floatHex {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-            }
-        }
-
-        /* Navigation */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--gray-200);
-        }
-
-        .nav-logo {
-            height: 40px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .nav-links a {
-            color: var(--gray-700);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-cta {
-            padding: 0.6rem 1.25rem;
-            background: var(--primary);
-            color: var(--white) !important;
-            text-decoration: none;
-            clip-path: polygon(8px 0%, calc(100% - 8px) 0%, 100% 50%, calc(100% - 8px) 100%, 8px 100%, 0% 50%);
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .nav-cta:hover {
-            background: var(--primary-light);
-        }
-
-        /* Sections */
-        section {
-            padding: 100px 5%;
-            position: relative;
-            z-index: 1;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-top: 80px;
-        }
-
-        .hero-content {
-            max-width: 900px;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.25rem;
-            background: rgba(218, 165, 32, 0.15);
-            border: 1px solid var(--gold);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            color: #b8860b;
-            margin-bottom: 2rem;
-        }
-
-        .hero-badge svg {
-            width: 18px;
-            height: 18px;
-            fill: var(--gold);
-        }
-
-        .hero-tagline {
-            font-size: 1.25rem;
-            color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--gray-900);
-        }
-
-        .hero-title span {
-            color: var(--primary);
-        }
-
-        .hero-description {
-            font-size: 1.2rem;
-            color: var(--gray-600);
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            line-height: 1.8;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .btn-primary {
-            padding: 1rem 2.5rem;
-            background: var(--primary);
-            color: var(--white);
-            border: none;
-            clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0% 50%);
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            padding: 1rem 2.5rem;
-            background: var(--gray-100);
-            color: var(--gray-700);
-            border: none;
-            clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0% 50%);
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        /* Unlimited Badge */
-        .unlimited-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: rgba(2, 64, 86, 0.08);
-            padding: 1rem 2rem;
-            border-radius: 60px;
-            border: 1px solid rgba(2, 64, 86, 0.15);
-        }
-
-        .unlimited-badge svg {
-            width: 28px;
-            height: 28px;
-            stroke: var(--primary);
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .unlimited-badge span {
-            color: var(--gray-700);
-            font-size: 0.95rem;
-        }
-
-        .unlimited-badge strong {
-            color: var(--primary);
-        }
-
-        /* Section Headers */
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--primary);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .section-tag::before {
-            content: '';
-            width: 12px;
-            height: 14px;
-            background: var(--primary);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--gray-900);
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--gray-600);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Features Grid */
-        .features-section {
-            background: transparent;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(2, 64, 86, 0.1);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 66px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-icon svg {
-            width: 28px;
-            height: 28px;
-            stroke: var(--white);
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--gray-900);
-        }
-
-        .feature-card p {
-            color: var(--gray-600);
-            line-height: 1.7;
-        }
-
-        /* Vision Mission Section */
-        .vm-section {
-            background: transparent;
-        }
-
-        .vision-mission {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .vm-card {
-            padding: 2.5rem;
-            border-radius: 16px;
-            position: relative;
-        }
-
-        .vm-card.vision {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-        }
-
-        .vm-card.mission {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-        }
-
-        .vm-card.values {
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
-            color: var(--white);
-        }
-
-        .vm-icon {
-            width: 50px;
-            height: 55px;
-            background: rgba(255, 255, 255, 0.15);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .vm-card.mission .vm-icon {
-            background: rgba(2, 64, 86, 0.1);
-        }
-
-        .vm-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .vm-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .vm-card p {
-            line-height: 1.8;
-            opacity: 0.9;
-        }
-
-        .vm-card.mission h3,
-        .vm-card.mission p {
-            color: var(--gray-900);
-        }
-
-        .vm-card.mission p {
-            color: var(--gray-600);
-        }
-
-        .values-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-
-        .value-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .value-item::before {
-            content: '';
-            width: 8px;
-            height: 9px;
-            background: rgba(255, 255, 255, 0.5);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        }
-
-        /* Why EXRP Section */
-        .why-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .why-content h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-            color: var(--gray-900);
-        }
-
-        .why-content h3 span {
-            color: var(--primary);
-        }
-
-        .why-content p {
-            color: var(--gray-600);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .why-benefits {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-
-        .why-benefit {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem;
-            background: var(--white);
-            border-radius: 8px;
-            border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
-        }
-
-        .why-benefit:hover {
-            border-color: var(--primary);
-        }
-
-        .why-benefit-icon {
-            width: 32px;
-            height: 35px;
-            background: rgba(2, 64, 86, 0.1);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .why-benefit-icon svg {
-            width: 14px;
-            height: 14px;
-            stroke: var(--primary);
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .why-benefit span {
-            font-size: 0.75rem;
-            color: var(--gray-700);
-        }
-
-        .competitors-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .competitor-tag {
-            padding: 0.5rem 1rem;
-            background: var(--gray-100);
-            border-radius: 6px;
-            font-size: 0.85rem;
-            color: var(--gray-500);
-        }
-
-        /* Success Story Card - Right Side */
-        .why-grid > .salesforce-highlight {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(34, 197, 94, 0.35);
-            margin: 0;
-            min-height: 350px;
-        }
-
-        .why-grid > .salesforce-highlight .highlight-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.25);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--white);
-            margin-bottom: 1.5rem;
-        }
-
-        .why-grid > .salesforce-highlight .highlight-text {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--white);
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-        }
-
-        .why-grid > .salesforce-highlight .highlight-company {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.85);
-            font-weight: 500;
-        }
-
-        /* Modules Section - Honeycomb Style */
-        .modules-section {
-            background: transparent;
-        }
-
-        .modules-honeycomb {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .modules-honeycomb-row {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: -48px;
-        }
-
-        .modules-honeycomb-row:first-child {
-            margin-top: 0;
-        }
-
-        .modules-honeycomb-row.offset {
-            transform: translateX(94px);
-        }
-
-        .module-hex {
-            width: 180px;
-            height: 198px;
-            background: linear-gradient(135deg, #b8d4e3, #d0e8f2);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 1.5rem 1rem;
-            transition: all 0.3s ease;
-            cursor: default;
-            position: relative;
-            box-shadow: 0 4px 20px rgba(2, 64, 86, 0.15);
-        }
-
-        .module-hex::before {
-            content: '';
-            position: absolute;
-            inset: 3px;
-            background: linear-gradient(180deg, #f0f7fb 0%, #e3f1f8 100%);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            z-index: -1;
-        }
-
-        .module-hex:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 30px rgba(2, 64, 86, 0.2);
-        }
-
-        .module-hex.core {
-            background: linear-gradient(135deg, var(--gold), #f4d03f);
-        }
-
-        .module-hex.core::before {
-            background: linear-gradient(180deg, #fef9e7 0%, #fdf2d0 100%);
-        }
-
-        .module-hex.free {
-            background: linear-gradient(135deg, #22c55e, #4ade80);
-        }
-
-        .module-hex.free::before {
-            background: linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%);
-        }
-
-        .module-hex.free .module-hex-icon svg {
-            stroke: #166534;
-        }
-
-        .module-hex.free .module-hex-subtitle {
-            color: #166534;
-        }
-
-        .module-hex.popular {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-        }
-
-        .module-hex.popular::before {
-            background: var(--white);
-        }
-
-        .module-hex.coming-soon {
-            opacity: 0.7;
-            background: linear-gradient(135deg, var(--gray-300), var(--gray-200));
-        }
-
-        .module-hex.coming-soon::before {
-            background: linear-gradient(180deg, var(--gray-100) 0%, var(--gray-50) 100%);
-        }
-
-        .module-hex-icon {
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .module-hex-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--primary);
-            fill: none;
-            stroke-width: 1.5;
-        }
-
-        .module-hex.core .module-hex-icon svg {
-            stroke: #1a1a1a;
-        }
-
-        .module-hex.popular .module-hex-icon svg {
-            stroke: var(--primary);
-        }
-
-        .module-hex-subtitle {
-            font-size: 0.65rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .module-hex.core .module-hex-subtitle {
-            color: #8B6914;
-        }
-
-        .module-hex-title {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            line-height: 1.2;
-        }
-
-        .module-hex-badge {
-            position: absolute;
-            top: 2rem;
-            font-size: 0.55rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 0.2rem 0.5rem;
-            border-radius: 3px;
-        }
-
-        .module-hex-badge.core-badge {
-            background: #1a1a1a;
-            color: var(--gold);
-        }
-
-        .module-hex-badge.free-badge {
-            background: #166534;
-            color: #dcfce7;
-        }
-
-        .module-hex-badge.popular-badge {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        .module-hex-badge.soon-badge {
-            background: var(--gray-500);
-            color: var(--white);
-        }
-
-        /* Payment Integration Section */
-        .payment-section {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-        }
-
-        .payment-section .section-tag {
-            color: #16a34a;
-        }
-
-        .payment-section .section-tag::before {
-            background: #16a34a;
-        }
-
-        .payment-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .payment-info h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--gray-900);
-        }
-
-        .payment-info h3 span {
-            color: #16a34a;
-        }
-
-        .payment-info p {
-            color: var(--gray-600);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .payment-features {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .payment-feature {
-            text-align: center;
-            padding: 1rem;
-            background: var(--white);
-            border-radius: 12px;
-            flex: 1;
-            box-shadow: 0 4px 15px rgba(22, 163, 74, 0.1);
-        }
-
-        .payment-feature-value {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #16a34a;
-        }
-
-        .payment-feature-label {
-            font-size: 0.75rem;
-            color: var(--gray-500);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .payment-providers {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-
-        .payment-provider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 1rem 1.25rem;
-            background: var(--white);
-            border-radius: 12px;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .payment-provider:hover {
-            border-color: #16a34a;
-            transform: translateY(-3px);
-        }
-
-        .payment-provider svg {
-            width: 28px;
-            height: 28px;
-        }
-
-        .payment-provider span {
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: var(--gray-700);
-        }
-
-        /* WhatsApp Integration Section */
-        .whatsapp-section {
-            background: linear-gradient(135deg, #075e54 0%, #128c7e 100%);
-            color: var(--white);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .whatsapp-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: rgba(37, 211, 102, 0.1);
-            border-radius: 50%;
-        }
-
-        .whatsapp-section::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -5%;
-            width: 300px;
-            height: 300px;
-            background: rgba(37, 211, 102, 0.08);
-            border-radius: 50%;
-        }
-
-        .whatsapp-section .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .whatsapp-section .section-tag {
-            color: #25d366;
-        }
-
-        .whatsapp-section .section-tag::before {
-            background: #25d366;
-        }
-
-        .whatsapp-section .section-title {
-            color: var(--white);
-        }
-
-        .whatsapp-section .section-subtitle {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .whatsapp-content {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .whatsapp-phone {
-            display: flex;
-            justify-content: center;
-        }
-
-        .phone-mockup {
-            width: 280px;
-            background: #1a1a1a;
-            border-radius: 40px;
-            padding: 12px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .phone-screen {
-            background: #ece5dd;
-            border-radius: 30px;
-            overflow: hidden;
-        }
-
-        .phone-header {
-            background: #075e54;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .phone-header-avatar {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
-        .phone-header-info {
-            flex: 1;
-        }
-
-        .phone-header-name {
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .phone-header-status {
-            font-size: 0.7rem;
-            opacity: 0.8;
-        }
-
-        .phone-messages {
-            padding: 1rem;
-            min-height: 320px;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .chat-bubble {
-            max-width: 85%;
-            padding: 0.6rem 0.9rem;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            line-height: 1.4;
-            color: #1a1a1a;
-        }
-
-        .chat-bubble.incoming {
-            background: var(--white);
-            align-self: flex-start;
-            border-bottom-left-radius: 2px;
-        }
-
-        .chat-bubble.outgoing {
-            background: #dcf8c6;
-            align-self: flex-end;
-            border-bottom-right-radius: 2px;
-        }
-
-        .chat-bubble .time {
-            font-size: 0.6rem;
-            color: #667781;
-            text-align: right;
-            margin-top: 0.25rem;
-        }
-
-        .chat-bubble strong {
-            color: #075e54;
-        }
-
-        .whatsapp-features {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .whatsapp-feature {
-            display: flex;
-            gap: 1.25rem;
-            align-items: flex-start;
-        }
-
-        .whatsapp-feature-icon {
-            width: 60px;
-            height: 66px;
-            background: rgba(37, 211, 102, 0.2);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .whatsapp-feature-icon svg {
-            width: 26px;
-            height: 26px;
-            stroke: #25d366;
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .whatsapp-feature-content h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.35rem;
-        }
-
-        .whatsapp-feature-content p {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.6;
-        }
-
-        .whatsapp-cta {
-            margin-top: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .whatsapp-cta a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: #25d366;
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-cta a:hover {
-            background: #20bd5a;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-        }
-
-        .whatsapp-cta a svg {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
-        }
-
-        /* Analytics Dashboard Section */
-        .analytics-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-        }
-
-        .analytics-section .section-tag {
-            color: var(--primary-light);
-        }
-
-        .analytics-section .section-tag::before {
-            background: var(--primary-light);
-        }
-
-        .analytics-section .section-title {
-            color: var(--white);
-        }
-
-        .analytics-section .section-subtitle {
-            color: var(--gray-400);
-        }
-
-        .analytics-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .analytics-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .analytics-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-3px);
-        }
-
-        .analytics-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-light);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .analytics-label {
-            font-size: 0.85rem;
-            color: var(--gray-400);
-            margin-bottom: 0.5rem;
-        }
-
-        .analytics-change {
-            font-size: 0.75rem;
-            color: #22c55e;
-        }
-
-        .analytics-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: stretch;
-        }
-
-        .diversity-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .diversity-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-            text-align: center;
-        }
-
-        .diversity-pie-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-            flex: 1;
-        }
-
-        .diversity-pie {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            background: conic-gradient(
-                #097992 0deg 131deg,
-                #0a9396 131deg 196deg,
-                #94d2bd 196deg 262deg,
-                #e9d8a6 262deg 327deg,
-                #ee9b00 327deg 360deg
-            );
-            flex-shrink: 0;
-            position: relative;
-        }
-
-        .diversity-pie::before {
-            content: '';
-            position: absolute;
-            inset: 25%;
-            background: var(--primary-dark);
-            border-radius: 50%;
-        }
-
-        .diversity-legend {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .diversity-legend-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.75rem;
-            color: var(--gray-300);
-        }
-
-        .diversity-legend-item .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        .diversity-legend-item .percent {
-            color: var(--primary-light);
-            font-weight: 600;
-            margin-left: auto;
-        }
-
-        .impact-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 2rem;
-        }
-
-        .impact-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-        }
-
-        .impact-items {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .impact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .impact-icon {
-            width: 50px;
-            height: 55px;
-            background: rgba(34, 197, 94, 0.2);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .impact-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: #22c55e;
-        }
-
-        .impact-item-content span {
-            display: block;
-        }
-
-        .impact-item-content .value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #22c55e;
-        }
-
-        .impact-item-content .label {
-            font-size: 0.8rem;
-            color: var(--gray-400);
-        }
-
-        /* Compliance Section */
-        .compliance-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .compliance-card {
-            text-align: center;
-            padding: 2rem;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .compliance-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .compliance-icon {
-            width: 70px;
-            height: 77px;
-            background: rgba(2, 64, 86, 0.08);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-        }
-
-        .compliance-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--primary);
-            fill: none;
-            stroke-width: 1.5;
-        }
-
-        .compliance-icon img {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-        }
-
-        .compliance-card h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--gray-900);
-        }
-
-        .compliance-card p {
-            font-size: 0.85rem;
-            color: var(--gray-500);
-        }
-
-        /* Industries Section */
-        .industries-hex-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .industry-hex {
-            width: 140px;
-            height: 154px;
-            background: linear-gradient(135deg, var(--gray-200), var(--gray-100));
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 1rem;
-            transition: all 0.3s ease;
-            cursor: default;
-            position: relative;
-        }
-
-        .industry-hex::before {
-            content: '';
-            position: absolute;
-            inset: 2px;
-            background: var(--white);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            z-index: -1;
-            transition: all 0.3s ease;
-        }
-
-        .industry-hex:hover {
-            background: var(--primary);
-        }
-
-        .industry-hex:hover::before {
-            background: var(--primary);
-        }
-
-        .industry-hex svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--primary);
-            fill: none;
-            stroke-width: 1.5;
-            margin-bottom: 0.5rem;
-            transition: stroke 0.3s ease;
-        }
-
-        .industry-hex:hover svg {
-            stroke: var(--white);
-        }
-
-        .industry-hex span {
-            font-size: 0.85rem;
-            color: var(--gray-700);
-            transition: color 0.3s ease;
-        }
-
-        .industry-hex:hover span {
-            color: var(--white);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            background: transparent;
-        }
-
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cta-content h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--gray-900);
-        }
-
-        .cta-content p {
-            font-size: 1.1rem;
-            color: var(--gray-600);
-            margin-bottom: 2rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+            --bg: #F5F7F0; --bg-2: #EEF2E7;
+            --ink: #0C1A13; --ink-2: #33463E; --muted: #6A7A72;
+            --line: rgba(12, 26, 19, 0.10); --card: #FFFFFF;
+            --green: #097992; --green-d: #024056; --brand-l: #17B0C7;
+            --lime: #C7F24A; --eco: #05B85F; --teal: #0E8FA6;
+            --mint: #D6ECEF; --limebg: #DFF2E6; --skybg: #DEEBFF; --peach: #FCE7CE;
+            --grad: linear-gradient(120deg, #05B36A 0%, #0E93A8 50%, #2E6BF0 100%);
+            --shadow: 0 18px 50px -20px rgba(12, 40, 28, 0.28);
+            --shadow-sm: 0 8px 26px -14px rgba(12, 40, 28, 0.30);
+            --fd: 'Bricolage Grotesque', 'Inter', sans-serif;
+            --fs: 'Instrument Serif', Georgia, serif;
+            --fb: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --maxw: 1240px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { font-family: var(--fb); background: var(--bg); color: var(--ink); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+        .aurora { position: fixed; inset: 0; z-index: -2; overflow: hidden; pointer-events: none; }
+        .blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.55; }
+        .blob.b1 { width: 620px; height: 620px; top: -180px; right: -120px; background: radial-gradient(circle, #9EF2C1, transparent 68%); }
+        .blob.b2 { width: 540px; height: 540px; top: 34%; left: -200px; background: radial-gradient(circle, #B4CEFF, transparent 66%); }
+        .blob.b3 { width: 560px; height: 560px; bottom: -220px; right: 8%; background: radial-gradient(circle, #A7EBD8, transparent 66%); }
+        body::after { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background-image: radial-gradient(rgba(12,26,19,0.05) 1px, transparent 1px); background-size: 26px 26px; mask-image: linear-gradient(180deg, #000, transparent 42%); -webkit-mask-image: linear-gradient(180deg, #000, transparent 42%); }
+
+        ::selection { background: var(--green); color: #fff; }
+        ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: var(--bg-2); } ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 6px; }
+        a { color: inherit; }
+
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--grad); z-index: 3000; }
+        .cursor-ring { position: fixed; width: 34px; height: 34px; border: 1.5px solid var(--green); border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 2500; transition: width .25s, height .25s, background .25s, opacity .3s; opacity: 0; mix-blend-mode: multiply; }
+        .cursor-ring.hot { width: 56px; height: 56px; background: rgba(9,121,146,0.10); }
+
+        .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 26px; }
+        section { position: relative; padding: 100px 0; z-index: 1; }
+
+        .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .serif { font-family: var(--fs); font-style: italic; font-weight: 400; }
+
+        .chip { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.9rem; border-radius: 100px; background: rgba(255,255,255,0.7); border: 1px solid var(--line); font-size: 0.78rem; font-weight: 600; color: var(--ink-2); backdrop-filter: blur(6px); }
+        .chip img { height: 15px; }
+        .chip .g { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(9,121,146,0.16); }
+
+        .head { max-width: 700px; margin: 0 auto 3.2rem; text-align: center; }
+        .head.left { margin-left: 0; text-align: left; }
+        .kicker { font-family: var(--fd); font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green-d); margin-bottom: 0.9rem; }
+        .h2 { font-family: var(--fd); font-weight: 700; font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1.05; letter-spacing: -1.5px; }
+        .lead { color: var(--muted); font-size: 1.05rem; margin-top: 1rem; }
+
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; font-family: var(--fd); font-weight: 600; font-size: 0.98rem; padding: 0.95rem 1.7rem; border-radius: 100px; border: 1.5px solid transparent; cursor: pointer; text-decoration: none; transition: transform .2s, box-shadow .3s, background .3s, color .3s, border-color .3s; white-space: nowrap; }
+        .btn svg { width: 18px; height: 18px; }
+        .btn-primary { background: var(--ink); color: #fff; box-shadow: var(--shadow-sm); }
+        .btn-primary:hover { background: var(--green); box-shadow: 0 16px 36px -14px rgba(9,121,146,0.7); transform: translateY(-2px); }
+        .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+        .btn-ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+        /* Nav */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.1rem 0; transition: all .35s ease; }
+        nav.scrolled { background: rgba(245,247,240,0.8); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); padding: 0.7rem 0; }
+        .nav-in { max-width: var(--maxw); margin: 0 auto; padding: 0 26px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { height: 38px; }
+        .nav-links { display: flex; gap: 2.1rem; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--ink-2); font-size: 0.92rem; font-weight: 500; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 0; height: 2px; background: var(--green); transition: width .3s; }
+        .nav-links a:hover { color: var(--ink); } .nav-links a:hover::after { width: 100%; }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; z-index: 1001; }
+        .menu-toggle span { width: 26px; height: 2px; background: var(--ink); border-radius: 2px; transition: all .3s; }
+
+        /* Hero */
+        #home { padding: 150px 0 70px; }
+        .hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3rem; align-items: center; }
+        .badge-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 1.6rem; }
+        .hero-kicker { font-family: var(--fd); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green-d); font-size: 0.82rem; margin-bottom: 0.7rem; }
+        .hero-h1 { font-family: var(--fd); font-weight: 800; font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 0.98; letter-spacing: -2.5px; margin-bottom: 1rem; }
+        .hero-h1 span.ex { font-size: 1.08em; }
+        .hero-note { font-family: var(--fs); font-style: italic; color: var(--muted); font-size: 1.1rem; margin-bottom: 1rem; }
+        .hero-sub { font-size: 1.08rem; color: var(--ink-2); max-width: 500px; margin-bottom: 2rem; }
+        .hero-cta { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 1.6rem; }
+        .hero-unl { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--card); border: 1px solid var(--line); border-radius: 100px; padding: 0.6rem 1.1rem; box-shadow: var(--shadow-sm); font-size: 0.86rem; }
+        .hero-unl svg { width: 20px; height: 20px; stroke: var(--green); fill: none; stroke-width: 2; }
+        .hero-unl b { font-weight: 700; }
+
+        /* Hero product mockup */
+        .hero2 { text-align: center; max-width: 800px; margin: 0 auto; }
+        .hero2 .badge-row, .hero2 .hero-cta { justify-content: center; }
+        .hero2 .hero-sub { margin-left: auto; margin-right: auto; }
+        .hero2 .unl-center { display: flex; justify-content: center; margin-top: 0.4rem; }
+        .app-wrap { margin: 3.4rem auto 0; max-width: 1060px; position: relative; }
+        .app-wrap::before { content: ''; position: absolute; inset: 12% 5% -8% 5%; background: var(--grad); filter: blur(60px); opacity: 0.16; border-radius: 40px; z-index: -1; }
+        .app { background: var(--card); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); overflow: hidden; }
+        .app-bar { display: flex; align-items: center; gap: 7px; padding: 0.8rem 1rem; border-bottom: 1px solid var(--line); background: var(--bg-2); }
+        .app-bar i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+        .app-url { margin-left: 0.7rem; font-size: 0.75rem; color: var(--muted); background: var(--card); border: 1px solid var(--line); border-radius: 100px; padding: 0.26rem 0.9rem; }
+        .app-live { margin-left: auto; display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; color: var(--eco); font-weight: 600; }
+        .app-live .d { width: 7px; height: 7px; border-radius: 50%; background: var(--eco); animation: blink 1.6s infinite; }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .app-body { display: grid; grid-template-columns: 62px 1fr; }
+        .app-side { border-right: 1px solid var(--line); padding: 1rem 0.5rem; display: flex; flex-direction: column; gap: 0.55rem; align-items: center; background: #fff; }
+        .app-side .s { width: 38px; height: 38px; border-radius: 11px; display: flex; align-items: center; justify-content: center; color: var(--muted); }
+        .app-side .s svg { width: 19px; height: 19px; stroke: currentColor; fill: none; stroke-width: 1.9; }
+        .app-side .s.on { background: var(--grad); color: #fff; }
+        .app-main { padding: 1.3rem 1.4rem; text-align: left; }
+        .app-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+        .app-top h4 { font-family: var(--fd); font-weight: 700; font-size: 1.05rem; }
+        .app-top .sel { font-size: 0.72rem; color: var(--muted); border: 1px solid var(--line); border-radius: 100px; padding: 0.25rem 0.75rem; }
+        .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 12px; }
+        .kpi { border: 1px solid var(--line); border-radius: 13px; padding: 0.8rem 0.9rem; background: var(--bg-2); }
+        .kpi span { font-size: 0.67rem; color: var(--muted); display: block; }
+        .kpi b { font-family: var(--fd); font-weight: 800; font-size: 1.15rem; letter-spacing: -0.5px; display: block; margin: 0.15rem 0; }
+        .kpi em { font-style: normal; font-size: 0.67rem; font-weight: 700; color: var(--eco); }
+        .app-cols { display: grid; grid-template-columns: 1.5fr 1fr; gap: 12px; }
+        .acard2 { border: 1px solid var(--line); border-radius: 14px; padding: 1rem; }
+        .acard2 .t { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.9rem; font-weight: 600; }
+        .chart { display: flex; align-items: flex-end; gap: 7px; height: 118px; }
+        .chart i { flex: 1; background: var(--grad); border-radius: 5px 5px 0 0; height: var(--h); transform-origin: bottom; animation: grow 0.9s ease forwards; }
+        @keyframes grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+        .inv { display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 0; border-bottom: 1px solid var(--line); }
+        .inv:last-child { border-bottom: none; }
+        .inv .av { width: 28px; height: 28px; border-radius: 8px; background: var(--mint); display: flex; align-items: center; justify-content: center; font-size: 0.64rem; font-weight: 700; font-family: var(--fd); color: var(--green-d); flex-shrink: 0; }
+        .inv .nm { flex: 1; } .inv .nm b { font-weight: 600; display: block; font-size: 0.8rem; } .inv .nm span { color: var(--muted); font-size: 0.68rem; }
+        .inv .pd { font-size: 0.62rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 100px; background: var(--limebg); color: var(--green-d); }
+
+        /* Bento */
+        .bento { display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; gap: 14px; aspect-ratio: 1 / 1.04; }
+        .tile { border-radius: 22px; padding: 1.3rem; position: relative; overflow: hidden; border: 1px solid var(--line); background: var(--card); box-shadow: var(--shadow-sm); transition: transform .25s ease, box-shadow .3s ease; will-change: transform; }
+        .tile:hover { box-shadow: var(--shadow); }
+        .t-unl { grid-row: span 2; background: var(--mint); display: flex; flex-direction: column; justify-content: space-between; }
+        .t-unl .inf { font-family: var(--fd); font-weight: 800; font-size: 3.4rem; line-height: 1; }
+        .t-unl .tl { font-family: var(--fd); font-weight: 700; font-size: 1rem; } .t-unl .ts { font-size: 0.78rem; color: var(--ink-2); margin-top: 0.2rem; }
+        .t-cloud { background: var(--ink); color: #fff; display: flex; flex-direction: column; justify-content: space-between; }
+        .t-cloud .cl { font-size: 0.72rem; color: #A7C4B6; font-weight: 600; letter-spacing: 0.5px; }
+        .t-cloud b { font-family: var(--fd); font-weight: 700; font-size: 1.05rem; }
+        .t-cloud .up { color: var(--lime); font-size: 0.8rem; font-weight: 600; }
+        .t-fee { background: var(--limebg); display: flex; flex-direction: column; justify-content: center; }
+        .t-fee b { font-family: var(--fd); font-weight: 800; font-size: 2.1rem; line-height: 1; } .t-fee span { font-size: 0.78rem; color: var(--ink-2); }
+        .t-mra { background: var(--skybg); display: flex; flex-direction: column; justify-content: center; }
+        .t-mra b { font-family: var(--fd); font-weight: 800; font-size: 1.7rem; } .t-mra span { font-size: 0.78rem; color: var(--ink-2); }
+        .t-mim { display: flex; align-items: center; gap: 0.7rem; }
+        .t-mim img { height: 46px; } .t-mim div b { font-family: var(--fd); font-weight: 700; font-size: 0.9rem; display: block; } .t-mim div span { font-size: 0.72rem; color: var(--muted); }
+
+        /* Card grids */
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .glass { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 1.8rem; box-shadow: var(--shadow-sm); transition: transform .28s ease, box-shadow .3s ease; }
+        .glass:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+        .ic { width: 48px; height: 48px; border-radius: 13px; background: var(--mint); display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem; }
+        .ic svg { width: 23px; height: 23px; stroke: var(--green-d); fill: none; stroke-width: 1.9; }
+        .ic.blue { background: var(--skybg); } .ic.blue svg { stroke: #2E6BF0; }
+        .ic.green { background: var(--limebg); } .ic.green svg { stroke: var(--eco); }
+        .glass h3 { font-family: var(--fd); font-weight: 700; font-size: 1.15rem; margin-bottom: 0.4rem; letter-spacing: -0.3px; }
+        .glass p { color: var(--muted); font-size: 0.9rem; }
+
+        /* Vision / mission / values */
+        .vm-card .ic { margin-bottom: 1rem; }
+        .vals { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.4rem; }
+        .val { padding: 0.35rem 0.8rem; border-radius: 100px; background: var(--bg-2); border: 1px solid var(--line); font-size: 0.78rem; font-weight: 500; color: var(--ink-2); }
+
+        /* Why EXRP */
+        .why { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2.6rem; align-items: center; }
+        .why h3 { font-family: var(--fd); font-weight: 700; font-size: clamp(1.7rem, 3.2vw, 2.4rem); letter-spacing: -1px; margin-bottom: 1rem; }
+        .why h3 .grad-text { display: inline; }
+        .why p { color: var(--ink-2); margin-bottom: 0.9rem; }
+        .vs-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.2rem 0; }
+        .vs { padding: 0.4rem 0.9rem; border-radius: 100px; background: var(--card); border: 1px solid var(--line); font-size: 0.8rem; font-weight: 600; color: var(--green-d); box-shadow: var(--shadow-sm); }
+        .benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 1rem; }
+        .benefit { display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; font-weight: 500; }
+        .benefit .bi { width: 30px; height: 30px; border-radius: 9px; background: var(--limebg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .benefit .bi svg { width: 16px; height: 16px; stroke: var(--green-d); fill: none; stroke-width: 2; }
+        .story-card { background: linear-gradient(160deg, #0C1A13, #103b46); color: #fff; border-radius: 26px; padding: 2.4rem; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        .story-card::before { content: '"'; position: absolute; top: -10px; right: 18px; font-family: var(--fs); font-size: 8rem; color: rgba(199,242,74,0.16); }
+        .story-badge { display: inline-flex; padding: 0.4rem 0.9rem; border-radius: 100px; background: rgba(199,242,74,0.16); color: var(--lime); font-weight: 600; font-size: 0.78rem; margin-bottom: 1.2rem; }
+        .story-text { font-family: var(--fd); font-weight: 600; font-size: 1.4rem; line-height: 1.3; letter-spacing: -0.5px; margin-bottom: 1.2rem; }
+        .story-co { color: #9EB4AA; font-size: 0.9rem; }
+
+        /* Modules */
+        .modules { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .mod { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 1.5rem 1.2rem; text-align: center; box-shadow: var(--shadow-sm); position: relative; transition: transform .25s, box-shadow .3s; }
+        .mod:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+        .mod .hexi { width: 58px; height: 64px; margin: 0 auto 0.9rem; background: var(--grad); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: flex; align-items: center; justify-content: center; }
+        .mod .hexi svg { width: 26px; height: 26px; stroke: #fff; fill: none; stroke-width: 1.8; }
+        .mod h4 { font-family: var(--fd); font-weight: 700; font-size: 1rem; }
+        .mod .fn { font-size: 0.78rem; color: var(--muted); }
+        .mod .mbadge { position: absolute; top: 12px; right: 12px; font-size: 0.62rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 100px; background: var(--mint); color: var(--green-d); }
+        .mod.core .hexi { background: linear-gradient(150deg, #024056, #0E8FA6); } .mod.core .mbadge { background: #024056; color: #fff; }
+        .mod.rs1 .hexi { background: linear-gradient(150deg, #05B36A, #17B0C7); } .mod.rs1 .mbadge { background: var(--eco); color: #fff; }
+        .mod.popular .mbadge { background: #FFE9A8; color: #6b4e00; }
+        .mod.soon { opacity: 0.72; } .mod.soon .hexi { background: linear-gradient(150deg, #9fb3ad, #c2d3ce); } .mod.soon .mbadge { background: var(--bg-2); color: var(--muted); }
+
+        /* Analytics */
+        .astats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 16px; }
+        .astat { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 1.4rem; box-shadow: var(--shadow-sm); }
+        .astat .av { font-family: var(--fd); font-weight: 800; font-size: 1.9rem; letter-spacing: -1px; line-height: 1; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .astat .al { font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; }
+        .astat .ac { font-size: 0.76rem; color: var(--muted); }
+        .arow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .acard { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 1.8rem; box-shadow: var(--shadow-sm); }
+        .acard h4 { font-family: var(--fd); font-weight: 700; font-size: 1.15rem; margin-bottom: 1.2rem; }
+        .pie-wrap { display: flex; align-items: center; gap: 1.6rem; flex-wrap: wrap; }
+        .pie { width: 150px; height: 150px; border-radius: 50%; flex-shrink: 0; background: conic-gradient(#097992 0 36.4%, #0E8FA6 36.4% 54.6%, #2E6BF0 54.6% 72.8%, #05B36A 72.8% 91%, #C7A500 91% 100%); position: relative; }
+        .pie::after { content: ''; position: absolute; inset: 26%; background: var(--card); border-radius: 50%; }
+        .legend { display: grid; gap: 0.5rem; flex: 1; min-width: 160px; }
+        .lg { display: flex; align-items: center; gap: 0.5rem; font-size: 0.86rem; }
+        .lg .d { width: 11px; height: 11px; border-radius: 3px; } .lg .p { margin-left: auto; font-weight: 600; color: var(--muted); }
+        .impact { display: grid; gap: 0.8rem; }
+        .imp { display: flex; align-items: center; gap: 0.9rem; background: var(--bg-2); border-radius: 14px; padding: 0.9rem 1.1rem; }
+        .imp .ii { width: 40px; height: 40px; border-radius: 11px; background: var(--limebg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .imp .ii svg { width: 20px; height: 20px; stroke: var(--eco); fill: none; stroke-width: 1.8; }
+        .imp b { font-family: var(--fd); font-weight: 800; font-size: 1.25rem; } .imp span { font-size: 0.8rem; color: var(--muted); margin-left: 0.5rem; }
+
+        /* Payments */
+        .pay { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 2.6rem; align-items: center; }
+        .pay h3 { font-family: var(--fd); font-weight: 700; font-size: clamp(1.7rem,3.2vw,2.3rem); letter-spacing: -1px; margin-bottom: 0.8rem; }
+        .pay > div > p { color: var(--ink-2); margin-bottom: 1.4rem; }
+        .payfeats { display: flex; gap: 1.6rem; }
+        .payfeat b { font-family: var(--fd); font-weight: 800; font-size: 1.7rem; display: block; } .payfeat span { font-size: 0.78rem; color: var(--muted); }
+        .providers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .provider { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1.2rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; box-shadow: var(--shadow-sm); transition: transform .25s; }
+        .provider:hover { transform: translateY(-5px); }
+        .provider svg { width: 34px; height: 34px; } .provider span { font-size: 0.82rem; font-weight: 600; }
+
+        /* WhatsApp */
+        .wa { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 2.6rem; align-items: center; }
+        .phone { width: 300px; max-width: 100%; margin: 0 auto; background: #0C1A13; border-radius: 34px; padding: 12px; box-shadow: var(--shadow); }
+        .phone-screen { background: #E9EDE5; border-radius: 24px; overflow: hidden; }
+        .phone-hd { background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; display: flex; align-items: center; gap: 0.7rem; padding: 0.9rem 1rem; }
+        .phone-hd .pa { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; font-family: var(--fd); font-weight: 700; font-size: 0.8rem; }
+        .phone-hd .pn { font-weight: 600; font-size: 0.9rem; } .phone-hd .pst { font-size: 0.7rem; opacity: 0.85; }
+        .phone-msgs { padding: 1rem; display: grid; gap: 0.7rem; background: #DCE5DB; max-height: 420px; }
+        .bub { padding: 0.65rem 0.85rem; border-radius: 12px; font-size: 0.8rem; max-width: 85%; box-shadow: 0 1px 2px rgba(0,0,0,0.1); position: relative; }
+        .bub.in { background: #fff; border-top-left-radius: 3px; } .bub.out { background: #DCF8C6; margin-left: auto; border-top-right-radius: 3px; }
+        .bub .tm { font-size: 0.62rem; color: #7a8a80; text-align: right; margin-top: 0.2rem; }
+        .wa-feats { display: grid; gap: 1rem; }
+        .wf { display: flex; gap: 1rem; }
+        .wf .wi { width: 44px; height: 44px; border-radius: 12px; background: var(--limebg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .wf .wi svg { width: 21px; height: 21px; stroke: var(--eco); fill: none; stroke-width: 1.8; }
+        .wf h4 { font-family: var(--fd); font-weight: 700; font-size: 1.02rem; margin-bottom: 0.15rem; } .wf p { color: var(--muted); font-size: 0.86rem; }
+        .wa-btn { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.4rem; background: linear-gradient(135deg,#25D366,#128C7E); color: #fff; padding: 0.8rem 1.4rem; border-radius: 100px; text-decoration: none; font-family: var(--fd); font-weight: 600; font-size: 0.9rem; }
+        .wa-btn svg { width: 18px; height: 18px; fill: #fff; }
+
+        /* Compliance / industries */
+        .comp-card { text-align: center; }
+        .comp-card .ic { margin: 0 auto 1rem; }
+        .comp-card img { height: 46px; }
+        .comp-card h4 { font-family: var(--fd); font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; } .comp-card p { font-size: 0.82rem; color: var(--muted); }
+        .inds { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        .ind { display: flex; align-items: center; gap: 0.55rem; background: var(--card); border: 1px solid var(--line); border-radius: 100px; padding: 0.7rem 1.2rem; box-shadow: var(--shadow-sm); font-weight: 600; font-size: 0.88rem; transition: all .25s; }
+        .ind:hover { transform: translateY(-4px); border-color: var(--green); }
+        .ind svg { width: 20px; height: 20px; stroke: var(--green-d); fill: none; stroke-width: 1.8; }
+
+        /* Trusted */
+        .logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px; }
+        .logos .lg-box { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 12px 22px; height: 84px; display: flex; align-items: center; box-shadow: var(--shadow-sm); }
+        .logos img { max-height: 100%; max-width: 150px; object-fit: contain; }
+        .more { text-align: center; color: var(--muted); font-family: var(--fs); font-style: italic; margin-top: 1.2rem; }
+
+        /* CTA */
+        .cta-card { background: linear-gradient(140deg, #05B36A, #0E8FA6 55%, #2E6BF0); border-radius: 30px; padding: 3.4rem; text-align: center; color: #fff; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+        .cta-card h2 { font-family: var(--fd); font-weight: 800; font-size: clamp(1.9rem, 4vw, 2.9rem); letter-spacing: -1px; margin-bottom: 0.8rem; }
+        .cta-card p { color: rgba(255,255,255,0.9); max-width: 540px; margin: 0 auto 1.8rem; }
+        .cta-card .btns { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
+        .cta-card .btn-white { background: #fff; color: var(--ink); } .cta-card .btn-white:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(0,0,0,0.3); }
+        .cta-card .btn-wa { background: rgba(255,255,255,0.16); color: #fff; border: 1.5px solid rgba(255,255,255,0.4); } .cta-card .btn-wa:hover { background: rgba(255,255,255,0.26); }
 
         /* Footer */
-        footer {
-            padding: 3rem 5%;
-            border-top: 1px solid var(--gray-200);
-            text-align: center;
-            background: var(--white);
+        footer { border-top: 1px solid var(--line); padding: 2.6rem 0; }
+        .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.4rem; }
+        .foot img { height: 30px; }
+        .foot .ft { color: var(--muted); font-size: 0.85rem; } .foot .ft em { font-family: var(--fs); font-style: italic; color: var(--green-d); }
+        .foot-links { display: flex; gap: 1.4rem; } .foot-links a { color: var(--ink-2); font-size: 0.86rem; text-decoration: none; } .foot-links a:hover { color: var(--green); }
+
+        .fab { position: fixed; bottom: 1.5rem; right: 1.5rem; width: 58px; height: 58px; border-radius: 50%; background: linear-gradient(135deg,#25D366,#128C7E); display: flex; align-items: center; justify-content: center; z-index: 900; box-shadow: 0 14px 30px -8px rgba(37,211,102,0.55); transition: transform .25s; }
+        .fab:hover { transform: scale(1.08); } .fab svg { width: 30px; height: 30px; fill: #fff; }
+        .to-top { position: fixed; bottom: 5.6rem; right: 1.5rem; width: 48px; height: 48px; border-radius: 50%; background: var(--card); border: 1px solid var(--line); color: var(--green-d); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 900; box-shadow: var(--shadow-sm); opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .3s, transform .3s, visibility .3s, background .25s, color .25s; }
+        .to-top.show { opacity: 1; visibility: visible; transform: none; } .to-top:hover { background: var(--green-d); color: #fff; } .to-top svg { width: 22px; height: 22px; }
+
+        .reveal { opacity: 0; transform: translateY(30px); filter: blur(4px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1), filter .8s; }
+        .reveal.in { opacity: 1; transform: none; filter: none; }
+
+        @media (max-width: 1000px) {
+            .hero { grid-template-columns: 1fr; gap: 2.4rem; } .bento { max-width: 460px; aspect-ratio: 1/1; }
+            .app-cols { grid-template-columns: 1fr; } .kpis { grid-template-columns: repeat(2, 1fr); }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); } .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .why, .pay, .wa { grid-template-columns: 1fr; gap: 2.2rem; } .phone-visual { order: -1; }
+            .modules { grid-template-columns: repeat(3, 1fr); } .astats { grid-template-columns: repeat(2, 1fr); }
+            .arow { grid-template-columns: 1fr; } .providers { grid-template-columns: repeat(3, 1fr); }
         }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
+        @media (max-width: 720px) {
+            section { padding: 72px 0; }
+            .nav-links { position: fixed; top: 0; right: 0; bottom: 0; left: auto; width: min(80vw, 320px); height: 100vh; flex-direction: column; justify-content: center; align-items: flex-start; padding-left: 2.2rem; gap: 1.8rem; background: rgba(245,247,240,0.98); backdrop-filter: blur(18px); border-left: 1px solid var(--line); transform: translateX(100%); transition: transform .4s; }
+            .nav-links.active { transform: translateX(0); } .nav-links a { font-size: 1.3rem; }
+            .menu-toggle { display: flex; } .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); } .menu-toggle.active span:nth-child(2) { opacity: 0; } .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px,-6px); }
+            .nav-right .btn { display: none; }
+            .grid-3, .grid-4 { grid-template-columns: 1fr; } .modules { grid-template-columns: repeat(2, 1fr); } .astats { grid-template-columns: repeat(2, 1fr); }
+            .benefits { grid-template-columns: 1fr; } .cta-card, .story-card { padding: 1.8rem; } .cursor-ring { display: none; }
+            .app-body { grid-template-columns: 1fr; } .app-side { display: none; } .kpis { grid-template-columns: repeat(2, 1fr); } .app-main { padding: 1rem; }
         }
+        @media (max-width: 420px) { .wrap { padding: 0 18px; } .modules { grid-template-columns: 1fr; } .providers { grid-template-columns: 1fr; } }
 
-        .footer-logo {
-            height: 30px;
-            opacity: 0.7;
-        }
-
-        .footer-text {
-            color: var(--gray-500);
-            font-size: 0.85rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .footer-links a {
-            color: var(--gray-500);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Scroll to Top */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 55px;
-            background: var(--primary);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            border: none;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .scroll-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-to-top:hover {
-            background: var(--primary-light);
-            transform: translateY(-3px);
-        }
-
-        .scroll-to-top svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--white);
-        }
-
-        /* Clients Section */
-        .clients-section {
-            background: transparent;
-        }
-
-        .clients-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .client-logo {
-            height: 60px;
-            width: auto;
-            max-width: 150px;
-            object-fit: contain;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: all 0.3s ease;
-        }
-
-        .client-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-
-        .clients-more {
-            text-align: center;
-            color: var(--gray-500);
-            font-style: italic;
-            margin-top: 1.5rem;
-            font-size: 1rem;
-        }
-
-        /* Animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .vision-mission {
-                grid-template-columns: 1fr;
-            }
-
-            .why-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .why-grid > .salesforce-highlight {
-                min-height: auto;
-                padding: 2rem;
-            }
-
-            .why-benefits {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .analytics-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .analytics-row {
-                grid-template-columns: 1fr;
-            }
-
-            .diversity-pie-container {
-                justify-content: center;
-            }
-
-            .payment-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .whatsapp-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .whatsapp-phone {
-                order: -1;
-            }
-
-            .phone-mockup {
-                width: 260px;
-            }
-
-            .module-hex {
-                width: 150px;
-                height: 165px;
-            }
-
-            .module-hex-title {
-                font-size: 0.8rem;
-            }
-
-            .module-hex-subtitle {
-                font-size: 0.6rem;
-            }
-
-            .modules-honeycomb-row {
-                margin-top: -40px;
-                gap: 6px;
-            }
-
-            .modules-honeycomb-row:first-child {
-                margin-top: 0;
-            }
-
-            .modules-honeycomb-row.offset {
-                transform: translateX(78px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-            }
-
-            .why-benefits {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .why-grid > .salesforce-highlight .highlight-text {
-                font-size: 1.15rem;
-            }
-
-            .diversity-pie-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .diversity-legend {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.75rem;
-            }
-
-            .diversity-legend-item .percent {
-                margin-left: 0.5rem;
-            }
-
-            .analytics-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
-            }
-
-            .analytics-value {
-                font-size: 1.75rem;
-            }
-
-            .industry-hex {
-                width: 110px;
-                height: 121px;
-            }
-
-            .cta-content h2 {
-                font-size: 1.75rem;
-            }
-
-            .payment-features {
-                flex-direction: column;
-            }
-
-            .payment-providers {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .phone-mockup {
-                width: 240px;
-            }
-
-            .phone-messages {
-                min-height: 280px;
-            }
-
-            .chat-bubble {
-                font-size: 0.75rem;
-            }
-
-            .whatsapp-feature-icon {
-                width: 50px;
-                height: 55px;
-            }
-
-            .whatsapp-feature-icon svg {
-                width: 22px;
-                height: 22px;
-            }
-
-            .whatsapp-feature-content h4 {
-                font-size: 1rem;
-            }
-
-            .whatsapp-feature-content p {
-                font-size: 0.85rem;
-            }
-
-            .module-hex {
-                width: 110px;
-                height: 121px;
-            }
-
-            .module-hex-icon svg {
-                width: 22px;
-                height: 22px;
-            }
-
-            .modules-honeycomb-row {
-                margin-top: -30px;
-                gap: 5px;
-            }
-
-            .modules-honeycomb-row:first-child {
-                margin-top: 0;
-            }
-
-            .modules-honeycomb-row.offset {
-                transform: translateX(58px);
-            }
-
-            .module-hex-badge {
-                font-size: 0.5rem;
-                padding: 0.15rem 0.4rem;
-                top: 1.25rem;
-            }
-
-            .module-hex-subtitle {
-                font-size: 0.5rem;
-            }
-
-            .module-hex-title {
-                font-size: 0.7rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            section {
-                padding: 60px 4%;
-            }
-
-            .unlimited-badge {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .compliance-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .analytics-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .payment-providers {
-                grid-template-columns: 1fr;
-            }
-
-            .modules-honeycomb {
-                gap: 0.75rem;
-            }
-
-            .modules-honeycomb-row {
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                margin-top: 0;
-                justify-content: center;
-            }
-
-            .modules-honeycomb-row.offset {
-                transform: none;
-            }
-
-            .module-hex {
-                width: 100px;
-                height: 110px;
-            }
-
-            .module-hex-title {
-                font-size: 0.65rem;
-            }
-
-            .module-hex-subtitle {
-                font-size: 0.45rem;
-            }
-
-            .module-hex-badge {
-                font-size: 0.4rem;
-                top: 1rem;
-                padding: 0.1rem 0.3rem;
-            }
-
-            .module-hex-icon svg {
-                width: 20px;
-                height: 20px;
-            }
-        }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .01ms !important; } html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; filter: none; } .cursor-ring { display: none; } }
     </style>
 </head>
 
 <body>
-    <!-- Animated Hexagon Background -->
-    <div class="hex-bg" id="hexBg"></div>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <a href="../">
-            <img src="../logo.webp" alt="Exera Ltd" class="nav-logo">
-        </a>
-        <div class="nav-links">
-            <a href="../">Home</a>
-            <a href="#features">Features</a>
-            <a href="#modules">Modules</a>
-            <a href="#analytics">Analytics</a>
-            <a href="mailto:info@exera.mu?subject=EXRP Demo Request" class="nav-cta">Get Demo</a>
+    <nav id="nav">
+        <div class="nav-in">
+            <a href="../" aria-label="Exera home"><img src="../logo.webp" alt="Exera Ltd" class="nav-logo"></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#modules">Modules</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#industries">Industries</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="mailto:info@exera.mu?subject=EXRP%20Demo%20Request" class="btn btn-primary" data-hot>Get a Demo</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content animate-on-scroll">
-            <div class="hero-badge">
-                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-                Made in Moris Certified | Sustainability Champions
-            </div>
-            <p class="hero-tagline">Operate Your Business In The Cloud</p>
-            <h1 class="hero-title">Meet <span>EXRP</span><br>Your Hive of Productivity</h1>
-            <p class="hero-description">
-                EXRP <em>(pronounced X-R-P)</em> is a cloud-based ERP solution designed by Exera to help startups and SMEs
-                operate efficiently and scale rapidly. Streamline your business operations without high costs,
-                hidden charges, or complex configurations.
-            </p>
-            <div class="hero-cta">
-                <a href="mailto:info@exrp.mu?subject=EXRP Demo Request" class="btn-primary">Request Free Demo</a>
-                <a href="#modules" class="btn-secondary">Explore Modules</a>
-            </div>
-            <div class="unlimited-badge">
-                <svg viewBox="0 0 24 24"><path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z"/></svg>
-                <span><strong>Unlimited</strong> Invoices, Products, Customers & Transactions</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Why EXRP</span>
-                <h2 class="section-title">Built Different, Built Better</h2>
-                <p class="section-subtitle">Everything you need to run your business, nothing you don't</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+    <main>
+        <!-- Hero -->
+        <section id="home">
+            <div class="wrap">
+                <div class="hero2">
+                    <div class="badge-row reveal">
+                        <span class="chip"><img src="../mim.png" alt="">Made in Moris Certified</span>
+                        <span class="chip"><span class="g"></span>Green-hosted &amp; MRA Compliant</span>
                     </div>
-                    <h3>Cloud-Based ERP</h3>
-                    <p>Access your business data securely from anywhere, anytime. No installations, no servers to maintain — just pure productivity.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                    <div class="hero-kicker reveal">Operate your business in the cloud</div>
+                    <h1 class="hero-h1 reveal">Meet <span class="ex grad-text">EXRP</span>, your hive of <span class="serif">productivity.</span></h1>
+                    <p class="hero-note reveal">(pronounced X-R-P)</p>
+                    <p class="hero-sub reveal">A cloud-based ERP built by Exera to help startups and SMEs run efficiently and scale fast. No high costs, no hidden charges, no complex setup.</p>
+                    <div class="hero-cta reveal">
+                        <a href="mailto:info@exera.mu?subject=EXRP%20Demo%20Request" class="btn btn-primary" data-hot>Request a free demo
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                        </a>
+                        <a href="#modules" class="btn btn-ghost" data-hot>Explore modules</a>
                     </div>
-                    <h3>Fixed Pricing</h3>
-                    <p>Straightforward pricing without hidden fees. Know exactly what you'll pay, every month, every year. No surprises.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-                    </div>
-                    <h3>Fully Customizable</h3>
-                    <p>Every business is unique. We offer customizations to adapt EXRP to your specific workflows and requirements.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                    </div>
-                    <h3>Scalable</h3>
-                    <p>From startup to enterprise, EXRP grows with your business. Add users, modules, and capacity as you expand.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    </div>
-                    <h3>Easy Data Migration</h3>
-                    <p>Import your existing data easily with our CSV templates. We'll help you transition smoothly from any system.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <h3>Daily Backups</h3>
-                    <p>Your data is precious. We perform regular backups to ensure your business information is always safe and recoverable.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Vision Mission Section -->
-    <section class="vm-section">
-        <div class="container">
-            <div class="vision-mission">
-                <div class="vm-card vision animate-on-scroll">
-                    <div class="vm-icon">
-                        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                    </div>
-                    <h3>Our Vision</h3>
-                    <p>To revolutionize business operations in the cloud era by offering an ERP solution that adapts to various business needs, eliminates hidden costs, and provides predictable pricing — ultimately enabling all types of businesses to thrive in a digital environment.</p>
-                </div>
-                <div class="vm-card mission animate-on-scroll">
-                    <div class="vm-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-                    </div>
-                    <h3>Our Mission</h3>
-                    <p>To provide businesses with a cloud-based ERP solution that operates transparently, flexibly, and cost-effectively, helping companies of all types manage their operations without unexpected expenses.</p>
-                </div>
-                <div class="vm-card values animate-on-scroll">
-                    <div class="vm-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-                    </div>
-                    <h3>Our Values</h3>
-                    <div class="values-list">
-                        <span class="value-item">Transparency</span>
-                        <span class="value-item">Flexibility</span>
-                        <span class="value-item">Fairness</span>
-                        <span class="value-item">Efficiency</span>
-                        <span class="value-item">Sustainability</span>
-                        <span class="value-item">Adaptability</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why EXRP Section -->
-    <section>
-        <div class="container">
-            <div class="why-grid">
-                <div class="why-content animate-on-scroll">
-                    <h3>Why Choose <span>EXRP</span> Over The Big Names?</h3>
-                    <p>While big shots like SAP, Oracle, Odoo, Salesforce, or Microsoft Dynamics bring worldwide wisdom, EXRP brings a local flavor that's just right for Mauritian businesses.</p>
-                    <p>Running a small business is your gig, not a corporate giant! Let us handle the nitty-gritty while you focus on blossoming and booming!</p>
-                    <div class="competitors-list">
-                        <span class="competitor-tag">vs SAP</span>
-                        <span class="competitor-tag">vs Oracle</span>
-                        <span class="competitor-tag">vs Odoo</span>
-                        <span class="competitor-tag">vs Salesforce</span>
-                        <span class="competitor-tag">vs Dynamics</span>
-                    </div>
-                    <div class="why-benefits">
-                        <div class="why-benefit">
-                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                            <span>Boost Productivity</span>
-                        </div>
-                        <div class="why-benefit">
-                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
-                            <span>Predictable Costs</span>
-                        </div>
-                        <div class="why-benefit">
-                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg></div>
-                            <span>Full Customization</span>
-                        </div>
-                        <div class="why-benefit">
-                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
-                            <span>Regular Backups</span>
-                        </div>
-                        <div class="why-benefit">
-                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-                            <span>Easy Data Migration</span>
-                        </div>
-                        <div class="why-benefit">
-                            <div class="why-benefit-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                            <span>Local Support</span>
+                    <div class="unl-center reveal">
+                        <div class="hero-unl">
+                            <svg viewBox="0 0 24 24"><path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z"/></svg>
+                            <span><b>Unlimited</b> invoices, products, customers &amp; transactions</span>
                         </div>
                     </div>
                 </div>
-                <div class="salesforce-highlight animate-on-scroll">
-                    <span class="highlight-badge">Success Story</span>
-                    <p class="highlight-text">"We replaced Salesforce with EXRP — BETTER in every aspect, CHEAPER, and more FLEXIBLE."</p>
-                    <p class="highlight-company">— Alfar Global (Subsidiary of Home Classics)</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Modules Section -->
-    <section id="modules" class="modules-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Build Your Hive</span>
-                <h2 class="section-title">Choose Your Modules</h2>
-                <p class="section-subtitle">Select modules to craft a solution tailored to your business needs</p>
-            </div>
-
-            <div class="modules-honeycomb">
-                <!-- Row 1 - Core Modules -->
-                <div class="modules-honeycomb-row">
-                    <div class="module-hex core animate-on-scroll">
-                        <span class="module-hex-badge core-badge">Core</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-                        <span class="module-hex-subtitle">Customer Management</span>
-                        <span class="module-hex-title">Worker Bee</span>
-                    </div>
-                    <div class="module-hex free animate-on-scroll">
-                        <span class="module-hex-badge free-badge">Rs 1 Only!</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-                        <span class="module-hex-subtitle">Invoicing</span>
-                        <span class="module-hex-title">Honey Maker</span>
-                    </div>
-                    <div class="module-hex popular animate-on-scroll">
-                        <span class="module-hex-badge popular-badge">Popular</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
-                        <span class="module-hex-subtitle">Inventory</span>
-                        <span class="module-hex-title">Hive Keeper</span>
-                    </div>
-                    <div class="module-hex popular animate-on-scroll">
-                        <span class="module-hex-badge popular-badge">Popular</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div>
-                        <span class="module-hex-subtitle">Orders</span>
-                        <span class="module-hex-title">Queen Bee</span>
-                    </div>
-                </div>
-
-                <!-- Row 2 - Offset -->
-                <div class="modules-honeycomb-row offset">
-                    <div class="module-hex popular animate-on-scroll">
-                        <span class="module-hex-badge popular-badge">Popular</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-                        <span class="module-hex-subtitle">Healthcare</span>
-                        <span class="module-hex-title">Consult Bee</span>
-                    </div>
-                    <div class="module-hex animate-on-scroll">
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-                        <span class="module-hex-subtitle">Appointments</span>
-                        <span class="module-hex-title">Busy Bee</span>
-                    </div>
-                    <div class="module-hex animate-on-scroll">
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-                        <span class="module-hex-subtitle">Point of Sale</span>
-                        <span class="module-hex-title">Collector Bee</span>
-                    </div>
-                    <div class="module-hex animate-on-scroll">
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></div>
-                        <span class="module-hex-subtitle">Analytics</span>
-                        <span class="module-hex-title">Wise Bee</span>
-                    </div>
-                </div>
-
-                <!-- Row 3 - No offset -->
-                <div class="modules-honeycomb-row">
-                    <div class="module-hex animate-on-scroll">
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-                        <span class="module-hex-subtitle">Campaigns</span>
-                        <span class="module-hex-title">Scout Bee</span>
-                    </div>
-                    <div class="module-hex animate-on-scroll">
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-                        <span class="module-hex-subtitle">Bank Reconciliation</span>
-                        <span class="module-hex-title">Banker Bee</span>
-                    </div>
-                    <div class="module-hex animate-on-scroll">
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
-                        <span class="module-hex-subtitle">Reporting</span>
-                        <span class="module-hex-title">Educator Bee</span>
-                    </div>
-                    <div class="module-hex coming-soon animate-on-scroll">
-                        <span class="module-hex-badge soon-badge">Soon</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10H12V2z"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-                        <span class="module-hex-subtitle">Smart Automation</span>
-                        <span class="module-hex-title">AI Insights</span>
-                    </div>
-                </div>
-
-                <!-- Row 4 - Coming Soon -->
-                <div class="modules-honeycomb-row offset">
-                    <div class="module-hex coming-soon animate-on-scroll">
-                        <span class="module-hex-badge soon-badge">Soon</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-                        <span class="module-hex-subtitle">On The Go</span>
-                        <span class="module-hex-title">Mobile App</span>
-                    </div>
-                    <div class="module-hex coming-soon animate-on-scroll">
-                        <span class="module-hex-badge soon-badge">Soon</span>
-                        <div class="module-hex-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-                        <span class="module-hex-subtitle">Staff Management</span>
-                        <span class="module-hex-title">Payroll</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Analytics Dashboard Section -->
-    <section id="analytics" class="analytics-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Numbers Don't Lie</span>
-                <h2 class="section-title">Live Analytics Dashboard</h2>
-                <p class="section-subtitle">Real metrics from all EXRP deployments</p>
-            </div>
-
-            <div class="analytics-grid">
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">99.9%</div>
-                    <div class="analytics-label">Uptime</div>
-                    <div class="analytics-change">Guaranteed SLA</div>
-                </div>
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">4.8k+</div>
-                    <div class="analytics-label">EXRP Users</div>
-                    <div class="analytics-change">Growing Daily</div>
-                </div>
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">1.6M+</div>
-                    <div class="analytics-label">Total Transactions</div>
-                    <div class="analytics-change">And Counting</div>
-                </div>
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">11.5k+</div>
-                    <div class="analytics-label">Invoices Issued</div>
-                    <div class="analytics-change">Across All Instances</div>
-                </div>
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">14.4k+</div>
-                    <div class="analytics-label">Hours On EXRP</div>
-                    <div class="analytics-change">Active Usage</div>
-                </div>
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">2</div>
-                    <div class="analytics-label">Incidents Resolved</div>
-                    <div class="analytics-change">0 Major / 2 Minor</div>
-                </div>
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">6</div>
-                    <div class="analytics-label">Instances Deployed</div>
-                    <div class="analytics-change">+100% Growth</div>
-                </div>
-                <div class="analytics-card animate-on-scroll">
-                    <div class="analytics-value">Rs 2.98M</div>
-                    <div class="analytics-label">Dec 2024 Transactions</div>
-                    <div class="analytics-change">Peak Month</div>
-                </div>
-            </div>
-
-            <div class="analytics-row">
-                <div class="diversity-card animate-on-scroll">
-                    <h4>Business Diversity</h4>
-                    <div class="diversity-pie-container">
-                        <div class="diversity-pie"></div>
-                        <div class="diversity-legend">
-                            <div class="diversity-legend-item">
-                                <span class="dot" style="background: #097992"></span>
-                                <span>Cosmetics</span>
-                                <span class="percent">36.4%</span>
+                <div class="app-wrap reveal">
+                    <div class="app">
+                        <div class="app-bar">
+                            <i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i>
+                            <span class="app-url">app.exrp.mu/dashboard</span>
+                            <span class="app-live"><span class="d"></span>Live</span>
+                        </div>
+                        <div class="app-body">
+                            <div class="app-side">
+                                <span class="s on"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
+                                <span class="s"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                                <span class="s"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></span>
+                                <span class="s"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
+                                <span class="s"><svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></span>
                             </div>
-                            <div class="diversity-legend-item">
-                                <span class="dot" style="background: #0a9396"></span>
-                                <span>Foods</span>
-                                <span class="percent">18.2%</span>
-                            </div>
-                            <div class="diversity-legend-item">
-                                <span class="dot" style="background: #94d2bd"></span>
-                                <span>Clothing</span>
-                                <span class="percent">18.2%</span>
-                            </div>
-                            <div class="diversity-legend-item">
-                                <span class="dot" style="background: #e9d8a6"></span>
-                                <span>Fishing</span>
-                                <span class="percent">18.2%</span>
-                            </div>
-                            <div class="diversity-legend-item">
-                                <span class="dot" style="background: #ee9b00"></span>
-                                <span>Service</span>
-                                <span class="percent">9.1%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="impact-card animate-on-scroll">
-                    <h4>Environmental Impact</h4>
-                    <div class="impact-items">
-                        <div class="impact-item">
-                            <div class="impact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-7m0 0c-4 0-7-3-7-7 0-3 2-5 5-6 1-2 3-3 5-3s4 1 5 3c3 1 5 3 5 6 0 4-3 7-7 7h-6z"/></svg></div>
-                            <div class="impact-item-content">
-                                <span class="value">10</span>
-                                <span class="label">Trees Planted</span>
-                            </div>
-                        </div>
-                        <div class="impact-item">
-                            <div class="impact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="14" rx="5" ry="4"/><path d="M12 10V4M9 6l3-2 3 2M7 13c-2 0-4-1-4-3 2 0 4 1 4 3zm10 0c2 0 4-1 4-3-2 0-4 1-4 3z"/></svg></div>
-                            <div class="impact-item-content">
-                                <span class="value">200+</span>
-                                <span class="label">Bees Saved</span>
-                            </div>
-                        </div>
-                        <div class="impact-item">
-                            <div class="impact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
-                            <div class="impact-item-content">
-                                <span class="value">302g</span>
-                                <span class="label">CO2 Offset</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Payment Integration Section -->
-    <section class="payment-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Accept Payments</span>
-                <h2 class="section-title">Seamless Payment Integration</h2>
-                <p class="section-subtitle">Accept payments directly through EXRP with our integrated payment solutions</p>
-            </div>
-
-            <div class="payment-content">
-                <div class="payment-info animate-on-scroll">
-                    <h3>Get Paid <span>Faster</span></h3>
-                    <p>Accept payments from your customers through multiple channels — all integrated directly into your EXRP invoicing system. No more chasing payments or manual reconciliation.</p>
-
-                    <div class="payment-features">
-                        <div class="payment-feature">
-                            <div class="payment-feature-value">Rs 0</div>
-                            <div class="payment-feature-label">Setup Fee</div>
-                        </div>
-                        <div class="payment-feature">
-                            <div class="payment-feature-value">Rs 0</div>
-                            <div class="payment-feature-label">Monthly Fee</div>
-                        </div>
-                        <div class="payment-feature">
-                            <div class="payment-feature-value">0.9%</div>
-                            <div class="payment-feature-label">As Low As</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="payment-providers animate-on-scroll">
-                    <div class="payment-provider">
-                        <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
-                        <span>MauCAS</span>
-                    </div>
-                    <div class="payment-provider">
-                        <svg viewBox="0 0 24 24" fill="#E31937"><rect x="2" y="5" width="20" height="14" rx="2"/><path fill="#fff" d="M7 12h10M12 9v6"/></svg>
-                        <span>MCB Juice</span>
-                    </div>
-                    <div class="payment-provider">
-                        <svg viewBox="0 0 24 24" fill="#6366F1"><circle cx="12" cy="12" r="10"/><path fill="#fff" d="M8 12l2 2 4-4"/></svg>
-                        <span>Blink</span>
-                    </div>
-                    <div class="payment-provider">
-                        <svg viewBox="0 0 24 24" fill="#FF6B00"><circle cx="12" cy="12" r="10"/><path fill="#fff" d="M12 6v12M8 10l4-4 4 4"/></svg>
-                        <span>my.t money</span>
-                    </div>
-                    <div class="payment-provider">
-                        <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-                        <span>Google Pay</span>
-                    </div>
-                    <div class="payment-provider">
-                        <svg viewBox="0 0 24 24" fill="#000"><path d="M17.05 12.72c-.04-1.65.87-2.89 2.35-3.66-.87-1.31-2.22-2.06-4-2.19-1.7-.12-3.5 1.05-4.16 1.05-.7 0-2.27-1-3.57-.97C5.5 7 3.36 8.55 2.2 10.91c-2.38 4.18-.61 10.37 1.68 13.77 1.13 1.67 2.48 3.54 4.26 3.47 1.7-.07 2.34-1.12 4.4-1.12s2.63 1.12 4.43 1.08c1.84-.03 3-1.7 4.12-3.38.85-1.24 1.5-2.52 1.82-3.17-3.55-1.38-4.19-6.54-4.86-8.84zM14.58.03c-1.23.1-2.72 1-3.59 2.16-.78.97-1.47 2.52-1.28 4 1.35.1 2.74-.83 3.58-1.94.79-1.05 1.4-2.53 1.29-4.22z"/></svg>
-                        <span>Apple Pay</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WhatsApp Integration Section -->
-    <section class="whatsapp-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Stay Connected</span>
-                <h2 class="section-title">Your Business, Right in WhatsApp</h2>
-                <p class="section-subtitle">Get real-time updates, share invoices, and never miss an appointment — all through the app you already use every day</p>
-            </div>
-
-            <div class="whatsapp-content">
-                <div class="whatsapp-phone animate-on-scroll">
-                    <div class="phone-mockup">
-                        <div class="phone-screen">
-                            <div class="phone-header">
-                                <div class="phone-header-avatar">EX</div>
-                                <div class="phone-header-info">
-                                    <div class="phone-header-name">EXRP Assistant</div>
-                                    <div class="phone-header-status">online</div>
+                            <div class="app-main">
+                                <div class="app-top"><h4>Dashboard</h4><span class="sel">This month ▾</span></div>
+                                <div class="kpis">
+                                    <div class="kpi"><span>Revenue</span><b>Rs 1.2M</b><em>▲ 15%</em></div>
+                                    <div class="kpi"><span>Invoices</span><b>1,247</b><em>▲ 8%</em></div>
+                                    <div class="kpi"><span>Products</span><b>3,480</b><em>▲ 5%</em></div>
+                                    <div class="kpi"><span>Customers</span><b>892</b><em>▲ 12%</em></div>
                                 </div>
-                            </div>
-                            <div class="phone-messages">
-                                <div class="chat-bubble incoming">
-                                    <strong>📊 Daily Sales Report</strong><br>
-                                    Total Sales: Rs 45,230<br>
-                                    Transactions: 23<br>
-                                    Top Product: Face Cream
-                                    <div class="time">9:00 AM</div>
-                                </div>
-                                <div class="chat-bubble outgoing">
-                                    Send invoice #1247 to client (Coming Soon)
-                                    <div class="time">10:15 AM ✓✓</div>
-                                </div>
-                                <div class="chat-bubble incoming">
-                                    ✅ Invoice #1247 sent to<br>
-                                    +230 5XXX XXXX (Coming Soon)
-                                    <div class="time">10:15 AM</div>
-                                </div>
-                                <div class="chat-bubble incoming">
-                                    <strong>📅 Reminder</strong><br>
-                                    Appointment with Marie at 2:00 PM today
-                                    <div class="time">1:30 PM</div>
-                                </div>
-                                <div class="chat-bubble incoming">
-                                    <strong>📈 Monthly Summary</strong><br>
-                                    Revenue: Rs 1.2M (+15%)<br>
-                                    New Customers: 47
-                                    <div class="time">6:00 PM</div>
+                                <div class="app-cols">
+                                    <div class="acard2">
+                                        <div class="t">Revenue · last 12 months</div>
+                                        <div class="chart">
+                                            <i style="--h:38%"></i><i style="--h:52%"></i><i style="--h:44%"></i><i style="--h:63%"></i><i style="--h:57%"></i><i style="--h:72%"></i><i style="--h:66%"></i><i style="--h:81%"></i><i style="--h:74%"></i><i style="--h:90%"></i><i style="--h:85%"></i><i style="--h:100%"></i>
+                                        </div>
+                                    </div>
+                                    <div class="acard2">
+                                        <div class="t">Recent invoices</div>
+                                        <div class="inv"><span class="av">KO</span><span class="nm"><b>Kler Optics</b><span>#1247</span></span><span class="pd">Paid</span></div>
+                                        <div class="inv"><span class="av">AT</span><span class="nm"><b>Abu's Tackle</b><span>#1246</span></span><span class="pd">Paid</span></div>
+                                        <div class="inv"><span class="av">ZW</span><span class="nm"><b>Zariya Wear</b><span>#1245</span></span><span class="pd">Paid</span></div>
+                                        <div class="inv"><span class="av">AG</span><span class="nm"><b>Alfar Global</b><span>#1244</span></span><span class="pd">Paid</span></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="whatsapp-features animate-on-scroll">
-                    <div class="whatsapp-feature">
-                        <div class="whatsapp-feature-icon">
-                            <svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg>
-                        </div>
-                        <div class="whatsapp-feature-content">
-                            <h4>Daily Sales Reports</h4>
-                            <p>Wake up to your sales summary every morning. Know exactly how your business performed yesterday without logging in.</p>
-                        </div>
+        <!-- Features -->
+        <section id="features">
+            <div class="wrap">
+                <div class="head reveal">
+                    <div class="kicker">Why EXRP</div>
+                    <h2 class="h2">Built different, <span class="serif grad-text">built better.</span></h2>
+                    <p class="lead">Everything you need to run your business, nothing you don't.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="glass reveal" data-hot>
+                        <div class="ic"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                        <h3>Cloud-Based ERP</h3><p>Access your business data securely from anywhere, anytime. No installs, no servers to maintain, just pure productivity.</p>
                     </div>
-                    <div class="whatsapp-feature">
-                        <div class="whatsapp-feature-icon">
-                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                        </div>
-                        <div class="whatsapp-feature-content">
-                            <h4>Invoice via WhatsApp</h4>
-                            <p>Send professional invoices directly to your customers' WhatsApp. Faster delivery, instant confirmation, no more lost emails.</p>
-                        </div>
+                    <div class="glass reveal" data-hot>
+                        <div class="ic blue"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+                        <h3>Fixed Pricing</h3><p>Straightforward pricing with no hidden fees. Know exactly what you'll pay every month and year. No surprises.</p>
                     </div>
-                    <div class="whatsapp-feature">
-                        <div class="whatsapp-feature-icon">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        </div>
-                        <div class="whatsapp-feature-content">
-                            <h4>Appointment Reminders</h4>
-                            <p>Automatic reminders sent to you and your clients. Reduce no-shows and keep your schedule running smoothly.</p>
-                        </div>
+                    <div class="glass reveal" data-hot>
+                        <div class="ic green"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+                        <h3>Fully Customizable</h3><p>Every business is unique. We adapt EXRP to your specific workflows and requirements.</p>
                     </div>
-                    <div class="whatsapp-feature">
-                        <div class="whatsapp-feature-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
-                        </div>
-                        <div class="whatsapp-feature-content">
-                            <h4>Monthly Summaries</h4>
-                            <p>End-of-month business insights delivered to you. Track growth, compare performance, and plan ahead — all from a chat.</p>
-                        </div>
+                    <div class="glass reveal" data-hot>
+                        <div class="ic"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+                        <h3>Scalable</h3><p>From startup to enterprise, EXRP grows with you. Add users, modules and capacity as you expand.</p>
                     </div>
+                    <div class="glass reveal" data-hot>
+                        <div class="ic blue"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+                        <h3>Easy Data Migration</h3><p>Import your existing data easily with our CSV templates. We help you transition smoothly from any system.</p>
+                    </div>
+                    <div class="glass reveal" data-hot>
+                        <div class="ic green"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <h3>Daily Backups</h3><p>Your data is precious. Regular backups keep your business information safe and recoverable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="whatsapp-cta">
-                        <a href="mailto:info@exera.mu?subject=EXRP WhatsApp Integration">
-                            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-                            Enable WhatsApp Updates
+        <!-- Vision / Mission / Values -->
+        <section>
+            <div class="wrap">
+                <div class="grid-3">
+                    <div class="glass vm-card reveal" data-hot>
+                        <div class="ic"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                        <h3>Our Vision</h3><p>To revolutionise business operations in the cloud era with an ERP that adapts to any business, eliminates hidden costs and offers predictable pricing, so every business can thrive digitally.</p>
+                    </div>
+                    <div class="glass vm-card reveal" data-hot>
+                        <div class="ic blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
+                        <h3>Our Mission</h3><p>To give businesses a cloud ERP that operates transparently, flexibly and cost-effectively, helping companies of all types manage operations without unexpected expenses.</p>
+                    </div>
+                    <div class="glass vm-card reveal" data-hot>
+                        <div class="ic green"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+                        <h3>Our Values</h3>
+                        <div class="vals"><span class="val">Transparency</span><span class="val">Flexibility</span><span class="val">Fairness</span><span class="val">Efficiency</span><span class="val">Sustainability</span><span class="val">Adaptability</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why over big names -->
+        <section>
+            <div class="wrap">
+                <div class="why">
+                    <div class="reveal">
+                        <div class="kicker">Local advantage</div>
+                        <h3>Why choose <span class="grad-text">EXRP</span> over the big names?</h3>
+                        <p>SAP, Oracle, Odoo, Salesforce and Microsoft Dynamics bring worldwide wisdom. EXRP brings a local flavour that's just right for Mauritian businesses.</p>
+                        <p>Running a small business is your gig, not a corporate giant's. Let us handle the nitty-gritty while you focus on blossoming and booming.</p>
+                        <div class="vs-list"><span class="vs">vs SAP</span><span class="vs">vs Oracle</span><span class="vs">vs Odoo</span><span class="vs">vs Salesforce</span><span class="vs">vs Dynamics</span></div>
+                        <div class="benefits">
+                            <div class="benefit"><span class="bi"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Boost productivity</div>
+                            <div class="benefit"><span class="bi"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>Predictable costs</div>
+                            <div class="benefit"><span class="bi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg></span>Full customization</div>
+                            <div class="benefit"><span class="bi"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></span>Regular backups</div>
+                            <div class="benefit"><span class="bi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>Easy data migration</div>
+                            <div class="benefit"><span class="bi"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Local support</div>
+                        </div>
+                    </div>
+                    <div class="story-card reveal">
+                        <span class="story-badge">Success story</span>
+                        <p class="story-text">"We replaced Salesforce with EXRP: better in every aspect, cheaper, and more flexible."</p>
+                        <p class="story-co">Alfar Global (Subsidiary of Home Classics)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modules -->
+        <section id="modules">
+            <div class="wrap">
+                <div class="head reveal">
+                    <div class="kicker">Build your hive</div>
+                    <h2 class="h2">Choose your <span class="serif grad-text">modules.</span></h2>
+                    <p class="lead">Pick the modules that craft a solution tailored to your business.</p>
+                </div>
+                <div class="modules">
+                    <div class="mod core reveal" data-hot><span class="mbadge">Core</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h4>Worker Bee</h4><span class="fn">Customer Management</span></div>
+                    <div class="mod rs1 reveal" data-hot><span class="mbadge">Rs 1 Only!</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h4>Honey Maker</h4><span class="fn">Invoicing</span></div>
+                    <div class="mod popular reveal" data-hot><span class="mbadge">Popular</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div><h4>Hive Keeper</h4><span class="fn">Inventory</span></div>
+                    <div class="mod popular reveal" data-hot><span class="mbadge">Popular</span><div class="hexi"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div><h4>Queen Bee</h4><span class="fn">Orders</span></div>
+                    <div class="mod popular reveal" data-hot><span class="mbadge">Popular</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h4>Consult Bee</h4><span class="fn">Healthcare</span></div>
+                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h4>Busy Bee</h4><span class="fn">Appointments</span></div>
+                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h4>Collector Bee</h4><span class="fn">Point of Sale</span></div>
+                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></div><h4>Wise Bee</h4><span class="fn">Analytics</span></div>
+                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h4>Scout Bee</h4><span class="fn">Campaigns</span></div>
+                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div><h4>Banker Bee</h4><span class="fn">Bank Reconciliation</span></div>
+                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><h4>Educator Bee</h4><span class="fn">Reporting</span></div>
+                    <div class="mod soon reveal" data-hot><span class="mbadge">Soon</span><div class="hexi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h4>AI Insights</h4><span class="fn">Smart Automation</span></div>
+                    <div class="mod soon reveal" data-hot><span class="mbadge">Soon</span><div class="hexi"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><h4>Mobile App</h4><span class="fn">On The Go</span></div>
+                    <div class="mod soon reveal" data-hot><span class="mbadge">Soon</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><h4>Payroll</h4><span class="fn">Staff Management</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics -->
+        <section id="analytics">
+            <div class="wrap">
+                <div class="head reveal">
+                    <div class="kicker">Numbers don't lie</div>
+                    <h2 class="h2">Live analytics <span class="serif grad-text">dashboard.</span></h2>
+                    <p class="lead">Real metrics from across EXRP deployments.</p>
+                </div>
+                <div class="astats">
+                    <div class="astat reveal"><div class="av">99.9%</div><div class="al">Uptime</div><div class="ac">Guaranteed SLA</div></div>
+                    <div class="astat reveal"><div class="av">4.8k+</div><div class="al">EXRP Users</div><div class="ac">Growing daily</div></div>
+                    <div class="astat reveal"><div class="av">1.6M+</div><div class="al">Total Transactions</div><div class="ac">And counting</div></div>
+                    <div class="astat reveal"><div class="av">11.5k+</div><div class="al">Invoices Issued</div><div class="ac">Across all instances</div></div>
+                    <div class="astat reveal"><div class="av">14.4k+</div><div class="al">Hours On EXRP</div><div class="ac">Active usage</div></div>
+                    <div class="astat reveal"><div class="av">2</div><div class="al">Incidents Resolved</div><div class="ac">0 major / 2 minor</div></div>
+                    <div class="astat reveal"><div class="av">6</div><div class="al">Instances Deployed</div><div class="ac">+100% growth</div></div>
+                    <div class="astat reveal"><div class="av">Rs 2.98M</div><div class="al">Dec 2024 Transactions</div><div class="ac">Peak month</div></div>
+                </div>
+                <div class="arow">
+                    <div class="acard reveal">
+                        <h4>Business Diversity</h4>
+                        <div class="pie-wrap">
+                            <div class="pie"></div>
+                            <div class="legend">
+                                <div class="lg"><span class="d" style="background:#097992"></span>Cosmetics<span class="p">36.4%</span></div>
+                                <div class="lg"><span class="d" style="background:#0E8FA6"></span>Foods<span class="p">18.2%</span></div>
+                                <div class="lg"><span class="d" style="background:#2E6BF0"></span>Clothing<span class="p">18.2%</span></div>
+                                <div class="lg"><span class="d" style="background:#05B36A"></span>Fishing<span class="p">18.2%</span></div>
+                                <div class="lg"><span class="d" style="background:#C7A500"></span>Service<span class="p">9.1%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="acard reveal">
+                        <h4>Environmental Impact</h4>
+                        <div class="impact">
+                            <div class="imp"><span class="ii"><svg viewBox="0 0 24 24"><path d="M12 22v-7m0 0c-4 0-7-3-7-7 0-3 2-5 5-6 1-2 3-3 5-3s4 1 5 3c3 1 5 3 5 6 0 4-3 7-7 7h-6z"/></svg></span><div><b>10</b><span>Trees planted</span></div></div>
+                            <div class="imp"><span class="ii"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="14" rx="5" ry="4"/><path d="M12 10V4M9 6l3-2 3 2M7 13c-2 0-4-1-4-3 2 0 4 1 4 3zm10 0c2 0 4-1 4-3-2 0-4 1-4 3z"/></svg></span><div><b>200+</b><span>Bees saved</span></div></div>
+                            <div class="imp"><span class="ii"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></span><div><b>302g</b><span>CO2 offset</span></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payments -->
+        <section>
+            <div class="wrap">
+                <div class="head reveal">
+                    <div class="kicker">Accept payments</div>
+                    <h2 class="h2">Get paid <span class="serif grad-text">faster.</span></h2>
+                    <p class="lead">Accept payments directly through EXRP with integrated payment options.</p>
+                </div>
+                <div class="pay">
+                    <div class="reveal">
+                        <h3>One system, every channel</h3>
+                        <p>Accept payments from your customers through multiple channels, all integrated directly into your EXRP invoicing. No more chasing payments or manual reconciliation.</p>
+                        <div class="payfeats">
+                            <div class="payfeat"><b class="grad-text">Rs 0</b><span>Setup fee</span></div>
+                            <div class="payfeat"><b class="grad-text">Rs 0</b><span>Monthly fee</span></div>
+                            <div class="payfeat"><b class="grad-text">0.9%</b><span>As low as</span></div>
+                        </div>
+                    </div>
+                    <div class="providers reveal">
+                        <div class="provider" data-hot><svg viewBox="0 0 24 24" fill="#097992"><circle cx="12" cy="12" r="10"/><path fill="#fff" d="M11 7h2v6h-2zm0 8h2v2h-2z"/></svg><span>MauCAS</span></div>
+                        <div class="provider" data-hot><svg viewBox="0 0 24 24" fill="#E31937"><rect x="2" y="5" width="20" height="14" rx="2"/><path stroke="#fff" stroke-width="2" d="M7 12h10M12 9v6"/></svg><span>MCB Juice</span></div>
+                        <div class="provider" data-hot><svg viewBox="0 0 24 24" fill="#6366F1"><circle cx="12" cy="12" r="10"/><path fill="none" stroke="#fff" stroke-width="2" d="M8 12l2.5 2.5L16 9"/></svg><span>Blink</span></div>
+                        <div class="provider" data-hot><svg viewBox="0 0 24 24" fill="#FF6B00"><circle cx="12" cy="12" r="10"/><path fill="none" stroke="#fff" stroke-width="2" d="M12 17V7M8 11l4-4 4 4"/></svg><span>my.t money</span></div>
+                        <div class="provider" data-hot><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><span>Google Pay</span></div>
+                        <div class="provider" data-hot><svg viewBox="0 0 24 24" fill="#111"><path d="M17.05 12.72c-.04-1.65.87-2.89 2.35-3.66-.87-1.31-2.22-2.06-4-2.19-1.7-.12-3.5 1.05-4.16 1.05-.7 0-2.27-1-3.57-.97C5.5 7 3.36 8.55 2.2 10.91c-2.38 4.18-.61 10.37 1.68 13.09 1.13 1.34 2.48 2.84 4.26 2.77 1.7-.07 2.34-1.12 4.4-1.12s2.63 1.12 4.43 1.08c1.84-.03 3-1.7 4.12-3.38.85-1.24 1.5-2.52 1.82-3.17-3.55-1.38-4.19-4.54-4.86-4.53zM14.58.03c-1.23.1-2.72 1-3.59 2.16-.78.97-1.47 2.52-1.28 4 1.35.1 2.74-.83 3.58-1.94.79-1.05 1.4-2.53 1.29-4.22z"/></svg><span>Apple Pay</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WhatsApp -->
+        <section>
+            <div class="wrap">
+                <div class="head reveal">
+                    <div class="kicker">Stay connected</div>
+                    <h2 class="h2">Your business, right in <span class="serif grad-text">WhatsApp.</span></h2>
+                    <p class="lead">Real-time updates, shared invoices and reminders, all through the app you already use every day.</p>
+                </div>
+                <div class="wa">
+                    <div class="phone-visual reveal">
+                        <div class="phone">
+                            <div class="phone-screen">
+                                <div class="phone-hd"><div class="pa">EX</div><div><div class="pn">EXRP Assistant</div><div class="pst">online</div></div></div>
+                                <div class="phone-msgs">
+                                    <div class="bub in"><strong>📊 Daily Sales Report</strong><br>Total Sales: Rs 45,230<br>Transactions: 23<br>Top Product: Face Cream<div class="tm">9:00 AM</div></div>
+                                    <div class="bub out">Send invoice #1247 to client (Coming Soon)<div class="tm">10:15 AM ✓✓</div></div>
+                                    <div class="bub in">✅ Invoice #1247 sent to +230 5XXX XXXX (Coming Soon)<div class="tm">10:15 AM</div></div>
+                                    <div class="bub in"><strong>📅 Reminder</strong><br>Appointment with Marie at 2:00 PM today<div class="tm">1:30 PM</div></div>
+                                    <div class="bub in"><strong>📈 Monthly Summary</strong><br>Revenue: Rs 1.2M (+15%)<br>New Customers: 47<div class="tm">6:00 PM</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wa-feats reveal">
+                        <div class="wf"><span class="wi"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></span><div><h4>Daily Sales Reports</h4><p>Wake up to your sales summary every morning, without logging in.</p></div></div>
+                        <div class="wf"><span class="wi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span><div><h4>Invoice via WhatsApp</h4><p>Send professional invoices straight to your customers' WhatsApp. Faster delivery, instant confirmation.</p></div></div>
+                        <div class="wf"><span class="wi"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><div><h4>Appointment Reminders</h4><p>Automatic reminders for you and your clients. Fewer no-shows, smoother scheduling.</p></div></div>
+                        <div class="wf"><span class="wi"><svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></span><div><h4>Monthly Summaries</h4><p>End-of-month insights delivered to you. Track growth and plan ahead, all from a chat.</p></div></div>
+                        <a class="wa-btn" href="https://wa.me/23059440110?text=Hi!%20I'm%20interested%20in%20EXRP%20WhatsApp%20updates" target="_blank" rel="noopener" data-hot>
+                            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+                            Enable WhatsApp updates
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Compliance Section -->
-    <section>
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Trust & Compliance</span>
-                <h2 class="section-title">Certified & Compliant</h2>
-                <p class="section-subtitle">We take security and compliance seriously</p>
+        <!-- Compliance -->
+        <section>
+            <div class="wrap">
+                <div class="head reveal">
+                    <div class="kicker">Trust &amp; compliance</div>
+                    <h2 class="h2">Certified &amp; <span class="serif grad-text">compliant.</span></h2>
+                    <p class="lead">We take security and compliance seriously.</p>
+                </div>
+                <div class="grid-4">
+                    <div class="glass comp-card reveal" data-hot><div class="ic"><img src="../mim.png" alt="Made in Moris"></div><h4>Made in Moris</h4><p>Quality-certified Mauritian product</p></div>
+                    <div class="glass comp-card reveal" data-hot><div class="ic blue"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h4>MRA Compliant</h4><p>Registered EBS solution provider</p></div>
+                    <div class="glass comp-card reveal" data-hot><div class="ic green"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>DPO Registered</h4><p>Data Protection Act compliant</p></div>
+                    <div class="glass comp-card reveal" data-hot><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><h4>Secure &amp; Encrypted</h4><p>Enterprise-grade security</p></div>
+                </div>
             </div>
+        </section>
 
-            <div class="compliance-grid">
-                <div class="compliance-card animate-on-scroll">
-                    <div class="compliance-icon">
-                        <img src="../mim.png" alt="Made in Moris" loading="lazy">
+        <!-- Industries -->
+        <section id="industries">
+            <div class="wrap">
+                <div class="head reveal">
+                    <div class="kicker">Industries</div>
+                    <h2 class="h2">Perfect for <span class="serif grad-text">your business.</span></h2>
+                    <p class="lead">EXRP adapts to a wide range of business types and needs.</p>
+                </div>
+                <div class="inds reveal">
+                    <div class="ind"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>Retail Shops</div>
+                    <div class="ind"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>Service Shops</div>
+                    <div class="ind"><svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></svg>Pharmacies</div>
+                    <div class="ind"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Optometrists</div>
+                    <div class="ind"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Doctors</div>
+                    <div class="ind"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.9 2.9M16.2 16.2l2.9 2.9M2 12h4M18 12h4"/></svg>SPAs</div>
+                    <div class="ind"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>Food Processing</div>
+                    <div class="ind"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>SMEs</div>
+                    <div class="ind"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>You Name It!</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted -->
+        <section>
+            <div class="wrap">
+                <div class="head reveal">
+                    <div class="kicker">Trusted by</div>
+                    <h2 class="h2">Businesses using <span class="serif grad-text">EXRP.</span></h2>
+                    <p class="lead">Join the growing list of Mauritian businesses who chose EXRP.</p>
+                </div>
+                <div class="logos reveal">
+                    <div class="lg-box"><img src="../clients/kler-optics.png" alt="Kler Optics" loading="lazy"></div>
+                    <div class="lg-box"><img src="../clients/abus-tackle.png" alt="Abu's Tackle" loading="lazy"></div>
+                    <div class="lg-box"><img src="../clients/zariya.png" alt="Zariya" loading="lazy"></div>
+                    <div class="lg-box"><img src="../clients/alfarglobal.webp" alt="Alfar Global" loading="lazy"></div>
+                </div>
+                <p class="more reveal">...among many others</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section>
+            <div class="wrap">
+                <div class="cta-card reveal">
+                    <h2>Ready to elevate your business?</h2>
+                    <p>Experience the local advantage with EXRP: tailored for Mauritian businesses, built to scale globally.</p>
+                    <div class="btns">
+                        <a href="mailto:info@exera.mu?subject=EXRP%20Demo%20Request" class="btn btn-white" data-hot>Get your free demo</a>
+                        <a href="https://wa.me/23059440110?text=Hi!%20I'm%20interested%20in%20EXRP" target="_blank" rel="noopener" class="btn btn-wa" data-hot>WhatsApp us</a>
                     </div>
-                    <h4>Made in Moris</h4>
-                    <p>Quality certified Mauritian product</p>
-                </div>
-                <div class="compliance-card animate-on-scroll">
-                    <div class="compliance-icon">
-                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                    </div>
-                    <h4>MRA Compliant</h4>
-                    <p>Registered EBS Solution Provider</p>
-                </div>
-                <div class="compliance-card animate-on-scroll">
-                    <div class="compliance-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <h4>DPO Registered</h4>
-                    <p>Data Protection Act compliant</p>
-                </div>
-                <div class="compliance-card animate-on-scroll">
-                    <div class="compliance-icon">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                    </div>
-                    <h4>Secure & Encrypted</h4>
-                    <p>Enterprise-grade security</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Industries Section -->
-    <section id="industries">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Industries</span>
-                <h2 class="section-title">Perfect For Your Business</h2>
-                <p class="section-subtitle">EXRP adapts to various business types and needs</p>
-            </div>
-
-            <div class="industries-hex-grid">
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-                    <span>Retail Shops</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg>
-                    <span>Service Shops</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></svg>
-                    <span>Pharmacies</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                    <span>Optometrists</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    <span>Doctors</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
-                    <span>SPAs</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-                    <span>Food Processing</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                    <span>SMEs</span>
-                </div>
-                <div class="industry-hex animate-on-scroll">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                    <span>You Name It!</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trusted By Section -->
-    <section class="clients-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Trusted By</span>
-                <h2 class="section-title">Businesses Using EXRP</h2>
-                <p class="section-subtitle">Join growing Mauritian businesses who chose EXRP</p>
-            </div>
-            <div class="clients-grid animate-on-scroll">
-                <img src="../clients/kler-optics.png" alt="Kler Optics" class="client-logo" loading="lazy">
-                <img src="../clients/abus-tackle.png" alt="Abu's Tackle" class="client-logo" loading="lazy">
-                <img src="../clients/zariya.png" alt="Zariya" class="client-logo" loading="lazy">
-                <img src="../clients/alfarglobal.webp" alt="Alfar Global" class="client-logo" loading="lazy">
-            </div>
-            <p class="clients-more animate-on-scroll">...among others</p>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content animate-on-scroll">
-                <h2>Ready to Elevate Your Business?</h2>
-                <p>Experience the local advantage with EXRP — tailored for Mauritian businesses, built to scale globally.</p>
-                <div class="cta-buttons">
-                    <a href="mailto:info@exrp.mu?subject=EXRP Demo Request" class="btn-primary">Get Your Free Demo</a>
-                    <a href="https://wa.me/23059440110?text=Hi! I'm interested in EXRP" target="_blank" class="btn-secondary">WhatsApp Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-        <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
-    </button>
-
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <img src="../logo.webp" alt="Exera Ltd" class="footer-logo">
-            <p class="footer-text">EXRP by Exera Ltd — <em>Stay Low, Stay Humble</em></p>
-            <div class="footer-links">
+        <div class="wrap foot">
+            <img src="../logo.webp" alt="Exera Ltd" loading="lazy">
+            <p class="ft">EXRP by Exera Ltd · <em>Stay Low, Stay Humble</em></p>
+            <div class="foot-links">
                 <a href="../">Back to Exera</a>
-                <a href="mailto:info@exrp.mu">info@exrp.mu</a>
+                <a href="mailto:info@exera.mu">info@exera.mu</a>
                 <a href="tel:+23059440110">+230 5944 0110</a>
             </div>
         </div>
     </footer>
 
+    <a href="https://wa.me/23059440110?text=Hi!%20I'm%20interested%20in%20EXRP" target="_blank" rel="noopener" class="fab" aria-label="WhatsApp" data-hot>
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <button class="to-top" id="toTop" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
     <script>
-        // Create animated hexagons
-        function createHexagons() {
-            const hexBg = document.getElementById('hexBg');
-            const hexCount = 15;
+        const nav = document.getElementById('nav');
+        const progress = document.getElementById('progressBar');
+        const toTop = document.getElementById('toTop');
+        addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', scrollY > 30);
+            const h = document.documentElement.scrollHeight - innerHeight;
+            progress.style.width = (h > 0 ? scrollY / h * 100 : 0) + '%';
+            toTop.classList.toggle('show', scrollY > 500);
+        });
+        toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
 
-            for (let i = 0; i < hexCount; i++) {
-                const hex = document.createElement('div');
-                hex.className = 'hexagon' + (Math.random() > 0.5 ? ' filled' : '');
+        const mt = document.getElementById('menuToggle'), nl = document.getElementById('navLinks');
+        mt.addEventListener('click', () => { const o = nl.classList.toggle('active'); mt.classList.toggle('active', o); mt.setAttribute('aria-expanded', o); });
+        nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nl.classList.remove('active'); mt.classList.remove('active'); mt.setAttribute('aria-expanded', 'false'); }));
 
-                const size = Math.random() * 80 + 40;
-                hex.style.width = size + 'px';
-                hex.style.height = (size * 1.15) + 'px';
-                hex.style.left = Math.random() * 100 + '%';
-                hex.style.animationDuration = (Math.random() * 20 + 15) + 's';
-                hex.style.animationDelay = (Math.random() * 10) + 's';
+        document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', function (e) {
+            const id = this.getAttribute('href'); if (id.length > 1) { const t = document.querySelector(id); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); } }
+        }));
 
-                const isFilled = hex.classList.contains('filled');
-                hex.innerHTML = `<svg viewBox="0 0 100 115.47">
-                    <polygon points="50,0 100,28.87 100,86.6 50,115.47 0,86.6 0,28.87"
-                        fill="${isFilled ? '#024056' : 'none'}"
-                        stroke="${isFilled ? 'none' : '#024056'}"
-                        stroke-width="2"/>
-                </svg>`;
+        const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: 0.1, rootMargin: '0px 0px -40px' });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-                hexBg.appendChild(hex);
-            }
+        if (matchMedia('(pointer:fine)').matches) {
+            const ring = document.getElementById('cursorRing');
+            let x = 0, y = 0, cx = 0, cy = 0;
+            addEventListener('mousemove', e => { x = e.clientX; y = e.clientY; ring.style.opacity = 1; });
+            (function loop() { cx += (x - cx) * .18; cy += (y - cy) * .18; ring.style.transform = `translate(${cx}px,${cy}px) translate(-50%,-50%)`; requestAnimationFrame(loop); })();
+            document.querySelectorAll('[data-hot]').forEach(el => { el.addEventListener('mouseenter', () => ring.classList.add('hot')); el.addEventListener('mouseleave', () => ring.classList.remove('hot')); });
         }
-
-        createHexagons();
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Scroll to top button
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
-            }
-        });
-
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
     </script>
 </body>
 
