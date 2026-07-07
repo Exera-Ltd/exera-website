@@ -78,11 +78,11 @@
             --teal: #0E8FA6;
             --sky: #A9CCFF;
             --mint: #D6ECEF;
-            --limebg: #EAF7C0;
+            --limebg: #DFF2E6;
             --skybg: #DEEBFF;
             --peach: #FCE7CE;
 
-            --grad: linear-gradient(120deg, #024056 0%, #0E8FA6 55%, #17B0C7 100%);
+            --grad: linear-gradient(120deg, #05B36A 0%, #0E93A8 50%, #2E6BF0 100%);
             --shadow: 0 18px 50px -20px rgba(12, 40, 28, 0.28);
             --shadow-sm: 0 8px 26px -14px rgba(12, 40, 28, 0.30);
 
@@ -109,8 +109,8 @@
         .aurora { position: fixed; inset: 0; z-index: -2; overflow: hidden; pointer-events: none; }
         .blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.55; will-change: transform; }
         .blob.b1 { width: 620px; height: 620px; top: -180px; right: -120px; background: radial-gradient(circle, #9EF2C1, transparent 68%); }
-        .blob.b2 { width: 540px; height: 540px; top: 30%; left: -200px; background: radial-gradient(circle, #E6F7A0, transparent 66%); }
-        .blob.b3 { width: 560px; height: 560px; bottom: -220px; right: 8%; background: radial-gradient(circle, #BFE0FF, transparent 66%); }
+        .blob.b2 { width: 540px; height: 540px; top: 30%; left: -200px; background: radial-gradient(circle, #B4CEFF, transparent 66%); }
+        .blob.b3 { width: 560px; height: 560px; bottom: -220px; right: 8%; background: radial-gradient(circle, #A7EBD8, transparent 66%); }
         body::after {
             content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
             background-image: radial-gradient(rgba(12, 26, 19, 0.05) 1px, transparent 1px);
@@ -223,13 +223,17 @@
         .t-rate b { font-family: var(--fd); font-weight: 700; font-size: 1.05rem; margin-top: 0.2rem; }
         .t-rate span { font-size: 0.76rem; color: var(--muted); }
 
-        /* ---------------- Marquee ---------------- */
-        .strip { padding: 26px 0 6px; }
-        .strip .lbl { text-align: center; font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 1.3rem; }
-        .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
-        .mtrack { display: flex; gap: 1.4rem; width: max-content; animation: scrollX 42s linear infinite; }
-        .marquee:hover .mtrack { animation-play-state: paused; }
-        .mtrack img { height: 66px; width: auto; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 10px 20px; box-shadow: var(--shadow-sm); }
+        /* ---------------- Stats band ---------------- */
+        .stats-band { padding: 20px 0 6px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .stat { display: flex; align-items: center; gap: 0.9rem; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 1.1rem 1.2rem; box-shadow: var(--shadow-sm); transition: transform .25s ease, box-shadow .3s ease; }
+        .stat:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+        .si { width: 44px; height: 44px; border-radius: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .si svg { width: 22px; height: 22px; fill: none; stroke-width: 1.9; }
+        .si.green { background: #DDF2E7; } .si.green svg { stroke: #05B36A; }
+        .si.blue { background: #E1EBFF; } .si.blue svg { stroke: #2E6BF0; }
+        .stat b { font-family: var(--fd); font-weight: 800; font-size: 1.7rem; line-height: 1; letter-spacing: -0.5px; display: block; }
+        .stat span { font-size: 0.8rem; color: var(--muted); }
         @keyframes scrollX { to { transform: translateX(-50%); } }
 
         /* ---------------- Services bento ---------------- */
@@ -374,7 +378,7 @@
         .field input::placeholder, .field textarea::placeholder { color: #6d857b; }
         .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--brand-l); box-shadow: 0 0 0 3px rgba(23,176,199,0.22); }
         .field select option { background: #0C1A13; }
-        .lead-form .btn { width: 100%; background: linear-gradient(120deg, #0E8FA6, #17B0C7); color: #fff; }
+        .lead-form .btn { width: 100%; background: linear-gradient(120deg, #05B36A, #2E6BF0); color: #fff; }
         .lead-form .btn:hover { background: #fff; color: var(--green-d); }
         .lead-note { font-size: 0.74rem; color: #7d948a; text-align: center; margin-top: 0.8rem; }
         .lead-note a { color: var(--brand-l); }
@@ -409,6 +413,7 @@
             #green .green-card { padding: 2rem; }
             .mim-badge { order: -1; }
             .steps { grid-template-columns: repeat(2,1fr); }
+            .stats-grid { grid-template-columns: repeat(2,1fr); }
             .clients { grid-template-columns: repeat(3,1fr); }
         }
         @media (max-width: 720px) {
@@ -529,17 +534,24 @@
             </div>
         </section>
 
-        <!-- Trust strip -->
-        <div class="strip">
-            <div class="wrap"><p class="lbl">Trusted across Mauritius &amp; beyond</p></div>
-            <div class="marquee">
-                <div class="mtrack" id="mtrack">
-                    <img src="clients/valle.webp" alt="Vallé"><img src="clients/manjoo.jpg" alt="Manjoo">
-                    <img src="clients/zariya.png" alt="Zariya"><img src="clients/abus-tackle.png" alt="Abu's Tackle">
-                    <img src="clients/kler-optics.png" alt="Kler Optics"><img src="clients/succexa.png" alt="Succexa">
-                    <img src="clients/alfarglobal.webp" alt="Alfar Global"><img src="clients/freair.png" alt="Freair">
-                    <img src="clients/mr-salami.png" alt="Mr Salami"><img src="clients/gentlemen-gala.webp" alt="Gentlemen Gala">
-                    <img src="clients/optimum-line.png" alt="Optimum Line"><img src="clients/home-classics.png" alt="Home Classics">
+        <!-- Stats band -->
+        <div class="stats-band">
+            <div class="wrap stats-grid">
+                <div class="stat reveal" data-hot>
+                    <span class="si green"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></span>
+                    <div><b data-count="10" data-suffix="+">0</b><span>Years building software</span></div>
+                </div>
+                <div class="stat reveal" data-hot>
+                    <span class="si blue"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                    <div><b data-count="40" data-suffix="+">0</b><span>Businesses served</span></div>
+                </div>
+                <div class="stat reveal" data-hot>
+                    <span class="si green"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></span>
+                    <div><b data-count="7" data-suffix="+">0</b><span>Countries reached</span></div>
+                </div>
+                <div class="stat reveal" data-hot>
+                    <span class="si blue"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                    <div><b>5.0★</b><span>Average client rating</span></div>
                 </div>
             </div>
         </div>
@@ -641,22 +653,6 @@
                             <div class="mim-feat"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Proudly Mauritian</div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Process -->
-        <section id="process">
-            <div class="wrap">
-                <div class="head reveal">
-                    <div class="kicker">How we work</div>
-                    <h2 class="h2">A path we've walked <span class="serif grad-text">100+ times.</span></h2>
-                </div>
-                <div class="steps">
-                    <div class="step reveal" data-hot><div class="n">01</div><h3>Discovery</h3><p>We visit your site, watch your operations and learn your business from the ground up.</p></div>
-                    <div class="step reveal" data-hot><div class="n">02</div><h3>Design</h3><p>We architect a solution tailored to your workflows, challenges and goals.</p></div>
-                    <div class="step reveal" data-hot><div class="n">03</div><h3>Develop</h3><p>We build with clean, maintainable code and regular progress updates.</p></div>
-                    <div class="step reveal" data-hot><div class="n">04</div><h3>Deploy &amp; Support</h3><p>We launch, then keep supporting you as your business evolves.</p></div>
                 </div>
             </div>
         </section>
@@ -850,6 +846,16 @@
         // Reveal
         const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: 0.12, rootMargin: '0px 0px -40px' });
         document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // Count-up stats
+        const cio = new IntersectionObserver(es => es.forEach(en => {
+            if (!en.isIntersecting) return;
+            const el = en.target, target = +el.dataset.count, suf = el.dataset.suffix || '';
+            let c = 0; const step = Math.max(1, Math.round(target / 32));
+            (function t() { c = Math.min(target, c + step); el.textContent = c + suf; if (c < target) requestAnimationFrame(t); })();
+            cio.unobserve(el);
+        }), { threshold: 0.6 });
+        document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
 
         // Word rotator
         (function () {
