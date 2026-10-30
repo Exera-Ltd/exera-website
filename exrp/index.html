@@ -160,7 +160,7 @@
         .app-side .s.on { background: var(--grad); color: #fff; }
         .app-main { padding: 1.3rem 1.4rem; text-align: left; }
         .app-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
-        .app-top h4 { font-family: var(--fd); font-weight: 700; font-size: 1.05rem; }
+        .app-top .dh { font-family: var(--fd); font-weight: 700; font-size: 1.05rem; }
         .app-top .sel { font-size: 0.72rem; color: var(--muted); border: 1px solid var(--line); border-radius: 100px; padding: 0.25rem 0.75rem; }
         .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 12px; }
         .kpi { border: 1px solid var(--line); border-radius: 13px; padding: 0.8rem 0.9rem; background: var(--bg-2); }
@@ -237,7 +237,7 @@
         .mod:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
         .mod .hexi { width: 58px; height: 64px; margin: 0 auto 0.9rem; background: var(--grad); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: flex; align-items: center; justify-content: center; }
         .mod .hexi svg { width: 26px; height: 26px; stroke: #fff; fill: none; stroke-width: 1.8; }
-        .mod h4 { font-family: var(--fd); font-weight: 700; font-size: 1rem; }
+        .mod h3 { font-family: var(--fd); font-weight: 700; font-size: 1rem; }
         .mod .fn { font-size: 0.78rem; color: var(--muted); }
         .mod .mbadge { position: absolute; top: 12px; right: 12px; font-size: 0.62rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 100px; background: var(--mint); color: var(--green-d); }
         .mod.core .hexi { background: linear-gradient(150deg, #024056, #0E8FA6); } .mod.core .mbadge { background: #024056; color: #fff; }
@@ -253,7 +253,7 @@
         .astat .ac { font-size: 0.76rem; color: var(--muted); }
         .arow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .acard { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 1.8rem; box-shadow: var(--shadow-sm); }
-        .acard h4 { font-family: var(--fd); font-weight: 700; font-size: 1.15rem; margin-bottom: 1.2rem; }
+        .acard h3 { font-family: var(--fd); font-weight: 700; font-size: 1.15rem; margin-bottom: 1.2rem; }
         .pie-wrap { display: flex; align-items: center; gap: 1.6rem; flex-wrap: wrap; }
         .pie { width: 150px; height: 150px; border-radius: 50%; flex-shrink: 0; background: conic-gradient(#097992 0 36.4%, #0E8FA6 36.4% 54.6%, #2E6BF0 54.6% 72.8%, #05B36A 72.8% 91%, #C7A500 91% 100%); position: relative; }
         .pie::after { content: ''; position: absolute; inset: 26%; background: var(--card); border-radius: 50%; }
@@ -292,7 +292,7 @@
         .wf { display: flex; gap: 1rem; }
         .wf .wi { width: 44px; height: 44px; border-radius: 12px; background: var(--limebg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .wf .wi svg { width: 21px; height: 21px; stroke: var(--eco); fill: none; stroke-width: 1.8; }
-        .wf h4 { font-family: var(--fd); font-weight: 700; font-size: 1.02rem; margin-bottom: 0.15rem; } .wf p { color: var(--muted); font-size: 0.86rem; }
+        .wf h3 { font-family: var(--fd); font-weight: 700; font-size: 1.02rem; margin-bottom: 0.15rem; } .wf p { color: var(--muted); font-size: 0.86rem; }
         .wa-btn { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.4rem; background: linear-gradient(135deg,#25D366,#128C7E); color: #fff; padding: 0.8rem 1.4rem; border-radius: 100px; text-decoration: none; font-family: var(--fd); font-weight: 600; font-size: 0.9rem; }
         .wa-btn svg { width: 18px; height: 18px; fill: #fff; }
 
@@ -300,7 +300,7 @@
         .comp-card { text-align: center; }
         .comp-card .ic { margin: 0 auto 1rem; }
         .comp-card img { height: 46px; }
-        .comp-card h4 { font-family: var(--fd); font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; } .comp-card p { font-size: 0.82rem; color: var(--muted); }
+        .comp-card h3 { font-family: var(--fd); font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; } .comp-card p { font-size: 0.82rem; color: var(--muted); }
         .inds { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
         .ind { display: flex; align-items: center; gap: 0.55rem; background: var(--card); border: 1px solid var(--line); border-radius: 100px; padding: 0.7rem 1.2rem; box-shadow: var(--shadow-sm); font-weight: 600; font-size: 0.88rem; transition: all .25s; }
         .ind:hover { transform: translateY(-4px); border-color: var(--green); }
@@ -442,7 +442,7 @@
                                 <span class="s"><svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></span>
                             </div>
                             <div class="app-main">
-                                <div class="app-top"><h4>Dashboard</h4><span class="sel">This month ▾</span></div>
+                                <div class="app-top"><div class="dh">Dashboard</div><span class="sel">This month ▾</span></div>
                                 <div class="kpis">
                                     <div class="kpi"><span>Revenue</span><b>Rs 1.2M</b><em>▲ 15%</em></div>
                                     <div class="kpi"><span>Invoices</span><b>1,247</b><em>▲ 8%</em></div>
@@ -566,20 +566,20 @@
                     <p class="lead">Pick the modules that craft a solution tailored to your business.</p>
                 </div>
                 <div class="modules">
-                    <div class="mod core reveal" data-hot><span class="mbadge">Core</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h4>Worker Bee</h4><span class="fn">Customer Management</span></div>
-                    <div class="mod rs1 reveal" data-hot><span class="mbadge">Rs 1 Only!</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h4>Honey Maker</h4><span class="fn">Invoicing</span></div>
-                    <div class="mod popular reveal" data-hot><span class="mbadge">Popular</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div><h4>Hive Keeper</h4><span class="fn">Inventory</span></div>
-                    <div class="mod popular reveal" data-hot><span class="mbadge">Popular</span><div class="hexi"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div><h4>Queen Bee</h4><span class="fn">Orders</span></div>
-                    <div class="mod popular reveal" data-hot><span class="mbadge">Popular</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h4>Consult Bee</h4><span class="fn">Healthcare</span></div>
-                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h4>Busy Bee</h4><span class="fn">Appointments</span></div>
-                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h4>Collector Bee</h4><span class="fn">Point of Sale</span></div>
-                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></div><h4>Wise Bee</h4><span class="fn">Analytics</span></div>
-                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h4>Scout Bee</h4><span class="fn">Campaigns</span></div>
-                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div><h4>Banker Bee</h4><span class="fn">Bank Reconciliation</span></div>
-                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><h4>Educator Bee</h4><span class="fn">Reporting</span></div>
-                    <div class="mod soon reveal" data-hot><span class="mbadge">Soon</span><div class="hexi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h4>AI Insights</h4><span class="fn">Smart Automation</span></div>
-                    <div class="mod soon reveal" data-hot><span class="mbadge">Soon</span><div class="hexi"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><h4>Mobile App</h4><span class="fn">On The Go</span></div>
-                    <div class="mod soon reveal" data-hot><span class="mbadge">Soon</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><h4>Payroll</h4><span class="fn">Staff Management</span></div>
+                    <div class="mod core reveal" data-hot><span class="mbadge">Core</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Worker Bee</h3><span class="fn">Customer Management</span></div>
+                    <div class="mod rs1 reveal" data-hot><span class="mbadge">Rs 1 Only!</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h3>Honey Maker</h3><span class="fn">Invoicing</span></div>
+                    <div class="mod popular reveal" data-hot><span class="mbadge">Popular</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div><h3>Hive Keeper</h3><span class="fn">Inventory</span></div>
+                    <div class="mod popular reveal" data-hot><span class="mbadge">Popular</span><div class="hexi"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div><h3>Queen Bee</h3><span class="fn">Orders</span></div>
+                    <div class="mod popular reveal" data-hot><span class="mbadge">Popular</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>Consult Bee</h3><span class="fn">Healthcare</span></div>
+                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h3>Busy Bee</h3><span class="fn">Appointments</span></div>
+                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3>Collector Bee</h3><span class="fn">Point of Sale</span></div>
+                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></div><h3>Wise Bee</h3><span class="fn">Analytics</span></div>
+                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h3>Scout Bee</h3><span class="fn">Campaigns</span></div>
+                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div><h3>Banker Bee</h3><span class="fn">Bank Reconciliation</span></div>
+                    <div class="mod reveal" data-hot><div class="hexi"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><h3>Educator Bee</h3><span class="fn">Reporting</span></div>
+                    <div class="mod soon reveal" data-hot><span class="mbadge">Soon</span><div class="hexi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h3>AI Insights</h3><span class="fn">Smart Automation</span></div>
+                    <div class="mod soon reveal" data-hot><span class="mbadge">Soon</span><div class="hexi"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><h3>Mobile App</h3><span class="fn">On The Go</span></div>
+                    <div class="mod soon reveal" data-hot><span class="mbadge">Soon</span><div class="hexi"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><h3>Payroll</h3><span class="fn">Staff Management</span></div>
                 </div>
             </div>
         </section>
@@ -604,7 +604,7 @@
                 </div>
                 <div class="arow">
                     <div class="acard reveal">
-                        <h4>Business Diversity</h4>
+                        <h3>Business Diversity</h3>
                         <div class="pie-wrap">
                             <div class="pie"></div>
                             <div class="legend">
@@ -617,7 +617,7 @@
                         </div>
                     </div>
                     <div class="acard reveal">
-                        <h4>Environmental Impact</h4>
+                        <h3>Environmental Impact</h3>
                         <div class="impact">
                             <div class="imp"><span class="ii"><svg viewBox="0 0 24 24"><path d="M12 22v-7m0 0c-4 0-7-3-7-7 0-3 2-5 5-6 1-2 3-3 5-3s4 1 5 3c3 1 5 3 5 6 0 4-3 7-7 7h-6z"/></svg></span><div><b>10</b><span>Trees planted</span></div></div>
                             <div class="imp"><span class="ii"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="14" rx="5" ry="4"/><path d="M12 10V4M9 6l3-2 3 2M7 13c-2 0-4-1-4-3 2 0 4 1 4 3zm10 0c2 0 4-1 4-3-2 0-4 1-4 3z"/></svg></span><div><b>200+</b><span>Bees saved</span></div></div>
@@ -682,10 +682,10 @@
                         </div>
                     </div>
                     <div class="wa-feats reveal">
-                        <div class="wf"><span class="wi"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></span><div><h4>Daily Sales Reports</h4><p>Wake up to your sales summary every morning, without logging in.</p></div></div>
-                        <div class="wf"><span class="wi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span><div><h4>Invoice via WhatsApp</h4><p>Send professional invoices straight to your customers' WhatsApp. Faster delivery, instant confirmation.</p></div></div>
-                        <div class="wf"><span class="wi"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><div><h4>Appointment Reminders</h4><p>Automatic reminders for you and your clients. Fewer no-shows, smoother scheduling.</p></div></div>
-                        <div class="wf"><span class="wi"><svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></span><div><h4>Monthly Summaries</h4><p>End-of-month insights delivered to you. Track growth and plan ahead, all from a chat.</p></div></div>
+                        <div class="wf"><span class="wi"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg></span><div><h3>Daily Sales Reports</h3><p>Wake up to your sales summary every morning, without logging in.</p></div></div>
+                        <div class="wf"><span class="wi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span><div><h3>Invoice via WhatsApp</h3><p>Send professional invoices straight to your customers' WhatsApp. Faster delivery, instant confirmation.</p></div></div>
+                        <div class="wf"><span class="wi"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><div><h3>Appointment Reminders</h3><p>Automatic reminders for you and your clients. Fewer no-shows, smoother scheduling.</p></div></div>
+                        <div class="wf"><span class="wi"><svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></span><div><h3>Monthly Summaries</h3><p>End-of-month insights delivered to you. Track growth and plan ahead, all from a chat.</p></div></div>
                         <a class="wa-btn" href="https://wa.me/23059440110?text=Hi!%20I'm%20interested%20in%20EXRP%20WhatsApp%20updates" target="_blank" rel="noopener" data-hot>
                             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
                             Enable WhatsApp updates
@@ -704,10 +704,10 @@
                     <p class="lead">We take security and compliance seriously.</p>
                 </div>
                 <div class="grid-4">
-                    <div class="glass comp-card reveal" data-hot><div class="ic"><img src="../mim.png" alt="Made in Moris"></div><h4>Made in Moris</h4><p>Quality-certified Mauritian product</p></div>
-                    <div class="glass comp-card reveal" data-hot><div class="ic blue"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h4>MRA Compliant</h4><p>Registered EBS solution provider</p></div>
-                    <div class="glass comp-card reveal" data-hot><div class="ic green"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>DPO Registered</h4><p>Data Protection Act compliant</p></div>
-                    <div class="glass comp-card reveal" data-hot><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><h4>Secure &amp; Encrypted</h4><p>Enterprise-grade security</p></div>
+                    <div class="glass comp-card reveal" data-hot><div class="ic"><img src="../mim.png" alt="Made in Moris"></div><h3>Made in Moris</h3><p>Quality-certified Mauritian product</p></div>
+                    <div class="glass comp-card reveal" data-hot><div class="ic blue"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h3>MRA Compliant</h3><p>Registered EBS solution provider</p></div>
+                    <div class="glass comp-card reveal" data-hot><div class="ic green"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>DPO Registered</h3><p>Data Protection Act compliant</p></div>
+                    <div class="glass comp-card reveal" data-hot><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><h3>Secure &amp; Encrypted</h3><p>Enterprise-grade security</p></div>
                 </div>
             </div>
         </section>
