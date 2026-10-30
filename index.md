@@ -1,17 +1,17 @@
-# Exera Ltd — Tailor-Made Software, Made in Moris & Green-Hosted
+# Exera Ltd · Tailor-Made Software, Made in Moris & Green-Hosted
 
 > Bespoke software the island trusts. Custom apps, web, mobile and the EXRP cloud ERP. Made in Moris certified. Run on clean, green servers. 10+ years' experience, 8+ countries.
 
 ## What we do
 
-One team, end to end — from the first site visit to launch and beyond.
+One team, end to end, from the first site visit to launch and beyond.
 
-- **Custom Software** — bespoke systems built around your exact workflow, not a template.
-- **Web Applications** — fast, modern and scalable web apps and portals.
-- **Mobile Apps** — native-feeling iOS & Android apps.
-- **Integration** — connect your tools, hardware and data.
-- **Maintenance** — ongoing support, updates and improvements.
-- **Consulting** — strategic guidance on the right technology.
+- **Custom Software**: bespoke systems built around your exact workflow, not a template.
+- **Web Applications**: fast, modern and scalable web apps and portals.
+- **Mobile Apps**: native-feeling iOS & Android apps.
+- **Integration**: connect your tools, hardware and data.
+- **Maintenance**: ongoing support, updates and improvements.
+- **Consulting**: strategic guidance on the right technology.
 
 ## Green servers
 
@@ -23,9 +23,9 @@ Software runs on clean, energy-efficient infrastructure, with lean code that doe
 
 ## Made in Moris
 
-Every product carries the Made in Moris label — the Association of Mauritian Manufacturers' certification that at least 80% of production happens on Mauritian soil, verified by SGS. SGS verified · 80%+ local · Quality assured · Proudly Mauritian.
+Every product carries the Made in Moris label: the Association of Mauritian Manufacturers' certification that at least 80% of production happens on Mauritian soil, verified by SGS. SGS verified · 80%+ local · Quality assured · Proudly Mauritian.
 
-## EXRP — cloud ERP
+## EXRP: cloud ERP
 
 Cloud-based ERP for startups and SMEs. Unlimited invoices, products, customers and transactions. Fixed pricing, no hidden fees, fully MRA E-Invoicing compliant. Modules include invoicing, inventory, orders, POS, healthcare, appointments, analytics, campaigns, bank reconciliation and reporting. Details: https://exera.mu/exrp/
 

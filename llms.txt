@@ -10,7 +10,8 @@ Primary contact is WhatsApp (+230 5944 0110). Fastest way to reach the team for 
 
 - [Home](https://exera.mu/): Overview of services, green-server hosting, Made in Moris certification, clients, reviews and contact.
 - [Home (Markdown)](https://exera.mu/index.md): Token-efficient Markdown version of the homepage.
-- [EXRP — Cloud ERP](https://exera.mu/exrp/): EXRP cloud ERP for startups and SMEs. Unlimited invoices, products, customers and transactions. Fixed pricing, MRA E-Invoicing compliant, modules, analytics, payment and WhatsApp integration.
+- [EXRP: Cloud ERP](https://exera.mu/exrp/): EXRP cloud ERP for startups and SMEs. Unlimited invoices, products, customers and transactions. Fixed pricing, MRA E-Invoicing compliant, modules, analytics, payment and WhatsApp integration.
+- [Contact](https://exera.mu/contact.html): Ways to reach Exera: WhatsApp, email, phone and office address.
 - [Terms of Service](https://exera.mu/terms.html): Website and service terms.
 - [Privacy Policy](https://exera.mu/privacy.html): How Exera handles data.
 
@@ -22,7 +23,7 @@ Primary contact is WhatsApp (+230 5944 0110). Fastest way to reach the team for 
 - System integration
 - Maintenance and ongoing support
 - Technology consulting
-- EXRP — cloud-based ERP (invoicing, inventory, orders, POS, analytics, more)
+- EXRP: cloud-based ERP (invoicing, inventory, orders, POS, analytics, more)
 
 ## Facts
 

@@ -1,4 +1,4 @@
-# robots.txt for Exera Ltd — https://exera.mu
+# robots.txt for Exera Ltd · https://exera.mu
 # Crawling is open. The Content-Signal line below states how our
 # content may be used (Cloudflare Content Signals Policy):
 #   search    = yes  (may be used to build a search index)
