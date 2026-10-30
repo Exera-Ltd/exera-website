@@ -1,0 +1,15 @@
+# Response headers for Netlify / Cloudflare Pages.
+# Harmlessly ignored on hosts that don't read a _headers file.
+
+/*
+  Link: </llms.txt>; rel="llms-txt", </index.md>; rel="alternate"; type="text/markdown"
+  Vary: Accept
+
+/index.md
+  Content-Type: text/markdown; charset=utf-8
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/.well-known/mcp/server-card.json
+  Content-Type: application/json; charset=utf-8

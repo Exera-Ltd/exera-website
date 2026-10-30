@@ -1,0 +1,33 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/2025/server-card.json",
+  "name": "Exera Ltd",
+  "version": "1.0.0",
+  "description": "Discovery card for Exera Ltd (exera.mu), a Mauritian software company offering tailor-made software and the EXRP cloud ERP. In-browser WebMCP tools (contact_exera, get_exera_info) are registered on the homepage via navigator.modelContext. A hosted remote MCP endpoint is advertised below.",
+  "publisher": {
+    "name": "Exera Ltd",
+    "url": "https://exera.mu"
+  },
+  "endpoint": "https://exera.mu/mcp",
+  "transport": "streamable-http",
+  "documentation": "https://exera.mu/llms.txt",
+  "capabilities": {
+    "tools": true,
+    "resources": false,
+    "prompts": false,
+    "logging": false
+  },
+  "tools": [
+    {
+      "name": "contact_exera",
+      "description": "Send Exera Ltd a project or demo enquiry. Collects name, business, need and message and opens a pre-filled WhatsApp conversation with the team."
+    },
+    {
+      "name": "get_exera_info",
+      "description": "Return key facts about Exera Ltd: services, the EXRP cloud ERP, Made in Moris certification, green hosting, countries served and contact details."
+    }
+  ],
+  "contact": {
+    "email": "info@exera.mu",
+    "phone": "+230-5944-0110"
+  }
+}

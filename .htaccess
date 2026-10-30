@@ -1,0 +1,24 @@
+# Agent-readiness headers for Apache hosts.
+# Every directive is wrapped in <IfModule> so a host missing a module
+# simply skips it instead of erroring. Ignored entirely on non-Apache hosts.
+
+# 1) Advertise the llms.txt and the Markdown alternate via an RFC 8288 Link header.
+<IfModule mod_headers.c>
+  Header set Link "</llms.txt>; rel=\"llms-txt\", </index.md>; rel=\"alternate\"; type=\"text/markdown\""
+  Header append Vary Accept
+</IfModule>
+
+# 2) Serve .md and related files with the right content types.
+<IfModule mod_mime.c>
+  AddType text/markdown .md
+  AddType application/json .json
+</IfModule>
+
+# 3) Content negotiation: when an agent requests the homepage with
+#    "Accept: text/markdown", serve the Markdown representation instead of HTML.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_ACCEPT} text/markdown [NC]
+  RewriteCond %{REQUEST_URI} ^/(index\.html)?$
+  RewriteRule ^(index\.html)?$ /index.md [L]
+</IfModule>

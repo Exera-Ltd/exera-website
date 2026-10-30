@@ -33,17 +33,66 @@
     <link rel="apple-touch-icon" href="favicon.png">
     <meta name="theme-color" content="#F6F8F2">
 
+    <!-- Agent-readable alternates -->
+    <link rel="alternate" type="text/markdown" href="/index.md" title="Markdown version">
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org", "@type": "Organization",
         "name": "Exera Ltd", "url": "https://exera.mu", "logo": "https://exera.mu/logo.webp",
+        "image": "https://exera.mu/logo.webp",
         "description": "Tailor-made, eco-friendly software solutions. Made in Moris certified and green-hosted.",
         "foundingDate": "2014",
+        "telephone": "+230-5944-0110",
+        "email": "info@exera.mu",
         "address": { "@type": "PostalAddress", "streetAddress": "IconEbene1", "addressLocality": "Ebene", "addressCountry": "MU" },
         "contactPoint": { "@type": "ContactPoint", "telephone": "+230-5944-0110", "contactType": "sales", "email": "info@exera.mu", "availableLanguage": ["English", "French"] },
         "sameAs": ["https://facebook.com/exera.mu", "https://instagram.com/exera.mu", "https://linkedin.com/company/exera-ltd", "https://github.com/Exera-Ltd"],
         "areaServed": ["Mauritius", "United States", "France", "Switzerland", "Thailand", "Turkey", "China"],
         "award": "Made in Moris Sustainability Champions 2025"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org", "@type": "WebSite",
+        "name": "Exera Ltd", "url": "https://exera.mu",
+        "inLanguage": "en",
+        "publisher": { "@type": "Organization", "name": "Exera Ltd", "url": "https://exera.mu" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org", "@type": "Service",
+        "serviceType": "Custom software development",
+        "name": "Tailor-made software development",
+        "provider": { "@type": "Organization", "name": "Exera Ltd", "url": "https://exera.mu", "telephone": "+230-5944-0110" },
+        "areaServed": ["Mauritius", "United States", "France", "Switzerland", "Thailand", "Turkey", "China"],
+        "description": "Bespoke software built around your workflow, engineered in Mauritius and run on green servers.",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog", "name": "Exera Services",
+            "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Applications" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile Apps" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Integration" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Maintenance" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consulting" } }
+            ]
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org", "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "What does Exera Ltd do?", "acceptedAnswer": { "@type": "Answer", "text": "Exera builds tailor-made software for businesses — custom apps, web applications, mobile apps, system integration, maintenance and consulting — plus EXRP, a cloud-based ERP. We come on site, learn how you work, and build software around your exact workflow." } },
+            { "@type": "Question", "name": "Where is Exera based?", "acceptedAnswer": { "@type": "Answer", "text": "Exera Ltd is based at IconEbene, Ebene, Mauritius, and has served clients in 7+ countries including the United States, France, Switzerland, Thailand, Turkey and China." } },
+            { "@type": "Question", "name": "Is Exera's software Made in Moris certified?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every product carries the Made in Moris label, certifying at least 80% local production, verified by SGS. Exera was named a Sustainability Champion in its Made in Moris cohort in 2025." } },
+            { "@type": "Question", "name": "What is EXRP?", "acceptedAnswer": { "@type": "Answer", "text": "EXRP is Exera's cloud-based ERP for startups and SMEs. It offers unlimited invoices, products, customers and transactions, fixed pricing with no hidden fees, and is fully MRA E-Invoicing compliant." } },
+            { "@type": "Question", "name": "How can I contact Exera?", "acceptedAnswer": { "@type": "Answer", "text": "The fastest way is WhatsApp or phone at +230 5944 0110. You can also email info@exera.mu." } }
+        ]
     }
     </script>
     <script type="application/ld+json">
@@ -389,6 +438,9 @@
         .foot img { height: 30px; }
         .foot .ft { color: var(--muted); font-size: 0.85rem; }
         .foot .ft em { font-family: var(--fs); font-style: italic; color: var(--green-d); }
+        .foot-links { display: flex; gap: 1.3rem; flex-wrap: wrap; }
+        .foot-links a { color: var(--ink-2); font-size: 0.86rem; font-weight: 500; text-decoration: none; }
+        .foot-links a:hover { color: var(--green); }
         .fsoc { display: flex; gap: 0.6rem; }
         .fsoc a { width: 40px; height: 40px; border-radius: 11px; background: var(--card); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; transition: all .25s; }
         .fsoc a:hover { background: var(--green); border-color: var(--green); }
@@ -787,7 +839,7 @@
                             </a>
                         </div>
                     </div>
-                    <form class="lead-form reveal" id="leadForm">
+                    <form class="lead-form reveal" id="leadForm" toolname="contact_exera" tooldescription="Send Exera Ltd a project enquiry. Provide your name, business and what you need; it opens a pre-filled WhatsApp message to the team.">
                         <h3>Start your project</h3>
                         <p>Send us the essentials. It takes 30 seconds.</p>
                         <div class="field"><label for="lf-name">Your name</label><input id="lf-name" type="text" placeholder="e.g. Ahmed Patel" required></div>
@@ -813,6 +865,12 @@
         <div class="wrap foot">
             <img src="logo.webp" alt="Exera Ltd" loading="lazy">
             <p class="ft"><em>Stay Low, Stay Humble</em> · © <span id="year"></span> Exera Ltd. Made in Moris &amp; green-hosted.</p>
+            <div class="foot-links">
+                <a href="#contact">Contact</a>
+                <a href="exrp">EXRP</a>
+                <a href="/terms.html">Terms</a>
+                <a href="/privacy.html">Privacy</a>
+            </div>
             <div class="fsoc">
                 <a href="https://facebook.com/exera.mu" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
                 <a href="https://instagram.com/exera.mu" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
@@ -952,9 +1010,55 @@
             form.addEventListener('submit', e => { e.preventDefault(); const n = document.getElementById('lf-name'); if (!n.value.trim()) { n.focus(); return; } open('https://wa.me/23059440110?text=' + build(), '_blank'); });
             document.getElementById('lf-email').addEventListener('click', e => { e.preventDefault(); location.href = `mailto:info@exera.mu?subject=${encodeURIComponent('New project enquiry')}&body=${build().replace(/%0A/g, '%0D%0A')}`; });
         })();
+
+        // WebMCP: expose in-browser tools to agents via navigator.modelContext
+        (function () {
+            try {
+                var mc = navigator.modelContext;
+                if (!mc || typeof mc.registerTool !== 'function') return;
+
+                mc.registerTool({
+                    name: "contact_exera",
+                    description: "Send Exera Ltd a project or demo enquiry. Opens a pre-filled WhatsApp message to the Exera team (+230 5944 0110).",
+                    inputSchema: {
+                        type: "object",
+                        properties: {
+                            name: { type: "string", description: "Your name" },
+                            business: { type: "string", description: "Your company or trade" },
+                            need: { type: "string", description: "What you need, e.g. custom software, web app, mobile app, EXRP/ERP, POS, integration" },
+                            message: { type: "string", description: "A few details about your project" }
+                        },
+                        required: ["name"]
+                    },
+                    execute: async function (args) {
+                        args = args || {};
+                        var t = "Hi Exera! 👋\nName: " + (args.name || "-") + "\n";
+                        if (args.business) t += "Business: " + args.business + "\n";
+                        if (args.need) t += "Looking for: " + args.need + "\n";
+                        if (args.message) t += "Details: " + args.message;
+                        var url = "https://wa.me/23059440110?text=" + encodeURIComponent(t);
+                        try { window.open(url, "_blank"); } catch (e) {}
+                        return { content: [{ type: "text", text: "Opening a pre-filled WhatsApp message to Exera (+230 5944 0110). Link: " + url }] };
+                    }
+                });
+
+                mc.registerTool({
+                    name: "get_exera_info",
+                    description: "Get key facts about Exera Ltd: what they do, services, the EXRP cloud ERP, certifications, countries served and contact details.",
+                    inputSchema: { type: "object", properties: {} },
+                    execute: async function () {
+                        var info = "Exera Ltd — Mauritian software company (founded 2014). " +
+                            "Services: custom software, web apps, mobile apps, integration, maintenance, consulting, and EXRP (cloud ERP). " +
+                            "Made in Moris certified (80%+ local, SGS verified), Sustainability Champions 2025, green-hosted. " +
+                            "Serves 7+ countries (Mauritius, US, France, Switzerland, Thailand, Turkey, China). " +
+                            "Contact: WhatsApp/phone +230 5944 0110, email info@exera.mu, https://exera.mu";
+                        return { content: [{ type: "text", text: info }] };
+                    }
+                });
+            } catch (e) { /* no-op: WebMCP not available */ }
+        })();
     </script>
 
-    <!-- amCharts 5 map -->
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>

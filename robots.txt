@@ -1,0 +1,12 @@
+# robots.txt for Exera Ltd — https://exera.mu
+# Crawling is open. The Content-Signal line below states how our
+# content may be used (Cloudflare Content Signals Policy):
+#   search    = yes  (may be used to build a search index)
+#   ai-input  = yes  (may be used to ground / answer with AI at query time)
+#   ai-train  = no   (may NOT be used to train AI models)
+
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+
+Sitemap: https://exera.mu/sitemap.xml
