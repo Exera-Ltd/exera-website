@@ -31,7 +31,7 @@ Cloud-based ERP for startups and SMEs. Unlimited invoices, products, customers a
 
 ## Clients
 
-Businesses across Mauritius and beyond, including Vallé Adventure Park, Manjoo, Zariya Designer Wear, Abu's Tackle Shop, Al Ihsaan Foundation, Succexa, Home Classics, Alfar Global, Kler Optics, Freair, Mr Salami, Gentlemen Gala, Promoshop, Ummahpreneurs, Patisserie du Nord and Optimum Line.
+Businesses across Mauritius and beyond, including Vallé Advenature Park, Manjoo, Zariya Designer Wear, Abu's Tackle Shop, Al Ihsaan Foundation, Succexa, Home Classics, Alfar Global, Kler Optics, Freair, Mr Salami, Gentlemen Gala, Promoshop, Ummahpreneurs, Patisserie du Nord and Optimum Line.
 
 ## Stats
 
