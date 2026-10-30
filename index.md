@@ -1,6 +1,6 @@
 # Exera Ltd — Tailor-Made Software, Made in Moris & Green-Hosted
 
-> Bespoke software the island trusts. Custom apps, web, mobile and the EXRP cloud ERP. Made in Moris certified. Run on clean, green servers. 10+ years, 7+ countries.
+> Bespoke software the island trusts. Custom apps, web, mobile and the EXRP cloud ERP. Made in Moris certified. Run on clean, green servers. 10+ years' experience, 8+ countries.
 
 ## What we do
 
@@ -35,9 +35,9 @@ Businesses across Mauritius and beyond, including Vallé Adventure Park, Manjoo,
 
 ## Stats
 
-- 10+ years building software
+- 10+ years of combined experience (founders, across companies & countries)
 - 40+ businesses served
-- 7+ countries reached (Mauritius, United States, France, Switzerland, Thailand, Turkey, China)
+- 8+ countries reached (Mauritius, India, United States, France, Switzerland, Thailand, Turkey, China)
 - 5.0 average client rating
 
 ## Contact

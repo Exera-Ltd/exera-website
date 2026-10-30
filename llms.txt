@@ -1,6 +1,6 @@
 # Exera Ltd
 
-> Exera Ltd is a Mauritian software company (founded 2014) that builds tailor-made software — custom apps, web, mobile and the EXRP cloud ERP. Made in Moris certified, green-hosted, serving clients in 7+ countries.
+> Exera Ltd is a Mauritian software company (founded 2021) that builds tailor-made software: custom apps, web, mobile and the EXRP cloud ERP. Made in Moris certified, green-hosted, serving clients in 8+ countries. Its founders bring 10+ years of combined software experience across companies and countries.
 
 Exera comes on site, learns how a business really works, and builds software around it. All products are Made in Moris certified (80%+ local production, SGS verified) and run on clean, energy-efficient "green" servers. Exera was named a Sustainability Champion in its Made in Moris cohort (2025).
 
@@ -27,8 +27,8 @@ Primary contact is WhatsApp (+230 5944 0110). Fastest way to reach the team for 
 ## Facts
 
 - Company: Exera Ltd, IconEbene, Ebene, Mauritius
-- Founded: 2014 (10+ years)
-- Countries served: Mauritius, United States, France, Switzerland, Thailand, Turkey, China
+- Founded: 2021 (founders bring 10+ years of combined software experience)
+- Countries served: Mauritius, India, United States, France, Switzerland, Thailand, Turkey, China
 - Certification: Made in Moris (SGS verified, 80%+ local), Sustainability Champions 2025
 - Hosting: green, energy-efficient servers
 - EXRP: MRA E-Invoicing compliant, fixed pricing, unlimited records
