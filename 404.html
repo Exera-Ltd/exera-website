@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page not found (404) | Exera Ltd</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="theme-color" content="#F6F8F2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg:#F5F7F0; --ink:#0C1A13; --ink-2:#33463E; --muted:#6A7A72; --line:rgba(12,26,19,0.10); --green:#097992; --green-d:#024056; --grad:linear-gradient(120deg,#05B36A,#0E93A8 55%,#2E6BF0); --fd:'Bricolage Grotesque','Inter',sans-serif; --fb:'Inter',sans-serif; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:var(--fb); background:var(--bg); color:var(--ink); min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:24px; position:relative; overflow:hidden; }
+        .blob { position:fixed; border-radius:50%; filter:blur(70px); opacity:.5; z-index:0; }
+        .b1 { width:520px; height:520px; top:-180px; right:-120px; background:radial-gradient(circle,#9EF2C1,transparent 68%); }
+        .b2 { width:480px; height:480px; bottom:-200px; left:-150px; background:radial-gradient(circle,#B4CEFF,transparent 66%); }
+        .card { position:relative; z-index:1; max-width:560px; }
+        .code { font-family:var(--fd); font-weight:800; font-size:clamp(5rem,18vw,9rem); line-height:1; letter-spacing:-4px; background:var(--grad); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+        h1 { font-family:var(--fd); font-weight:700; font-size:clamp(1.5rem,4vw,2.2rem); letter-spacing:-1px; margin:0.6rem 0 0.8rem; }
+        p { color:var(--ink-2); margin-bottom:2rem; }
+        .btns { display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap; }
+        .btn { display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--fd); font-weight:600; padding:0.9rem 1.6rem; border-radius:100px; text-decoration:none; border:1.5px solid transparent; transition:all .25s; }
+        .btn-p { background:var(--ink); color:#fff; } .btn-p:hover { background:var(--green); transform:translateY(-2px); }
+        .btn-g { border-color:var(--line); color:var(--ink); } .btn-g:hover { border-color:var(--ink); }
+        .links { margin-top:1.6rem; font-size:0.9rem; color:var(--muted); }
+        .links a { color:var(--green); text-decoration:none; margin:0 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="blob b1"></div><div class="blob b2"></div>
+    <div class="card">
+        <div class="code">404</div>
+        <h1>This page wandered off.</h1>
+        <p>The page you're looking for doesn't exist or has moved. Let's get you back on track.</p>
+        <div class="btns">
+            <a href="/" class="btn btn-p">Back to home</a>
+            <a href="/contact.html" class="btn btn-g">Contact us</a>
+        </div>
+        <div class="links">
+            <a href="/">Home</a>·<a href="/exrp">EXRP</a>·<a href="/contact.html">Contact</a>·<a href="/terms.html">Terms</a>·<a href="/privacy.html">Privacy</a>
+        </div>
+    </div>
+</body>
+</html>
