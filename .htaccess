@@ -26,6 +26,11 @@
 # 4) Custom error page.
 ErrorDocument 404 /404.html
 
+# 4b) Redirect old/retired URLs to their new home (301, keeps link equity).
+<IfModule mod_alias.c>
+  Redirect 301 /exrp.html /exrp/
+</IfModule>
+
 # 5) Light caching for static assets (helps Core Web Vitals / repeat visits).
 <IfModule mod_expires.c>
   ExpiresActive On
