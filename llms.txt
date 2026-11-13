@@ -12,6 +12,7 @@ Primary contact is WhatsApp (+230 5944 0110). Fastest way to reach the team for 
 - [Home (Markdown)](https://exera.mu/index.md): Token-efficient Markdown version of the homepage.
 - [EXRP: Cloud ERP](https://exera.mu/exrp/): EXRP cloud ERP for startups and SMEs. Unlimited invoices, products, customers and transactions. Fixed pricing, MRA E-Invoicing compliant, modules, analytics, payment and WhatsApp integration.
 - [Blog](https://exera.mu/blog/): Case studies and guides on software, ERP and running a business in Mauritius.
+- [Team](https://exera.mu/team.html): Meet the founders, Bilaal Abdel Hassan and Naailah Gunglee.
 - [Contact](https://exera.mu/contact.html): Ways to reach Exera: WhatsApp, email, phone and office address.
 - [Terms of Service](https://exera.mu/terms.html): Website and service terms.
 - [Privacy Policy](https://exera.mu/privacy.html): How Exera handles data.
